@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bfqxoebsvlpda"]
+
+[ext_resource type="Script" uid="uid://cl6tdjsopyxgk" path="res://scripts/main_menu.gd" id="1_qkhwq"]
+[ext_resource type="Texture2D" uid="uid://bc1hwm41wpvs1" path="res://assets/images/mainmenubackground.jpg" id="2_3d1i7"]
+[ext_resource type="FontFile" uid="uid://nspbe307sbq3" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="3_48ign"]
+
+[sub_resource type="FontVariation" id="FontVariation_l7wge"]
+base_font = ExtResource("3_48ign")
+
+[node name="MainMenu" type="Control" unique_id=866398376]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qkhwq")
+
+[node name="Mainmenubackground" type="Sprite2D" parent="." unique_id=1345740648]
+position = Vector2(640.00006, 359.99997)
+scale = Vector2(0.2688511, 0.22835398)
+texture = ExtResource("2_3d1i7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1998031602]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 560.0
+offset_top = 275.0
+offset_right = 643.0
+offset_bottom = 364.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(2, 2)
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=909495439]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_48ign")
+text = "Start"
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1045468362]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_l7wge")
+text = "Settings"
+
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=619647018]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_48ign")
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
