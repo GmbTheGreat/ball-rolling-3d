@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cwottqute8e0l"]
+
+[ext_resource type="PackedScene" uid="uid://c3uddklw4auex" path="res://scenes/ball.tscn" id="1_lgrwq"]
+
+[node name="debug" type="Node3D" unique_id=1171176572]
+
+[node name="Ball" parent="." unique_id=1403333367 instance=ExtResource("1_lgrwq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1744243, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=476264155]
+transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, -0.00084996223, 2.1188903, 3.0923498)

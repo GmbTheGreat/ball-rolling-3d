@@ -2,6 +2,7 @@ extends RigidBody3D
 
 @export var force_strength := 30.0
 @export var max_speed := 10.0
+@export var boost_speed := 20
 @export var camera: Camera3D
 
 # 👉 This is used by camera
@@ -15,6 +16,8 @@ func respawn():
 	global_position = spawn_position
 	linear_velocity = Vector3.ZERO
 	angular_velocity = Vector3.ZERO
+	
+	camera.reset_camera()
 
 func _physics_process(delta):
 	var input_dir = Vector2.ZERO
@@ -52,5 +55,5 @@ func _physics_process(delta):
 	if linear_velocity.length() > max_speed:
 		linear_velocity = linear_velocity.normalized() * max_speed
 
-	if position.y < -10:
+	if position.y < -20 or Input.is_action_just_pressed("reset_debug"):
 		respawn()
