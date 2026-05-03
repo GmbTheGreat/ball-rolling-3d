@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://u3tr08oa1u45"]
 
 [ext_resource type="Texture2D" uid="uid://c7os5qtl0e2fp" path="res://assets/hdri/sky_30_2k.png" id="1_ibkli"]
+[ext_resource type="Script" uid="uid://bb4u6tejidyux" path="res://scripts/game.gd" id="1_s0nni"]
 [ext_resource type="PackedScene" uid="uid://c3uddklw4auex" path="res://scenes/ball.tscn" id="2_qbsmt"]
 [ext_resource type="Script" uid="uid://cxaheovrhi5fl" path="res://scripts/camera_3d.gd" id="3_cpr0p"]
 [ext_resource type="Script" uid="uid://ct086s8dt707t" path="res://scripts/jump_pad.gd" id="4_78awf"]
@@ -46,7 +47,15 @@ size = Vector3(2.5, 1, 2.5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_s0nni"]
 size = Vector3(2.5, 1, 2.5)
 
+[sub_resource type="Curve3D" id="Curve3D_78awf"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.07582635, 0, -15.547498, 0, 0, 0, 0, 0, 0, 0, 2, -21.249, 0, 0, 0, 0, 0, 0, -0.069, -3, -34.49, 0, 0, 0, 0, 0, 0, 0, -3, -93, 0, 0, 0, 0, 0, 0, -0.009033203, 4.681784, -114.730865, 0, 0, 0, 0, 0, 0, 0, 4.682, -134.587, 0, 0, 0, 0, 0, 0, -23.081486, 4.682007, -135.21875, 0, 0, 0, 0, 0, 0, -23.471163, 4.682007, -156.78825, 0, 0, 0, 0, 0, 0, -23.464952, 4.682007, -165.98836, 0, 0, 0, 0, 0, 0, -23.073458, 4.682007, -178.19002, 0, 0, 0, 0, 0, 0, -6.4348316, 4.682007, -178.12477, 0, 0, 0, 0, 0, 0, 14.275884, 4.682007, -177.74582, 0, 0, 0, 0, 0, 0, 30.26202, 4.682007, -177.35432, 0, 0, 0, 0, 0, 0, 30.392513, 4.682007, -159.99796),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 15
+
 [node name="Game" type="Node3D" unique_id=1413653819]
+script = ExtResource("1_s0nni")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2012353524]
 environment = SubResource("Environment_78awf")
@@ -55,18 +64,10 @@ environment = SubResource("Environment_78awf")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 172.12152, 0)
 
 [node name="Ball" parent="." unique_id=1403333367 node_paths=PackedStringArray("camera") instance=ExtResource("2_qbsmt")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -23.09274, 11.477478, -167.44986)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 2, 0)
 mass = 1.5
 physics_material_override = SubResource("PhysicsMaterial_cpr0p")
-camera = NodePath("../Camera3D")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=712928646 node_paths=PackedStringArray("target")]
-transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 62.115974, 112.58028)
-current = true
-script = ExtResource("3_cpr0p")
-target = NodePath("../Ball")
-follow_speed = 2.0
-rotation_smooth = 1.0
+camera = NodePath("../Path3D/PathFollow3D/Camera3D")
 
 [node name="CSG 1" type="CSGBox3D" parent="." unique_id=605893555]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.997474e-06, 0, -6.404812)
@@ -835,5 +836,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.332, 8.03974, -150.942)
 use_collision = true
 inner_radius = 0.53
 outer_radius = 2.0
+
+[node name="Path3D" type="Path3D" parent="." unique_id=827834557]
+curve = SubResource("Curve3D_78awf")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1030945362]
+transform = Transform3D(0.9999603, 0, 0.0048768907, 0, 0.9999974, 0, -0.004876884, 0, 0.9999617, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D" unique_id=712928646 node_paths=PackedStringArray("target")]
+transform = Transform3D(1.0000278, 2.3283064e-10, 0, 0, 0.86603284, 0.49999243, 4.656613e-10, -0.50000435, 0.86605346, -0.024385778, 6.0000157, 5.0000725)
+current = true
+script = ExtResource("3_cpr0p")
+target = NodePath("../../../Ball")
 
 [connection signal="area_entered" from="JumpPad" to="JumpPad" method="_on_area_entered"]
