@@ -4,6 +4,7 @@ extends RigidBody3D
 @export var max_speed := 10.0
 @export var boost_speed := 20
 @export var camera: Camera3D
+@export var air_control := 0.2
 
 # 👉 This is used by camera
 var move_direction := Vector3.ZERO
@@ -26,6 +27,8 @@ func _physics_process(delta):
 	input_dir.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_dir.y = Input.get_action_strength("ui_up") - Input.get_action_strength("ui_down")
 	
+	var is_in_air = abs(linear_velocity.y) > 0.5
+	
 	if input_dir != Vector2.ZERO:
 		input_dir = input_dir.normalized()
 		
@@ -46,7 +49,8 @@ func _physics_process(delta):
 		move_direction = (forward * input_dir.y + right * input_dir.x)
 		
 		# Apply force
-		apply_central_force(move_direction * force_strength)
+		var strength = force_strength if not is_in_air else force_strength * air_control	
+		apply_central_force(move_direction * strength)
 	else:
 		# No input → stop updating direction (important for camera stability)
 		move_direction = Vector3.ZERO

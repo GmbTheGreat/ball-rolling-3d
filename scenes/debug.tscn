@@ -1,11 +1,67 @@
 [gd_scene format=3 uid="uid://cwottqute8e0l"]
 
-[ext_resource type="PackedScene" uid="uid://c3uddklw4auex" path="res://scenes/ball.tscn" id="1_lgrwq"]
+[ext_resource type="Script" uid="uid://c37srpp48yoxx" path="res://scripts/debug.gd" id="1_3vd64"]
+[ext_resource type="Texture2D" uid="uid://bdmfene5ryyw0" path="res://icon.svg" id="1_lgrwq"]
+[ext_resource type="Script" uid="uid://b8hyenj2auy4" path="res://scenes/rigid_body_3d.gd" id="2_4pmxj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4pmxj"]
+albedo_texture = ExtResource("1_lgrwq")
+uv1_scale = Vector3(12, 12, 12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8neu0"]
+material = SubResource("StandardMaterial3D_4pmxj")
+size = Vector3(100, 1, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lgrwq"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="Curve3D" id="Curve3D_4pmxj"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.057478033, 0.00014448166, -4.7177286, 0, 0, 0, 0, 0, 0, -0.7989251, 0.00081539154, -8.599167, 0, 0, 0, 0, 0, 0, 0.81862915, -0.00041913986, -11.139706, 0, 0, 0, 0, 0, 0, -0.13710177, 0.00044631958, -16.13865, 0, 0, 0, 0, 0, 0, 0.62331045, -7.4863434e-05, -20.197676),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lgrwq"]
+albedo_texture = ExtResource("1_lgrwq")
+
+[sub_resource type="SphereMesh" id="SphereMesh_4pmxj"]
+material = SubResource("StandardMaterial3D_lgrwq")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3vd64"]
 
 [node name="debug" type="Node3D" unique_id=1171176572]
+script = ExtResource("1_3vd64")
 
-[node name="Ball" parent="." unique_id=1403333367 instance=ExtResource("1_lgrwq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1744243, 0)
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1837987750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.48799843, 0)
+visible = false
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=476264155]
-transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, -0.00084996223, 2.1188903, 3.0923498)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1862785647]
+transform = Transform3D(0.99220955, 0, 0, 0, 0.99220955, 0, 0, 0, 0.99220955, 0, 0, 0)
+mesh = SubResource("BoxMesh_8neu0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=114557829]
+shape = SubResource("BoxShape3D_lgrwq")
+
+[node name="Path3D" type="Path3D" parent="." unique_id=1213055798]
+curve = SubResource("Curve3D_4pmxj")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1186312118]
+transform = Transform3D(0.99992543, 3.7306484e-07, 0.012182505, 0, 1, -3.0622978e-05, -0.012182505, 3.0620715e-05, 0.99992543, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D" unique_id=1318302749]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2127738, 0)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=354697834]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8174939, -3.266226)
+script = ExtResource("2_4pmxj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=1530718980]
+mesh = SubResource("SphereMesh_4pmxj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1100605684]
+shape = SubResource("SphereShape3D_3vd64")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=880981093]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 22.481752, 0)

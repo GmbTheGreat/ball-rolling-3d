@@ -1,7 +1,7 @@
 extends Area3D
 
-@export var jump_force := 100.0
-@export var upward_force := 1000.0
+@export var jump_force := 10.0
+@export var upward_force := 100.0
 
 var triggered := false
 var boosting := false
