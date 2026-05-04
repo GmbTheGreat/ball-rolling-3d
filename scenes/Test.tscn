@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://u3tr08oa1u45"]
 
-[ext_resource type="Texture2D" uid="uid://c7os5qtl0e2fp" path="res://assets/hdri/sky_30_2k.png" id="1_ibkli"]
-[ext_resource type="Script" uid="uid://bb4u6tejidyux" path="res://scripts/game.gd" id="1_s0nni"]
-[ext_resource type="PackedScene" uid="uid://c3uddklw4auex" path="res://scenes/ball.tscn" id="2_qbsmt"]
-[ext_resource type="Script" uid="uid://cxaheovrhi5fl" path="res://scripts/camera_3d.gd" id="3_cpr0p"]
-[ext_resource type="Script" uid="uid://ct086s8dt707t" path="res://scripts/jump_pad.gd" id="4_78awf"]
+[ext_resource type="Script" uid="uid://bb4u6tejidyux" path="res://scripts/test_level.gd" id="1_iscks"]
+[ext_resource type="Texture2D" uid="uid://c7os5qtl0e2fp" path="res://assets/hdri/sky_30_2k.png" id="2_amo3t"]
+[ext_resource type="PackedScene" uid="uid://c3uddklw4auex" path="res://scenes/ball.tscn" id="3_qca6q"]
+[ext_resource type="Script" uid="uid://ct086s8dt707t" path="res://scripts/jump_pad.gd" id="4_2loec"]
+[ext_resource type="Script" uid="uid://2xkacrybn8go" path="res://scripts/area_3d.gd" id="5_amo3t"]
+[ext_resource type="Script" uid="uid://cxaheovrhi5fl" path="res://scripts/camera_3d.gd" id="5_jbd4l"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qbsmt"]
-panorama = ExtResource("1_ibkli")
+panorama = ExtResource("2_amo3t")
 
 [sub_resource type="Sky" id="Sky_cpr0p"]
 sky_material = SubResource("PanoramaSkyMaterial_qbsmt")
@@ -47,15 +48,122 @@ size = Vector3(2.5, 1, 2.5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_s0nni"]
 size = Vector3(2.5, 1, 2.5)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_iscks"]
+height = 0.2
+
 [sub_resource type="Curve3D" id="Curve3D_78awf"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.07582635, 0, -15.547498, 0, 0, 0, 0, 0, 0, 0, 2, -21.249, 0, 0, 0, 0, 0, 0, -0.069, -3, -34.49, 0, 0, 0, 0, 0, 0, 0, -3, -93, 0, 0, 0, 0, 0, 0, -0.009033203, 4.681784, -114.730865, 0, 0, 0, 0, 0, 0, 0, 4.682, -134.587, 0, 0, 0, 0, 0, 0, -23.081486, 4.682007, -135.21875, 0, 0, 0, 0, 0, 0, -23.471163, 4.682007, -156.78825, 0, 0, 0, 0, 0, 0, -23.464952, 4.682007, -165.98836, 0, 0, 0, 0, 0, 0, -23.073458, 4.682007, -178.19002, 0, 0, 0, 0, 0, 0, -6.4348316, 4.682007, -178.12477, 0, 0, 0, 0, 0, 0, 14.275884, 4.682007, -177.74582, 0, 0, 0, 0, 0, 0, 30.26202, 4.682007, -177.35432, 0, 0, 0, 0, 0, 0, 30.392513, 4.682007, -159.99796),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.22211099, 2.7694225, 0, -0.22211099, -2.7694225, 0, 2, -20, 0, 0.19650221, 3.2681236, 0, -0.19650221, -3.2681236, 0, -2.9, -35, -0.003148079, 0.28424168, 11.395042, 0.003148079, -0.28424168, -11.395042, 0, -2.8990855, -90.00133, 0.06330681, -0.08734226, 4.830902, -0.06330681, 0.08734226, -4.830902, 0, 6, -113.4245, -0.6239676, -0.19058609, 2.93573, 0.6239676, 0.19058609, -2.93573, 0, 4.2, -125, 2.3305912, -0.051748276, 2.1954346, -2.3305912, 0.051748276, -2.1954346, 0, 4.2, -135, 0, 0, 0, 0, 0, 0, -11, 4.2, -135, 1.8861847, -2.3841858e-05, 1.748291, -1.8861847, 2.3841858e-05, -1.748291, -23.5, 4.2, -135, 0.12228775, -0.53259873, 3.6435852, -0.12228775, 0.53259873, -3.6435852, -23.5, 4.2, -150.3886, 0, -1.1907063, 5.16037, 0, 1.1907063, -5.16037, -23.5, 9, -157, -0.079811096, -0.12143612, 2.9855347, 0.079811096, 0.12143612, -2.9855347, -23.5, 8.2, -167, -2.2924309, -0.65465164, 3.8207245, 2.2924309, 0.65465164, -3.8207245, -23.5, 8.2, -179, -5.9237347, -0.64279175, 4.5776367e-05, 5.9237347, 0.64279175, -4.5776367e-05, -10.5, 12.150517, -175.09013, 0, 0, 0, 0, 0, 0, 13.926257, 8.2, -178.0065, -3.5343704, 1.1375628, -3.0195923, 3.5343704, -1.1375628, 3.0195923, 29.90873, 8.244521, -178.1208, 0, 0.14846706, -6.181076, 0, -0.14846706, 6.181076, 29.926025, 10.181134, -161.99237, 0, 0, 0, 0, 0, 0, 29.926, 4.2, -150),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 15
+point_count = 18
 
-[node name="Game" type="Node3D" unique_id=1413653819]
-script = ExtResource("1_s0nni")
+[sub_resource type="Animation" id="Animation_aug50"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CSGBox3D6:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CSGBox3D6:use_collision")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_s0nni"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kiw3p"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iscks"]
+resource_name = "transform_platform"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGBox3D6:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CSGBox3D6:use_collision")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aug50"]
+_data = {
+&"RESET": SubResource("Animation_aug50"),
+&"fade_in": SubResource("Animation_s0nni"),
+&"fade_out": SubResource("Animation_kiw3p"),
+&"platform_enable": SubResource("Animation_iscks")
+}
+
+[node name="Test Level" type="Node3D" unique_id=1413653819]
+script = ExtResource("1_iscks")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2012353524]
 environment = SubResource("Environment_78awf")
@@ -63,8 +171,8 @@ environment = SubResource("Environment_78awf")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=417298971]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 172.12152, 0)
 
-[node name="Ball" parent="." unique_id=1403333367 node_paths=PackedStringArray("camera") instance=ExtResource("2_qbsmt")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 2, 0)
+[node name="Ball" parent="." unique_id=1403333367 node_paths=PackedStringArray("camera") instance=ExtResource("3_qca6q")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -23.403704, 7.2833996, -145.77681)
 mass = 1.5
 physics_material_override = SubResource("PhysicsMaterial_cpr0p")
 camera = NodePath("../Path3D/PathFollow3D/Camera3D")
@@ -757,6 +865,7 @@ size = Vector3(5, 1, 1)
 
 [node name="Round12" type="Node3D" parent="." unique_id=2007123049]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 29.777668, 8.243, -176.56245)
+visible = false
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Round12" unique_id=1772909465]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5781667, 0, 1.7081782)
@@ -810,7 +919,7 @@ size = Vector3(5, 1, 1)
 
 [node name="JumpPad" type="Area3D" parent="." unique_id=313820940]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.373, 4.2, -156.77171)
-script = ExtResource("4_78awf")
+script = ExtResource("4_2loec")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="JumpPad" unique_id=1379810166]
 mesh = SubResource("BoxMesh_78awf")
@@ -837,16 +946,36 @@ use_collision = true
 inner_radius = 0.53
 outer_radius = 2.0
 
+[node name="Area3D" type="Area3D" parent="CSGTorus3D" unique_id=1216527417]
+script = ExtResource("5_amo3t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGTorus3D/Area3D" unique_id=1280804483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.31154966, 0)
+shape = SubResource("CylinderShape3D_iscks")
+
 [node name="Path3D" type="Path3D" parent="." unique_id=827834557]
 curve = SubResource("Curve3D_78awf")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1030945362]
-transform = Transform3D(0.9999603, 0, 0.0048768907, 0, 0.9999974, 0, -0.004876884, 0, 0.9999617, 0, 0, 0)
+transform = Transform3D(0.99983215, 0, 0, 0, 0.99171054, -0.1278823, 0, 0.1278942, 0.99161834, 0, 0, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D" unique_id=712928646 node_paths=PackedStringArray("target")]
-transform = Transform3D(1.0000278, 2.3283064e-10, 0, 0, 0.86603284, 0.49999243, 4.656613e-10, -0.50000435, 0.86605346, -0.024385778, 6.0000157, 5.0000725)
+[node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D" unique_id=712928646]
+transform = Transform3D(1.0001678, 2.3284605e-10, -4.033394e-10, -3.469447e-18, 0.8661116, 0.5000023, 4.657265e-10, -0.5000498, 0.86619365, 0, 4, 4)
 current = true
-script = ExtResource("3_cpr0p")
-target = NodePath("../../../Ball")
+script = ExtResource("5_jbd4l")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1017631931]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=144321177]
+modulate = Color(1, 1, 1, 0)
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=15515841]
+libraries/ = SubResource("AnimationLibrary_aug50")
+
+[node name="Timer" type="Timer" parent="." unique_id=1435069568]
 
 [connection signal="area_entered" from="JumpPad" to="JumpPad" method="_on_area_entered"]
+[connection signal="area_entered" from="CSGTorus3D/Area3D" to="CSGTorus3D/Area3D" method="_on_area_entered"]

@@ -6,17 +6,17 @@ extends Node3D
 
 @onready var player := $Ball
 
-var path_curve : Curve3D
-var follow_speed:float = 5.0
+var path_curve :Curve3D
+var follow_speed :float = 5.0
 
-@export var camera_distance_behind :float = 3.0
+@export var camera_distance_behind :float = 0.1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	path_curve = path3D.curve
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	var closest_offset = path_curve.get_closest_offset(player.global_position)
 	var camera_offset = closest_offset - camera_distance_behind
 	camera_offset = max(0.0,camera_offset)

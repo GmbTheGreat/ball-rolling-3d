@@ -15,18 +15,12 @@ var spawn_position
 
 func _ready() -> void:
 	spawn_position = global_position
-	timer.timeout.connect(fade_in)
 
 func respawn():
-	timer.start()
 	
 	global_position = spawn_position
 	linear_velocity = Vector3.ZERO
 	angular_velocity = Vector3.ZERO
-
-func fade_in():
-	animePlayer.play("fade_out")
-	timer.stop()
 
 func _physics_process(delta):
 	var input_dir = Vector2.ZERO
@@ -54,7 +48,7 @@ func _physics_process(delta):
 		right = right.normalized()
 		
 		# Final movement direction
-		move_direction = (forward * input_dir.y + (right * input_dir.x * 0.5))
+		move_direction = (forward * input_dir.y + right * input_dir.x)
 		
 		# Apply force
 		var strength = force_strength if not is_in_air else force_strength * air_control	
