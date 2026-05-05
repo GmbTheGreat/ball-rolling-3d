@@ -54,7 +54,7 @@ func _physics_process(delta):
 		right = right.normalized()
 		
 		# Final movement direction
-		move_direction = (forward * input_dir.y + (right * input_dir.x * 0.5))
+		move_direction = (forward * input_dir.y + right * input_dir.x)
 		
 		# Apply force
 		var strength = force_strength if not is_in_air else force_strength * air_control	

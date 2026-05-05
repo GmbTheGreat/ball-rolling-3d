@@ -1,33 +1,38 @@
 extends Node3D
 
-@onready var path3D := $Path3D
-@onready var path_follow := $Path3D/PathFollow3D
-@onready var camera := $Path3D/PathFollow3D/Camera3D
+@onready var ball = $RigidBody3D
+@onready var camera = $Camera3D
 
-@onready var player := $RigidBody3D
+var move_force = 20.0
+var rotation_speed = 2.0
 
-var path_curve : Curve3D
-var follow_speed:float = 5.0
-
-@export var camera_distance_behind :float = 3.0
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	path_curve = path3D.curve
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	var closest_offset = path_curve.get_closest_offset(player.global_position)
-	var camera_offset = closest_offset - camera_distance_behind
-	camera_offset = max(0.0,camera_offset)
+func _physics_process(delta):
+	var direction = Vector3.ZERO
 	
-	var curve_length = path_curve.get_baked_length()
-	var target_ratio = camera_offset / curve_length if curve_length > 0 else 0.0
+	# Get camera forward direction (ignore Y so it stays on ground)
+	var cam_forward = -camera.global_transform.basis.z
+	cam_forward.y = 0
+	cam_forward = cam_forward.normalized()
 
-	path_follow.progress_ratio = lerp(
-		path_follow.progress_ratio,
-		target_ratio,
-		follow_speed * delta
-	)
-	
-	camera.look_at(player.global_position, Vector3.UP)
+	# Movement (W / S only)
+	if Input.is_action_pressed("ui_up"): # W
+		direction += cam_forward
+	if Input.is_action_pressed("ui_down"): # S
+		direction -= cam_forward
+
+	# Apply force to ball
+	if direction != Vector3.ZERO:
+		ball.apply_central_force(direction * move_force)
+
+	# Camera rotation (A / D)
+	if Input.is_action_pressed("ui_left"): # A
+		rotate_y(rotation_speed * delta)
+	if Input.is_action_pressed("ui_right"): # D
+		rotate_y(-rotation_speed * delta)
+
+	# Keep camera following behind
+	var offset = Vector3(0, 2, 3)
+	camera.global_transform.origin = global_transform.origin + (global_transform.basis * offset)
+
+	# Make camera look at ball
+	camera.look_at(ball.global_transform.origin, Vector3.UP)

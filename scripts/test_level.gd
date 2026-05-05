@@ -31,3 +31,6 @@ func _physics_process(delta: float) -> void:
 	)
 	
 	camera.look_at(player.global_position, Vector3.UP)
+
+	print("path:", path_follow.global_position)
+	print("ball", player.global_position)
