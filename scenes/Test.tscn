@@ -4,8 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://c7os5qtl0e2fp" path="res://assets/hdri/sky_30_2k.png" id="2_amo3t"]
 [ext_resource type="PackedScene" uid="uid://c3uddklw4auex" path="res://scenes/ball.tscn" id="3_qca6q"]
 [ext_resource type="Script" uid="uid://ct086s8dt707t" path="res://scripts/jump_pad.gd" id="4_2loec"]
-[ext_resource type="Script" uid="uid://dvwjb8f34i3q8" path="res://scripts/csg_torus_3d.gd" id="5_amo3t"]
-[ext_resource type="Script" uid="uid://cxaheovrhi5fl" path="res://scripts/camera_3d.gd" id="5_jbd4l"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qbsmt"]
 panorama = ExtResource("2_amo3t")
@@ -58,6 +56,43 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 23
+
+[sub_resource type="GDScript" id="GDScript_di7wo"]
+script/source = "extends Camera3D
+
+@export var target: RigidBody3D
+@export var distance := 1.1
+@export var height := 5.0
+@export var follow_speed := 6.0
+@export var rotation_smooth := 1.0
+
+var current_direction := Vector3.FORWARD
+var current_rotation
+
+func _ready() -> void:
+	current_rotation = global_rotation
+
+func reset_camera():
+	pass
+	#if target == null:
+		#return
+	#
+	## Use player's forward direction (or fallback)
+	#var dir = target.move_direction
+	#if dir.length() < 0.1:
+		#dir = Vector3.FORWARD
+	#
+	#current_direction = dir.normalized()
+	#
+	## Recalculate position
+	#global_position = target.global_position \\
+		#- current_direction * distance \\
+		#+ Vector3.UP * height
+	#
+	## Instantly look at player
+	#look_at(target.global_position)
+	
+"
 
 [sub_resource type="Animation" id="Animation_aug50"]
 length = 0.001
@@ -121,7 +156,7 @@ environment = SubResource("Environment_78awf")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 172.12152, 0)
 
 [node name="Ball" parent="." unique_id=1403333367 node_paths=PackedStringArray("camera") instance=ExtResource("3_qca6q")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 28.8693, 9.527401, -175.34045)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 2, 0)
 mass = 1.5
 physics_material_override = SubResource("PhysicsMaterial_cpr0p")
 camera = NodePath("../Path3D/PathFollow3D/Camera3D")
@@ -1024,7 +1059,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.228, -0.407, -21.11855)
 use_collision = true
 inner_radius = 0.53
 outer_radius = 2.0
-script = ExtResource("5_amo3t")
 
 [node name="Path3D" type="Path3D" parent="." unique_id=827834557]
 curve = SubResource("Curve3D_78awf")
@@ -1032,9 +1066,10 @@ curve = SubResource("Curve3D_78awf")
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1030945362]
 transform = Transform3D(0.99983215, 0, 0, 0, 0.99171054, -0.1278823, 0, 0.1278942, 0.99161834, 0, 0, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D" unique_id=712928646]
+[node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D" unique_id=712928646 node_paths=PackedStringArray("target")]
 transform = Transform3D(1.0001678, 2.3284605e-10, -4.033394e-10, -3.469447e-18, 0.8661116, 0.5000023, 4.657265e-10, -0.5000498, 0.86619365, 0, 3, 5)
-script = ExtResource("5_jbd4l")
+script = SubResource("GDScript_di7wo")
+target = NodePath("../../../Ball")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1017631931]
 
