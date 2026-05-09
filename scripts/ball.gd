@@ -1,72 +1,132 @@
 extends RigidBody3D
 
-@export var force_strength := 30.0
-@export var max_speed := 10.0
-@export var boost_speed := 20
-@export var camera: Camera3D
-@export var air_control := 0.2
+@export var move_speed := 12.0
+@export var max_speed := 12.0
+@export var rotate_speed := 2.0
+@export var acceleration := 8.0
+@export var friction := 8.0
+@export var brake_force := 20.0
+
+# Movement smoothing
+@export var ground_control := 4.0
+@export var air_control := 0.5
+
+var move_direction := Vector3.FORWARD
+var current_speed := 0.0
 
 @onready var animePlayer = $"../AnimationPlayer"
 @onready var timer = $"../Timer"
 
-# 👉 This is used by camera
-var move_direction := Vector3.ZERO
 var spawn_position
 
 func _ready() -> void:
+
 	spawn_position = global_position
+
 	timer.timeout.connect(fade_in)
 
 func respawn():
+
 	timer.start()
-	
+
 	global_position = spawn_position
+
 	linear_velocity = Vector3.ZERO
 	angular_velocity = Vector3.ZERO
 
+	current_speed = 0.0
+	move_direction = Vector3.FORWARD
+
 func fade_in():
+
 	animePlayer.play("fade_out")
+
 	timer.stop()
 
 func _physics_process(delta):
-	var input_dir = Vector2.ZERO
-	
-	# Input (WASD / Arrow Keys)
-	input_dir.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	input_dir.y = Input.get_action_strength("ui_up") - Input.get_action_strength("ui_down")
-	
-	var is_in_air = abs(linear_velocity.y) > 0.5
-	
-	if input_dir != Vector2.ZERO:
-		input_dir = input_dir.normalized()
-		
-		# Camera directions
-		var cam_basis = camera.global_transform.basis
-		
-		var forward = -cam_basis.z
-		var right = cam_basis.x
-		
-		# Remove vertical influence
-		forward.y = 0
-		right.y = 0
-		
-		forward = forward.normalized()
-		right = right.normalized()
-		
-		# Final movement direction
-		move_direction = (forward * input_dir.y + right * input_dir.x)
-		
-		# Apply force
-		var strength = force_strength if not is_in_air else force_strength * air_control	
-		apply_central_force(move_direction * strength)
+
+	# AIR CHECK
+	var is_in_air = abs(linear_velocity.y) > 0.3
+
+	# REVERSE STEERING
+	var steer_direction = 1.0
+
+	if current_speed < 0:
+		steer_direction = -1.0
+
+	# STEERING
+	if Input.is_action_pressed("ui_left"):
+		move_direction = move_direction.rotated(
+			Vector3.UP,
+			rotate_speed * steer_direction * delta
+		)
+
+	if Input.is_action_pressed("ui_right"):
+		move_direction = move_direction.rotated(
+			Vector3.UP,
+			-rotate_speed * steer_direction * delta
+		)
+
+	# ACCELERATION
+	if Input.is_action_pressed("ui_up"):
+
+		current_speed += acceleration * delta
+
+		current_speed = clamp(
+			current_speed,
+			-move_speed,
+			move_speed
+		)
+
+	# BRAKE / REVERSE
+	elif Input.is_action_pressed("ui_down"):
+
+		current_speed -= brake_force * delta
+
+		current_speed = clamp(
+			current_speed,
+			-move_speed * 0.5,
+			move_speed
+		)
+
+	# NATURAL FRICTION
 	else:
-		# No input → stop updating direction (important for camera stability)
-		move_direction = Vector3.ZERO
-	
-	# Speed limit
+
+		current_speed = move_toward(
+			current_speed,
+			0.0,
+			friction * delta
+		)
+
+	# TARGET VELOCITY
+	var target_velocity = move_direction.normalized() * current_speed
+
+	# KEEP REAL GRAVITY
+	target_velocity.y = linear_velocity.y
+
+	# CONTROL STRENGTH
+	var control = ground_control
+
+	if is_in_air:
+		control = air_control
+
+	# SMOOTH MOVEMENT
+	linear_velocity = linear_velocity.lerp(
+		target_velocity,
+		control * delta
+	)
+
+	# SPEED LIMIT
 	if linear_velocity.length() > max_speed:
+
+		var y_velocity = linear_velocity.y
+
 		linear_velocity = linear_velocity.normalized() * max_speed
-	
+
+		# KEEP GRAVITY
+		linear_velocity.y = y_velocity
+
+	# FALL CHECK
 	if position.y < -10:
 		animePlayer.play("fade_in")
 

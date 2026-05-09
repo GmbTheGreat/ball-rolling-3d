@@ -24,30 +24,32 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 560.0
-offset_top = 275.0
-offset_right = 643.0
-offset_bottom = 364.0
+offset_left = 494.0
+offset_top = 220.0
+offset_right = 827.0
+offset_bottom = 468.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(2, 2)
 
 [node name="Start" type="Button" parent="VBoxContainer" unique_id=909495439]
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_48ign")
+theme_override_font_sizes/font_size = 60
 text = "Start"
 
 [node name="Settings" type="Button" parent="VBoxContainer" unique_id=1045468362]
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_l7wge")
-text = "Settings"
+theme_override_font_sizes/font_size = 60
+text = "  Settings  "
 
 [node name="Exit" type="Button" parent="VBoxContainer" unique_id=619647018]
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_48ign")
+theme_override_font_sizes/font_size = 60
 text = "Exit"
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]

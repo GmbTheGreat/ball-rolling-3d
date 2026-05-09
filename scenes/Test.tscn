@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://u3tr08oa1u45"]
 
-[ext_resource type="Script" uid="uid://bb4u6tejidyux" path="res://scripts/test_level.gd" id="1_iscks"]
 [ext_resource type="Texture2D" uid="uid://c7os5qtl0e2fp" path="res://assets/hdri/sky_30_2k.png" id="2_amo3t"]
 [ext_resource type="PackedScene" uid="uid://c3uddklw4auex" path="res://scenes/ball.tscn" id="3_qca6q"]
 [ext_resource type="Script" uid="uid://ct086s8dt707t" path="res://scripts/jump_pad.gd" id="4_2loec"]
+[ext_resource type="Script" uid="uid://cxaheovrhi5fl" path="res://scripts/camera_3d.gd" id="4_di7wo"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qbsmt"]
 panorama = ExtResource("2_amo3t")
@@ -40,59 +40,11 @@ height = 12.0
 radius = 0.07
 height = 12.0
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_amo3t"]
-height = 12.0
-radius = 0.07
-
 [sub_resource type="BoxMesh" id="BoxMesh_78awf"]
 size = Vector3(2.5, 1, 2.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s0nni"]
 size = Vector3(2.5, 1, 2.5)
-
-[sub_resource type="Curve3D" id="Curve3D_78awf"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.22211099, 2.7694225, 0, -0.22211099, -2.7694225, 0, 2, -20, 0, 0.19650221, 3.2681236, 0, -0.19650221, -3.2681236, 0, -2.9, -35, -0.003148079, 0.28424168, 11.395042, 0.003148079, -0.28424168, -11.395042, 0, -2.8990855, -90.00133, 0.06330681, -0.08734226, 4.830902, -0.06330681, 0.08734226, -4.830902, 0, 6, -113.4245, -0.6239676, -0.19058609, 2.93573, 0.6239676, 0.19058609, -2.93573, 0, 4.2, -125, 0.61993074, -0.05168438, 0.8143158, -0.61993074, 0.05168438, -0.8143158, 0, 4.2, -135, 0, 0, 0, 0, 0, 0, -11, 4.2, -135, 1.1623955, -4.863739e-05, 0.89756775, -1.1623955, 4.863739e-05, -0.89756775, -23.5, 4.2, -135, 0.12228775, -0.53259873, 3.6435852, -0.12228775, 0.53259873, -3.6435852, -23.5, 4.2, -150.3886, 0, -1.1907063, 5.16037, 0, 1.1907063, -5.16037, -23.5, 9, -157, -0.079811096, -0.12143612, 2.9855347, 0.079811096, 0.12143612, -2.9855347, -23.5, 8.2, -167, -1.1926346, 0.027148247, 0.9381256, 1.1926346, -0.027148247, -0.9381256, -23.5, 8.2, -179, -5.9237347, -0.64279175, 4.5776367e-05, 5.9237347, 0.64279175, -4.5776367e-05, -10.5, 12.150517, -177.68782, 0, 0, 0, 0, 0, 0, 13.926257, 8.2, -178.0065, -0.6831875, -0.22852993, -1.4447784, 0.6831875, 0.22852993, 1.4447784, 29.90873, 8.244521, -178.1208, 0, 0.14846706, -6.181076, 0, -0.14846706, 6.181076, 30.332, 10.181, -161.99, 2.4795532e-05, -0.15861988, -2.4961853, -2.4795532e-05, 0.15861988, 2.4961853, 30.332, 4.2, -150, 1.0698586, 4.863739e-05, -1.4646149, -1.0698586, -4.863739e-05, 1.4646149, 30.332, 4.2, -133.08, 0.81983757, 0.1322031, -1.3996735, -0.81983757, -0.1322031, 1.3996735, 30.332, 4.2, -133.08, 0, 0, 0, 0, 0, 0, 30.332, 4.2, -115.375, 0, 0, 0, 0, 0, 0, 30.332, -0.6, -97.375, 0, 0, 0, 0, 0, 0, 30.332, -0.6, -24.375),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-}
-point_count = 23
-
-[sub_resource type="GDScript" id="GDScript_di7wo"]
-script/source = "extends Camera3D
-
-@export var target: RigidBody3D
-@export var distance := 1.1
-@export var height := 5.0
-@export var follow_speed := 6.0
-@export var rotation_smooth := 1.0
-
-var current_direction := Vector3.FORWARD
-var current_rotation
-
-func _ready() -> void:
-	current_rotation = global_rotation
-
-func reset_camera():
-	pass
-	#if target == null:
-		#return
-	#
-	## Use player's forward direction (or fallback)
-	#var dir = target.move_direction
-	#if dir.length() < 0.1:
-		#dir = Vector3.FORWARD
-	#
-	#current_direction = dir.normalized()
-	#
-	## Recalculate position
-	#global_position = target.global_position \\
-		#- current_direction * distance \\
-		#+ Vector3.UP * height
-	#
-	## Instantly look at player
-	#look_at(target.global_position)
-	
-"
 
 [sub_resource type="Animation" id="Animation_aug50"]
 length = 0.001
@@ -147,7 +99,6 @@ _data = {
 }
 
 [node name="Test Level" type="Node3D" unique_id=1413653819]
-script = ExtResource("1_iscks")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2012353524]
 environment = SubResource("Environment_78awf")
@@ -155,11 +106,15 @@ environment = SubResource("Environment_78awf")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=417298971]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 172.12152, 0)
 
-[node name="Ball" parent="." unique_id=1403333367 node_paths=PackedStringArray("camera") instance=ExtResource("3_qca6q")]
+[node name="Ball" parent="." unique_id=1403333367 instance=ExtResource("3_qca6q")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 2, 0)
 mass = 1.5
 physics_material_override = SubResource("PhysicsMaterial_cpr0p")
-camera = NodePath("../Path3D/PathFollow3D/Camera3D")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=712928646 node_paths=PackedStringArray("ball")]
+transform = Transform3D(1, 0, 0, 0, 0.9396926, 0.34202012, 0, -0.34202012, 0.9396926, 0, 3, 3)
+script = ExtResource("4_di7wo")
+ball = NodePath("../Ball")
 
 [node name="CSG 1" type="CSGBox3D" parent="." unique_id=605893555]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.997474e-06, 0, -6.404812)
@@ -173,7 +128,7 @@ use_collision = true
 size = Vector3(4.838318, 1, 5)
 
 [node name="CSG Ramp4" type="CSGBox3D" parent="." unique_id=263008840]
-transform = Transform3D(-1.2041383e-07, -5.861255e-08, 1, -0.5, 0.8660254, 0, -0.8660254, -0.5, -1.172251e-07, 30.332, 0.68, -30.468)
+transform = Transform3D(-1.2041383e-07, -5.861255e-08, 1, -0.5, 0.8660254, 0, -0.8660254, -0.5, -1.172251e-07, 12.129, -1.5791502, -23.177773)
 use_collision = true
 size = Vector3(4.838318, 1, 5)
 
@@ -222,23 +177,6 @@ mesh = SubResource("CylinderMesh_s0nni")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9941839, 0, 0)
 shape = SubResource("CapsuleShape3D_aug50")
 
-[node name="pipe3" type="StaticBody3D" parent="." unique_id=829596622]
-transform = Transform3D(1, 0, 0, 0, -0.25881907, -0.9659258, 0, 0.9659258, -0.25881907, 30.332, 2.199, -106.019)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="pipe3" unique_id=362603328]
-mesh = SubResource("CylinderMesh_cpr0p")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="pipe3" unique_id=1994207395]
-shape = SubResource("CylinderShape3D_78awf")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="pipe3" unique_id=2086261356]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9941839, 0, 0)
-mesh = SubResource("CylinderMesh_s0nni")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="pipe3" unique_id=878552539]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9941839, 0, 0)
-shape = SubResource("CylinderShape3D_amo3t")
-
 [node name="CSG 3" type="CSGBox3D" parent="." unique_id=1532033253]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.0268737e-06, -2.8672504, -79.721146)
 use_collision = true
@@ -246,7 +184,7 @@ size = Vector3(19.496473, 1, 5)
 material = SubResource("StandardMaterial3D_cpr0p")
 
 [node name="CSG 4" type="CSGBox3D" parent="." unique_id=1523261218]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 30.332, -0.598, -65.632)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 12.129, -2.867, -58.363)
 use_collision = true
 size = Vector3(65.675, 1, 5)
 material = SubResource("StandardMaterial3D_cpr0p")
@@ -255,6 +193,12 @@ material = SubResource("StandardMaterial3D_cpr0p")
 transform = Transform3D(-4.3711392e-08, 0, 1, -0.25881907, 0.96592593, -1.131334e-08, -0.96592593, -0.25881907, -4.2221963e-08, 2.4943743, -3.804502, -91.85523)
 use_collision = true
 polygon = PackedVector2Array(0, 0, 2.4658585, 1.8468571, 19.802872, 14.106494, 11.952034, 8.052118)
+depth = 5.0
+
+[node name="CSG Ramp5" type="CSGPolygon3D" parent="." unique_id=958725253]
+transform = Transform3D(-4.3711392e-08, 0, 1, -0.25881907, 0.96592593, -1.131334e-08, -0.96592593, -0.25881907, -4.2221963e-08, 14.612768, -3.7945685, -92.41805)
+use_collision = true
+polygon = PackedVector2Array(0, 0, -1.5349884, 1.0338554, 19.802872, 14.106494, 11.952034, 8.052118)
 depth = 5.0
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=21572303]
@@ -283,14 +227,19 @@ use_collision = true
 size = Vector3(5, 1, 11.834158)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="." unique_id=2143811214]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.332, 4.2, -123.262)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.128545, 4.2, -122.55428)
 use_collision = true
-size = Vector3(5, 1, 17.351)
+size = Vector3(5, 1, 15.204876)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=688932919]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.360352, 8.242828, -169.92445)
 use_collision = true
 size = Vector3(5, 1, 11.224834)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="." unique_id=1978679603]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -24.581455, 9.40504, -180.48509)
+use_collision = true
+size = Vector3(2, 1, 1)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=2072047286]
 transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -14.522152, 8.242828, -178.34052)
@@ -1055,21 +1004,10 @@ mesh = SubResource("BoxMesh_78awf")
 shape = SubResource("BoxShape3D_s0nni")
 
 [node name="CSGTorus3D" type="CSGTorus3D" parent="." unique_id=1280377498]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.228, -0.407, -21.11855)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 12.228, 1.2717423, -16.15232)
 use_collision = true
-inner_radius = 0.53
-outer_radius = 2.0
-
-[node name="Path3D" type="Path3D" parent="." unique_id=827834557]
-curve = SubResource("Curve3D_78awf")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1030945362]
-transform = Transform3D(0.99983215, 0, 0, 0, 0.99171054, -0.1278823, 0, 0.1278942, 0.99161834, 0, 0, 0)
-
-[node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D" unique_id=712928646 node_paths=PackedStringArray("target")]
-transform = Transform3D(1.0001678, 2.3284605e-10, -4.033394e-10, -3.469447e-18, 0.8661116, 0.5000023, 4.657265e-10, -0.5000498, 0.86619365, 0, 3, 5)
-script = SubResource("GDScript_di7wo")
-target = NodePath("../../../Ball")
+inner_radius = 2.0
+outer_radius = 3.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1017631931]
 
