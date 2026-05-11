@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cx45xyo61bypy"]
+
+[ext_resource type="Script" uid="uid://0hppaubhb0dn" path="res://scripts/main/game.gd" id="1_e64el"]
+
+[node name="Game" type="Node" unique_id=1227103452]
+script = ExtResource("1_e64el")
+
+[node name="LevelHolder" type="Node3D" parent="." unique_id=1997819223]

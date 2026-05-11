@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwottqute8e0l"]
 
-[ext_resource type="PackedScene" uid="uid://ceq2xdox0gp6f" path="res://scenes/debug_ball.tscn" id="1_lgrwq"]
-[ext_resource type="Script" uid="uid://dwommhmt24wym" path="res://scripts/debug/debug_camera.gd" id="2_4pmxj"]
+[ext_resource type="PackedScene" uid="uid://ceq2xdox0gp6f" path="res://scenes/debug/debug_ball.tscn" id="1_4pmxj"]
+[ext_resource type="Script" uid="uid://dcp73cumoumn3" path="res://scripts/debug/debug_camera.gd" id="2_3vd64"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8neu0"]
 albedo_color = Color(0.16565639, 0.16565642, 0.16565639, 1)
@@ -29,12 +29,12 @@ shape = SubResource("BoxShape3D_lgrwq")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=880981093]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 15.025569, 0)
 
-[node name="debug ball" parent="." unique_id=960412635 instance=ExtResource("1_lgrwq")]
+[node name="debug ball" parent="." unique_id=960412635 instance=ExtResource("1_4pmxj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99422014, 0)
 
 [node name="debug camera" type="Camera3D" parent="." unique_id=1338168890 node_paths=PackedStringArray("ball")]
 transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 1.8602225, 2.268787)
-script = ExtResource("2_4pmxj")
+script = ExtResource("2_3vd64")
 ball = NodePath("../debug ball")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=631383431]

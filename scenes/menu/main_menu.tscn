@@ -1,21 +1,21 @@
 [gd_scene format=3 uid="uid://bfqxoebsvlpda"]
 
-[ext_resource type="Script" uid="uid://cl6tdjsopyxgk" path="res://scripts/main_menu.gd" id="1_qkhwq"]
-[ext_resource type="Texture2D" uid="uid://bc1hwm41wpvs1" path="res://assets/images/mainmenubackground.jpg" id="2_3d1i7"]
-[ext_resource type="FontFile" uid="uid://nspbe307sbq3" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="3_48ign"]
+[ext_resource type="Script" uid="uid://q4jcvcvs8njp" path="res://scripts/menu/main_menu.gd" id="1_3rkf3"]
+[ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/Fonts/RubikSprayPaint-Regular.ttf" id="2_247la"]
+[ext_resource type="Texture2D" uid="uid://dbg0umugme0rs" path="res://assets/Background/mainmenubackground.jpg" id="2_kiqgm"]
 
 [sub_resource type="FontVariation" id="FontVariation_l7wge"]
-base_font = ExtResource("3_48ign")
+base_font = ExtResource("2_247la")
 
 [node name="MainMenu" type="Control" unique_id=866398376]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_qkhwq")
+script = ExtResource("1_3rkf3")
 
 [node name="Mainmenubackground" type="Sprite2D" parent="." unique_id=1345740648]
 position = Vector2(640.00006, 359.99997)
 scale = Vector2(0.2688511, 0.22835398)
-texture = ExtResource("2_3d1i7")
+texture = ExtResource("2_kiqgm")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1998031602]
 layout_mode = 1
@@ -24,17 +24,19 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 494.0
-offset_top = 220.0
-offset_right = 827.0
-offset_bottom = 468.0
+offset_left = 72.0
+offset_top = 456.0
+offset_right = 405.0
+offset_bottom = 786.0
 grow_horizontal = 0
 grow_vertical = 0
+scale = Vector2(0.67999935, 0.67999935)
+theme_override_constants/separation = 11
 
 [node name="Start" type="Button" parent="VBoxContainer" unique_id=909495439]
 texture_filter = 1
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_48ign")
+theme_override_fonts/font = ExtResource("2_247la")
 theme_override_font_sizes/font_size = 60
 text = "Start"
 
@@ -48,7 +50,7 @@ text = "  Settings  "
 [node name="Exit" type="Button" parent="VBoxContainer" unique_id=619647018]
 texture_filter = 1
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_48ign")
+theme_override_fonts/font = ExtResource("2_247la")
 theme_override_font_sizes/font_size = 60
 text = "Exit"
 

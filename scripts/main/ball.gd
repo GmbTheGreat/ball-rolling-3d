@@ -1,32 +1,35 @@
 extends RigidBody3D
 
-@export var move_speed := 12.0
-@export var max_speed := 12.0
-@export var rotate_speed := 2.0
 @export var acceleration := 8.0
+@export var move_speed := 10.0
+@export var max_speed := 10.0
+@export var boost_speed := 20.0
+@export var boost_duration := 2.0
+@export var rotate_speed := 2.0
 @export var friction := 8.0
 @export var brake_force := 20.0
-
 # Movement smoothing
 @export var ground_control := 4.0
 @export var air_control := 0.5
 
+
+@onready var animePlayer: AnimationPlayer = $"../Animation/AnimationPlayer"
+@onready var timer: Timer = $"../Animation/Timer"
+
 var move_direction := Vector3.FORWARD
 var current_speed := 0.0
-
-@onready var animePlayer = $"../AnimationPlayer"
-@onready var timer = $"../Timer"
-
+var normal_move_speed := 0.0
+var normal_max_speed := 0.0
+var boost_active := false
 var spawn_position
 
 func _ready() -> void:
-
+	normal_move_speed = move_speed
+	normal_max_speed = max_speed
 	spawn_position = global_position
-
 	timer.timeout.connect(fade_in)
 
 func respawn():
-
 	timer.start()
 
 	global_position = spawn_position
@@ -36,12 +39,29 @@ func respawn():
 
 	current_speed = 0.0
 	move_direction = Vector3.FORWARD
+	
+	for boost in get_tree().get_nodes_in_group("boosts"):
+		boost.respawn_boost()
 
 func fade_in():
-
 	animePlayer.play("fade_out")
-
 	timer.stop()
+	
+func apply_boost():
+	if boost_active:
+		return
+
+	boost_active = true
+
+	move_speed = boost_speed
+	max_speed = boost_speed
+
+	await get_tree().create_timer(boost_duration).timeout
+
+	move_speed = normal_move_speed
+	max_speed = normal_max_speed
+
+	boost_active = false
 
 func _physics_process(delta):
 
