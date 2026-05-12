@@ -4,13 +4,19 @@ extends Node
 
 var current_level
 
+func _ready() -> void:
+	load_level(LevelsManager.current_level)
+
 func load_level(level_path: String):
 	# Remove old level
-	if current_level:
-		current_level.queue_free()
+	for child in level_holder.get_children():
+		child.queue_free()
 
-	# Load new level
+	# Load level scene
 	var level_scene = load(level_path)
-	current_level = level_scene.instantiate()
 
-	level_holder.add_child(current_level)
+	# Create instance
+	var level_instance = level_scene.instantiate()
+
+	# Add into LevelHolder
+	level_holder.add_child(level_instance)

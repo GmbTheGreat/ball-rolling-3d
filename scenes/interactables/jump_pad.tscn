@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://mvbh8x4205co"]
+
+[ext_resource type="Script" uid="uid://1mj1xjnathgw" path="res://scripts/interactables/jump_pad.gd" id="1_vnbro"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d7s3n"]
+size = Vector3(2.5, 1, 2.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d7s3n"]
+size = Vector3(2.5, 1, 2.5)
+
+[node name="JumpPad" type="Area3D" unique_id=1298668205]
+script = ExtResource("1_vnbro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2096956840]
+shape = SubResource("BoxShape3D_d7s3n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=966192316]
+mesh = SubResource("BoxMesh_d7s3n")

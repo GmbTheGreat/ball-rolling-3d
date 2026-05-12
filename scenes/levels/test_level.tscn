@@ -1,28 +1,7 @@
 [gd_scene format=3 uid="uid://u3tr08oa1u45"]
 
-[ext_resource type="Texture2D" uid="uid://cqnvjv1423c1a" path="res://assets/HDRI/sky_30_2k.png" id="1_48ne7"]
-[ext_resource type="PackedScene" uid="uid://c3uddklw4auex" path="res://scenes/main/ball.tscn" id="2_6xh4u"]
-[ext_resource type="Script" uid="uid://7cgnyrelrll1" path="res://scripts/main/camera_3d.gd" id="3_cyt5c"]
 [ext_resource type="Script" uid="uid://nhmx0hfs6wio" path="res://scripts/interactables/boost.gd" id="4_7x1jh"]
-[ext_resource type="Script" uid="uid://2tg6o4osnemm" path="res://scripts/interactables/jump_pad.gd" id="5_hfwtw"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qbsmt"]
-panorama = ExtResource("1_48ne7")
-filter = false
-energy_multiplier = 1.1
-
-[sub_resource type="Sky" id="Sky_cpr0p"]
-sky_material = SubResource("PanoramaSkyMaterial_qbsmt")
-process_mode = 3
-
-[sub_resource type="Environment" id="Environment_78awf"]
-background_mode = 2
-sky = SubResource("Sky_cpr0p")
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cpr0p"]
-friction = 0.6
-rough = true
-bounce = 0.5
+[ext_resource type="Script" uid="uid://ds4crgmofgwt4" path="res://scripts/debug/area_3d.gd" id="5_48ne7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cpr0p"]
 
@@ -31,64 +10,6 @@ size = Vector3(0.391, 1, 0.391)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6r4da"]
 size = Vector3(0.391, 1, 0.391)
-
-[sub_resource type="Animation" id="Animation_aug50"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Animation/CanvasLayer/ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_s0nni"]
-resource_name = "fade_in"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Animation/CanvasLayer/ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_kiw3p"]
-resource_name = "fade_out"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Animation/CanvasLayer/ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_aug50"]
-_data = {
-&"RESET": SubResource("Animation_aug50"),
-&"fade_in": SubResource("Animation_s0nni"),
-&"fade_out": SubResource("Animation_kiw3p")
-}
-
-[sub_resource type="BoxMesh" id="BoxMesh_78awf"]
-size = Vector3(2.5, 1, 2.5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_s0nni"]
-size = Vector3(2.5, 1, 2.5)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_cpr0p"]
 top_radius = 0.07
@@ -108,23 +29,13 @@ height = 12.0
 radius = 0.07
 height = 12.0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_v45ci"]
+size = Vector3(2.5, 1, 2.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_48ne7"]
+size = Vector3(2.5, 1, 2.5)
+
 [node name="Test Level" type="Node3D" unique_id=1413653819]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2012353524]
-environment = SubResource("Environment_78awf")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=417298971]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 172.12152, 0)
-
-[node name="ball" parent="." unique_id=1403333367 instance=ExtResource("2_6xh4u")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 2, 0)
-mass = 1.5
-physics_material_override = SubResource("PhysicsMaterial_cpr0p")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=712928646 node_paths=PackedStringArray("ball")]
-transform = Transform3D(1, 0, 0, 0, 0.9396926, 0.34202012, 0, -0.34202012, 0.9396926, 0, 3, 3)
-script = ExtResource("3_cyt5c")
-ball = NodePath("../ball")
 
 [node name="Win" type="CSGTorus3D" parent="." unique_id=1280377498]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 12.228, 1.2717423, -16.15232)
@@ -1001,34 +912,7 @@ shape = SubResource("BoxShape3D_wkt5j")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Boosts/boost3" unique_id=837111880]
 mesh = SubResource("BoxMesh_6r4da")
 
-[node name="Animation" type="Node" parent="." unique_id=590934715]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Animation" unique_id=1017631931]
-
-[node name="ColorRect" type="ColorRect" parent="Animation/CanvasLayer" unique_id=144321177]
-modulate = Color(1, 1, 1, 0)
-offset_right = 1280.0
-offset_bottom = 720.0
-color = Color(0, 0, 0, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation" unique_id=15515841]
-root_node = NodePath("../..")
-libraries/ = SubResource("AnimationLibrary_aug50")
-
-[node name="Timer" type="Timer" parent="Animation" unique_id=1435069568]
-
-[node name="Jump Pads" type="Node" parent="." unique_id=421779868]
-
-[node name="JumpPad" type="Area3D" parent="Jump Pads" unique_id=313820940]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.373, 4.2, -156.77171)
-script = ExtResource("5_hfwtw")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Jump Pads/JumpPad" unique_id=1379810166]
-mesh = SubResource("BoxMesh_78awf")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Jump Pads/JumpPad" unique_id=1211427575]
-shape = SubResource("BoxShape3D_s0nni")
+[node name="Jump Pads" type="Node" parent="." unique_id=1080507715]
 
 [node name="Pipes" type="Node" parent="." unique_id=1738873956]
 
@@ -1068,6 +952,16 @@ shape = SubResource("CapsuleShape3D_aug50")
 
 [node name="Coins" type="Node" parent="." unique_id=1961804121]
 
+[node name="Area3D" type="Area3D" parent="." unique_id=443614727]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.690638, 4.2268496, -156.8418)
+script = ExtResource("5_48ne7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=76458921]
+shape = SubResource("BoxShape3D_v45ci")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=1302708936]
+mesh = SubResource("BoxMesh_48ne7")
+
 [connection signal="body_entered" from="Boosts/boost2" to="Boosts/boost2" method="_on_body_entered"]
 [connection signal="body_entered" from="Boosts/boost3" to="Boosts/boost3" method="_on_body_entered"]
-[connection signal="area_entered" from="Jump Pads/JumpPad" to="Jump Pads/JumpPad" method="_on_area_entered"]
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

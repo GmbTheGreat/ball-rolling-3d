@@ -23,6 +23,7 @@ var normal_max_speed := 0.0
 var boost_active := false
 var spawn_position
 
+
 func _ready() -> void:
 	normal_move_speed = move_speed
 	normal_max_speed = max_speed
@@ -64,9 +65,8 @@ func apply_boost():
 	boost_active = false
 
 func _physics_process(delta):
-
 	# AIR CHECK
-	var is_in_air = abs(linear_velocity.y) > 0.3
+	var is_in_air = abs(linear_velocity.y) > 1
 
 	# REVERSE STEERING
 	var steer_direction = 1.0
@@ -89,9 +89,7 @@ func _physics_process(delta):
 
 	# ACCELERATION
 	if Input.is_action_pressed("ui_up"):
-
 		current_speed += acceleration * delta
-
 		current_speed = clamp(
 			current_speed,
 			-move_speed,
@@ -100,9 +98,7 @@ func _physics_process(delta):
 
 	# BRAKE / REVERSE
 	elif Input.is_action_pressed("ui_down"):
-
 		current_speed -= brake_force * delta
-
 		current_speed = clamp(
 			current_speed,
 			-move_speed * 0.5,
@@ -111,7 +107,6 @@ func _physics_process(delta):
 
 	# NATURAL FRICTION
 	else:
-
 		current_speed = move_toward(
 			current_speed,
 			0.0,
@@ -136,15 +131,25 @@ func _physics_process(delta):
 		control * delta
 	)
 
-	# SPEED LIMIT
-	if linear_velocity.length() > max_speed:
+	# SPEED LIMIT (OLD CODE)
+	#{if linear_velocity.length() > max_speed:
+		#var y_velocity = linear_velocity.y
+		#linear_velocity = linear_velocity.normalized() * max_speed
+#
+		## KEEP GRAVITY
+		#linear_velocity.y = y_velocity}
+	
+	var horizontal_velocity = Vector3(
+		linear_velocity.x,
+		0,
+		linear_velocity.z
+	)
 
-		var y_velocity = linear_velocity.y
+	if horizontal_velocity.length() > max_speed:
+		horizontal_velocity = horizontal_velocity.normalized() * max_speed
 
-		linear_velocity = linear_velocity.normalized() * max_speed
-
-		# KEEP GRAVITY
-		linear_velocity.y = y_velocity
+		linear_velocity.x = horizontal_velocity.x
+		linear_velocity.z = horizontal_velocity.z
 
 	# FALL CHECK
 	if position.y < -10:
