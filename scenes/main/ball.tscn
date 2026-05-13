@@ -5,22 +5,14 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_n1dj2"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ja1hk"]
-cull_mode = 1
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k2nl5"]
 shading_mode = 0
-albedo_color = Color(0, 0, 0, 1)
-grow = true
-grow_amount = 0.03
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7cbr"]
-next_pass = SubResource("StandardMaterial3D_ja1hk")
+diffuse_mode = 3
 specular_mode = 1
 albedo_texture = ExtResource("2_cxlvu")
-roughness = 0.5
-rim_enabled = true
 
 [sub_resource type="SphereMesh" id="SphereMesh_7s4qf"]
-material = SubResource("StandardMaterial3D_f7cbr")
+material = SubResource("StandardMaterial3D_k2nl5")
 
 [node name="ball" type="RigidBody3D" unique_id=1403333367]
 script = ExtResource("1_k2nl5")
