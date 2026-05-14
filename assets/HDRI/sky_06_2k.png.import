@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qf8pjtwwdpe3"
-path="res://.godot/imported/sky_06_2k.png-5da0ee7377cb51942495fcf9f033fa7e.ctex"
+path="res://.godot/imported/sky_06_2k.png-6b8ff7bec6e57559ac1e56b7e8b23686.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HDRI/sky_06_2k.png"
-dest_files=["res://.godot/imported/sky_06_2k.png-5da0ee7377cb51942495fcf9f033fa7e.ctex"]
+source_file="res://assets/hdri/sky_06_2k.png"
+dest_files=["res://.godot/imported/sky_06_2k.png-6b8ff7bec6e57559ac1e56b7e8b23686.ctex"]
 
 [params]
 

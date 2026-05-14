@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cwieljm56i1xg"
-path="res://.godot/imported/RubikSprayPaint-Regular.ttf-6043f7e1f0622770d7d9dee9d693650d.fontdata"
+path="res://.godot/imported/RubikSprayPaint-Regular.ttf-7c9f79b47dc1dd7cb8cde1d04c98ece3.fontdata"
 
 [deps]
 
-source_file="res://assets/Fonts/RubikSprayPaint-Regular.ttf"
-dest_files=["res://.godot/imported/RubikSprayPaint-Regular.ttf-6043f7e1f0622770d7d9dee9d693650d.fontdata"]
+source_file="res://assets/fonts/RubikSprayPaint-Regular.ttf"
+dest_files=["res://.godot/imported/RubikSprayPaint-Regular.ttf-7c9f79b47dc1dd7cb8cde1d04c98ece3.fontdata"]
 
 [params]
 

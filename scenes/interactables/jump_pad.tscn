@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://mvbh8x4205co"]
 
-[ext_resource type="Script" uid="uid://1mj1xjnathgw" path="res://scripts/interactables/jump_pad.gd" id="1_vnbro"]
+[ext_resource type="Script" uid="uid://1mj1xjnathgw" path="res://scripts/base/interactables/jump_pad.gd" id="1_vnbro"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d7s3n"]
 size = Vector3(2.5, 1, 2.5)

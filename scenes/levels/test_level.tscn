@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://u3tr08oa1u45"]
 
-[ext_resource type="Script" uid="uid://nhmx0hfs6wio" path="res://scripts/interactables/boost.gd" id="4_7x1jh"]
-[ext_resource type="Script" uid="uid://ds4crgmofgwt4" path="res://scripts/debug/area_3d.gd" id="5_48ne7"]
+[ext_resource type="Script" uid="uid://nhmx0hfs6wio" path="res://scripts/base/interactables/boost.gd" id="4_7x1jh"]
+[ext_resource type="Script" uid="uid://ds4crgmofgwt4" path="res://scripts/base/debug/area_3d.gd" id="5_48ne7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cpr0p"]
 

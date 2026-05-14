@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bfqxoebsvlpda"]
 
-[ext_resource type="Script" uid="uid://q4jcvcvs8njp" path="res://scripts/menu/main_menu.gd" id="1_3rkf3"]
-[ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/Fonts/RubikSprayPaint-Regular.ttf" id="2_247la"]
-[ext_resource type="Texture2D" uid="uid://dbg0umugme0rs" path="res://assets/Background/mainmenubackground.jpg" id="2_kiqgm"]
+[ext_resource type="Script" uid="uid://q4jcvcvs8njp" path="res://scripts/base/menu/main_menu.gd" id="1_3rkf3"]
+[ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="2_247la"]
+[ext_resource type="Texture2D" uid="uid://dbg0umugme0rs" path="res://assets/background/mainmenubackground.jpg" id="2_kiqgm"]
 
 [sub_resource type="FontVariation" id="FontVariation_l7wge"]
 base_font = ExtResource("2_247la")
