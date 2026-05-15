@@ -1,33 +1,16 @@
 [gd_scene format=3 uid="uid://u3tr08oa1u45"]
 
+[ext_resource type="PackedScene" uid="uid://cxv2g8t1ky0s1" path="res://scenes/assets/platforms/pipe.tscn" id="3_fr1um"]
 [ext_resource type="Script" uid="uid://nhmx0hfs6wio" path="res://scripts/base/interactables/boost.gd" id="4_7x1jh"]
+[ext_resource type="PackedScene" uid="uid://q5c8jlvgqhp7" path="res://scenes/assets/platforms/straight_platform.tscn" id="4_v45ci"]
+[ext_resource type="PackedScene" uid="uid://msl1lbid8crh" path="res://scenes/assets/platforms/ramp.tscn" id="5_6xh4u"]
 [ext_resource type="Script" uid="uid://ds4crgmofgwt4" path="res://scripts/base/debug/area_3d.gd" id="5_48ne7"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cpr0p"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wkt5j"]
 size = Vector3(0.391, 1, 0.391)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6r4da"]
 size = Vector3(0.391, 1, 0.391)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_cpr0p"]
-top_radius = 0.07
-bottom_radius = 0.07
-height = 12.0
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_78awf"]
-height = 12.0
-radius = 0.07
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_s0nni"]
-top_radius = 0.07
-bottom_radius = 0.07
-height = 12.0
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_aug50"]
-radius = 0.07
-height = 12.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v45ci"]
 size = Vector3(2.5, 1, 2.5)
@@ -38,118 +21,62 @@ size = Vector3(2.5, 1, 2.5)
 [node name="Test Level" type="Node3D" unique_id=1413653819]
 
 [node name="Win" type="CSGTorus3D" parent="." unique_id=1280377498]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 12.228, 1.2717423, -16.15232)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 12.228, 1.2717423, -19.22641)
 use_collision = true
 inner_radius = 2.0
 outer_radius = 3.0
 
-[node name="CSG" type="Node" parent="." unique_id=1685121324]
+[node name="Platforms" type="Node" parent="." unique_id=1685121324]
 
-[node name="CSG 3" type="CSGBox3D" parent="CSG" unique_id=1532033253]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.0268737e-06, -2.8672504, -79.721146)
-use_collision = true
-size = Vector3(19.496473, 1, 5)
-material = SubResource("StandardMaterial3D_cpr0p")
+[node name="strigth_platform" parent="Platforms" unique_id=1543553135 instance=ExtResource("4_v45ci")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.4293363, 0, 0, -9.706111)
 
-[node name="CSG 4" type="CSGBox3D" parent="CSG" unique_id=1523261218]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 12.129, -2.867, -58.363)
-use_collision = true
-size = Vector3(65.675, 1, 5)
-material = SubResource("StandardMaterial3D_cpr0p")
+[node name="strigth_platform2" parent="Platforms" unique_id=1973904859 instance=ExtResource("4_v45ci")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.2420548, 0, -1.8797231, -44.66593)
 
-[node name="CSG Ramp2" type="CSGPolygon3D" parent="CSG" unique_id=1765194309]
-transform = Transform3D(-4.3711392e-08, 0, 1, -0.25881907, 0.96592593, -1.131334e-08, -0.96592593, -0.25881907, -4.2221963e-08, 2.4943743, -3.804502, -91.85523)
-use_collision = true
-polygon = PackedVector2Array(0, 0, 2.4658585, 1.8468571, 19.802872, 14.106494, 11.952034, 8.052118)
-depth = 5.0
+[node name="strigth_platform3" parent="Platforms" unique_id=2100987427 instance=ExtResource("4_v45ci")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.877081, 0, -2.867, -79.28228)
 
-[node name="CSG Ramp5" type="CSGPolygon3D" parent="CSG" unique_id=958725253]
-transform = Transform3D(-4.3711392e-08, 0, 1, -0.25881907, 0.96592593, -1.131334e-08, -0.96592593, -0.25881907, -4.2221963e-08, 14.612768, -3.7945685, -92.41805)
-use_collision = true
-polygon = PackedVector2Array(0, 0, -1.5349884, 1.0338554, 19.802872, 14.106494, 11.952034, 8.052118)
-depth = 5.0
+[node name="strigth_platform4" parent="Platforms" unique_id=26889581 instance=ExtResource("4_v45ci")]
+transform = Transform3D(1, 0, 0, 0, 0.9687175, -0.32835737, 0, 0.25956708, 1.2254463, 0, 0.62736225, -101.70974)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CSG" unique_id=21572303]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.200297, -123.261665)
-use_collision = true
-size = Vector3(5, 1, 17.351)
+[node name="strigth_platform5" parent="Platforms" unique_id=1013273154 instance=ExtResource("4_v45ci")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.877081, 0, 4.0949993, -123.91377)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSG" unique_id=1863629920]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -11.789, 4.2, -135.08)
-use_collision = true
-size = Vector3(5, 1, 17.351)
+[node name="strigth_platform6" parent="Platforms" unique_id=1009228905 instance=ExtResource("4_v45ci")]
+transform = Transform3D(-4.3711385e-08, 0, -0.8770809, 0, 0.99999994, 0, 0.99999994, 0, -3.8338424e-08, -11.142458, 4.0949993, -135.24323)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSG" unique_id=438679942]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.404, 4.2, -146.90543)
-use_collision = true
-size = Vector3(5, 1, 17.276714)
+[node name="strigth_platform7" parent="Platforms" unique_id=117599693 instance=ExtResource("4_v45ci")]
+transform = Transform3D(-0.99999994, 0, 7.667685e-08, 0, 0.9999999, 0, -8.742276e-08, 0, -0.87708086, -23.34303, 4.0949993, -146.87485)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="CSG" unique_id=899790072]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.332, 4.2, -144.80849)
-use_collision = true
-size = Vector3(5, 1, 17.276714)
+[node name="strigth_platform8" parent="Platforms" unique_id=379388794 instance=ExtResource("4_v45ci")]
+transform = Transform3D(-1, 0, 7.9212455e-08, 0, 1, 0, -1.509958e-07, 0, -0.5246004, -23.34303, 8.226202, -169.80612)
 
-[node name="CSGBox3D8" type="CSGBox3D" parent="CSG" unique_id=1591173899]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21.23806, 4.2, -133.12352)
-use_collision = true
-size = Vector3(5, 1, 11.834158)
+[node name="strigth_platform9" parent="Platforms" unique_id=769557187 instance=ExtResource("4_v45ci")]
+transform = Transform3D(-1.07284414e-07, 0, -0.53395116, 0, 1, 0, 1, 0, -5.728464e-08, -14.602615, 8.226202, -178.3623)
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="CSG" unique_id=2143811214]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.128545, 4.2, -122.55428)
-use_collision = true
-size = Vector3(5, 1, 15.204876)
+[node name="strigth_platform10" parent="Platforms" unique_id=255572584 instance=ExtResource("4_v45ci")]
+transform = Transform3D(-1, 0, 8.062438e-08, 0, 1, 0, -1.509958e-07, 0, -0.53395116, 30.339542, 8.226202, -168.69968)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="CSG" unique_id=688932919]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.360352, 8.242828, -169.92445)
-use_collision = true
-size = Vector3(5, 1, 11.224834)
+[node name="strigth_platform11" parent="Platforms" unique_id=1171410321 instance=ExtResource("4_v45ci")]
+transform = Transform3D(-0.99999994, 0, 7.667685e-08, 0, 0.9999999, 0, -8.742276e-08, 0, -0.87708086, 30.327, 4.2, -145.489)
 
-[node name="CSGBox3D10" type="CSGBox3D" parent="CSG" unique_id=1978679603]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -24.581455, 9.40504, -180.48509)
-use_collision = true
-size = Vector3(2, 1, 1)
+[node name="strigth_platform12" parent="Platforms" unique_id=974996401 instance=ExtResource("4_v45ci")]
+transform = Transform3D(-4.371137e-08, 0, -0.5627425, 0, 0.9999999, 0, 0.99999994, 0, -2.4598254e-08, 21.163, 4.2, -133.136)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="CSG" unique_id=2072047286]
-transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -14.522152, 8.242828, -178.34052)
-use_collision = true
-size = Vector3(5, 1, 11.224834)
+[node name="strigth_platform13" parent="Platforms" unique_id=275790113 instance=ExtResource("4_v45ci")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.9999999, 0, -1.0658141e-14, 0, 0.70668685, 12.109228, 4.2, -122.614105)
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="CSG" unique_id=2055300604]
-transform = Transform3D(1, 0, -7.351371e-08, 0, 1, 0, 7.351371e-08, 0, 1, 30.331936, 8.242828, -168.7856)
-use_collision = true
-size = Vector3(5, 1, 11.224834)
+[node name="strigth_platform14" parent="Platforms" unique_id=602494191 instance=ExtResource("4_v45ci")]
+transform = Transform3D(1, 0, 0, 0, 0.9687175, -0.32835737, 0, 0.25956708, 1.2254463, 12.157879, 0.65581036, -102.19307)
 
-[node name="CSG 1" type="CSGBox3D" parent="CSG" unique_id=605893555]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.997474e-06, 0, -6.404812)
-use_collision = true
-size = Vector3(21.250233, 1, 5)
-material = SubResource("StandardMaterial3D_cpr0p")
-
-[node name="CSG Ramp" type="CSGBox3D" parent="CSG" unique_id=619052395]
-transform = Transform3D(4.4703484e-08, 1.4901161e-08, -1, -0.5, 0.8660254, 0, 0.8660254, 0.5, 2.9802322e-08, 0, 1.271493, -19.382818)
-use_collision = true
-size = Vector3(4.838318, 1, 5)
-
-[node name="CSG Ramp4" type="CSGBox3D" parent="CSG" unique_id=263008840]
-transform = Transform3D(-1.2041383e-07, -5.861255e-08, 1, -0.5, 0.8660254, 0, -0.8660254, -0.5, -1.172251e-07, 12.129, -1.5791502, -23.177773)
-use_collision = true
-size = Vector3(4.838318, 1, 5)
-
-[node name="CSG Ramp3" type="CSGBox3D" parent="CSG" unique_id=1821787155]
-transform = Transform3D(-1.2041383e-07, -5.861255e-08, 1, -0.5, 0.8660254, 0, -0.8660254, -0.5, -1.172251e-07, 30.310953, 9.475857, -160.901)
-use_collision = true
-size = Vector3(4.838318, 1, 5)
-
-[node name="CSG 2" type="CSGBox3D" parent="CSG" unique_id=877928415]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.0146508e-06, -2.8672504, -43.05073)
-use_collision = true
-size = Vector3(31.796047, 1, 5)
-material = SubResource("StandardMaterial3D_cpr0p")
+[node name="strigth_platform15" parent="Platforms" unique_id=1478324196 instance=ExtResource("4_v45ci")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.1247299, 12.158, -2.867, -55.985577)
 
 [node name="Rounds" type="Node" parent="." unique_id=888317796]
 
 [node name="Round" type="Node3D" parent="Rounds" unique_id=1469345121]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.614, 4.2, -134.06381)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.614, 4.095, -134.064)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Rounds/Round" unique_id=247322874]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5781667, 0, 1.7081782)
@@ -202,7 +129,7 @@ use_collision = true
 size = Vector3(5, 1, 1)
 
 [node name="Round2" type="Node3D" parent="Rounds" unique_id=1617554580]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -22.807, 4.2, -136.15607)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -22.807, 4.095, -136.156)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Rounds/Round2" unique_id=352855309]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5781667, 0, 1.7081782)
@@ -914,54 +841,41 @@ mesh = SubResource("BoxMesh_6r4da")
 
 [node name="Jump Pads" type="Node" parent="." unique_id=1080507715]
 
-[node name="Pipes" type="Node" parent="." unique_id=1738873956]
-
-[node name="pipe" type="StaticBody3D" parent="Pipes" unique_id=1335954986]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.37354445, -2.1589367, -64.77763)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Pipes/pipe" unique_id=938580305]
-mesh = SubResource("CylinderMesh_cpr0p")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pipes/pipe" unique_id=746576163]
-shape = SubResource("CylinderShape3D_78awf")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Pipes/pipe" unique_id=611020809]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9941839, 0, 0)
-mesh = SubResource("CylinderMesh_s0nni")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Pipes/pipe" unique_id=488989378]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9941839, 0, 0)
-shape = SubResource("CapsuleShape3D_aug50")
-
-[node name="pipe2" type="StaticBody3D" parent="Pipes" unique_id=1969541953]
-transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, 21.511, 8.693319, -178.46)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Pipes/pipe2" unique_id=627320281]
-mesh = SubResource("CylinderMesh_cpr0p")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pipes/pipe2" unique_id=2127934421]
-shape = SubResource("CylinderShape3D_78awf")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Pipes/pipe2" unique_id=126228814]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9941839, 0, 0)
-mesh = SubResource("CylinderMesh_s0nni")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Pipes/pipe2" unique_id=1573871594]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9941839, 0, 0)
-shape = SubResource("CapsuleShape3D_aug50")
-
-[node name="Coins" type="Node" parent="." unique_id=1961804121]
-
-[node name="Area3D" type="Area3D" parent="." unique_id=443614727]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.690638, 4.2268496, -156.8418)
+[node name="Area3D" type="Area3D" parent="Jump Pads" unique_id=443614727]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.691, 4.095, -156.842)
 script = ExtResource("5_48ne7")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=76458921]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Jump Pads/Area3D" unique_id=76458921]
 shape = SubResource("BoxShape3D_v45ci")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=1302708936]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Jump Pads/Area3D" unique_id=1302708936]
 mesh = SubResource("BoxMesh_48ne7")
+
+[node name="Pipes" type="Node" parent="." unique_id=1738873956]
+
+[node name="pipe" parent="Pipes" unique_id=1455267557 instance=ExtResource("3_fr1um")]
+transform = Transform3D(1, 0, 0, 0, 0.9992359, 0.039561473, 0, -0.039085414, 1.0114064, 0, -1.9621007, -64.295715)
+
+[node name="pipe2" parent="Pipes" unique_id=621310716 instance=ExtResource("3_fr1um")]
+transform = Transform3D(-4.3622816e-08, -0.024521355, -0.9187189, -2.7812068e-09, 0.9976471, -0.022581356, 1, 5.4197797e-09, -4.0006096e-08, 21.963783, 8.554653, -177.62047)
+
+[node name="Ramps" type="Node" parent="." unique_id=1961804121]
+
+[node name="ramp" parent="Ramps" unique_id=469585993 instance=ExtResource("5_6xh4u")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.017447472, 0.814, -22.888535)
+
+[node name="ramp2" parent="Ramps" unique_id=943731790 instance=ExtResource("5_6xh4u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0674168, -33.477478)
+
+[node name="ramp3" parent="Ramps" unique_id=135832136 instance=ExtResource("5_6xh4u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.371498, 9.012328, -165.07562)
+
+[node name="ramp4" parent="Ramps" unique_id=763066487 instance=ExtResource("5_6xh4u")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 30.35743, 5.009288, -152.80035)
+
+[node name="ramp5" parent="Ramps" unique_id=1459174878 instance=ExtResource("5_6xh4u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.158, -2.048492, -24.796513)
 
 [connection signal="body_entered" from="Boosts/boost2" to="Boosts/boost2" method="_on_body_entered"]
 [connection signal="body_entered" from="Boosts/boost3" to="Boosts/boost3" method="_on_body_entered"]
-[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="Jump Pads/Area3D" to="Jump Pads/Area3D" method="_on_body_entered"]
