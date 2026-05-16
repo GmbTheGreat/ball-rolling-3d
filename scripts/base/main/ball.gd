@@ -112,6 +112,8 @@ func _physics_process(delta):
 			0.0,
 			friction * delta
 		)
+	
+		# nashra test
 
 	# TARGET VELOCITY
 	var target_velocity = move_direction.normalized() * current_speed
