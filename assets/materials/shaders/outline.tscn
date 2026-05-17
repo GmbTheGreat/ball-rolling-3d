@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://7jh4j16x37yv"]
 
-[ext_resource type="Shader" uid="uid://bsv8mqy36o3ri" path="res://scripts/shaders/outline/outline.gdshader" id="1_o0lds"]
+[ext_resource type="Shader" uid="uid://bsv8mqy36o3ri" path="res://scripts/shaders/outline.gdshader" id="1_o0lds"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_o0lds"]
 size = Vector2(2, 2)

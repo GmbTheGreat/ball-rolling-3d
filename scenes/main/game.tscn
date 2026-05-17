@@ -17,6 +17,7 @@ process_mode = 3
 [sub_resource type="Environment" id="Environment_gf1f2"]
 background_mode = 2
 sky = SubResource("Sky_gsayk")
+glow_enabled = true
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_em1bs"]
 friction = 0.6
@@ -84,7 +85,7 @@ script = ExtResource("1_e64el")
 environment = SubResource("Environment_gf1f2")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1322373630]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 172.12152, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 38.371925, 0)
 
 [node name="ball" parent="." unique_id=1403333367 instance=ExtResource("3_gf1f2")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 2, 0)

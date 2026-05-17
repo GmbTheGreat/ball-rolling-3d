@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://b86kw00lt8vl5"]
+
+[ext_resource type="PackedScene" uid="uid://hvt3ytuw4i73" path="res://assets/models/interactables/boost.glb" id="1_iia4s"]
+[ext_resource type="Script" uid="uid://dvqll1y6eb8ch" path="res://scripts/base/interactables/boost.gd" id="2_60i7m"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0lr1b"]
+data = PackedVector3Array(0.45139998, 0, -0.37269998, 0, 0, -0.7438, 0, 0, -1.0541999, 0.45139998, 0, -0.37269998, 0.17719999, 0, -0.37269998, 0, 0, -0.7438, 0, 0, -1.0541999, 0, 0, -0.7438, -0.17719999, 0, -0.37269998, 0, 0, -1.0541999, -0.17719999, 0, -0.37269998, -0.45139998, 0, -0.37269998, 0.45139998, 0, 0.17809999, 0, 0, -0.19299999, 0, 0, -0.50339997, 0.45139998, 0, 0.17809999, 0.17719999, 0, 0.17809999, 0, 0, -0.19299999, 0, 0, -0.50339997, 0, 0, -0.19299999, -0.17719999, 0, 0.17809999, 0, 0, -0.50339997, -0.17719999, 0, 0.17809999, -0.45139998, 0, 0.17809999, 0.45139998, 0, 0.74399996, 0, 0, 0.37289998, 0, 0, 0.0625, 0.45139998, 0, 0.74399996, 0.17719999, 0, 0.74399996, 0, 0, 0.37289998, 0, 0, 0.0625, 0, 0, 0.37289998, -0.17719999, 0, 0.74399996, 0, 0, 0.0625, -0.17719999, 0, 0.74399996, -0.45139998, 0, 0.74399996)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iia4s"]
+blend_mode = 3
+emission_enabled = true
+emission = Color(0.40832916, 0.40832955, 0.40832937, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_iia4s"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 0, 2)
+gravity = Vector3(0, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_60i7m"]
+albedo_color = Color(1, 0.11372549, 0.08627451, 1)
+emission_enabled = true
+emission = Color(0.8899286, 0.34443632, 0.32226616, 1)
+emission_energy_multiplier = 1.51
+
+[sub_resource type="QuadMesh" id="QuadMesh_60i7m"]
+material = SubResource("StandardMaterial3D_60i7m")
+size = Vector2(0.2, 0.2)
+
+[node name="boost" unique_id=27694386 instance=ExtResource("1_iia4s")]
+
+[node name="Area3D" type="Area3D" parent="." index="0" unique_id=1283266769 groups=["boosts"]]
+script = ExtResource("2_60i7m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=923561357]
+transform = Transform3D(2.2154324, 0, 0, 0, 1, 0, 0, 0, 2.2535143, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_0lr1b")
+
+[node name="Circle" parent="." index="1" unique_id=1100366509]
+material_overlay = SubResource("StandardMaterial3D_iia4s")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="2" unique_id=1241848204]
+amount = 4
+lifetime = 0.7
+process_material = SubResource("ParticleProcessMaterial_iia4s")
+draw_pass_1 = SubResource("QuadMesh_60i7m")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

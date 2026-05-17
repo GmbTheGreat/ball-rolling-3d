@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bgtvnq6d5j4op"]
+
+[ext_resource type="Shader" uid="uid://cgb4ntx6p6hsc" path="res://scripts/shaders/water.gdshader" id="1_ej58j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4lcip"]
+render_priority = 0
+shader = ExtResource("1_ej58j")
+shader_parameter/WATER_COL = Color(0.04, 0.38, 0.88, 1)
+shader_parameter/WATER2_COL = Color(0.04, 0.35, 0.78, 1)
+shader_parameter/FOAM_COL = Color(0.8125, 0.9609, 0.9648, 1)
+shader_parameter/distortion_speed = 2.0
+shader_parameter/tile = Vector2(5, 5)
+shader_parameter/height = 2.0
+shader_parameter/wave_size = Vector2(2, 2)
+shader_parameter/wave_speed = 1.5
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_p7qtd"]
+material = SubResource("ShaderMaterial_4lcip")
+size = Vector2(1000, 1000)
+
+[node name="Node3D" type="Node3D" unique_id=1278693079]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1747925666]
+mesh = SubResource("PlaneMesh_p7qtd")

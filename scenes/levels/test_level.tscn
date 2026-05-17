@@ -2,22 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://87onxlt8byot" path="res://scenes/assets/platforms/curve.tscn" id="2_6xh4u"]
 [ext_resource type="PackedScene" uid="uid://cxv2g8t1ky0s1" path="res://scenes/assets/platforms/pipe.tscn" id="3_fr1um"]
-[ext_resource type="Script" uid="uid://nhmx0hfs6wio" path="res://scripts/base/interactables/boost.gd" id="4_7x1jh"]
+[ext_resource type="PackedScene" uid="uid://dq2r45p173jco" path="res://scenes/assets/interactables/jump_pad.tscn" id="4_6xh4u"]
 [ext_resource type="PackedScene" uid="uid://q5c8jlvgqhp7" path="res://scenes/assets/platforms/straight_platform.tscn" id="4_v45ci"]
 [ext_resource type="PackedScene" uid="uid://msl1lbid8crh" path="res://scenes/assets/platforms/ramp.tscn" id="5_6xh4u"]
-[ext_resource type="Script" uid="uid://ds4crgmofgwt4" path="res://scripts/base/debug/area_3d.gd" id="5_48ne7"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_wkt5j"]
-size = Vector3(0.391, 1, 0.391)
-
-[sub_resource type="BoxMesh" id="BoxMesh_6r4da"]
-size = Vector3(0.391, 1, 0.391)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_v45ci"]
-size = Vector3(2.5, 1, 2.5)
-
-[sub_resource type="BoxMesh" id="BoxMesh_48ne7"]
-size = Vector3(2.5, 1, 2.5)
+[ext_resource type="PackedScene" uid="uid://b86kw00lt8vl5" path="res://scenes/assets/interactables/boost.tscn" id="6_6xh4u"]
 
 [node name="Test Level" type="Node3D" unique_id=1413653819]
 
@@ -48,7 +36,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.86037153, 0, 4.0949993, -123.6
 transform = Transform3D(-4.371139e-08, 0, -0.866, 0, 1, 0, 1, 0, -3.785406e-08, -11.664, 4.095, -135.257)
 
 [node name="strigth_platform7" parent="Platforms" unique_id=117599693 instance=ExtResource("4_v45ci")]
-transform = Transform3D(-0.99999994, 0, 7.667685e-08, 0, 0.9999999, 0, -8.742276e-08, 0, -0.87708086, -23.31596, 4.0949993, -146.94669)
+transform = Transform3D(-0.99999994, 0, 8.611527e-08, 0, 0.9999999, 0, -8.742276e-08, 0, -0.9850438, -23.31596, 4.0949993, -148.19484)
 
 [node name="strigth_platform8" parent="Platforms" unique_id=379388794 instance=ExtResource("4_v45ci")]
 transform = Transform3D(-1, 0, 7.9212455e-08, 0, 1, 0, -1.509958e-07, 0, -0.5246004, -23.34303, 8.226202, -169.80612)
@@ -63,7 +51,7 @@ transform = Transform3D(-1, 0, 8.062438e-08, 0, 1, 0, -1.509958e-07, 0, -0.53395
 transform = Transform3D(1.9470718e-07, 0, 0.36995983, 0, 1, 0, -1, 0, 7.203383e-08, 23.973572, 8.226202, -177.60338)
 
 [node name="strigth_platform11" parent="Platforms" unique_id=1171410321 instance=ExtResource("4_v45ci")]
-transform = Transform3D(-0.99999994, 0, 1.0753789e-07, 0, 0.9999999, 0, -8.742276e-08, 0, -1.23009, 30.327, 4.2, -149.27081)
+transform = Transform3D(-0.99999994, 0, 8.997745e-08, 0, 0.9999999, 0, -8.742276e-08, 0, -1.029222, 30.327, 4.2, -147.13477)
 
 [node name="strigth_platform12" parent="Platforms" unique_id=974996401 instance=ExtResource("4_v45ci")]
 transform = Transform3D(-4.371137e-08, 0, -0.5627425, 0, 0.9999999, 0, 0.99999994, 0, -2.4598254e-08, 21.925398, 4.2, -133.73631)
@@ -135,37 +123,16 @@ transform = Transform3D(-0.9999999, 0, 8.742276e-08, 0, 1, 0, -8.742276e-08, 0, 
 
 [node name="Boosts" type="Node" parent="." unique_id=1456786011]
 
-[node name="boost2" type="Area3D" parent="Boosts" unique_id=157249076 groups=["boosts"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.093702435, -1.7548687, -85.225235)
-script = ExtResource("4_7x1jh")
+[node name="boost" parent="Boosts" unique_id=27694386 instance=ExtResource("6_6xh4u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06195259, -1.3347881, -43.125584)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Boosts/boost2" unique_id=1079251843]
-shape = SubResource("BoxShape3D_wkt5j")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Boosts/boost2" unique_id=1032785665]
-mesh = SubResource("BoxMesh_6r4da")
-
-[node name="boost3" type="Area3D" parent="Boosts" unique_id=954870229 groups=["boosts"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.505, -1.755, -85.225)
-script = ExtResource("4_7x1jh")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Boosts/boost3" unique_id=1733564905]
-shape = SubResource("BoxShape3D_wkt5j")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Boosts/boost3" unique_id=837111880]
-mesh = SubResource("BoxMesh_6r4da")
+[node name="boost2" parent="Boosts" unique_id=1707176265 instance=ExtResource("6_6xh4u")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 13.406076, -2.3474803, -83.3129)
 
 [node name="Jump Pads" type="Node" parent="." unique_id=1080507715]
 
-[node name="Area3D" type="Area3D" parent="Jump Pads" unique_id=443614727]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.691, 4.095, -156.842)
-script = ExtResource("5_48ne7")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Jump Pads/Area3D" unique_id=76458921]
-shape = SubResource("BoxShape3D_v45ci")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Jump Pads/Area3D" unique_id=1302708936]
-mesh = SubResource("BoxMesh_48ne7")
+[node name="jump_pad" parent="Jump Pads" unique_id=900099848 instance=ExtResource("4_6xh4u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.485518, 4.498532, -157.20505)
 
 [node name="Pipes" type="Node" parent="." unique_id=1738873956]
 
@@ -182,7 +149,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.34, 9.03822, -165.79669)
 
 [node name="ramp3" parent="Ramps" unique_id=2045066067 instance=ExtResource("5_6xh4u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.505, -2.061, -24.796)
-
-[connection signal="body_entered" from="Boosts/boost2" to="Boosts/boost2" method="_on_body_entered"]
-[connection signal="body_entered" from="Boosts/boost3" to="Boosts/boost3" method="_on_body_entered"]
-[connection signal="body_entered" from="Jump Pads/Area3D" to="Jump Pads/Area3D" method="_on_body_entered"]

@@ -4,13 +4,16 @@ extends RigidBody3D
 @export var move_speed := 10.0
 @export var max_speed := 10.0
 @export var boost_speed := 20.0
-@export var boost_duration := 2.0
+@export var boost_duration := 4.0
 @export var rotate_speed := 2.0
 @export var friction := 8.0
 @export var brake_force := 20.0
+
 # Movement smoothing
 @export var ground_control := 4.0
 @export var air_control := 0.5
+@export var jump_velocity := 6.0
+@export var jump_cooldown := 0.15
 
 
 @onready var animePlayer: AnimationPlayer = $"../Animation/AnimationPlayer"
@@ -22,6 +25,8 @@ var normal_move_speed := 0.0
 var normal_max_speed := 0.0
 var boost_active := false
 var spawn_position
+var can_jump := true
+var jump_locked := false
 
 
 func _ready() -> void:
@@ -66,7 +71,8 @@ func apply_boost():
 
 func _physics_process(delta):
 	# AIR CHECK
-	var is_in_air = abs(linear_velocity.y) > 1
+	var is_grounded = abs(linear_velocity.y) < 0.5
+	var is_in_air = !is_grounded
 
 	# REVERSE STEERING
 	var steer_direction = 1.0
@@ -113,7 +119,13 @@ func _physics_process(delta):
 			friction * delta
 		)
 	
-		# nashra test
+	# JUMP
+	if Input.is_action_just_pressed("jump") and is_grounded and can_jump:
+		apply_central_impulse(Vector3.UP * mass * jump_velocity)
+		can_jump = false
+
+		await get_tree().create_timer(jump_cooldown).timeout
+		can_jump = true
 
 	# TARGET VELOCITY
 	var target_velocity = move_direction.normalized() * current_speed
