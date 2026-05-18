@@ -124,7 +124,7 @@ transform = Transform3D(-0.9999999, 0, 8.742276e-08, 0, 1, 0, -8.742276e-08, 0, 
 [node name="Boosts" type="Node" parent="." unique_id=1456786011]
 
 [node name="boost" parent="Boosts" unique_id=27694386 instance=ExtResource("6_6xh4u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06195259, -1.3347881, -43.125584)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.062, -2.347, -83.313)
 
 [node name="boost2" parent="Boosts" unique_id=1707176265 instance=ExtResource("6_6xh4u")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 13.406076, -2.3474803, -83.3129)

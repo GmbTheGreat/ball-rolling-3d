@@ -13,7 +13,7 @@ uniform vec2 tile = vec2(5.0, 5.0);
 uniform float height = 2.0;
 uniform vec2 wave_size = vec2(2.0, 2.0);
 uniform float wave_speed = 1.5;
-
+varying vec3 world_pos;
 const float M_2PI = 6.283185307;
 const float M_6PI = 18.84955592;
 
@@ -177,22 +177,35 @@ vec3 water(vec2 uv, vec3 cdir, float iTime)
 
 
 void vertex(){
+	world_pos = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
+
 	float time = TIME * wave_speed;
-	vec2 uv = UV * wave_size;
+
+	vec2 uv = world_pos.xz * wave_size * 0.1;
+
 	float d1 = mod(uv.x + uv.y, M_2PI);
     float d2 = mod((uv.x + uv.y + 0.25) * 1.3, M_6PI);
+
     d1 = time * 0.07 + d1;
     d2 = time * 0.5 + d2;
+
     vec2 dist = vec2(
     	sin(d1) * 0.15 + sin(d2) * 0.05,
     	cos(d1) * 0.15 + cos(d2) * 0.05
     );
+
 	VERTEX.y += dist.y * height;
 }
 
 void fragment()
 {
-	vec2 uv = UV;
-	
-    ALBEDO = vec3(water(uv * tile, vec3(0,1,0), TIME * distortion_speed));
+	vec2 uv = world_pos.xz * 0.002;
+
+	ALBEDO = vec3(
+		water(
+			uv * tile,
+			vec3(0,1,0),
+			TIME * distortion_speed
+		)
+	);
 }

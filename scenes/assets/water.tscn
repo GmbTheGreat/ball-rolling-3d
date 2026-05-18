@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bgtvnq6d5j4op"]
 
+[ext_resource type="Script" uid="uid://c8xcpgay0ejhm" path="res://scripts/base/environment/water.gd" id="1_4lcip"]
 [ext_resource type="Shader" uid="uid://cgb4ntx6p6hsc" path="res://scripts/shaders/water.gdshader" id="1_ej58j"]
+[ext_resource type="Shader" uid="uid://77p67bj8g1qo" path="res://scripts/shaders/water_lod.gdshader" id="3_p7qtd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4lcip"]
 render_priority = 0
@@ -16,9 +18,56 @@ shader_parameter/wave_speed = 1.5
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_p7qtd"]
 material = SubResource("ShaderMaterial_4lcip")
-size = Vector2(1000, 1000)
+size = Vector2(1024, 1024)
 
-[node name="Node3D" type="Node3D" unique_id=1278693079]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wxg25"]
+render_priority = 0
+shader = ExtResource("3_p7qtd")
+shader_parameter/WATER_COL = Color(0.04, 0.38, 0.88, 1)
+shader_parameter/WATER2_COL = Color(0.04, 0.35, 0.78, 1)
+shader_parameter/FOAM_COL = Color(0.8125, 0.9609, 0.9648, 1)
+shader_parameter/wave_speed = 0.15
+shader_parameter/wave_scale = 8.0
+shader_parameter/foam_density = 18.0
+shader_parameter/foam_strength = 0.18
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fl7k6"]
+material = SubResource("ShaderMaterial_wxg25")
+size = Vector2(5000, 5000)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p7qtd"]
+render_priority = 0
+shader = ExtResource("3_p7qtd")
+shader_parameter/WATER_COL = Color(0.04, 0.38, 0.88, 1)
+shader_parameter/WATER2_COL = Color(0.04, 0.35, 0.78, 1)
+shader_parameter/FOAM_COL = Color(0.8125, 0.9609, 0.9648, 1)
+shader_parameter/wave_speed = 0.15
+shader_parameter/wave_scale = 8.0
+shader_parameter/foam_density = 18.0
+shader_parameter/foam_strength = 0.18
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wxg25"]
+material = SubResource("ShaderMaterial_p7qtd")
+size = Vector2(2000, 1024)
+
+[node name="water" type="Node3D" unique_id=1278693079]
+script = ExtResource("1_4lcip")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1747925666]
 mesh = SubResource("PlaneMesh_p7qtd")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1225594269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3006.1328, 0, 0)
+mesh = SubResource("PlaneMesh_fl7k6")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1208222365]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3005.876, 0, 0)
+mesh = SubResource("PlaneMesh_fl7k6")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1609436964]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7, 0, 1512)
+mesh = SubResource("PlaneMesh_wxg25")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=588500142]
+transform = Transform3D(0.005061442, 0, 0.9999872, 0, 1, 0, -0.9999872, 0, 0.005061442, 2, 0, -1495)
+mesh = SubResource("PlaneMesh_wxg25")

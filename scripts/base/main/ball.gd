@@ -4,7 +4,7 @@ extends RigidBody3D
 @export var move_speed := 10.0
 @export var max_speed := 10.0
 @export var boost_speed := 20.0
-@export var boost_duration := 4.0
+@export var boost_duration := 2.0
 @export var rotate_speed := 2.0
 @export var friction := 8.0
 @export var brake_force := 20.0
