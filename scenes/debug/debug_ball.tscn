@@ -1,21 +1,7 @@
 [gd_scene format=3 uid="uid://ceq2xdox0gp6f"]
 
-[ext_resource type="Script" uid="uid://b4vmc4r7mnwot" path="res://scripts/base/debug/debug_ball.gd" id="1_ng5kn"]
-[ext_resource type="Texture2D" uid="uid://bdmfene5ryyw0" path="res://icon.svg" id="1_vlmvj"]
+[ext_resource type="PackedScene" uid="uid://c3uddklw4auex" path="res://scenes/main/ball.tscn" id="1_p8keq"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ng5kn"]
-albedo_texture = ExtResource("1_vlmvj")
+[node name="Node3D" type="Node3D" unique_id=1704926034]
 
-[sub_resource type="SphereMesh" id="SphereMesh_x1s6m"]
-material = SubResource("StandardMaterial3D_ng5kn")
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_tb1st"]
-
-[node name="debug ball" type="RigidBody3D" unique_id=960412635]
-script = ExtResource("1_ng5kn")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1045135354]
-mesh = SubResource("SphereMesh_x1s6m")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1665297335]
-shape = SubResource("SphereShape3D_tb1st")
+[node name="ball" parent="." unique_id=1403333367 instance=ExtResource("1_p8keq")]
