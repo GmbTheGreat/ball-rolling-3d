@@ -10,12 +10,10 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_n1dj2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k2nl5"]
+shading_mode = 0
 diffuse_mode = 3
 specular_mode = 1
 albedo_texture = ExtResource("2_k2nl5")
-roughness = 0.0
-rim_enabled = true
-rim_tint = 0.0
 stencil_flags = 2
 
 [sub_resource type="SphereMesh" id="SphereMesh_7s4qf"]
@@ -42,35 +40,11 @@ albedo_texture = ExtResource("3_8a8nt")
 material = SubResource("StandardMaterial3D_7uhbw")
 orientation = 1
 
-[sub_resource type="Curve" id="Curve_k2nl5"]
-_data = [Vector2(0, 1), 0.0, 0.42857134, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_8a8nt"]
-curve = SubResource("Curve_k2nl5")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k2nl5"]
-emission_shape = 3
-emission_box_extents = Vector3(0.5, 0, 0.5)
-direction = Vector3(0, 0, 0)
-spread = 180.0
-initial_velocity_min = 1.0
-initial_velocity_max = 5.0
-gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_8a8nt")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8a8nt"]
-albedo_color = Color(0.0627451, 0.654902, 1, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_8a8nt"]
-material = SubResource("StandardMaterial3D_8a8nt")
-radius = 0.1
-height = 0.2
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0payd"]
 shader = ExtResource("4_nyjrx")
 
 [sub_resource type="Gradient" id="Gradient_oewb3"]
+offsets = PackedFloat32Array(0.53061223, 1)
 colors = PackedColorArray(0, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_43p2q"]
@@ -98,6 +72,31 @@ shader_parameter/flags = 44
 [sub_resource type="QuadMesh" id="QuadMesh_tu04w"]
 material = SubResource("ShaderMaterial_kqkjh")
 
+[sub_resource type="Curve" id="Curve_k2nl5"]
+_data = [Vector2(0, 1), 0.0, 0.42857134, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_8a8nt"]
+curve = SubResource("Curve_k2nl5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k2nl5"]
+emission_shape = 3
+emission_box_extents = Vector3(0.5, 0, 0.5)
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_8a8nt")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8a8nt"]
+albedo_color = Color(0.0627451, 0.654902, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_8a8nt"]
+material = SubResource("StandardMaterial3D_8a8nt")
+radius = 0.1
+height = 0.2
+
 [node name="ball" type="RigidBody3D" unique_id=1403333367]
 script = ExtResource("1_k2nl5")
 
@@ -118,16 +117,8 @@ fixed_fps = 0
 process_material = SubResource("ParticleProcessMaterial_8a8nt")
 draw_pass_1 = SubResource("QuadMesh_k2nl5")
 
-[node name="WaterDroplets" type="GPUParticles3D" parent="." unique_id=784224419]
-emitting = false
-amount = 16
-one_shot = true
-explosiveness = 1.0
-fixed_fps = 60
-process_material = SubResource("ParticleProcessMaterial_k2nl5")
-draw_pass_1 = SubResource("SphereMesh_8a8nt")
-
-[node name="GPUTrail3D" type="GPUParticles3D" parent="." unique_id=2035756401]
+[node name="GPUTrail3D" type="GPUParticles3D" parent="RayCast3D" unique_id=2035756401]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
 amount = 25
 lifetime = 25.0
 explosiveness = 1.0
@@ -142,3 +133,12 @@ curve = SubResource("CurveTexture_wmmms")
 billboard = true
 _defaults_have_been_set = true
 metadata/_custom_type_script = "uid://clk5tgqbb7tfu"
+
+[node name="WaterDroplets" type="GPUParticles3D" parent="." unique_id=784224419]
+emitting = false
+amount = 16
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_k2nl5")
+draw_pass_1 = SubResource("SphereMesh_8a8nt")
