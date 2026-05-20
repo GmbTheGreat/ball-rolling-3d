@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://dkpmkh0x2gyp6" path="res://scripts/base/main/ball.gd" id="1_k2nl5"]
 [ext_resource type="Texture2D" uid="uid://b1ijckfl023hh" path="res://assets/textures/ball_football.webp" id="2_k2nl5"]
 [ext_resource type="Texture2D" uid="uid://eq8fb0hssuir" path="res://assets/textures/vecteezy_realistic-water-ripple-effect_38252256.png" id="3_8a8nt"]
+[ext_resource type="Shader" uid="uid://xp144hvxfttb" path="res://addons/GPUTrail-main/shaders/trail.gdshader" id="4_nyjrx"]
+[ext_resource type="Shader" uid="uid://5wgjfh4i15nq" path="res://addons/GPUTrail-main/shaders/trail_draw_pass.gdshader" id="5_a1s1t"]
+[ext_resource type="Script" uid="uid://clk5tgqbb7tfu" path="res://addons/GPUTrail-main/GPUTrail3D.gd" id="6_3klhb"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_n1dj2"]
 
@@ -64,6 +67,37 @@ material = SubResource("StandardMaterial3D_8a8nt")
 radius = 0.1
 height = 0.2
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0payd"]
+shader = ExtResource("4_nyjrx")
+
+[sub_resource type="Gradient" id="Gradient_oewb3"]
+colors = PackedColorArray(0, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_43p2q"]
+gradient = SubResource("Gradient_oewb3")
+
+[sub_resource type="Curve" id="Curve_y3jdm"]
+bake_resolution = 16
+_data = [Vector2(0, 0.22471917), 0.0, 0.0, 0, 0, Vector2(1, 0.1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wmmms"]
+curve = SubResource("Curve_y3jdm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kqkjh"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("5_a1s1t")
+shader_parameter/mask_strength = 1.0
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/color_ramp = SubResource("GradientTexture1D_43p2q")
+shader_parameter/curve = SubResource("CurveTexture_wmmms")
+shader_parameter/emmission_transform = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/flags = 44
+
+[sub_resource type="QuadMesh" id="QuadMesh_tu04w"]
+material = SubResource("ShaderMaterial_kqkjh")
+
 [node name="ball" type="RigidBody3D" unique_id=1403333367]
 script = ExtResource("1_k2nl5")
 
@@ -92,3 +126,19 @@ explosiveness = 1.0
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_k2nl5")
 draw_pass_1 = SubResource("SphereMesh_8a8nt")
+
+[node name="GPUTrail3D" type="GPUParticles3D" parent="." unique_id=2035756401]
+amount = 25
+lifetime = 25.0
+explosiveness = 1.0
+fixed_fps = 144
+process_material = SubResource("ShaderMaterial_0payd")
+draw_pass_1 = SubResource("QuadMesh_tu04w")
+script = ExtResource("6_3klhb")
+length = 25
+length_seconds = 0.1736111111111111
+color_ramp = SubResource("GradientTexture1D_43p2q")
+curve = SubResource("CurveTexture_wmmms")
+billboard = true
+_defaults_have_been_set = true
+metadata/_custom_type_script = "uid://clk5tgqbb7tfu"

@@ -16,7 +16,7 @@ extends RigidBody3D
 @export var jump_velocity := 6.0
 @export var jump_cooldown := 0.5
 
-
+@onready var camera: Camera3D = $"../Camera3D"
 @onready var animePlayer: AnimationPlayer = $"../Animation/AnimationPlayer"
 @onready var timer: Timer = $"../Animation/Timer"
 @onready var ground_ray: RayCast3D = $RayCast3D
@@ -64,12 +64,19 @@ func apply_boost():
 	move_speed = boost_speed
 	max_speed = boost_speed
 
+	camera.distance = 4.0
+	camera.height = 1.5
+
 	await get_tree().create_timer(boost_duration).timeout
 
 	move_speed = normal_move_speed
 	max_speed = normal_max_speed
 
+	camera.distance = camera.default_distance
+	camera.height = camera.default_height
+
 	boost_active = false
+	
 
 func _physics_process(delta):
 	can_jump += delta

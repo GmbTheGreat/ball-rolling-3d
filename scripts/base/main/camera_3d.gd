@@ -2,8 +2,10 @@ extends Camera3D
 
 @export var ball : RigidBody3D
 
-var distance := 2.0
-var height := 3.0
+var default_distance := 2.0
+var distance := default_distance
+var default_height := 3.0
+var height := default_height
 var smooth_speed := 4.0
 
 func _physics_process(delta):
