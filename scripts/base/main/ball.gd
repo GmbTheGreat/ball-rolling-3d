@@ -8,6 +8,7 @@ extends RigidBody3D
 @export var rotate_speed := 2.0
 @export var friction := 8.0
 @export var brake_force := 20.0
+@export var respawn_cooldown := 1.0
 
 # Movement smoothing
 @export var ground_control := 4.0
@@ -19,6 +20,8 @@ extends RigidBody3D
 @onready var animePlayer: AnimationPlayer = $"../Animation/AnimationPlayer"
 @onready var timer: Timer = $"../Animation/Timer"
 @onready var ground_ray: RayCast3D = $RayCast3D
+@onready var water_droplets: GPUParticles3D = $WaterDroplets
+@onready var water_ripple: GPUParticles3D = $RayCast3D/WaterRipple
 
 var move_direction := Vector3.FORWARD
 var current_speed := 0.0
@@ -36,7 +39,6 @@ func _ready() -> void:
 	timer.timeout.connect(fade_in)
 
 func respawn():
-	timer.start()
 
 	global_position = spawn_position
 
@@ -147,14 +149,6 @@ func _physics_process(delta):
 		target_velocity,
 		control * delta
 	)
-
-	# SPEED LIMIT (OLD CODE)
-	#{if linear_velocity.length() > max_speed:
-		#var y_velocity = linear_velocity.y
-		#linear_velocity = linear_velocity.normalized() * max_speed
-#
-		## KEEP GRAVITY
-		#linear_velocity.y = y_velocity}
 	
 	var horizontal_velocity = Vector3(
 		linear_velocity.x,
@@ -169,8 +163,12 @@ func _physics_process(delta):
 		linear_velocity.z = horizontal_velocity.z
 
 	# FALL CHECK
-	if position.y < -10:
-		animePlayer.play("fade_in")
-
-	if position.y < -20 or Input.is_action_just_pressed("reset_debug"):
+	if position.y < -3.0 or Input.is_action_just_pressed("reset_debug"):
+		water_droplets.emitting = true
+		water_ripple.emitting = true
+		
+		angular_velocity = Vector3.ZERO
+		current_speed = 0.0
+		
+		await get_tree().create_timer(respawn_cooldown).timeout
 		respawn()

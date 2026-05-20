@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dkpmkh0x2gyp6" path="res://scripts/base/main/ball.gd" id="1_k2nl5"]
 [ext_resource type="Texture2D" uid="uid://b1ijckfl023hh" path="res://assets/textures/ball_football.webp" id="2_k2nl5"]
+[ext_resource type="Texture2D" uid="uid://eq8fb0hssuir" path="res://assets/textures/vecteezy_realistic-water-ripple-effect_38252256.png" id="3_8a8nt"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_n1dj2"]
 
@@ -17,6 +18,52 @@ stencil_flags = 2
 [sub_resource type="SphereMesh" id="SphereMesh_7s4qf"]
 material = SubResource("StandardMaterial3D_k2nl5")
 
+[sub_resource type="Curve" id="Curve_8a8nt"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 4), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_7uhbw"]
+curve = SubResource("Curve_8a8nt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8a8nt"]
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_7uhbw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7uhbw"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("3_8a8nt")
+
+[sub_resource type="QuadMesh" id="QuadMesh_k2nl5"]
+material = SubResource("StandardMaterial3D_7uhbw")
+orientation = 1
+
+[sub_resource type="Curve" id="Curve_k2nl5"]
+_data = [Vector2(0, 1), 0.0, 0.42857134, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_8a8nt"]
+curve = SubResource("Curve_k2nl5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k2nl5"]
+emission_shape = 3
+emission_box_extents = Vector3(0.5, 0, 0.5)
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_8a8nt")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8a8nt"]
+albedo_color = Color(0.0627451, 0.654902, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_8a8nt"]
+material = SubResource("StandardMaterial3D_8a8nt")
+radius = 0.1
+height = 0.2
+
 [node name="ball" type="RigidBody3D" unique_id=1403333367]
 script = ExtResource("1_k2nl5")
 
@@ -28,3 +75,20 @@ mesh = SubResource("SphereMesh_7s4qf")
 
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=1729249087]
 target_position = Vector3(0, -0.6, 0)
+
+[node name="WaterRipple" type="GPUParticles3D" parent="RayCast3D" unique_id=2094383646]
+emitting = false
+amount = 1
+one_shot = true
+fixed_fps = 0
+process_material = SubResource("ParticleProcessMaterial_8a8nt")
+draw_pass_1 = SubResource("QuadMesh_k2nl5")
+
+[node name="WaterDroplets" type="GPUParticles3D" parent="." unique_id=784224419]
+emitting = false
+amount = 16
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_k2nl5")
+draw_pass_1 = SubResource("SphereMesh_8a8nt")

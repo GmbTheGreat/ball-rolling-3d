@@ -199,7 +199,7 @@ void vertex(){
 
 void fragment()
 {
-	vec2 uv = world_pos.xz * 0.02;
+	vec2 uv = world_pos.xz * 0.015;
 
 	ALBEDO = vec3(
 		water(

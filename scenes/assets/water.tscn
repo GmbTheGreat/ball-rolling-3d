@@ -20,6 +20,9 @@ shader_parameter/wave_speed = 1.5
 material = SubResource("ShaderMaterial_4lcip")
 size = Vector2(1024, 1024)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_p7qtd"]
+size = Vector3(1024, 0.1, 1024)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wxg25"]
 render_priority = 0
 shader = ExtResource("3_p7qtd")
@@ -53,8 +56,14 @@ size = Vector2(2000, 1024)
 [node name="water" type="Node3D" unique_id=1278693079]
 script = ExtResource("1_4lcip")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1747925666]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=860921530]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1747925666]
 mesh = SubResource("PlaneMesh_p7qtd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1247912665]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+shape = SubResource("BoxShape3D_p7qtd")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1225594269]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3006.1328, 0, 0)
