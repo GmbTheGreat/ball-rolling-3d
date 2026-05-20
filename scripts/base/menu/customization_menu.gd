@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_ball_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/menu/ball_customization.tscn")
 
 
 func _on_trail_pressed() -> void:

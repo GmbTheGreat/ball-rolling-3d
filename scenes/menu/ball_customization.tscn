@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://le0bqhclqdlq"]
+
+[ext_resource type="Texture2D" uid="uid://b1ijckfl023hh" path="res://assets/textures/ball_football.webp" id="1_2nxkg"]
+[ext_resource type="Texture2D" uid="uid://qf8pjtwwdpe3" path="res://assets/hdri/sky_06_2k.png" id="2_rvxrh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nwwp1"]
+shading_mode = 0
+albedo_color = Color(0.40392157, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42gxp"]
+shading_mode = 0
+albedo_texture = ExtResource("1_2nxkg")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vdplk"]
+panorama = ExtResource("2_rvxrh")
+
+[sub_resource type="Sky" id="Sky_ng8a8"]
+sky_material = SubResource("PanoramaSkyMaterial_vdplk")
+
+[sub_resource type="Environment" id="Environment_xi1lk"]
+background_mode = 2
+sky = SubResource("Sky_ng8a8")
+
+[node name="ball_customization" type="Node3D" unique_id=206109914]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1238493281]
+material = SubResource("StandardMaterial3D_nwwp1")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=941398884]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0356523, 0)
+material = SubResource("StandardMaterial3D_42gxp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=857684843]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 8.933266, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=950327852]
+environment = SubResource("Environment_xi1lk")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=401168420]
+transform = Transform3D(0.9405038, 0.017288005, -0.33934265, 0.0019229425, 0.998418, 0.056194503, 0.3397773, -0.053503696, 0.9389827, -1, 1.1292202, 3)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=875528284]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 1000
+alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer" unique_id=1065729351]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = " < "
+
+[node name="Button2" type="Button" parent="HBoxContainer" unique_id=88700975]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = " > "
