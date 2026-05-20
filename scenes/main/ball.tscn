@@ -112,7 +112,6 @@ mesh = SubResource("SphereMesh_7s4qf")
 target_position = Vector3(0, -0.6, 0)
 
 [node name="WaterRipple" type="GPUParticles3D" parent="RayCast3D" unique_id=2094383646]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23635435, 0, 0)
 emitting = false
 amount = 1
 one_shot = true
