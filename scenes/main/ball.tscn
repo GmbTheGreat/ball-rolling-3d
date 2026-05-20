@@ -6,6 +6,7 @@
 [ext_resource type="Shader" uid="uid://xp144hvxfttb" path="res://addons/GPUTrail-main/shaders/trail.gdshader" id="4_nyjrx"]
 [ext_resource type="Shader" uid="uid://5wgjfh4i15nq" path="res://addons/GPUTrail-main/shaders/trail_draw_pass.gdshader" id="5_a1s1t"]
 [ext_resource type="Script" uid="uid://clk5tgqbb7tfu" path="res://addons/GPUTrail-main/GPUTrail3D.gd" id="6_3klhb"]
+[ext_resource type="Texture2D" uid="uid://crk6pkb7e5rwc" path="res://addons/GPUTrail-main/defaults/texture.tres" id="6_a1s1t"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_n1dj2"]
 
@@ -44,15 +45,15 @@ orientation = 1
 shader = ExtResource("4_nyjrx")
 
 [sub_resource type="Gradient" id="Gradient_oewb3"]
-offsets = PackedFloat32Array(0.53061223, 1)
-colors = PackedColorArray(0, 1, 1, 1, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0.38265306, 0.74489796)
+colors = PackedColorArray(0, 1, 1, 1, 0.8352941, 0.16470589, 0.2, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_43p2q"]
 gradient = SubResource("Gradient_oewb3")
 
 [sub_resource type="Curve" id="Curve_y3jdm"]
 bake_resolution = 16
-_data = [Vector2(0, 0.22471917), 0.0, 0.0, 0, 0, Vector2(1, 0.1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.32584274), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_wmmms"]
@@ -62,6 +63,7 @@ curve = SubResource("Curve_y3jdm")
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("5_a1s1t")
+shader_parameter/tex = ExtResource("6_a1s1t")
 shader_parameter/mask_strength = 1.0
 shader_parameter/uv_offset = Vector2(0, 0)
 shader_parameter/color_ramp = SubResource("GradientTexture1D_43p2q")
@@ -110,6 +112,7 @@ mesh = SubResource("SphereMesh_7s4qf")
 target_position = Vector3(0, -0.6, 0)
 
 [node name="WaterRipple" type="GPUParticles3D" parent="RayCast3D" unique_id=2094383646]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23635435, 0, 0)
 emitting = false
 amount = 1
 one_shot = true
@@ -118,7 +121,7 @@ process_material = SubResource("ParticleProcessMaterial_8a8nt")
 draw_pass_1 = SubResource("QuadMesh_k2nl5")
 
 [node name="GPUTrail3D" type="GPUParticles3D" parent="RayCast3D" unique_id=2035756401]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+transform = Transform3D(-1, 0, 4.371139e-08, 0, 1, 0, -4.371139e-08, 0, -1, 0, -0.4, 0)
 amount = 25
 lifetime = 25.0
 explosiveness = 1.0

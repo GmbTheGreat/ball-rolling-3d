@@ -16,6 +16,7 @@ func load_level(level_path: String):
 	var level_scene = load(level_path)
 
 	# Create instance
+
 	var level_instance = level_scene.instantiate()
 
 	# Add into LevelHolder
