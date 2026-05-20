@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dteuula4y2op0"]
 
 [ext_resource type="Script" uid="uid://c4njsaip0o0wd" path="res://scripts/base/menu/levels_menu.gd" id="1_51xa5"]
+[ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="2_1gfdk"]
 
 [node name="LevelsMenu" type="Control" unique_id=1518830162]
 layout_mode = 3
@@ -23,31 +24,37 @@ columns = 3
 
 [node name="level1" type="Button" parent="GridContainer" unique_id=1071519886]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1gfdk")
 theme_override_font_sizes/font_size = 64
 text = " 1 "
 
 [node name="level2" type="Button" parent="GridContainer" unique_id=843556113]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1gfdk")
 theme_override_font_sizes/font_size = 64
 text = " 2 "
 
 [node name="level3" type="Button" parent="GridContainer" unique_id=201305532]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1gfdk")
 theme_override_font_sizes/font_size = 64
 text = " 3 "
 
 [node name="level4" type="Button" parent="GridContainer" unique_id=1581865090]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1gfdk")
 theme_override_font_sizes/font_size = 64
 text = "4"
 
 [node name="level5" type="Button" parent="GridContainer" unique_id=1171958806]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1gfdk")
 theme_override_font_sizes/font_size = 64
 text = "5"
 
 [node name="level6" type="Button" parent="GridContainer" unique_id=1714249360]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1gfdk")
 theme_override_font_sizes/font_size = 64
 text = "6"
 
