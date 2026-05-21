@@ -1,6 +1,5 @@
 extends Control
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -14,10 +13,9 @@ func _process(delta: float) -> void:
 func _on_ball_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/menu/ball_customization.tscn")
 
-
 func _on_trail_pressed() -> void:
 	pass # Replace with function body.
 
-
+ 
 func _on_background_pressed() -> void:
 	pass # Replace with function body.
