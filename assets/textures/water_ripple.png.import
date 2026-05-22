@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j6epoe2g53hl"
-path.s3tc="res://.godot/imported/scratch_01.png-af24164652f04c6f623ef55a24d0b1f3.s3tc.ctex"
+uid="uid://eq8fb0hssuir"
+path.s3tc="res://.godot/imported/water_ripple.png-def54f8adca3c29983ba7fc71258198d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/scratch_01.png"
-dest_files=["res://.godot/imported/scratch_01.png-af24164652f04c6f623ef55a24d0b1f3.s3tc.ctex"]
+source_file="res://assets/textures/water_ripple.png"
+dest_files=["res://.godot/imported/water_ripple.png-def54f8adca3c29983ba7fc71258198d.s3tc.ctex"]
 
 [params]
 

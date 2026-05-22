@@ -1,17 +1,12 @@
 [gd_scene format=3 uid="uid://le0bqhclqdlq"]
 
 [ext_resource type="Script" uid="uid://bg16o71s1xkj5" path="res://scripts/base/menu/customization.gd" id="1_nvaev"]
-[ext_resource type="Texture2D" uid="uid://b1ijckfl023hh" path="res://assets/textures/ball_football.webp" id="2_tgp3n"]
 [ext_resource type="Texture2D" uid="uid://qf8pjtwwdpe3" path="res://assets/hdri/sky_06_2k.png" id="3_vfrjv"]
 [ext_resource type="PackedScene" uid="uid://bgtvnq6d5j4op" path="res://scenes/assets/water.tscn" id="4_i2tad"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nwwp1"]
 shading_mode = 0
 albedo_color = Color(0.40392157, 1, 1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42gxp"]
-shading_mode = 0
-albedo_texture = ExtResource("2_tgp3n")
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vdplk"]
 panorama = ExtResource("3_vfrjv")
@@ -31,7 +26,6 @@ material = SubResource("StandardMaterial3D_nwwp1")
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=941398884]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0356523, 0)
-material = SubResource("StandardMaterial3D_42gxp")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=857684843]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 8.933266, 0)
@@ -43,6 +37,14 @@ environment = SubResource("Environment_xi1lk")
 transform = Transform3D(0.9405038, 0.017288005, -0.33934265, 0.0019229425, 0.998418, 0.056194503, 0.3397773, -0.053503696, 0.9389827, -1, 1.1292202, 3)
 
 [node name="water" parent="." unique_id=1278693079 instance=ExtResource("4_i2tad")]
+
+[node name="Back" type="Button" parent="." unique_id=1348965246]
+offset_left = 23.0
+offset_top = 17.0
+offset_right = 105.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 32
+text = "Back"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=875528284]
 anchors_preset = 8
@@ -75,10 +77,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -241.0
-offset_top = 227.0
-offset_right = 301.0
-offset_bottom = 290.0
+offset_left = -235.0
+offset_top = 232.0
+offset_right = 379.0
+offset_bottom = 295.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40
@@ -97,3 +99,23 @@ text = "  Trail  "
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "  Background  "
+
+[node name="Equip" type="Button" parent="." unique_id=591504531]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = 137.0
+offset_right = 49.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Equip"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="HBoxContainer/Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="HBoxContainer/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Equip" to="." method="_on_equip_pressed"]
