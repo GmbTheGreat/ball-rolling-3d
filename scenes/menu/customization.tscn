@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://le0bqhclqdlq"]
 
-[ext_resource type="Texture2D" uid="uid://b1ijckfl023hh" path="res://assets/textures/ball_football.webp" id="1_2nxkg"]
-[ext_resource type="Texture2D" uid="uid://qf8pjtwwdpe3" path="res://assets/hdri/sky_06_2k.png" id="2_rvxrh"]
+[ext_resource type="Script" uid="uid://bg16o71s1xkj5" path="res://scripts/base/menu/customization.gd" id="1_nvaev"]
+[ext_resource type="Texture2D" uid="uid://b1ijckfl023hh" path="res://assets/textures/ball_football.webp" id="2_tgp3n"]
+[ext_resource type="Texture2D" uid="uid://qf8pjtwwdpe3" path="res://assets/hdri/sky_06_2k.png" id="3_vfrjv"]
+[ext_resource type="PackedScene" uid="uid://bgtvnq6d5j4op" path="res://scenes/assets/water.tscn" id="4_i2tad"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nwwp1"]
 shading_mode = 0
@@ -9,10 +11,10 @@ albedo_color = Color(0.40392157, 1, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42gxp"]
 shading_mode = 0
-albedo_texture = ExtResource("1_2nxkg")
+albedo_texture = ExtResource("2_tgp3n")
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vdplk"]
-panorama = ExtResource("2_rvxrh")
+panorama = ExtResource("3_vfrjv")
 
 [sub_resource type="Sky" id="Sky_ng8a8"]
 sky_material = SubResource("PanoramaSkyMaterial_vdplk")
@@ -21,7 +23,8 @@ sky_material = SubResource("PanoramaSkyMaterial_vdplk")
 background_mode = 2
 sky = SubResource("Sky_ng8a8")
 
-[node name="ball_customization" type="Node3D" unique_id=206109914]
+[node name="customization" type="Node3D" unique_id=206109914]
+script = ExtResource("1_nvaev")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1238493281]
 material = SubResource("StandardMaterial3D_nwwp1")
@@ -39,27 +42,58 @@ environment = SubResource("Environment_xi1lk")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=401168420]
 transform = Transform3D(0.9405038, 0.017288005, -0.33934265, 0.0019229425, 0.998418, 0.056194503, 0.3397773, -0.053503696, 0.9389827, -1, 1.1292202, 3)
 
+[node name="water" parent="." unique_id=1278693079 instance=ExtResource("4_i2tad")]
+
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=875528284]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -574.0
+offset_top = -45.5
+offset_right = 574.0
+offset_bottom = 45.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 1000
 alignment = 1
 
-[node name="Button" type="Button" parent="HBoxContainer" unique_id=1065729351]
+[node name="Previous" type="Button" parent="HBoxContainer" unique_id=1065729351]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = " < "
 
-[node name="Button2" type="Button" parent="HBoxContainer" unique_id=88700975]
+[node name="Next" type="Button" parent="HBoxContainer" unique_id=88700975]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = " > "
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1529806539]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -241.0
+offset_top = 227.0
+offset_right = 301.0
+offset_bottom = 290.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="Ball" type="Button" parent="HBoxContainer2" unique_id=436430146]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "  Ball  "
+
+[node name="Trail" type="Button" parent="HBoxContainer2" unique_id=765528758]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "  Trail  "
+
+[node name="Background" type="Button" parent="HBoxContainer2" unique_id=346477976]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "  Background  "
