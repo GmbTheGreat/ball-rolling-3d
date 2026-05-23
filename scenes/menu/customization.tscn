@@ -5,41 +5,52 @@
 [ext_resource type="Texture2D" uid="uid://qf8pjtwwdpe3" path="res://assets/hdri/sky_06_2k.png" id="3_vfrjv"]
 [ext_resource type="Shader" uid="uid://5wgjfh4i15nq" path="res://addons/GPUTrail-main/shaders/trail_draw_pass.gdshader" id="3_vl8h5"]
 [ext_resource type="PackedScene" uid="uid://bgtvnq6d5j4op" path="res://scenes/assets/water.tscn" id="4_i2tad"]
+[ext_resource type="Texture2D" uid="uid://crk6pkb7e5rwc" path="res://addons/GPUTrail-main/defaults/texture.tres" id="4_ls4j2"]
 [ext_resource type="Script" uid="uid://clk5tgqbb7tfu" path="res://addons/GPUTrail-main/GPUTrail3D.gd" id="5_m3mfg"]
 [ext_resource type="PackedScene" uid="uid://q5c8jlvgqhp7" path="res://scenes/assets/platforms/straight_platform.tscn" id="7_i2tad"]
 [ext_resource type="PackedScene" uid="uid://87onxlt8byot" path="res://scenes/assets/platforms/curve.tscn" id="8_vl8h5"]
 
+[sub_resource type="Curve3D" id="Curve3D_vl8h5"]
+closed = true
+_data = {
+"points": PackedVector3Array(-1.8192484, 0, 3.0355682, 1.8192484, 0, -3.0355682, 0, 0, 0, 2.5994592, 0, 2.097292, -2.5994592, 0, -2.097292, 0, 0, -25, 2.617752, 0, -2.5223656, -2.617752, 0, 2.5223656, -25, 0, -25, -2.6118584, 0, -1.7664542, 2.6118584, 0, 1.7664542, -25, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56nvu"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vfrjv"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0payd"]
 shader = ExtResource("2_i2tad")
 
-[sub_resource type="Gradient" id="Gradient_i2tad"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+[sub_resource type="Gradient" id="Gradient_ls4j2"]
+offsets = PackedFloat32Array(0.38265306, 0.74489796)
+colors = PackedColorArray(0, 1, 1, 1, 0.8352941, 0.16470589, 0.2, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_vl8h5"]
-gradient = SubResource("Gradient_i2tad")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_43p2q"]
+gradient = SubResource("Gradient_ls4j2")
 
-[sub_resource type="Curve" id="Curve_ls4j2"]
+[sub_resource type="Curve" id="Curve_m3mfg"]
 bake_resolution = 16
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.32584274), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_m3mfg"]
-curve = SubResource("Curve_ls4j2")
+[sub_resource type="CurveTexture" id="CurveTexture_wmmms"]
+curve = SubResource("Curve_m3mfg")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_87qbk"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_vl8h5")
+shader_parameter/tex = ExtResource("4_ls4j2")
 shader_parameter/mask_strength = 1.0
 shader_parameter/uv_offset = Vector2(0, 0)
-shader_parameter/color_ramp = SubResource("GradientTexture1D_vl8h5")
-shader_parameter/curve = SubResource("CurveTexture_m3mfg")
+shader_parameter/color_ramp = SubResource("GradientTexture1D_43p2q")
+shader_parameter/curve = SubResource("CurveTexture_wmmms")
 shader_parameter/emmission_transform = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
 shader_parameter/flags = 44
 
-[sub_resource type="QuadMesh" id="QuadMesh_7hjbw"]
+[sub_resource type="QuadMesh" id="QuadMesh_tu04w"]
 material = SubResource("ShaderMaterial_87qbk")
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vdplk"]
@@ -55,23 +66,36 @@ sky = SubResource("Sky_ng8a8")
 [node name="customization" type="Node3D" unique_id=206109914]
 script = ExtResource("1_nvaev")
 
-[node name="PreviewBall" type="CSGSphere3D" parent="." unique_id=941398884]
+[node name="Path3D" type="Path3D" parent="." unique_id=1911097608]
+curve = SubResource("Curve3D_vl8h5")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=911303973]
+transform = Transform3D(0.8577374, 0, -0.51405114, 0, 0.99998116, 0, 0.51405114, 0, 0.8577374, 0, 0, 0)
+
+[node name="CosmeticCamera" type="Camera3D" parent="Path3D/PathFollow3D" unique_id=401168420]
+transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 4, 4)
+
+[node name="PreviewBall" type="CSGSphere3D" parent="Path3D/PathFollow3D" unique_id=941398884]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 radial_segments = 64
 rings = 32
 material = SubResource("StandardMaterial3D_56nvu")
 
-[node name="GPUTrail3D" type="GPUParticles3D" parent="PreviewBall" unique_id=593099733]
-amount = 100
-lifetime = 100.0
+[node name="RayCast3D" type="RayCast3D" parent="Path3D/PathFollow3D/PreviewBall" unique_id=1173685714]
+
+[node name="GPUTrail3D" type="GPUParticles3D" parent="Path3D/PathFollow3D/PreviewBall/RayCast3D" unique_id=628490455]
+transform = Transform3D(-1, 0, 4.371139e-08, 0, 1, 0, -4.371139e-08, 0, -1, 0, -0.4, 0)
+amount = 25
+lifetime = 25.0
 explosiveness = 1.0
 fixed_fps = 144
-process_material = SubResource("ShaderMaterial_vfrjv")
-draw_pass_1 = SubResource("QuadMesh_7hjbw")
+process_material = SubResource("ShaderMaterial_0payd")
+draw_pass_1 = SubResource("QuadMesh_tu04w")
 script = ExtResource("5_m3mfg")
-length_seconds = 0.6944444444444444
-color_ramp = SubResource("GradientTexture1D_vl8h5")
-curve = SubResource("CurveTexture_m3mfg")
+length = 25
+length_seconds = 0.1736111111111111
+color_ramp = SubResource("GradientTexture1D_43p2q")
+curve = SubResource("CurveTexture_wmmms")
 billboard = true
 _defaults_have_been_set = true
 metadata/_custom_type_script = "uid://clk5tgqbb7tfu"
@@ -82,11 +106,8 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 8
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=950327852]
 environment = SubResource("Environment_xi1lk")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=401168420]
-transform = Transform3D(0.94050395, 0.01728801, -0.3393427, 0.0019229428, 0.99841803, 0.05619451, 0.33977735, -0.053503696, 0.93898284, -1, 3.4318163, 6.3327694)
-
 [node name="Water" parent="." unique_id=1278693079 instance=ExtResource("4_i2tad")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.061446667, -0.02814293, -0.03955078)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17770338, -0.028146744, -0.10071945)
 
 [node name="Back" type="Button" parent="." unique_id=1348965246]
 offset_left = 23.0
@@ -165,29 +186,31 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "Equip"
 
-[node name="strigth_platform" parent="." unique_id=1543553135 instance=ExtResource("7_i2tad")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -9.643)
+[node name="track" type="Node" parent="." unique_id=1077743471]
 
-[node name="curve" parent="." unique_id=516517366 instance=ExtResource("8_vl8h5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9944315, 1, 2.4781923)
+[node name="strigth_platform" parent="track" unique_id=1543553135 instance=ExtResource("7_i2tad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19514847, 1, -12.383066)
 
-[node name="strigth_platform2" parent="." unique_id=794339609 instance=ExtResource("7_i2tad")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -13.058374, 1, -22.704315)
+[node name="curve" parent="track" unique_id=516517366 instance=ExtResource("8_vl8h5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.799283, 1, -0.2618742)
 
-[node name="curve2" parent="." unique_id=1386000604 instance=ExtResource("8_vl8h5")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.9132979, 1, -21.709885)
+[node name="strigth_platform2" parent="track" unique_id=794339609 instance=ExtResource("7_i2tad")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.863226, 1, -25.444384)
 
-[node name="strigth_platform3" parent="." unique_id=525839645 instance=ExtResource("7_i2tad")]
-transform = Transform3D(-1.0000001, -4.2221966e-08, -2.9802322e-08, -4.222196e-08, 1, -3.2398052e-08, 2.9802322e-08, -3.2398052e-08, -1.0000001, -26.16146, 0.99999976, -9.674427)
+[node name="curve2" parent="track" unique_id=1386000604 instance=ExtResource("8_vl8h5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.7181494, 1, -24.449953)
 
-[node name="curve3" parent="." unique_id=244666968 instance=ExtResource("8_vl8h5")]
-transform = Transform3D(-1.0000001, -4.2221966e-08, -2.9802322e-08, -4.222196e-08, 1, -3.2398052e-08, 2.9802322e-08, -3.2398052e-08, -1.0000001, -25.173018, 0.9999994, -21.79562)
+[node name="strigth_platform3" parent="track" unique_id=525839645 instance=ExtResource("7_i2tad")]
+transform = Transform3D(-1.0000001, -4.2221966e-08, -2.9802322e-08, -4.222196e-08, 1, -3.2398052e-08, 2.9802322e-08, -3.2398052e-08, -1.0000001, -25.966312, 0.99999976, -12.414494)
 
-[node name="strigth_platform4" parent="." unique_id=1141802171 instance=ExtResource("7_i2tad")]
-transform = Transform3D(5.9604645e-08, -4.2221966e-08, -1.0000001, 3.2398052e-08, 1, -4.2221956e-08, 1.0000001, -3.2398052e-08, 5.9604645e-08, -13.128168, 1.0000007, 3.373516)
+[node name="curve3" parent="track" unique_id=244666968 instance=ExtResource("8_vl8h5")]
+transform = Transform3D(-1.0000001, -4.2221966e-08, -2.9802322e-08, -4.222196e-08, 1, -3.2398052e-08, 2.9802322e-08, -3.2398052e-08, -1.0000001, -24.977869, 0.9999994, -24.535688)
 
-[node name="curve4" parent="." unique_id=620573928 instance=ExtResource("8_vl8h5")]
-transform = Transform3D(5.9604645e-08, -4.2221966e-08, -1.0000001, 3.2398052e-08, 1, -4.2221956e-08, 1.0000001, -3.2398052e-08, 5.9604645e-08, -25.260818, 1.0000001, 2.3676243)
+[node name="strigth_platform4" parent="track" unique_id=1141802171 instance=ExtResource("7_i2tad")]
+transform = Transform3D(5.9604645e-08, -4.2221966e-08, -1.0000001, 3.2398052e-08, 1, -4.2221956e-08, 1.0000001, -3.2398052e-08, 5.9604645e-08, -12.93302, 1.0000007, 0.63344955)
+
+[node name="curve4" parent="track" unique_id=620573928 instance=ExtResource("8_vl8h5")]
+transform = Transform3D(5.9604645e-08, -4.2221966e-08, -1.0000001, 3.2398052e-08, 1, -4.2221956e-08, 1.0000001, -3.2398052e-08, 5.9604645e-08, -25.06567, 1.0000001, -0.37244225)
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="HBoxContainer/Previous" to="." method="_on_previous_pressed"]

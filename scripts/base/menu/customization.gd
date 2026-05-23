@@ -1,8 +1,14 @@
 extends Node3D
 
 
-@onready var ball_preview: CSGSphere3D = $PreviewBall
-var rotation_speed := 100.0
+@onready var cosmetic_camera: Camera3D = $Path3D/PathFollow3D/CosmeticCamera
+@onready var cosmetic_trail: GPUTrail3D = $Path3D/PathFollow3D/PreviewBall/GPUTrail3D
+@onready var path_follow: PathFollow3D = $Path3D/PathFollow3D
+@onready var ball_preview: CSGSphere3D = $Path3D/PathFollow3D/PreviewBall
+@onready var ground_ray: RayCast3D = $Path3D/PathFollow3D/PreviewBall/RayCast3D
+
+@export var move_speed := 4.0
+@export var rotate_speed := 300.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,8 +17,13 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	pass
+	# move on path
+	path_follow.progress += move_speed * delta
 	
+	#rotate ball
+	ball_preview.rotate_x(-deg_to_rad(rotate_speed) * delta)
+	
+	ground_ray.global_rotation = Vector3.ZERO
 	
 func on_ball_changed(ball_data):
 	var ball_mat = ball_preview.material as StandardMaterial3D
