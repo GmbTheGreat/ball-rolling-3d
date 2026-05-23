@@ -53,7 +53,7 @@ shader_parameter/foam_strength = 0.18
 material = SubResource("ShaderMaterial_p7qtd")
 size = Vector2(2000, 1024)
 
-[node name="water" type="Node3D" unique_id=1278693079]
+[node name="Water" type="Node3D" unique_id=1278693079]
 script = ExtResource("1_4lcip")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=860921530]

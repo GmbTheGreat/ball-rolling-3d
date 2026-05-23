@@ -1,14 +1,48 @@
 [gd_scene format=3 uid="uid://le0bqhclqdlq"]
 
 [ext_resource type="Script" uid="uid://bg16o71s1xkj5" path="res://scripts/base/menu/customization.gd" id="1_nvaev"]
+[ext_resource type="Shader" uid="uid://xp144hvxfttb" path="res://addons/GPUTrail-main/shaders/trail.gdshader" id="2_i2tad"]
 [ext_resource type="Texture2D" uid="uid://qf8pjtwwdpe3" path="res://assets/hdri/sky_06_2k.png" id="3_vfrjv"]
+[ext_resource type="Shader" uid="uid://5wgjfh4i15nq" path="res://addons/GPUTrail-main/shaders/trail_draw_pass.gdshader" id="3_vl8h5"]
 [ext_resource type="PackedScene" uid="uid://bgtvnq6d5j4op" path="res://scenes/assets/water.tscn" id="4_i2tad"]
+[ext_resource type="Script" uid="uid://clk5tgqbb7tfu" path="res://addons/GPUTrail-main/GPUTrail3D.gd" id="5_m3mfg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nwwp1"]
 shading_mode = 0
 albedo_color = Color(0.40392157, 1, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56nvu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vfrjv"]
+shader = ExtResource("2_i2tad")
+
+[sub_resource type="Gradient" id="Gradient_i2tad"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vl8h5"]
+gradient = SubResource("Gradient_i2tad")
+
+[sub_resource type="Curve" id="Curve_ls4j2"]
+bake_resolution = 16
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_m3mfg"]
+curve = SubResource("Curve_ls4j2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_87qbk"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_vl8h5")
+shader_parameter/mask_strength = 1.0
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/color_ramp = SubResource("GradientTexture1D_vl8h5")
+shader_parameter/curve = SubResource("CurveTexture_m3mfg")
+shader_parameter/emmission_transform = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/flags = 44
+
+[sub_resource type="QuadMesh" id="QuadMesh_7hjbw"]
+material = SubResource("ShaderMaterial_87qbk")
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vdplk"]
 panorama = ExtResource("3_vfrjv")
@@ -23,16 +57,31 @@ sky = SubResource("Sky_ng8a8")
 [node name="customization" type="Node3D" unique_id=206109914]
 script = ExtResource("1_nvaev")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1238493281]
+[node name="BallPlatform" type="CSGBox3D" parent="." unique_id=1238493281]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1781311, 0, 0)
 size = Vector3(4.618225, 1, 1)
 material = SubResource("StandardMaterial3D_nwwp1")
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=941398884]
+[node name="PreviewBall" type="CSGSphere3D" parent="." unique_id=941398884]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 radial_segments = 64
 rings = 32
 material = SubResource("StandardMaterial3D_56nvu")
+
+[node name="GPUTrail3D" type="GPUParticles3D" parent="PreviewBall" unique_id=593099733]
+amount = 100
+lifetime = 100.0
+explosiveness = 1.0
+fixed_fps = 144
+process_material = SubResource("ShaderMaterial_vfrjv")
+draw_pass_1 = SubResource("QuadMesh_7hjbw")
+script = ExtResource("5_m3mfg")
+length_seconds = 0.6944444444444444
+color_ramp = SubResource("GradientTexture1D_vl8h5")
+curve = SubResource("CurveTexture_m3mfg")
+billboard = true
+_defaults_have_been_set = true
+metadata/_custom_type_script = "uid://clk5tgqbb7tfu"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=857684843]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 8.933266, 0)
@@ -43,7 +92,7 @@ environment = SubResource("Environment_xi1lk")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=401168420]
 transform = Transform3D(0.9405038, 0.017288005, -0.33934265, 0.0019229425, 0.998418, 0.056194503, 0.3397773, -0.053503696, 0.9389827, -1, 1.1292202, 3)
 
-[node name="water" parent="." unique_id=1278693079 instance=ExtResource("4_i2tad")]
+[node name="Water" parent="." unique_id=1278693079 instance=ExtResource("4_i2tad")]
 
 [node name="Back" type="Button" parent="." unique_id=1348965246]
 offset_left = 23.0

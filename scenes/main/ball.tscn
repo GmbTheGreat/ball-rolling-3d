@@ -38,22 +38,22 @@ orientation = 1
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0payd"]
 shader = ExtResource("4_nyjrx")
 
-[sub_resource type="Gradient" id="Gradient_oewb3"]
+[sub_resource type="Gradient" id="Gradient_nyjrx"]
 offsets = PackedFloat32Array(0.38265306, 0.74489796)
 colors = PackedColorArray(0, 1, 1, 1, 0.8352941, 0.16470589, 0.2, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_43p2q"]
-gradient = SubResource("Gradient_oewb3")
+gradient = SubResource("Gradient_nyjrx")
 
-[sub_resource type="Curve" id="Curve_y3jdm"]
+[sub_resource type="Curve" id="Curve_a1s1t"]
 bake_resolution = 16
 _data = [Vector2(0, 0.32584274), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_wmmms"]
-curve = SubResource("Curve_y3jdm")
+curve = SubResource("Curve_a1s1t")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kqkjh"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3klhb"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("5_a1s1t")
@@ -66,7 +66,7 @@ shader_parameter/emmission_transform = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 
 shader_parameter/flags = 44
 
 [sub_resource type="QuadMesh" id="QuadMesh_tu04w"]
-material = SubResource("ShaderMaterial_kqkjh")
+material = SubResource("ShaderMaterial_3klhb")
 
 [sub_resource type="Curve" id="Curve_k2nl5"]
 _data = [Vector2(0, 1), 0.0, 0.42857134, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
