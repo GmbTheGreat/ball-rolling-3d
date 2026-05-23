@@ -11,8 +11,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	ball_preview.rotate_y(deg_to_rad(rotation_speed) * delta)
-	ball_preview.rotate_x(deg_to_rad(rotation_speed) * delta)
+	pass
 	
 	
 func on_ball_changed(ball_data):
