@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c3uddklw4auex"]
 
 [ext_resource type="Script" uid="uid://dkpmkh0x2gyp6" path="res://scripts/base/main/ball.gd" id="1_k2nl5"]
-[ext_resource type="Texture2D" uid="uid://c7qrwsdf4ord4" path="res://assets/textures/skins/football.webp" id="2_a1s1t"]
 [ext_resource type="Texture2D" uid="uid://eq8fb0hssuir" path="res://assets/textures/water_ripple.png" id="3_8a8nt"]
 [ext_resource type="Shader" uid="uid://xp144hvxfttb" path="res://addons/GPUTrail-main/shaders/trail.gdshader" id="4_nyjrx"]
 [ext_resource type="Shader" uid="uid://5wgjfh4i15nq" path="res://addons/GPUTrail-main/shaders/trail_draw_pass.gdshader" id="5_a1s1t"]
@@ -10,15 +9,10 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_n1dj2"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k2nl5"]
-shading_mode = 0
-diffuse_mode = 3
-specular_mode = 1
-albedo_texture = ExtResource("2_a1s1t")
-stencil_flags = 2
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nyjrx"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_7s4qf"]
-material = SubResource("StandardMaterial3D_k2nl5")
+material = SubResource("StandardMaterial3D_nyjrx")
 
 [sub_resource type="Curve" id="Curve_8a8nt"]
 _limits = [0.0, 5.0, 0.0, 1.0]

@@ -22,6 +22,7 @@ extends RigidBody3D
 @onready var ground_ray: RayCast3D = $RayCast3D
 @onready var water_droplets: GPUParticles3D = $WaterDroplets
 @onready var water_ripple: GPUParticles3D = $RayCast3D/WaterRipple
+@onready var mesh: MeshInstance3D = $MeshInstance3D
 
 var move_direction := Vector3.FORWARD
 var current_speed := 0.0
@@ -37,6 +38,14 @@ func _ready() -> void:
 	normal_max_speed = max_speed
 	spawn_position = global_position
 	timer.timeout.connect(fade_in)
+	apply_equipped_skin()
+	
+func apply_equipped_skin():
+	var ball_skin = CosmeticsManager.get_equipped_skin()
+	var ball_matr = mesh.get_active_material(0) as StandardMaterial3D
+	
+	if ball_matr:
+		ball_matr.albedo_texture = ball_skin["texture"]
 
 func respawn():
 
@@ -51,10 +60,12 @@ func respawn():
 	for boost in get_tree().get_nodes_in_group("boosts"):
 		boost.respawn_boost()
 
+
 func fade_in():
 	animePlayer.play("fade_out")
 	timer.stop()
-	
+
+
 func apply_boost():
 	if boost_active:
 		return
@@ -76,7 +87,7 @@ func apply_boost():
 	camera.height = camera.default_height
 
 	boost_active = false
-	
+
 
 func _physics_process(delta):
 	can_jump += delta

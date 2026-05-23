@@ -28,7 +28,7 @@ func _on_next_pressed() -> void:
 
 
 func _on_equip_pressed() -> void:
-	pass # Replace with function body.
+	CosmeticsManager.equip_ball()
 
 
 func _on_back_pressed() -> void:

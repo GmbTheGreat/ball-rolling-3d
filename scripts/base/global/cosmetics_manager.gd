@@ -56,3 +56,13 @@ func next_ball():
 		current_ball_index = 0
 
 	ball_change.emit(get_current_ball_data())
+
+func equip_ball():
+	equiped_ball_id = get_current_ball_data()["id"]
+
+func get_equipped_skin() -> Dictionary:
+	for ball in balls:
+		if ball["id"] == equiped_ball_id:
+			return ball
+	
+	return balls[0]
