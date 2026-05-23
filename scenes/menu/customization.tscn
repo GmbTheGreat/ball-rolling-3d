@@ -28,6 +28,8 @@ material = SubResource("StandardMaterial3D_nwwp1")
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=941398884]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0356523, 0)
+radial_segments = 64
+rings = 32
 material = SubResource("StandardMaterial3D_56nvu")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=857684843]

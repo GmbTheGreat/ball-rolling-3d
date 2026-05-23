@@ -2,13 +2,18 @@ extends Node3D
 
 
 @onready var ball_preview: CSGSphere3D = $CSGSphere3D
+var rotation_speed := 100.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	CosmeticsManager.ball_change.connect(on_ball_changed)
 	on_ball_changed(CosmeticsManager.get_current_ball_data())
 
-
+func _process(delta: float) -> void:
+	ball_preview.rotate_y(deg_to_rad(rotation_speed) * delta)
+	ball_preview.rotate_x(deg_to_rad(rotation_speed) * delta)
+	
+	
 func on_ball_changed(ball_data):
 	var ball_mat = ball_preview.material as StandardMaterial3D
 	ball_mat.albedo_texture = ball_data.texture
