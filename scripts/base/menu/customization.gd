@@ -1,21 +1,25 @@
 extends Node3D
 
+
+@onready var ball_preview: CSGSphere3D = $CSGSphere3D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	CosmeticsManager.ball_change.connect(on_ball_changed)
+	on_ball_changed(CosmeticsManager.get_current_ball_data())
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func on_ball_changed(ball_data):
+	var ball_mat = ball_preview.material as StandardMaterial3D
+	ball_mat.albedo_texture = ball_data.texture
 
 
 func _on_previous_pressed() -> void:
-	pass # Replace with function body.
+	CosmeticsManager.previous_ball()
 
 
 func _on_next_pressed() -> void:
-	pass # Replace with function body.
+	CosmeticsManager.next_ball()
 
 
 func _on_equip_pressed() -> void:
