@@ -7,7 +7,7 @@ extends Node3D
 @onready var ball_preview: CSGSphere3D = $Path3D/PathFollow3D/PreviewBall
 @onready var ground_ray: RayCast3D = $Path3D/PathFollow3D/PreviewBall/RayCast3D
 
-@export var move_speed := 4.0
+@export var move_speed := 6.0
 @export var rotate_speed := 300.0
 
 # Called when the node enters the scene tree for the first time.
