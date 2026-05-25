@@ -54,11 +54,13 @@ func _on_back_pressed() -> void:
 
 
 func _on_ball_pressed() -> void:
-	pass # Replace with function body.
+	CosmeticsManager.current_category = CosmeticsManager.CosmeticCategory.BALL
+	trail_preview.visible = false
 
 
 func _on_trail_pressed() -> void:
-	pass # Replace with function body.
+	CosmeticsManager.current_category = CosmeticsManager.CosmeticCategory.TRAIL
+	trail_preview.visible = true
 
 
 func _on_background_pressed() -> void:
