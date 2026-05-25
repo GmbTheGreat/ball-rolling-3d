@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CosmeticTrailData" format=3 uid="uid://cs3sh3t46hy6r"]
+
+[ext_resource type="Script" uid="uid://dw06njle7ivrm" path="res://scripts/base/menu/trail_data.gd" id="1_i2465"]
+
+[sub_resource type="Gradient" id="Gradient_i2465"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3jvcp"]
+gradient = SubResource("Gradient_i2465")
+
+[resource]
+script = ExtResource("1_i2465")
+id = "blue"
+display_name = "Blue"
+color_ramp = SubResource("GradientTexture1D_3jvcp")
+metadata/_custom_type_script = "uid://dw06njle7ivrm"

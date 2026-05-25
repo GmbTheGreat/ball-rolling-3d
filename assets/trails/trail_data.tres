@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CosmeticTrailData" format=3 uid="uid://d3v0e5lbsr0v2"]
+
+[ext_resource type="Script" uid="uid://dw06njle7ivrm" path="res://scripts/base/menu/trail_data.gd" id="1_ekxr0"]
+
+[resource]
+script = ExtResource("1_ekxr0")
+metadata/_custom_type_script = "uid://dw06njle7ivrm"

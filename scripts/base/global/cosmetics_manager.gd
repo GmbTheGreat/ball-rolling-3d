@@ -40,6 +40,14 @@ var balls = [
 	},
 ]
 
+# TRAILS
+var trails = [
+	preload("res://assets/trails/default_trail.tres"),
+	preload("res://assets/trails/red_trail.tres"),
+	preload("res://assets/trails/green_trail.tres"),
+	preload("res://assets/trails/blue_trail.tres")
+]
+
 var current_ball_index = 0
 var equiped_ball_id = "football"
 
