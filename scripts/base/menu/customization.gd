@@ -1,19 +1,23 @@
 extends Node3D
 
-
+#region variables
 @onready var cosmetic_camera: Camera3D = $Path3D/PathFollow3D/CosmeticCamera
-@onready var cosmetic_trail: GPUTrail3D = $Path3D/PathFollow3D/PreviewBall/GPUTrail3D
 @onready var path_follow: PathFollow3D = $Path3D/PathFollow3D
 @onready var ball_preview: CSGSphere3D = $Path3D/PathFollow3D/PreviewBall
 @onready var ground_ray: RayCast3D = $Path3D/PathFollow3D/PreviewBall/RayCast3D
+@onready var trail_preview: GPUTrail3D = $Path3D/PathFollow3D/PreviewBall/RayCast3D/GPUTrail3D
 
-@export var move_speed := 6.0
-@export var rotate_speed := 300.0
+@export var move_speed: float = 6.0
+@export var rotate_speed: float = 300.0
+#endregion
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	CosmeticsManager.ball_change.connect(on_ball_changed)
 	on_ball_changed(CosmeticsManager.get_current_ball_data())
+	
+	CosmeticsManager.trail_change.connect(on_trail_changed)
+	on_trail_changed(CosmeticsManager.get_current_trail_data())
 
 
 func _process(delta: float) -> void:
@@ -29,6 +33,9 @@ func on_ball_changed(ball_data):
 	var ball_mat = ball_preview.material as StandardMaterial3D
 	ball_mat.albedo_texture = ball_data.texture
 
+func on_trail_changed(trail_data: CosmeticTrailData):
+	trail_preview.texture = trail_data.texture
+	trail_preview.color_ramp = trail_data.color_ramp
 
 func _on_previous_pressed() -> void:
 	CosmeticsManager.previous()
