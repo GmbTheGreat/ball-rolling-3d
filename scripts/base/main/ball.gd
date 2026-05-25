@@ -36,6 +36,7 @@ var spawn_position
 var can_jump := 0.5
 #endregion
 
+
 func _ready() -> void:
 	normal_move_speed = move_speed
 	normal_max_speed = max_speed
