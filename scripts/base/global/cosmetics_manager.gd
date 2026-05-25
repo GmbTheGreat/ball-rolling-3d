@@ -1,13 +1,14 @@
 extends Node
 
 signal ball_change(ball_data)
+signal trail_change(trail_data)
 
 enum CosmeticCategory {BALL,TRAIL,BACKGROUND}
 
 var current_category = CosmeticCategory.BALL
 
 # BALLS
-var balls = [
+var balls : Array = [
 	{
 		"id": "football",
 		"name": "Football",
@@ -41,13 +42,15 @@ var balls = [
 ]
 
 # TRAILS
-var trails = [
+var trails : Array[CosmeticTrailData] = [
 	preload("res://assets/trails/default_trail.tres"),
 	preload("res://assets/trails/red_trail.tres"),
 	preload("res://assets/trails/green_trail.tres"),
 	preload("res://assets/trails/blue_trail.tres")
 ]
 
+
+#region ball change
 var current_ball_index = 0
 var equiped_ball_id = "football"
 
@@ -79,3 +82,28 @@ func get_equipped_skin() -> Dictionary:
 			return ball
 	
 	return balls[0]
+#endregion
+
+#region trail change
+var current_trail_index := 0
+
+func get_current_trail_data() -> CosmeticTrailData:
+	return trails[current_trail_index]
+	
+func next_trail():
+	current_trail_index += 1
+
+	if current_trail_index >= trails.size():
+		current_trail_index = 0
+
+	trail_change.emit(get_current_trail_data())
+
+
+func previous_trail():
+	current_trail_index -= 1
+
+	if current_trail_index < 0:
+		current_trail_index = trails.size() - 1
+
+	trail_change.emit(get_current_trail_data())
+#endregion

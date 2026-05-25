@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://qf8pjtwwdpe3" path="res://assets/hdri/sky_02.png" id="3_vfrjv"]
 [ext_resource type="Shader" uid="uid://5wgjfh4i15nq" path="res://addons/GPUTrail-main/shaders/trail_draw_pass.gdshader" id="3_vl8h5"]
 [ext_resource type="PackedScene" uid="uid://bgtvnq6d5j4op" path="res://scenes/assets/water.tscn" id="4_i2tad"]
-[ext_resource type="Texture2D" uid="uid://cgpjka5qt1lrj" path="res://assets/textures/trails/window_04.png" id="4_ls4j2"]
+[ext_resource type="Texture2D" uid="uid://crk6pkb7e5rwc" path="res://addons/GPUTrail-main/defaults/texture.tres" id="4_ls4j2"]
 [ext_resource type="Script" uid="uid://clk5tgqbb7tfu" path="res://addons/GPUTrail-main/GPUTrail3D.gd" id="5_m3mfg"]
 [ext_resource type="PackedScene" uid="uid://q5c8jlvgqhp7" path="res://scenes/assets/platforms/straight_platform.tscn" id="7_i2tad"]
 [ext_resource type="PackedScene" uid="uid://87onxlt8byot" path="res://scenes/assets/platforms/curve.tscn" id="8_vl8h5"]
@@ -24,8 +24,8 @@ point_count = 4
 shader = ExtResource("2_i2tad")
 
 [sub_resource type="Gradient" id="Gradient_ls4j2"]
-offsets = PackedFloat32Array(0, 0.66796875)
-colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_43p2q"]
 gradient = SubResource("Gradient_ls4j2")
@@ -33,7 +33,7 @@ gradient = SubResource("Gradient_ls4j2")
 [sub_resource type="Curve" id="Curve_m3mfg"]
 _limits = [0.0, 2.0, 0.0, 1.0]
 bake_resolution = 16
-_data = [Vector2(0, 0.38686132), 0.0, 0.0, 0, 0, Vector2(1, 0.32992697), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.31094885), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_wmmms"]
@@ -94,7 +94,6 @@ draw_pass_1 = SubResource("QuadMesh_tu04w")
 script = ExtResource("5_m3mfg")
 length = 40
 length_seconds = 0.2777777777777778
-texture = ExtResource("4_ls4j2")
 color_ramp = SubResource("GradientTexture1D_43p2q")
 curve = SubResource("CurveTexture_wmmms")
 use_red_as_alpha = true
