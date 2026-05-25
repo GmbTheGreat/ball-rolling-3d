@@ -31,11 +31,11 @@ func on_ball_changed(ball_data):
 
 
 func _on_previous_pressed() -> void:
-	CosmeticsManager.previous_ball()
+	CosmeticsManager.previous()
 
 
 func _on_next_pressed() -> void:
-	CosmeticsManager.next_ball()
+	CosmeticsManager.next()
 
 
 func _on_equip_pressed() -> void:

@@ -49,7 +49,6 @@ var trails : Array[CosmeticTrailData] = [
 	preload("res://assets/trails/blue_trail.tres")
 ]
 
-
 #region ball change
 var current_ball_index = 0
 var equiped_ball_id = "football"
@@ -106,4 +105,23 @@ func previous_trail():
 		current_trail_index = trails.size() - 1
 
 	trail_change.emit(get_current_trail_data())
+#endregion
+
+#region whom to change
+func next():
+	match current_category:
+		CosmeticCategory.BALL:
+			next_ball()
+
+		CosmeticCategory.TRAIL:
+			next_trail()
+
+
+func previous():
+	match current_category:
+		CosmeticCategory.BALL:
+			previous_ball()
+
+		CosmeticCategory.TRAIL:
+			previous_trail()
 #endregion
