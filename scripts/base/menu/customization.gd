@@ -6,6 +6,7 @@ extends Node3D
 @onready var ball_preview: CSGSphere3D = $Path3D/PathFollow3D/PreviewBall
 @onready var ground_ray: RayCast3D = $Path3D/PathFollow3D/PreviewBall/RayCast3D
 @onready var trail_preview: GPUTrail3D = $Path3D/PathFollow3D/PreviewBall/RayCast3D/GPUTrail3D
+@onready var background_preview: WorldEnvironment = $WorldEnvironment
 
 @export var move_speed: float = 6.0
 @export var rotate_speed: float = 300.0
@@ -18,6 +19,9 @@ func _ready() -> void:
 	
 	CosmeticsManager.trail_change.connect(on_trail_changed)
 	on_trail_changed(CosmeticsManager.get_current_trail_data())
+	
+	CosmeticsManager.background_change.connect(on_background_changed)
+	on_background_changed(CosmeticsManager.get_current_background_data())
 
 
 func _process(delta: float) -> void:
@@ -28,14 +32,19 @@ func _process(delta: float) -> void:
 	ball_preview.rotate_x(-deg_to_rad(rotate_speed) * delta)
 	
 	ground_ray.global_rotation = Vector3.ZERO
-	
+
+
 func on_ball_changed(ball_data):
 	var ball_mat = ball_preview.material as StandardMaterial3D
 	ball_mat.albedo_texture = ball_data.texture
 
+
 func on_trail_changed(trail_data: CosmeticTrailData):
 	trail_preview.texture = trail_data.texture
 	trail_preview.color_ramp = trail_data.color_ramp
+	
+func on_background_changed(background_data):
+	background_preview.environment.sky.sky_material.panorama = background_data["hdri"]
 
 #region button signals
 func _on_previous_pressed() -> void:
@@ -53,6 +62,9 @@ func _on_equip_pressed() -> void:
 
 		CosmeticsManager.CosmeticCategory.TRAIL:
 			CosmeticsManager.equip_trail()
+		
+		CosmeticsManager.CosmeticCategory.BACKGROUND:
+			CosmeticsManager.equip_background()
 
 
 func _on_back_pressed() -> void:
@@ -70,5 +82,5 @@ func _on_trail_pressed() -> void:
 
 
 func _on_background_pressed() -> void:
-	pass # Replace with function body.
+	CosmeticsManager.current_category = CosmeticsManager.CosmeticCategory.BACKGROUND
 #endregion

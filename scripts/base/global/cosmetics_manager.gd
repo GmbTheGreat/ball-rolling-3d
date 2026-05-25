@@ -2,6 +2,7 @@ extends Node
 
 signal ball_change(ball_data)
 signal trail_change(trail_data)
+signal background_change(background_data)
 
 enum CosmeticCategory {BALL,TRAIL,BACKGROUND}
 
@@ -47,6 +48,28 @@ var trails : Array[CosmeticTrailData] = [
 	preload("res://assets/trails/red_trail.tres"),
 	preload("res://assets/trails/green_trail.tres"),
 	preload("res://assets/trails/blue_trail.tres")
+]
+
+# BACKGROUND
+var backgrounds : Array = [
+	{
+		"id": "sky_01",
+		"name": "Default",
+		"price": 0,
+		"hdri": preload("res://assets/hdri/sky_01.png")
+	},
+	{
+		"id": "sun_set",
+		"name": "Sun Set",
+		"price": 0,
+		"hdri": preload("res://assets/hdri/sky_02.png")
+	},
+	{
+		"id": "cloudy",
+		"name": "Cloudy",
+		"price": 0,
+		"hdri": preload("res://assets/hdri/sky_03.png")
+	},
 ]
 
 #region ball change
@@ -118,6 +141,44 @@ func get_equipped_trail() -> CosmeticTrailData:
 	return trails[0]
 #endregion
 
+#region background change
+var current_background_index := 0
+var equipped_background_id := "default"
+
+func get_current_background_data():
+	return backgrounds[current_background_index]
+
+
+func next_background():
+	current_background_index += 1
+
+	if current_background_index >= backgrounds.size():
+		current_background_index = 0
+
+	background_change.emit(get_current_background_data())
+
+
+func previous_background():
+	current_background_index -= 1
+
+	if current_background_index < 0:
+		current_background_index = backgrounds.size() - 1
+
+	background_change.emit(get_current_background_data())
+
+
+func equip_background():
+	equipped_background_id = get_current_background_data()["id"]
+
+
+func get_equipped_background():
+	for bg in backgrounds:
+		if bg["id"] == equipped_background_id:
+			return bg
+
+	return backgrounds[0]
+#endregion
+
 #region whom to change
 func next():
 	match current_category:
@@ -126,6 +187,9 @@ func next():
 
 		CosmeticCategory.TRAIL:
 			next_trail()
+		
+		CosmeticCategory.BACKGROUND:
+			next_background()
 
 
 func previous():
@@ -135,4 +199,7 @@ func previous():
 
 		CosmeticCategory.TRAIL:
 			previous_trail()
+			
+		CosmeticCategory.BACKGROUND:
+			next_background()
 #endregion
