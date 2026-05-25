@@ -2,6 +2,11 @@ extends Node
 
 signal ball_change(ball_data)
 
+enum CosmeticCategory {BALL,TRAIL,BACKGROUND}
+
+var current_category = CosmeticCategory.BALL
+
+# BALLS
 var balls = [
 	{
 		"id": "football",

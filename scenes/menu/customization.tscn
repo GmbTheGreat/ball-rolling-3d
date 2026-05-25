@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bg16o71s1xkj5" path="res://scripts/base/menu/customization.gd" id="1_nvaev"]
 [ext_resource type="Shader" uid="uid://xp144hvxfttb" path="res://addons/GPUTrail-main/shaders/trail.gdshader" id="2_i2tad"]
-[ext_resource type="Texture2D" uid="uid://qf8pjtwwdpe3" path="res://assets/hdri/sky_06_2k.png" id="3_vfrjv"]
+[ext_resource type="Texture2D" uid="uid://qf8pjtwwdpe3" path="res://assets/hdri/sky_02.png" id="3_vfrjv"]
 [ext_resource type="Shader" uid="uid://5wgjfh4i15nq" path="res://addons/GPUTrail-main/shaders/trail_draw_pass.gdshader" id="3_vl8h5"]
 [ext_resource type="PackedScene" uid="uid://bgtvnq6d5j4op" path="res://scenes/assets/water.tscn" id="4_i2tad"]
-[ext_resource type="Texture2D" uid="uid://crk6pkb7e5rwc" path="res://addons/GPUTrail-main/defaults/texture.tres" id="4_ls4j2"]
+[ext_resource type="Texture2D" uid="uid://cgpjka5qt1lrj" path="res://assets/textures/trails/window_04.png" id="4_ls4j2"]
 [ext_resource type="Script" uid="uid://clk5tgqbb7tfu" path="res://addons/GPUTrail-main/GPUTrail3D.gd" id="5_m3mfg"]
 [ext_resource type="PackedScene" uid="uid://q5c8jlvgqhp7" path="res://scenes/assets/platforms/straight_platform.tscn" id="7_i2tad"]
 [ext_resource type="PackedScene" uid="uid://87onxlt8byot" path="res://scenes/assets/platforms/curve.tscn" id="8_vl8h5"]
@@ -13,7 +13,7 @@
 [sub_resource type="Curve3D" id="Curve3D_vl8h5"]
 closed = true
 _data = {
-"points": PackedVector3Array(-1.8192484, 0, 3.0355682, 1.8192484, 0, -3.0355682, 0, 0, 0, 2.5994592, 0, 2.097292, -2.5994592, 0, -2.097292, 0, 0, -25, 2.617752, 0, -2.5223656, -2.617752, 0, 2.5223656, -25, 0, -25, -2.6118584, 0, -1.7664542, 2.6118584, 0, 1.7664542, -25, 0, 0),
+"points": PackedVector3Array(-1.411648, -0.00021409988, 1.2560616, 1.411648, 0.00021409988, -1.2560616, 0, 0, 0, 1.3927022, -5.2928925e-05, 1.9217529, -1.3927022, 5.2928925e-05, -1.9217529, 0, 0, -25, 1.0116901, -0.0001282692, -0.75141525, -1.0116901, 0.0001282692, 0.75141525, -25, 0, -25, -1.6148682, -0.0021038055, -1.7788048, 1.6148682, 0.0021038055, 1.7788048, -25, 0, 0),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
@@ -24,15 +24,16 @@ point_count = 4
 shader = ExtResource("2_i2tad")
 
 [sub_resource type="Gradient" id="Gradient_ls4j2"]
-offsets = PackedFloat32Array(0.38265306, 0.74489796)
-colors = PackedColorArray(0, 1, 1, 1, 0.8352941, 0.16470589, 0.2, 1)
+offsets = PackedFloat32Array(0, 0.66796875)
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_43p2q"]
 gradient = SubResource("Gradient_ls4j2")
 
 [sub_resource type="Curve" id="Curve_m3mfg"]
+_limits = [0.0, 2.0, 0.0, 1.0]
 bake_resolution = 16
-_data = [Vector2(0, 0.32584274), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.38686132), 0.0, 0.0, 0, 0, Vector2(1, 0.32992697), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_wmmms"]
@@ -48,7 +49,7 @@ shader_parameter/uv_offset = Vector2(0, 0)
 shader_parameter/color_ramp = SubResource("GradientTexture1D_43p2q")
 shader_parameter/curve = SubResource("CurveTexture_wmmms")
 shader_parameter/emmission_transform = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
-shader_parameter/flags = 44
+shader_parameter/flags = 46
 
 [sub_resource type="QuadMesh" id="QuadMesh_tu04w"]
 material = SubResource("ShaderMaterial_87qbk")
@@ -70,32 +71,33 @@ script = ExtResource("1_nvaev")
 curve = SubResource("Curve3D_vl8h5")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=911303973]
-transform = Transform3D(0.8577374, 0, -0.51405114, 0, 0.99998116, 0, 0.51405114, 0, 0.8577374, 0, 0, 0)
+transform = Transform3D(0.6647136, -8.4647254e-05, -0.7470507, 7.2757e-12, 0.99998116, -0.00011330265, 0.7470507, 7.531774e-05, 0.6647136, 0, 0, 0)
 
 [node name="CosmeticCamera" type="Camera3D" parent="Path3D/PathFollow3D" unique_id=401168420]
-transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 4, 4)
+transform = Transform3D(1, 0, 0, 0, 0.8660253, 0.49999997, 0, -0.49999997, 0.8660253, 0, 4, 4)
 
 [node name="PreviewBall" type="CSGSphere3D" parent="Path3D/PathFollow3D" unique_id=941398884]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-radial_segments = 64
-rings = 32
+radial_segments = 10
 material = SubResource("StandardMaterial3D_56nvu")
 
 [node name="RayCast3D" type="RayCast3D" parent="Path3D/PathFollow3D/PreviewBall" unique_id=1173685714]
 
 [node name="GPUTrail3D" type="GPUParticles3D" parent="Path3D/PathFollow3D/PreviewBall/RayCast3D" unique_id=628490455]
 transform = Transform3D(-1, 0, 4.371139e-08, 0, 1, 0, -4.371139e-08, 0, -1, 0, -0.4, 0)
-amount = 25
-lifetime = 25.0
+amount = 40
+lifetime = 40.0
 explosiveness = 1.0
 fixed_fps = 144
 process_material = SubResource("ShaderMaterial_0payd")
 draw_pass_1 = SubResource("QuadMesh_tu04w")
 script = ExtResource("5_m3mfg")
-length = 25
-length_seconds = 0.1736111111111111
+length = 40
+length_seconds = 0.2777777777777778
+texture = ExtResource("4_ls4j2")
 color_ramp = SubResource("GradientTexture1D_43p2q")
 curve = SubResource("CurveTexture_wmmms")
+use_red_as_alpha = true
 billboard = true
 _defaults_have_been_set = true
 metadata/_custom_type_script = "uid://clk5tgqbb7tfu"
@@ -123,70 +125,86 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -574.0
-offset_top = -45.5
-offset_right = 574.0
-offset_bottom = 45.5
+offset_left = -343.0
+offset_top = -26.5
+offset_right = 343.0
+offset_bottom = 26.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 1000
+theme_override_constants/separation = 600
 alignment = 1
 
 [node name="Previous" type="Button" parent="HBoxContainer" unique_id=1065729351]
 layout_mode = 2
-theme_override_font_sizes/font_size = 60
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
 text = " < "
 
 [node name="Next" type="Button" parent="HBoxContainer" unique_id=88700975]
 layout_mode = 2
-theme_override_font_sizes/font_size = 60
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
 text = " > "
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1529806539]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -235.0
-offset_top = 232.0
-offset_right = 379.0
-offset_bottom = 295.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 40
+[node name="HBoxContainer2" type="VBoxContainer" parent="." unique_id=2002142783]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -55.0
+offset_top = 16.0
+offset_right = -18.0
+offset_bottom = 248.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
 
 [node name="Ball" type="Button" parent="HBoxContainer2" unique_id=436430146]
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "  Ball  "
+size_flags_horizontal = 5
+size_flags_vertical = 5
+theme_override_font_sizes/font_size = 25
+text = "B"
 
 [node name="Trail" type="Button" parent="HBoxContainer2" unique_id=765528758]
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "  Trail  "
+size_flags_horizontal = 5
+size_flags_vertical = 5
+theme_override_font_sizes/font_size = 25
+text = "T"
 
 [node name="Background" type="Button" parent="HBoxContainer2" unique_id=346477976]
 layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "  Background  "
+size_flags_horizontal = 5
+size_flags_vertical = 5
+theme_override_font_sizes/font_size = 25
+text = "B"
+
+[node name="Ground" type="Button" parent="HBoxContainer2" unique_id=729008875]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 5
+theme_override_font_sizes/font_size = 25
+text = "G"
 
 [node name="Equip" type="Button" parent="." unique_id=591504531]
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -46.0
-offset_top = 137.0
-offset_right = 49.0
-offset_bottom = 190.0
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -106.0
+offset_right = 48.0
+offset_bottom = -53.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = "Equip"
 
-[node name="track" type="Node" parent="." unique_id=1077743471]
+[node name="track" type="Node3D" parent="." unique_id=1144637967]
 
 [node name="strigth_platform" parent="track" unique_id=1543553135 instance=ExtResource("7_i2tad")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19514847, 1, -12.383066)

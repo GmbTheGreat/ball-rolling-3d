@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qf8pjtwwdpe3"
-path.s3tc="res://.godot/imported/sky_06_2k.png-6b8ff7bec6e57559ac1e56b7e8b23686.s3tc.ctex"
+uid="uid://cmuorrnks6mdv"
+path.s3tc="res://.godot/imported/window_03.png-ee9a90df03aab90934bfc2d3742c3fa7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/hdri/sky_06_2k.png"
-dest_files=["res://.godot/imported/sky_06_2k.png-6b8ff7bec6e57559ac1e56b7e8b23686.s3tc.ctex"]
+source_file="res://assets/textures/trails/window_03.png"
+dest_files=["res://.godot/imported/window_03.png-ee9a90df03aab90934bfc2d3742c3fa7.s3tc.ctex"]
 
 [params]
 

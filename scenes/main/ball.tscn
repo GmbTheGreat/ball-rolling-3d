@@ -13,6 +13,8 @@
 
 [sub_resource type="SphereMesh" id="SphereMesh_7s4qf"]
 material = SubResource("StandardMaterial3D_nyjrx")
+radial_segments = 10
+rings = 6
 
 [sub_resource type="Curve" id="Curve_8a8nt"]
 _limits = [0.0, 5.0, 0.0, 1.0]
@@ -38,20 +40,18 @@ orientation = 1
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0payd"]
 shader = ExtResource("4_nyjrx")
 
-[sub_resource type="Gradient" id="Gradient_ls4j2"]
-offsets = PackedFloat32Array(0.38265306, 0.74489796)
-colors = PackedColorArray(0, 1, 1, 1, 0.8352941, 0.16470589, 0.2, 1)
+[sub_resource type="Gradient" id="Gradient_nyjrx"]
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_43p2q"]
-gradient = SubResource("Gradient_ls4j2")
+gradient = SubResource("Gradient_nyjrx")
+width = 1884
 
-[sub_resource type="Curve" id="Curve_m3mfg"]
-bake_resolution = 16
-_data = [Vector2(0, 0.32584274), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_nyjrx"]
+_data = [Vector2(0, 0.2978102), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_wmmms"]
-curve = SubResource("Curve_m3mfg")
+curve = SubResource("Curve_nyjrx")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_87qbk"]
 resource_local_to_scene = true
@@ -115,15 +115,15 @@ draw_pass_1 = SubResource("QuadMesh_k2nl5")
 
 [node name="GPUTrail3D" type="GPUParticles3D" parent="RayCast3D" unique_id=2035756401]
 transform = Transform3D(-1, 0, 4.371139e-08, 0, 1, 0, -4.371139e-08, 0, -1, 0, -0.4, 0)
-amount = 25
-lifetime = 25.0
+amount = 30
+lifetime = 30.0
 explosiveness = 1.0
 fixed_fps = 144
 process_material = SubResource("ShaderMaterial_0payd")
 draw_pass_1 = SubResource("QuadMesh_tu04w")
 script = ExtResource("6_3klhb")
-length = 25
-length_seconds = 0.1736111111111111
+length = 30
+length_seconds = 0.20833333333333334
 color_ramp = SubResource("GradientTexture1D_43p2q")
 curve = SubResource("CurveTexture_wmmms")
 billboard = true

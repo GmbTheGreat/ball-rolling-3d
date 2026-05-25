@@ -152,3 +152,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.34, 9.03822, -165.79669)
 
 [node name="ramp3" parent="Ramps" unique_id=2045066067 instance=ExtResource("5_6xh4u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.505, -2.061, -24.796)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=664440771]
