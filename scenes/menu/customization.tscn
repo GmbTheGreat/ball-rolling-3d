@@ -182,13 +182,6 @@ size_flags_vertical = 5
 theme_override_font_sizes/font_size = 25
 text = "B"
 
-[node name="Ground" type="Button" parent="HBoxContainer2" unique_id=729008875]
-layout_mode = 2
-size_flags_horizontal = 5
-size_flags_vertical = 5
-theme_override_font_sizes/font_size = 25
-text = "G"
-
 [node name="Equip" type="Button" parent="." unique_id=591504531]
 anchors_preset = 7
 anchor_left = 0.5
@@ -233,4 +226,7 @@ transform = Transform3D(5.9604645e-08, -4.2221966e-08, -1.0000001, 3.2398052e-08
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="HBoxContainer/Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="HBoxContainer/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="HBoxContainer2/Ball" to="." method="_on_ball_pressed"]
+[connection signal="pressed" from="HBoxContainer2/Trail" to="." method="_on_trail_pressed"]
+[connection signal="pressed" from="HBoxContainer2/Background" to="." method="_on_background_pressed"]
 [connection signal="pressed" from="Equip" to="." method="_on_equip_pressed"]
