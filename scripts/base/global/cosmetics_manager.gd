@@ -85,6 +85,7 @@ func get_equipped_skin() -> Dictionary:
 
 #region trail change
 var current_trail_index := 0
+var equipped_trail_id := "default"
 
 func get_current_trail_data() -> CosmeticTrailData:
 	return trails[current_trail_index]
@@ -105,6 +106,16 @@ func previous_trail():
 		current_trail_index = trails.size() - 1
 
 	trail_change.emit(get_current_trail_data())
+	
+func equip_trail():
+	equipped_trail_id = get_current_trail_data().id
+
+func get_equipped_trail() -> CosmeticTrailData:
+	for trail in trails:
+		if trail.id == equipped_trail_id:
+			return trail
+
+	return trails[0]
 #endregion
 
 #region whom to change

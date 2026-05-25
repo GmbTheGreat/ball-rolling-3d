@@ -37,6 +37,7 @@ func on_trail_changed(trail_data: CosmeticTrailData):
 	trail_preview.texture = trail_data.texture
 	trail_preview.color_ramp = trail_data.color_ramp
 
+#region button signals
 func _on_previous_pressed() -> void:
 	CosmeticsManager.previous()
 
@@ -65,3 +66,4 @@ func _on_trail_pressed() -> void:
 
 func _on_background_pressed() -> void:
 	pass # Replace with function body.
+#endregion
