@@ -1,5 +1,7 @@
 extends RigidBody3D
 
+
+#region variables
 @export var acceleration := 8.0
 @export var move_speed := 10.0
 @export var max_speed := 10.0
@@ -23,6 +25,7 @@ extends RigidBody3D
 @onready var water_droplets: GPUParticles3D = $WaterDroplets
 @onready var water_ripple: GPUParticles3D = $RayCast3D/WaterRipple
 @onready var mesh: MeshInstance3D = $MeshInstance3D
+@onready var trail: GPUTrail3D = $RayCast3D/GPUTrail3D
 
 var move_direction := Vector3.FORWARD
 var current_speed := 0.0
@@ -31,21 +34,32 @@ var normal_max_speed := 0.0
 var boost_active := false
 var spawn_position
 var can_jump := 0.5
-
+#endregion
 
 func _ready() -> void:
 	normal_move_speed = move_speed
 	normal_max_speed = max_speed
 	spawn_position = global_position
 	timer.timeout.connect(fade_in)
-	apply_equipped_skin()
 	
+	apply_equipped_skin()
+	apply_equipped_trail()
+
+
 func apply_equipped_skin():
 	var ball_skin = CosmeticsManager.get_equipped_skin()
 	var ball_matr = mesh.get_active_material(0) as StandardMaterial3D
 	
 	if ball_matr:
 		ball_matr.albedo_texture = ball_skin["texture"]
+
+
+func apply_equipped_trail():
+	var trail_data = CosmeticsManager.get_equipped_trail()
+
+	trail.texture = trail_data.texture
+	trail.color_ramp = trail_data.color_ramp
+
 
 func respawn():
 
