@@ -47,7 +47,12 @@ func _on_next_pressed() -> void:
 
 
 func _on_equip_pressed() -> void:
-	CosmeticsManager.equip_ball()
+	match CosmeticsManager.current_category:
+		CosmeticsManager.CosmeticCategory.BALL:
+			CosmeticsManager.equip_ball()
+
+		CosmeticsManager.CosmeticCategory.TRAIL:
+			CosmeticsManager.equip_trail()
 
 
 func _on_back_pressed() -> void:
