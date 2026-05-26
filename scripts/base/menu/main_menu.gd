@@ -1,15 +1,15 @@
-extends Control
+extends Node3D
 
+@onready var background: WorldEnvironment = $WorldEnvironment
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	apply_equipped_background()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+func apply_equipped_background():
+	var bg = CosmeticsManager.get_equipped_background()
+	background.environment.sky.sky_material.panorama = bg["hdri"]
 
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/menu/levels_menu.tscn")

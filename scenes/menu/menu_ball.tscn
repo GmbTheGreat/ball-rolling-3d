@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://c3uddklw4auex"]
+[gd_scene format=3 uid="uid://dfwga7b5pp4t5"]
 
-[ext_resource type="Script" uid="uid://dkpmkh0x2gyp6" path="res://scripts/base/main/ball.gd" id="1_k2nl5"]
-[ext_resource type="Texture2D" uid="uid://eq8fb0hssuir" path="res://assets/textures/water_ripple.png" id="3_8a8nt"]
-[ext_resource type="Shader" uid="uid://xp144hvxfttb" path="res://addons/GPUTrail-main/shaders/trail.gdshader" id="4_nyjrx"]
-[ext_resource type="Shader" uid="uid://5wgjfh4i15nq" path="res://addons/GPUTrail-main/shaders/trail_draw_pass.gdshader" id="5_a1s1t"]
-[ext_resource type="Script" uid="uid://clk5tgqbb7tfu" path="res://addons/GPUTrail-main/GPUTrail3D.gd" id="6_3klhb"]
-[ext_resource type="Texture2D" uid="uid://crk6pkb7e5rwc" path="res://addons/GPUTrail-main/defaults/texture.tres" id="6_a1s1t"]
+[ext_resource type="Texture2D" uid="uid://eq8fb0hssuir" path="res://assets/textures/water_ripple.png" id="1_avh0x"]
+[ext_resource type="Script" uid="uid://3mm00cs8ysk8" path="res://scripts/base/menu/menu_ball.gd" id="1_lsvsu"]
+[ext_resource type="Shader" uid="uid://xp144hvxfttb" path="res://addons/GPUTrail-main/shaders/trail.gdshader" id="2_lsvsu"]
+[ext_resource type="Shader" uid="uid://5wgjfh4i15nq" path="res://addons/GPUTrail-main/shaders/trail_draw_pass.gdshader" id="3_h2upv"]
+[ext_resource type="Texture2D" uid="uid://crk6pkb7e5rwc" path="res://addons/GPUTrail-main/defaults/texture.tres" id="4_rwexe"]
+[ext_resource type="Script" uid="uid://clk5tgqbb7tfu" path="res://addons/GPUTrail-main/GPUTrail3D.gd" id="5_lxnap"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_n1dj2"]
 
@@ -16,29 +16,8 @@ material = SubResource("StandardMaterial3D_nyjrx")
 radial_segments = 10
 rings = 6
 
-[sub_resource type="Curve" id="Curve_8a8nt"]
-_limits = [0.0, 5.0, 0.0, 1.0]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 4), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_nyjrx"]
-curve = SubResource("Curve_8a8nt")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8a8nt"]
-gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_nyjrx")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a1s1t"]
-transparency = 1
-shading_mode = 0
-albedo_texture = ExtResource("3_8a8nt")
-
-[sub_resource type="QuadMesh" id="QuadMesh_k2nl5"]
-material = SubResource("StandardMaterial3D_a1s1t")
-orientation = 1
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0payd"]
-shader = ExtResource("4_nyjrx")
+shader = ExtResource("2_lsvsu")
 
 [sub_resource type="Gradient" id="Gradient_nyjrx"]
 
@@ -56,8 +35,8 @@ curve = SubResource("Curve_nyjrx")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_87qbk"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("5_a1s1t")
-shader_parameter/tex = ExtResource("6_a1s1t")
+shader = ExtResource("3_h2upv")
+shader_parameter/tex = ExtResource("4_rwexe")
 shader_parameter/mask_strength = 1.0
 shader_parameter/uv_offset = Vector2(0, 0)
 shader_parameter/color_ramp = SubResource("GradientTexture1D_43p2q")
@@ -67,6 +46,27 @@ shader_parameter/flags = 44
 
 [sub_resource type="QuadMesh" id="QuadMesh_tu04w"]
 material = SubResource("ShaderMaterial_87qbk")
+
+[sub_resource type="Curve" id="Curve_8a8nt"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 4), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_nyjrx"]
+curve = SubResource("Curve_8a8nt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8a8nt"]
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_nyjrx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a1s1t"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("1_avh0x")
+
+[sub_resource type="QuadMesh" id="QuadMesh_k2nl5"]
+material = SubResource("StandardMaterial3D_a1s1t")
+orientation = 1
 
 [sub_resource type="Curve" id="Curve_k2nl5"]
 _data = [Vector2(0, 1), 0.0, 0.42857134, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -93,8 +93,9 @@ material = SubResource("StandardMaterial3D_0payd")
 radius = 0.1
 height = 0.2
 
-[node name="ball" type="RigidBody3D" unique_id=1403333367]
-script = ExtResource("1_k2nl5")
+[node name="menu_ball" type="RigidBody3D" unique_id=1403333367]
+gravity_scale = 0.195
+script = ExtResource("1_lsvsu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=263410226]
 shape = SubResource("SphereShape3D_n1dj2")
@@ -103,15 +104,8 @@ shape = SubResource("SphereShape3D_n1dj2")
 mesh = SubResource("SphereMesh_7s4qf")
 
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=1729249087]
+transform = Transform3D(1, 0, 0, 0, -1.0000001, 8.940697e-08, 0, -8.940697e-08, -1.0000001, 0, 0, 0)
 target_position = Vector3(0, -0.6, 0)
-
-[node name="WaterRipple" type="GPUParticles3D" parent="RayCast3D" unique_id=2094383646]
-emitting = false
-amount = 1
-one_shot = true
-fixed_fps = 0
-process_material = SubResource("ParticleProcessMaterial_8a8nt")
-draw_pass_1 = SubResource("QuadMesh_k2nl5")
 
 [node name="GPUTrail3D" type="GPUParticles3D" parent="RayCast3D" unique_id=2035756401]
 transform = Transform3D(-1, 0, 4.371139e-08, 0, 1, 0, -4.371139e-08, 0, -1, 0, -0.4, 0)
@@ -121,7 +115,7 @@ explosiveness = 1.0
 fixed_fps = 144
 process_material = SubResource("ShaderMaterial_0payd")
 draw_pass_1 = SubResource("QuadMesh_tu04w")
-script = ExtResource("6_3klhb")
+script = ExtResource("5_lxnap")
 length = 30
 length_seconds = 0.20833333333333334
 color_ramp = SubResource("GradientTexture1D_43p2q")
@@ -129,6 +123,17 @@ curve = SubResource("CurveTexture_wmmms")
 billboard = true
 _defaults_have_been_set = true
 metadata/_custom_type_script = "uid://clk5tgqbb7tfu"
+
+[node name="RayCast3D2" type="RayCast3D" parent="." unique_id=305727761]
+
+[node name="WaterRipple" type="GPUParticles3D" parent="RayCast3D2" unique_id=2094383646]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0.5, 0)
+emitting = false
+amount = 1
+one_shot = true
+fixed_fps = 0
+process_material = SubResource("ParticleProcessMaterial_8a8nt")
+draw_pass_1 = SubResource("QuadMesh_k2nl5")
 
 [node name="WaterDroplets" type="GPUParticles3D" parent="." unique_id=784224419]
 emitting = false
