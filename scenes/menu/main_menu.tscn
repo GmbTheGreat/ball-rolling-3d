@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cqnvjv1423c1a" path="res://assets/hdri/sky_01.png" id="2_kiqgm"]
 [ext_resource type="PackedScene" uid="uid://bgtvnq6d5j4op" path="res://scenes/assets/water.tscn" id="3_247la"]
 [ext_resource type="PackedScene" uid="uid://dfwga7b5pp4t5" path="res://scenes/menu/menu_ball.tscn" id="5_hj162"]
+[ext_resource type="Texture2D" uid="uid://di2i5n6e6f5jf" path="res://assets/textures/buttons/CGB02-yellow_L_btn.png" id="5_xn6kt"]
+[ext_resource type="Texture2D" uid="uid://vq2lbx76wco1" path="res://assets/textures/buttons/CGB02-green_L_btn.png" id="7_isoef"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hj162"]
 panorama = ExtResource("2_kiqgm")
@@ -16,8 +18,11 @@ sky_material = SubResource("PanoramaSkyMaterial_hj162")
 background_mode = 2
 sky = SubResource("Sky_xn6kt")
 
-[sub_resource type="FontVariation" id="FontVariation_l7wge"]
-base_font = ExtResource("2_247la")
+[sub_resource type="Theme" id="Theme_isoef"]
+default_font = ExtResource("2_247la")
+
+[sub_resource type="Theme" id="Theme_xn6kt"]
+default_font = ExtResource("2_247la")
 
 [node name="MainMenu" type="Node3D" unique_id=2004049587]
 script = ExtResource("1_3rkf3")
@@ -36,48 +41,106 @@ environment = SubResource("Environment_isoef")
 [node name="menu_ball" parent="." unique_id=1403333367 instance=ExtResource("5_hj162")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6581645, 8.508127, -1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1998031602]
-anchors_preset = -1
-anchor_left = 0.032
-anchor_top = 0.425
-anchor_right = 0.032
-anchor_bottom = 0.425
-offset_left = 0.0399971
-offset_right = 392.04
-offset_bottom = 353.0
-grow_vertical = 0
-scale = Vector2(0.67999935, 0.67999935)
-size_flags_horizontal = 0
-theme_override_constants/separation = 11
+[node name="Buttons" type="CanvasLayer" parent="." unique_id=1918625446]
+scale = Vector2(0.4, 0.4)
+transform = Transform2D(0.4, 0, 0, 0.4, 0, 0)
 
-[node name="Start" type="Button" parent="VBoxContainer" unique_id=909495439]
+[node name="Start" type="TextureButton" parent="Buttons" unique_id=1913381072]
 texture_filter = 1
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_247la")
-theme_override_font_sizes/font_size = 40
+offset_left = 160.0
+offset_top = 880.0
+offset_right = 672.0
+offset_bottom = 1020.0
+theme = SubResource("Theme_isoef")
+texture_normal = ExtResource("5_xn6kt")
+texture_hover = ExtResource("7_isoef")
+
+[node name="Label" type="Label" parent="Buttons/Start" unique_id=901298118]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 62
 text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Customize" type="Button" parent="VBoxContainer" unique_id=2144891481]
+[node name="Customize" type="TextureButton" parent="Buttons" unique_id=787687178]
 texture_filter = 1
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_247la")
-theme_override_font_sizes/font_size = 40
-text = "  Customize  "
+offset_left = 160.0
+offset_top = 1084.0
+offset_right = 672.0
+offset_bottom = 1224.0
+theme = SubResource("Theme_xn6kt")
+texture_normal = ExtResource("5_xn6kt")
+texture_hover = ExtResource("7_isoef")
 
-[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1045468362]
-texture_filter = 1
-layout_mode = 2
-theme_override_fonts/font = SubResource("FontVariation_l7wge")
-theme_override_font_sizes/font_size = 40
-text = "  Settings  "
+[node name="Label" type="Label" parent="Buttons/Customize" unique_id=875900297]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 62
+text = "Customize"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Exit" type="Button" parent="VBoxContainer" unique_id=619647018]
+[node name="Settings" type="TextureButton" parent="Buttons" unique_id=299428420]
 texture_filter = 1
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_247la")
-theme_override_font_sizes/font_size = 40
+offset_left = 160.0
+offset_top = 1288.0
+offset_right = 672.0
+offset_bottom = 1428.0
+theme = SubResource("Theme_xn6kt")
+texture_normal = ExtResource("5_xn6kt")
+texture_hover = ExtResource("7_isoef")
+
+[node name="Label" type="Label" parent="Buttons/Settings" unique_id=404116857]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 62
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit" type="TextureButton" parent="Buttons" unique_id=1320392781]
+texture_filter = 1
+offset_left = 160.0
+offset_top = 1492.0
+offset_right = 672.0
+offset_bottom = 1632.0
+theme = SubResource("Theme_xn6kt")
+texture_normal = ExtResource("5_xn6kt")
+texture_hover = ExtResource("7_isoef")
+
+[node name="Label" type="Label" parent="Buttons/Exit" unique_id=1504612918]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 62
 text = "Exit"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Customize" to="." method="_on_customize_pressed"]
-[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="mouse_entered" from="Buttons/Start" to="." method="_on_start_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Start" to="." method="_on_start_mouse_exited"]
+[connection signal="pressed" from="Buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="Buttons/Customize" to="." method="_on_customize_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Customize" to="." method="_on_customize_mouse_exited"]
+[connection signal="pressed" from="Buttons/Customize" to="." method="_on_customize_pressed"]
+[connection signal="mouse_entered" from="Buttons/Settings" to="." method="_on_settings_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Settings" to="." method="_on_settings_mouse_exited"]
+[connection signal="mouse_entered" from="Buttons/Exit" to="." method="_on_exit_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Exit" to="." method="_on_exit_mouse_exited"]
+[connection signal="pressed" from="Buttons/Exit" to="." method="_on_exit_pressed"]

@@ -24,6 +24,7 @@ columns = 3
 
 [node name="level1" type="Button" parent="GridContainer" unique_id=1071519886]
 layout_mode = 2
+focus_mode = 0
 theme_override_fonts/font = ExtResource("2_1gfdk")
 theme_override_font_sizes/font_size = 64
 text = " 1 "
