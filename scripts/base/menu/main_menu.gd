@@ -1,7 +1,6 @@
 extends Node3D
 
 @onready var background: WorldEnvironment = $WorldEnvironment
-
 @onready var start_btn = $Buttons/Start
 @onready var customize_btn = $Buttons/Customize
 @onready var settings_btn = $Buttons/Settings
