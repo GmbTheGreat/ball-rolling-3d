@@ -147,29 +147,32 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
 text = " > "
 
-[node name="Ball" type="TextureButton" parent="." unique_id=2134445985]
-offset_left = 1225.0
+[node name="Ball" type="Button" parent="." unique_id=1316135236]
+offset_left = 1226.0
 offset_top = 16.0
-offset_right = 1262.0
-offset_bottom = 59.0
+offset_right = 1263.0
+offset_bottom = 47.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
+text = "Ball"
 
-[node name="Trail" type="TextureButton" parent="." unique_id=1488172781]
+[node name="Trail" type="Button" parent="." unique_id=795978864]
 offset_left = 1225.0
-offset_top = 79.0
-offset_right = 1262.0
-offset_bottom = 122.0
+offset_top = 80.0
+offset_right = 1268.0
+offset_bottom = 111.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
+text = "Trail"
 
-[node name="Background" type="TextureButton" parent="." unique_id=120338932]
-offset_left = 1225.0
+[node name="Background" type="Button" parent="." unique_id=1469133656]
+offset_left = 1224.0
 offset_top = 142.0
-offset_right = 1262.0
-offset_bottom = 185.0
+offset_right = 1325.0
+offset_bottom = 173.0
 size_flags_horizontal = 5
 size_flags_vertical = 5
+text = "Background"
 
 [node name="Equip" type="Button" parent="." unique_id=591504531]
 anchors_preset = 7
