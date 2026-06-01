@@ -6,11 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://q5c8jlvgqhp7" path="res://scenes/assets/platforms/straight_platform.tscn" id="4_v45ci"]
 [ext_resource type="PackedScene" uid="uid://msl1lbid8crh" path="res://scenes/assets/platforms/ramp.tscn" id="5_6xh4u"]
 [ext_resource type="PackedScene" uid="uid://b86kw00lt8vl5" path="res://scenes/assets/interactables/boost.tscn" id="6_6xh4u"]
+[ext_resource type="PackedScene" uid="uid://bhr8neihmxmiq" path="res://scenes/assets/interactables/star.tscn" id="7_cyt5c"]
 
 [node name="Test Level" type="Node3D" unique_id=1413653819]
 
 [node name="Win" type="CSGTorus3D" parent="." unique_id=1280377498]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 13.505, 1.272, -19.226)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 13.505, 1.7287232, -17.49135)
 use_collision = true
 inner_radius = 2.0
 outer_radius = 3.0
@@ -153,4 +154,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.34, 9.03822, -165.79669)
 [node name="ramp3" parent="Ramps" unique_id=2045066067 instance=ExtResource("5_6xh4u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.505, -2.061, -24.796)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=664440771]
+[node name="star" parent="." unique_id=615678935 groups=["star"] instance=ExtResource("7_cyt5c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.673292, 12.124981, -159.81712)

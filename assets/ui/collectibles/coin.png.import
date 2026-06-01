@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxwqigw82bl0f"
-path="res://.godot/imported/ChatGPT_Image_May_26__2026__06_39_07_PM-removebg-preview.png-ee671fdc69702c8dfdf012a5fd6d04cb.ctex"
+uid="uid://dltmw4out452m"
+path="res://.godot/imported/coin.png-f6a00a912b9622d2985e0d4a055e3df1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/buttons/ChatGPT_Image_May_26__2026__06_39_07_PM-removebg-preview.png"
-dest_files=["res://.godot/imported/ChatGPT_Image_May_26__2026__06_39_07_PM-removebg-preview.png-ee671fdc69702c8dfdf012a5fd6d04cb.ctex"]
+source_file="res://assets/ui/collectibles/coin.png"
+dest_files=["res://.godot/imported/coin.png-f6a00a912b9622d2985e0d4a055e3df1.ctex"]
 
 [params]
 

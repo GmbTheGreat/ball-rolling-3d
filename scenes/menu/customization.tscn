@@ -8,7 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://crk6pkb7e5rwc" path="res://addons/GPUTrail-main/defaults/texture.tres" id="4_ls4j2"]
 [ext_resource type="Script" uid="uid://clk5tgqbb7tfu" path="res://addons/GPUTrail-main/GPUTrail3D.gd" id="5_m3mfg"]
 [ext_resource type="PackedScene" uid="uid://q5c8jlvgqhp7" path="res://scenes/assets/platforms/straight_platform.tscn" id="7_i2tad"]
+[ext_resource type="Texture2D" uid="uid://dehfoqauc7628" path="res://assets/ui/button_atlas_ui.tres" id="8_m3mfg"]
 [ext_resource type="PackedScene" uid="uid://87onxlt8byot" path="res://scenes/assets/platforms/curve.tscn" id="8_vl8h5"]
+[ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="9_87qbk"]
+[ext_resource type="Texture2D" uid="uid://dv1yptisdc8f3" path="res://assets/ui/window_atlas_ui.tres" id="12_7hjbw"]
 
 [sub_resource type="Curve3D" id="Curve3D_vl8h5"]
 closed = true
@@ -64,6 +67,34 @@ sky_material = SubResource("PanoramaSkyMaterial_vdplk")
 background_mode = 2
 sky = SubResource("Sky_ng8a8")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hjbw"]
+atlas = ExtResource("8_m3mfg")
+region = Rect2(2352, 1408, 181, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3mfg"]
+atlas = ExtResource("8_m3mfg")
+region = Rect2(401, 2716, 181, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87qbk"]
+atlas = ExtResource("8_m3mfg")
+region = Rect2(401, 2498, 181, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q76ue"]
+atlas = ExtResource("12_7hjbw")
+region = Rect2(2150, 1234, 301, 441)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjd33"]
+atlas = ExtResource("8_m3mfg")
+region = Rect2(629, 433, 425, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xewsq"]
+atlas = ExtResource("8_m3mfg")
+region = Rect2(629, 433, 425, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikwwa"]
+atlas = ExtResource("8_m3mfg")
+region = Rect2(629, 433, 425, 189)
+
 [node name="customization" type="Node3D" unique_id=206109914]
 script = ExtResource("1_nvaev")
 
@@ -110,83 +141,128 @@ environment = SubResource("Environment_xi1lk")
 [node name="Water" parent="." unique_id=1278693079 instance=ExtResource("4_i2tad")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17770338, -0.028146744, -0.10071945)
 
-[node name="Back" type="Button" parent="." unique_id=1348965246]
-offset_left = 23.0
-offset_top = 17.0
-offset_right = 105.0
-offset_bottom = 70.0
-theme_override_font_sizes/font_size = 32
-text = "Back"
+[node name="Back" type="TextureButton" parent="." unique_id=1042860709]
+offset_left = 56.0
+offset_top = 51.0
+offset_right = 237.0
+offset_bottom = 241.0
+scale = Vector2(0.4, 0.4)
+texture_normal = SubResource("AtlasTexture_7hjbw")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=875528284]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -343.0
-offset_top = -26.5
-offset_right = 343.0
-offset_bottom = 26.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 600
+offset_left = 159.0
+offset_top = 337.0
+offset_right = 2521.0
+offset_bottom = 526.0
+scale = Vector2(0.4, 0.4)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 2000
 alignment = 1
 
-[node name="Previous" type="Button" parent="HBoxContainer" unique_id=1065729351]
+[node name="Previous" type="TextureButton" parent="HBoxContainer" unique_id=726885036]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 32
-text = " < "
+texture_normal = SubResource("AtlasTexture_m3mfg")
 
-[node name="Next" type="Button" parent="HBoxContainer" unique_id=88700975]
+[node name="Next" type="TextureButton" parent="HBoxContainer" unique_id=2052542853]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 32
-text = " > "
+texture_normal = SubResource("AtlasTexture_87qbk")
 
-[node name="Ball" type="Button" parent="." unique_id=1316135236]
-offset_left = 1226.0
-offset_top = 16.0
-offset_right = 1263.0
-offset_bottom = 47.0
+[node name="TextureRect" type="TextureRect" parent="." unique_id=208113733]
+offset_left = 1143.0
+offset_top = 28.0
+offset_right = 1453.0
+offset_bottom = 522.99994
+scale = Vector2(0.4, 0.4)
+texture = SubResource("AtlasTexture_q76ue")
+
+[node name="Ball" type="TextureButton" parent="." unique_id=1803289598]
+offset_left = 1152.0
+offset_top = 48.0
+offset_right = 1577.0
+offset_bottom = 237.0
+scale = Vector2(0.25, 0.25)
 size_flags_horizontal = 5
 size_flags_vertical = 5
+texture_normal = SubResource("AtlasTexture_fjd33")
+
+[node name="Label" type="Label" parent="Ball" unique_id=1972020795]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 44.0
+offset_right = 280.0
+offset_bottom = 154.0
+theme_override_fonts/font = ExtResource("9_87qbk")
+theme_override_font_sizes/font_size = 80
 text = "Ball"
 
-[node name="Trail" type="Button" parent="." unique_id=795978864]
-offset_left = 1225.0
-offset_top = 80.0
-offset_right = 1268.0
-offset_bottom = 111.0
+[node name="Trail" type="TextureButton" parent="." unique_id=1913931347]
+offset_left = 1152.0
+offset_top = 104.0
+offset_right = 1577.0
+offset_bottom = 293.0
+scale = Vector2(0.25, 0.25)
 size_flags_horizontal = 5
 size_flags_vertical = 5
+texture_normal = SubResource("AtlasTexture_xewsq")
+
+[node name="Label2" type="Label" parent="Trail" unique_id=150555547]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 44.0
+offset_right = 306.0
+offset_bottom = 154.0
+theme_override_fonts/font = ExtResource("9_87qbk")
+theme_override_font_sizes/font_size = 80
 text = "Trail"
 
-[node name="Background" type="Button" parent="." unique_id=1469133656]
-offset_left = 1224.0
-offset_top = 142.0
-offset_right = 1325.0
-offset_bottom = 173.0
+[node name="Background" type="TextureButton" parent="." unique_id=854996570]
+offset_left = 1152.0
+offset_top = 160.0
+offset_right = 1577.0
+offset_bottom = 349.0
+scale = Vector2(0.25, 0.25)
 size_flags_horizontal = 5
 size_flags_vertical = 5
-text = "Background"
+texture_normal = SubResource("AtlasTexture_xewsq")
 
-[node name="Equip" type="Button" parent="." unique_id=591504531]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -47.0
-offset_top = -106.0
-offset_right = 48.0
-offset_bottom = -53.0
+[node name="Label3" type="Label" parent="Background" unique_id=1997682127]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 44.0
+offset_right = 379.0
+offset_bottom = 154.0
+theme_override_fonts/font = ExtResource("9_87qbk")
+theme_override_font_sizes/font_size = 80
+text = "BackGr"
+
+[node name="Equip" type="TextureButton" parent="." unique_id=1768036246]
+anchors_preset = -1
+anchor_left = 0.33400002
+anchor_top = 0.66400003
+anchor_right = 0.33400002
+anchor_bottom = 0.66400003
+offset_left = 158.47998
+offset_top = 65.91998
+offset_right = 583.48
+offset_bottom = 254.91998
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 32
+scale = Vector2(0.35, 0.35)
+texture_normal = SubResource("AtlasTexture_ikwwa")
+
+[node name="Label" type="Label" parent="Equip" unique_id=1794164039]
+layout_mode = 0
+offset_left = 92.49999
+offset_top = 30.0
+offset_right = 335.5
+offset_bottom = 140.0
+theme_override_fonts/font = ExtResource("9_87qbk")
+theme_override_font_sizes/font_size = 80
 text = "Equip"
 
 [node name="track" type="Node3D" parent="." unique_id=1144637967]

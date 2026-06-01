@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c718wvcjwnjr7"
-path="res://.godot/imported/tennis.png-1e077629b02ea19f92713303c3248998.ctex"
+uid="uid://20inhm7dum7p"
+path="res://.godot/imported/Button.png-1a60562274a332bde4f7f1b8950e778b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/buttons/tennis.png"
-dest_files=["res://.godot/imported/tennis.png-1e077629b02ea19f92713303c3248998.ctex"]
+source_file="res://assets/ui/Button.png"
+dest_files=["res://.godot/imported/Button.png-1a60562274a332bde4f7f1b8950e778b.ctex"]
 
 [params]
 
