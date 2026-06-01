@@ -1,6 +1,7 @@
 extends Node
 
 @onready var level_holder = $LevelHolder
+@onready var hearts_label: Label = $Control/Label
 @onready var background: WorldEnvironment = $WorldEnvironment
 
 var current_level
@@ -13,6 +14,7 @@ var level_time := 0.0
 func _ready() -> void:
 	load_level(LevelsManager.current_level)
 	apply_equipped_background()
+	update_hearts_ui()
 
 func load_level(level_path: String):
 	# Remove old level
@@ -30,14 +32,20 @@ func load_level(level_path: String):
 
 	# Reset hearts
 	hearts = 3
+	update_hearts_ui()
 	star_collected = false
 
 func collect_star():
 	if not star_collected:
 		star_collected = true
 
+func update_hearts_ui():
+	hearts_label.text = str(hearts)
+
 func lose_heart():
 	hearts -= 1
+
+	update_hearts_ui()
 
 	if hearts <= 0:
 		game_over()

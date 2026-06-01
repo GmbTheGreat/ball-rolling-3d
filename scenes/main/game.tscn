@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://7cgnyrelrll1" path="res://scripts/base/main/camera_3d.gd" id="4_em1bs"]
 [ext_resource type="PackedScene" uid="uid://c3uddklw4auex" path="res://scenes/main/ball.tscn" id="5_em1bs"]
 [ext_resource type="PackedScene" uid="uid://bgtvnq6d5j4op" path="res://scenes/assets/water.tscn" id="5_gf1f2"]
-[ext_resource type="Texture2D" uid="uid://dltmw4out452m" path="res://assets/ui/collectibles/coin.png" id="6_em1bs"]
+[ext_resource type="Texture2D" uid="uid://biaxfglek4mfe" path="res://assets/ui/heart.png" id="6_0rn35"]
 [ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="7_0rn35"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_gsayk"]
@@ -124,8 +124,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 [node name="Control" type="Control" parent="." unique_id=1348079725]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 2.0
+offset_top = 592.0
+offset_right = 42.0
+offset_bottom = 632.0
 
 [node name="Panel" type="Panel" parent="Control" unique_id=1330726594]
 layout_mode = 0
@@ -143,7 +145,7 @@ offset_top = 35.999996
 offset_right = 5040.0
 offset_bottom = 5036.0
 scale = Vector2(0.015, 0.015)
-texture = ExtResource("6_em1bs")
+texture = ExtResource("6_0rn35")
 
 [node name="Label" type="Label" parent="Control" unique_id=456294473]
 layout_mode = 0
@@ -153,4 +155,4 @@ offset_right = 160.0
 offset_bottom = 104.0
 theme_override_fonts/font = ExtResource("7_0rn35")
 theme_override_font_sizes/font_size = 50
-text = "0"
+text = "3"
