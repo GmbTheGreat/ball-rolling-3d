@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://djjqcxlr01ksq"]
+
+[ext_resource type="Shader" uid="uid://bql3pxrp2gthg" path="res://scripts/shaders/speedlines.gdshader" id="1_hr7wc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hr7wc"]
+shader = ExtResource("1_hr7wc")
+shader_parameter/Speed = 0.5
+shader_parameter/LineLength = 2.0
+shader_parameter/LineColor = Color(0, 0, 0, 1)
+shader_parameter/Softness = 0.1
+shader_parameter/Weirdness = 0.1
+shader_parameter/Radius = 1.3
+shader_parameter/Freq = 10.0
+
+[node name="speedlines" type="Control" unique_id=1825705356]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1050441131]
+material = SubResource("ShaderMaterial_hr7wc")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

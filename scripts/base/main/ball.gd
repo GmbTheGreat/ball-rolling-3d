@@ -19,13 +19,13 @@ extends RigidBody3D
 @export var jump_cooldown := 0.5
 
 @onready var camera: Camera3D = $"../Camera3D"
-@onready var animePlayer: AnimationPlayer = $"../Animation/AnimationPlayer"
-@onready var timer: Timer = $"../Animation/Timer"
 @onready var ground_ray: RayCast3D = $RayCast3D
 @onready var water_droplets: GPUParticles3D = $WaterDroplets
 @onready var water_ripple: GPUParticles3D = $RayCast3D/WaterRipple
 @onready var mesh: MeshInstance3D = $MeshInstance3D
 @onready var trail: GPUTrail3D = $RayCast3D/GPUTrail3D
+@onready var speedlines: Control = $"../speedlines"
+@onready var speedlines_rect = $"../speedlines/ColorRect"
 
 var move_direction := Vector3.FORWARD
 var current_speed := 0.0
@@ -43,6 +43,8 @@ func _ready() -> void:
 	normal_max_speed = max_speed
 	spawn_position = global_position
 	
+	speedlines.visible = false
+
 	apply_equipped_skin()
 	apply_equipped_trail()
 
@@ -92,6 +94,11 @@ func apply_boost():
 	camera.distance = 4.0
 	camera.height = 1.5
 
+	speedlines.visible = true
+
+	var mat := speedlines_rect.material as ShaderMaterial
+	mat.set_shader_parameter("intensity", 1.0)
+
 	await get_tree().create_timer(boost_duration).timeout
 
 	move_speed = normal_move_speed
@@ -101,6 +108,8 @@ func apply_boost():
 	camera.height = camera.default_height
 
 	boost_active = false
+	mat.set_shader_parameter("intensity", 0.0)
+	speedlines.visible = false
 
 
 func _physics_process(delta):
