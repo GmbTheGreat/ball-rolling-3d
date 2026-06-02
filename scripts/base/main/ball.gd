@@ -33,6 +33,7 @@ var normal_move_speed := 0.0
 var normal_max_speed := 0.0
 var boost_active := false
 var spawn_position
+var is_respawning := false
 var can_jump := 0.5
 #endregion
 
@@ -77,10 +78,6 @@ func respawn():
 		star.reset_star()
 		
 	get_tree().current_scene.lose_heart()
-
-func fade_in():
-	animePlayer.play("fade_out")
-	timer.stop()
 
 
 func apply_boost():
@@ -198,12 +195,16 @@ func _physics_process(delta):
 		linear_velocity.z = horizontal_velocity.z
 
 	# FALL CHECK
-	if position.y < -3.0 or Input.is_action_just_pressed("reset_debug"):
+	if (position.y < -3.0 or Input.is_action_just_pressed("reset_debug")) and !is_respawning:
+		is_respawning = true
+
 		water_droplets.emitting = true
 		water_ripple.emitting = true
-		
+
 		angular_velocity = Vector3.ZERO
 		current_speed = 0.0
-		
+
 		await get_tree().create_timer(respawn_cooldown).timeout
 		respawn()
+
+		is_respawning = false
