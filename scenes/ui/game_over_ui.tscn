@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b8a28kn3m1kvi" path="res://assets/ui/broken-heart.png" id="5_6o2nj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6o2nj"]
-bg_color = Color(0, 0, 0, 0.29803923)
+bg_color = Color(0, 0, 0, 0.70980394)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u4odh"]
 atlas = ExtResource("1_i5oy2")
