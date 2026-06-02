@@ -54,6 +54,7 @@ material = SubResource("ShaderMaterial_p7qtd")
 size = Vector2(2000, 1024)
 
 [node name="Water" type="Node3D"]
+visible = false
 script = ExtResource("1_4lcip")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
