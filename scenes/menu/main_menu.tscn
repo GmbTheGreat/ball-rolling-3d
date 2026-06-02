@@ -53,6 +53,7 @@ offset_right = 672.0
 offset_bottom = 1020.0
 theme = SubResource("Theme_isoef")
 texture_normal = ExtResource("5_xn6kt")
+texture_pressed = ExtResource("5_xn6kt")
 texture_hover = ExtResource("7_isoef")
 
 [node name="Label" type="Label" parent="Buttons/Start"]
