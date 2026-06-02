@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://diemjwxf8sebk"]
+
+[ext_resource type="Texture2D" uid="uid://biaxfglek4mfe" path="res://assets/ui/heart.png" id="1_jlmwh"]
+[ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="2_n3j5y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0rn35"]
+bg_color = Color(0, 0, 0, 0.45490196)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="heart_ui" type="Control" unique_id=630889087]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 2.0
+offset_top = 592.0
+offset_right = 42.0
+offset_bottom = 632.0
+
+[node name="Panel" type="Panel" parent="." unique_id=590867404]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 37.0
+offset_right = 196.0
+offset_bottom = 77.34093
+scale = Vector2(0.9199991, 1.7599994)
+theme_override_styles/panel = SubResource("StyleBoxFlat_0rn35")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=127459504]
+layout_mode = 0
+offset_left = 39.999996
+offset_top = 35.999996
+offset_right = 5040.0
+offset_bottom = 5036.0
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("1_jlmwh")
+
+[node name="Label" type="Label" parent="." unique_id=1520653036]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 44.0
+offset_right = 160.0
+offset_bottom = 104.0
+theme_override_fonts/font = ExtResource("2_n3j5y")
+theme_override_font_sizes/font_size = 50
+text = "3"

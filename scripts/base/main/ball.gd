@@ -41,7 +41,6 @@ func _ready() -> void:
 	normal_move_speed = move_speed
 	normal_max_speed = max_speed
 	spawn_position = global_position
-	timer.timeout.connect(fade_in)
 	
 	apply_equipped_skin()
 	apply_equipped_trail()

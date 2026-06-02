@@ -1,8 +1,9 @@
 extends Node
 
-@onready var level_holder = $LevelHolder
-@onready var hearts_label: Label = $Control/Label
+@onready var level_holder: Node3D = $LevelHolder
+@onready var hearts_label: Label = $heart_ui/Label
 @onready var background: WorldEnvironment = $WorldEnvironment
+@onready var game_over_ui: Control = $game_over_ui
 
 var current_level
 
@@ -11,47 +12,82 @@ var star_collected := false
 var hearts := 3
 var level_time := 0.0
 
+
 func _ready() -> void:
+	game_over_ui.retry_pressed.connect(_on_retry_pressed)
+	game_over_ui.home_pressed.connect(_on_home_pressed)
+	game_over_ui.ad_pressed.connect(_on_ad_pressed)
+
+	game_over_ui.visible = false
+
 	load_level(LevelsManager.current_level)
 	apply_equipped_background()
 	update_hearts_ui()
 
+
 func load_level(level_path: String):
+	game_over_ui.visible = false
+
 	# Remove old level
 	for child in level_holder.get_children():
 		child.queue_free()
 
-	# Load level scene
+	# Load level
 	var level_scene = load(level_path)
-
-	# Create instance
 	var level_instance = level_scene.instantiate()
 
-	# Add into LevelHolder
 	level_holder.add_child(level_instance)
 
-	# Reset hearts
+	# Reset run data
 	hearts = 3
-	update_hearts_ui()
 	star_collected = false
+	level_time = 0.0
+
+	update_hearts_ui()
+
 
 func collect_star():
-	if not star_collected:
-		star_collected = true
+	star_collected = true
+
 
 func update_hearts_ui():
 	hearts_label.text = str(hearts)
 
+
 func lose_heart():
 	hearts -= 1
-
 	update_hearts_ui()
 
 	if hearts <= 0:
 		game_over()
 
+
 func game_over():
+	game_over_ui.visible = true
+	get_tree().paused = true
+
+
+func _on_retry_pressed():
+	get_tree().paused = false
 	load_level(LevelsManager.current_level)
+
+
+func _on_home_pressed():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
+
+
+func _on_ad_pressed():
+	get_tree().paused = false
+
+	hearts = 1
+	update_hearts_ui()
+
+	game_over_ui.visible = false
+
+	# TODO:
+	# Respawn player here instead of reloading level
+
 
 func apply_equipped_background():
 	var bg = CosmeticsManager.get_equipped_background()
