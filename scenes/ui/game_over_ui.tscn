@@ -30,6 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 0
 script = ExtResource("1_6o2nj")
 
 [node name="Panel" type="Panel" parent="." unique_id=2027431030]
@@ -48,32 +49,31 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -151.0
-offset_top = -243.0
-offset_right = 299.0
-offset_bottom = 387.0
+offset_left = -216.0
+offset_top = -320.0
+offset_right = 234.0
+offset_bottom = 310.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.7, 0.7)
 texture = SubResource("AtlasTexture_u4odh")
 
 [node name="Title" type="Label" parent="." unique_id=444126465]
 layout_mode = 0
-offset_left = 579.0
-offset_top = 125.0
-offset_right = 706.0
-offset_bottom = 173.0
+offset_left = 569.0
+offset_top = 56.0
+offset_right = 728.0
+offset_bottom = 116.0
 theme_override_fonts/font = ExtResource("4_pgjlk")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 50
 text = "Failed"
 
 [node name="Home" type="TextureButton" parent="." unique_id=1612019190]
 layout_mode = 0
-offset_left = 568.0
-offset_top = 339.0
-offset_right = 749.0
-offset_bottom = 529.0
-scale = Vector2(0.2, 0.2)
+offset_left = 520.0
+offset_top = 343.0
+offset_right = 701.0
+offset_bottom = 533.0
+scale = Vector2(0.32, 0.32)
 texture_normal = SubResource("AtlasTexture_nkgcp")
 
 [node name="Label" type="Label" parent="Home" unique_id=88273868]
@@ -88,11 +88,11 @@ text = "Home"
 
 [node name="Retry" type="TextureButton" parent="." unique_id=1377091295]
 layout_mode = 0
-offset_left = 568.0
-offset_top = 391.0
-offset_right = 749.0
-offset_bottom = 580.0
-scale = Vector2(0.2, 0.2)
+offset_left = 520.0
+offset_top = 422.0
+offset_right = 701.0
+offset_bottom = 611.0
+scale = Vector2(0.32, 0.32)
 texture_normal = SubResource("AtlasTexture_sxdiq")
 
 [node name="Label" type="Label" parent="Retry" unique_id=1916966126]
@@ -112,13 +112,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -72.0
-offset_top = 83.0
-offset_right = 28.0
-offset_bottom = 183.0
+offset_left = -119.0
+offset_top = 136.0
+offset_right = -19.0
+offset_bottom = 236.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.36, 0.36)
+scale = Vector2(0.55, 0.55)
 texture_normal = ExtResource("3_sxdiq")
 
 [node name="Label" type="Label" parent="Ad" unique_id=1072885836]
@@ -133,19 +133,19 @@ text = "Watch Ad"
 
 [node name="Hearts" type="TextureRect" parent="." unique_id=1963638975]
 layout_mode = 0
-offset_left = 622.0
-offset_top = 222.0
-offset_right = 1134.0
-offset_bottom = 734.0
-scale = Vector2(0.08, 0.08)
+offset_left = 617.0
+offset_top = 188.0
+offset_right = 1129.0
+offset_bottom = 700.0
+scale = Vector2(0.12, 0.12)
 texture = ExtResource("5_6o2nj")
 
 [node name="Label" type="Label" parent="Hearts" unique_id=281187999]
 layout_mode = 0
-offset_left = -724.9998
-offset_top = 662.5
-offset_right = -332.99982
-offset_bottom = 734.5
+offset_left = -683.3337
+offset_top = 583.3333
+offset_right = -291.33368
+offset_bottom = 655.3333
 scale = Vector2(5, 5)
 theme_override_fonts/font = ExtResource("4_pgjlk")
 theme_override_font_sizes/font_size = 60
