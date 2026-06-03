@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bnlvcpfs6eq1w"]
+[gd_scene load_steps=0 format=3 uid="uid://bnlvcpfs6eq1w"]
 
 [ext_resource type="Texture2D" uid="uid://dv1yptisdc8f3" path="res://assets/ui/window_atlas_ui.tres" id="1_yrwkb"]
 [ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="2_8dn2d"]
