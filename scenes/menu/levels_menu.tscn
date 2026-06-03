@@ -23,9 +23,9 @@ script = ExtResource("1_51xa5")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 487.0
+offset_left = 458.43
 offset_top = 285.0
-offset_right = 1070.0
+offset_right = 1041.4303
 offset_bottom = 683.0
 scale = Vector2(0.635, 0.635)
 theme_override_constants/h_separation = 20
