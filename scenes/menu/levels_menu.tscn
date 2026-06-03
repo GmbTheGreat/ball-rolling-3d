@@ -1,9 +1,18 @@
-[gd_scene format=3 uid="uid://dteuula4y2op0"]
+[gd_scene load_steps=6 format=3 uid="uid://dteuula4y2op0"]
 
 [ext_resource type="Script" uid="uid://c4njsaip0o0wd" path="res://scripts/base/menu/levels_menu.gd" id="1_51xa5"]
 [ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="2_1gfdk"]
+[ext_resource type="Texture2D" uid="uid://dehfoqauc7628" path="res://assets/ui/button_atlas_ui.tres" id="2_nvge3"]
 
-[node name="LevelsMenu" type="Control" unique_id=1518830162]
+[sub_resource type="AtlasTexture" id="AtlasTexture_uehtd"]
+atlas = ExtResource("2_nvge3")
+region = Rect2(548, 668, 181, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvge3"]
+atlas = ExtResource("2_nvge3")
+region = Rect2(759, 668, 181, 189)
+
+[node name="LevelsMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,51 +21,171 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_51xa5")
 
-[node name="GridContainer" type="GridContainer" parent="." unique_id=122457482]
+[node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
 offset_left = 487.0
 offset_top = 285.0
-offset_right = 761.0
-offset_bottom = 497.0
+offset_right = 1070.0
+offset_bottom = 683.0
+scale = Vector2(0.635, 0.635)
 theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
 columns = 3
 
-[node name="level1" type="Button" parent="GridContainer" unique_id=1071519886]
+[node name="level1" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 focus_mode = 0
+texture_normal = SubResource("AtlasTexture_uehtd")
+texture_hover = SubResource("AtlasTexture_nvge3")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="GridContainer/level1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -38.5
+offset_right = 36.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_1gfdk")
 theme_override_font_sizes/font_size = 64
-text = " 1 "
+text = "1"
+horizontal_alignment = 1
 
-[node name="level2" type="Button" parent="GridContainer" unique_id=843556113]
+[node name="level2" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+texture_normal = SubResource("AtlasTexture_uehtd")
+texture_hover = SubResource("AtlasTexture_uehtd")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="GridContainer/level2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -38.5
+offset_right = 36.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_1gfdk")
 theme_override_font_sizes/font_size = 64
-text = " 2 "
+text = "2"
+horizontal_alignment = 1
 
-[node name="level3" type="Button" parent="GridContainer" unique_id=201305532]
+[node name="level3" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+texture_normal = SubResource("AtlasTexture_uehtd")
+texture_hover = SubResource("AtlasTexture_uehtd")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="GridContainer/level3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -38.5
+offset_right = 36.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_1gfdk")
 theme_override_font_sizes/font_size = 64
-text = " 3 "
+text = "3"
+horizontal_alignment = 1
 
-[node name="level4" type="Button" parent="GridContainer" unique_id=1581865090]
+[node name="level4" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+texture_normal = SubResource("AtlasTexture_uehtd")
+texture_hover = SubResource("AtlasTexture_uehtd")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="GridContainer/level4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -38.5
+offset_right = 36.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_1gfdk")
 theme_override_font_sizes/font_size = 64
 text = "4"
+horizontal_alignment = 1
 
-[node name="level5" type="Button" parent="GridContainer" unique_id=1171958806]
+[node name="level5" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+texture_normal = SubResource("AtlasTexture_uehtd")
+texture_hover = SubResource("AtlasTexture_uehtd")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="GridContainer/level5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -38.5
+offset_right = 36.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_1gfdk")
 theme_override_font_sizes/font_size = 64
 text = "5"
+horizontal_alignment = 1
 
-[node name="level6" type="Button" parent="GridContainer" unique_id=1714249360]
+[node name="level6" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+texture_normal = SubResource("AtlasTexture_uehtd")
+texture_hover = SubResource("AtlasTexture_uehtd")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="GridContainer/level6"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -38.5
+offset_right = 36.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_1gfdk")
 theme_override_font_sizes/font_size = 64
 text = "6"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="GridContainer/level1" to="." method="_on_level_1_pressed"]
