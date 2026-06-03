@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bfqxoebsvlpda"]
+[gd_scene format=3 uid="uid://bfqxoebsvlpda"]
 
 [ext_resource type="Script" uid="uid://q4jcvcvs8njp" path="res://scripts/base/menu/main_menu.gd" id="1_3rkf3"]
 [ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="2_247la"]
@@ -24,28 +24,28 @@ default_font = ExtResource("2_247la")
 [sub_resource type="Theme" id="Theme_xn6kt"]
 default_font = ExtResource("2_247la")
 
-[node name="MainMenu" type="Node3D"]
+[node name="MainMenu" type="Node3D" unique_id=22314492]
 script = ExtResource("1_3rkf3")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1302297107]
 transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 4, 5)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=849034633]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 8.988998, 0)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=945680636]
 environment = SubResource("Environment_isoef")
 
-[node name="Water" parent="." instance=ExtResource("3_247la")]
+[node name="Water" parent="." unique_id=638073912 instance=ExtResource("3_247la")]
 
-[node name="menu_ball" parent="." instance=ExtResource("5_hj162")]
+[node name="menu_ball" parent="." unique_id=1693652898 instance=ExtResource("5_hj162")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6581645, 8.508127, -1)
 
-[node name="Buttons" type="CanvasLayer" parent="."]
+[node name="Buttons" type="CanvasLayer" parent="." unique_id=539094191]
 scale = Vector2(0.4, 0.4)
 transform = Transform2D(0.4, 0, 0, 0.4, 0, 0)
 
-[node name="Start" type="TextureButton" parent="Buttons"]
+[node name="Start" type="TextureButton" parent="Buttons" unique_id=1455940385]
 texture_filter = 1
 offset_left = 160.0
 offset_top = 880.0
@@ -56,7 +56,7 @@ texture_normal = ExtResource("5_xn6kt")
 texture_pressed = ExtResource("5_xn6kt")
 texture_hover = ExtResource("7_isoef")
 
-[node name="Label" type="Label" parent="Buttons/Start"]
+[node name="Label" type="Label" parent="Buttons/Start" unique_id=488211466]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,7 +68,7 @@ text = "Start"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Customize" type="TextureButton" parent="Buttons"]
+[node name="Customize" type="TextureButton" parent="Buttons" unique_id=1155789919]
 texture_filter = 1
 offset_left = 160.0
 offset_top = 1084.0
@@ -78,7 +78,7 @@ theme = SubResource("Theme_xn6kt")
 texture_normal = ExtResource("5_xn6kt")
 texture_hover = ExtResource("7_isoef")
 
-[node name="Label" type="Label" parent="Buttons/Customize"]
+[node name="Label" type="Label" parent="Buttons/Customize" unique_id=2075647970]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -90,7 +90,7 @@ text = "Customize"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Settings" type="TextureButton" parent="Buttons"]
+[node name="Settings" type="TextureButton" parent="Buttons" unique_id=1927066788]
 texture_filter = 1
 offset_left = 160.0
 offset_top = 1288.0
@@ -100,7 +100,7 @@ theme = SubResource("Theme_xn6kt")
 texture_normal = ExtResource("5_xn6kt")
 texture_hover = ExtResource("7_isoef")
 
-[node name="Label" type="Label" parent="Buttons/Settings"]
+[node name="Label" type="Label" parent="Buttons/Settings" unique_id=2081643106]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -112,7 +112,7 @@ text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Exit" type="TextureButton" parent="Buttons"]
+[node name="Exit" type="TextureButton" parent="Buttons" unique_id=1225351495]
 texture_filter = 1
 offset_left = 160.0
 offset_top = 1492.0
@@ -122,7 +122,7 @@ theme = SubResource("Theme_xn6kt")
 texture_normal = ExtResource("5_xn6kt")
 texture_hover = ExtResource("7_isoef")
 
-[node name="Label" type="Label" parent="Buttons/Exit"]
+[node name="Label" type="Label" parent="Buttons/Exit" unique_id=49268192]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

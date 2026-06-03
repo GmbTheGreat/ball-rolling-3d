@@ -8,6 +8,14 @@ extends Node3D
 @onready var trail_preview: GPUTrail3D = $Path3D/PathFollow3D/PreviewBall/RayCast3D/GPUTrail3D
 @onready var background_preview: WorldEnvironment = $WorldEnvironment
 
+@onready var btn_ball = find_child("BallButton", true, false) # tumhara Ball texture button
+@onready var btn_trail = find_child("TrailButton", true, false) # Trail button
+@onready var btn_bg = find_child("BackgroundButton", true, false) # Background button
+
+@onready var _b1 = $Ball
+@onready var _b2 = $Trail
+@onready var _b3 = $Background
+
 @export var move_speed: float = 6.0
 @export var rotate_speed: float = 300.0
 #endregion
@@ -84,3 +92,22 @@ func _on_trail_pressed() -> void:
 func _on_background_pressed() -> void:
 	CosmeticsManager.current_category = CosmeticsManager.CosmeticCategory.BACKGROUND
 #endregion
+#-----------------------
+
+func _one_button_only():
+	await get_tree().process_frame
+	var grp = ButtonGroup.new()  # yehi ek ko pressed rakhta hai
+	
+	for b in [_b1, _b2, _b3]:
+		if b:
+			b.toggle_mode = true
+			b.button_group = grp
+			b.focus_mode = Control.FOCUS_NONE
+	
+	# start me jo category hai usko pressed karo
+	_b1.button_pressed = CosmeticsManager.current_category == CosmeticsManager.CosmeticCategory.BALL
+	_b2.button_pressed = CosmeticsManager.current_category == CosmeticsManager.CosmeticCategory.TRAIL
+	_b3.button_pressed = CosmeticsManager.current_category == CosmeticsManager.CosmeticCategory.BACKGROUND
+
+func _enter_tree():
+	_one_button_only.call_deferred()
