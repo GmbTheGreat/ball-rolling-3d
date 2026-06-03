@@ -24,8 +24,8 @@ extends RigidBody3D
 @onready var water_ripple: GPUParticles3D = $RayCast3D/WaterRipple
 @onready var mesh: MeshInstance3D = $MeshInstance3D
 @onready var trail: GPUTrail3D = $RayCast3D/GPUTrail3D
-@onready var speedlines: Control = $"../speedlines"
-@onready var speedlines_rect = $"../speedlines/ColorRect"
+@onready var speedlines: Control = $"../UI/speedlines"
+@onready var speedlines_rect = $"../UI/speedlines/ColorRect"
 
 var move_direction := Vector3.FORWARD
 var current_speed := 0.0

@@ -1,9 +1,9 @@
 extends Node
 
 @onready var level_holder: Node3D = $LevelHolder
-@onready var hearts_label: Label = $heart_ui/Label
+@onready var hearts_label: Label = $UI/heart_ui/Label
 @onready var background: WorldEnvironment = $WorldEnvironment
-@onready var game_over_ui: Control = $game_over_ui
+@onready var game_over_ui: Control = $UI/game_over_ui
 
 var current_level
 

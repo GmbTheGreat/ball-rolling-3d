@@ -4,12 +4,12 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hr7wc"]
 shader = ExtResource("1_hr7wc")
-shader_parameter/Speed = 0.5
-shader_parameter/LineLength = 2.0
-shader_parameter/LineColor = Color(0, 0, 0, 1)
+shader_parameter/Speed = 0.30000001425
+shader_parameter/LineLength = 1.0000000475
+shader_parameter/LineColor = Color(1, 1, 1, 1)
 shader_parameter/Softness = 0.1
 shader_parameter/Weirdness = 0.1
-shader_parameter/Radius = 1.3
+shader_parameter/Radius = 1.350000064125
 shader_parameter/Freq = 10.0
 
 [node name="speedlines" type="Control" unique_id=1825705356]
