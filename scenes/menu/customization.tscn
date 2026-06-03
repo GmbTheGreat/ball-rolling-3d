@@ -71,13 +71,25 @@ sky = SubResource("Sky_ng8a8")
 atlas = ExtResource("8_m3mfg")
 region = Rect2(2352, 1408, 181, 190)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_14nrc"]
+atlas = ExtResource("8_m3mfg")
+region = Rect2(2557, 1408, 181, 190)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_m3mfg"]
 atlas = ExtResource("8_m3mfg")
 region = Rect2(401, 2716, 181, 189)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3pev"]
+atlas = ExtResource("8_m3mfg")
+region = Rect2(606, 2716, 181, 189)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_87qbk"]
 atlas = ExtResource("8_m3mfg")
 region = Rect2(401, 2498, 181, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tgwr"]
+atlas = ExtResource("8_m3mfg")
+region = Rect2(606, 2498, 181, 189)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q76ue"]
 atlas = ExtResource("12_7hjbw")
@@ -87,13 +99,29 @@ region = Rect2(2150, 1234, 301, 441)
 atlas = ExtResource("8_m3mfg")
 region = Rect2(629, 433, 425, 189)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_aktbx"]
+atlas = ExtResource("8_m3mfg")
+region = Rect2(1085, 433, 426, 189)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_xewsq"]
 atlas = ExtResource("8_m3mfg")
 region = Rect2(629, 433, 425, 189)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mh8vx"]
+atlas = ExtResource("8_m3mfg")
+region = Rect2(1085, 433, 426, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pqb2"]
+atlas = ExtResource("8_m3mfg")
+region = Rect2(1085, 433, 426, 189)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ikwwa"]
 atlas = ExtResource("8_m3mfg")
 region = Rect2(629, 433, 425, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28mpo"]
+atlas = ExtResource("8_m3mfg")
+region = Rect2(1085, 433, 426, 189)
 
 [node name="customization" type="Node3D" unique_id=206109914]
 script = ExtResource("1_nvaev")
@@ -148,6 +176,7 @@ offset_right = 237.0
 offset_bottom = 241.0
 scale = Vector2(0.4, 0.4)
 texture_normal = SubResource("AtlasTexture_7hjbw")
+texture_pressed = SubResource("AtlasTexture_14nrc")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=875528284]
 offset_left = 159.0
@@ -165,12 +194,14 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = SubResource("AtlasTexture_m3mfg")
+texture_pressed = SubResource("AtlasTexture_h3pev")
 
 [node name="Next" type="TextureButton" parent="HBoxContainer" unique_id=2052542853]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = SubResource("AtlasTexture_87qbk")
+texture_pressed = SubResource("AtlasTexture_2tgwr")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=208113733]
 offset_left = 1143.0
@@ -189,6 +220,7 @@ scale = Vector2(0.25, 0.25)
 size_flags_horizontal = 5
 size_flags_vertical = 5
 texture_normal = SubResource("AtlasTexture_fjd33")
+texture_pressed = SubResource("AtlasTexture_aktbx")
 
 [node name="Label" type="Label" parent="Ball" unique_id=1972020795]
 layout_mode = 0
@@ -209,6 +241,7 @@ scale = Vector2(0.25, 0.25)
 size_flags_horizontal = 5
 size_flags_vertical = 5
 texture_normal = SubResource("AtlasTexture_xewsq")
+texture_pressed = SubResource("AtlasTexture_mh8vx")
 
 [node name="Label2" type="Label" parent="Trail" unique_id=150555547]
 layout_mode = 0
@@ -229,6 +262,7 @@ scale = Vector2(0.25, 0.25)
 size_flags_horizontal = 5
 size_flags_vertical = 5
 texture_normal = SubResource("AtlasTexture_xewsq")
+texture_pressed = SubResource("AtlasTexture_1pqb2")
 
 [node name="Label3" type="Label" parent="Background" unique_id=1997682127]
 layout_mode = 0
@@ -254,6 +288,7 @@ grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.35, 0.35)
 texture_normal = SubResource("AtlasTexture_ikwwa")
+texture_pressed = SubResource("AtlasTexture_28mpo")
 
 [node name="Label" type="Label" parent="Equip" unique_id=1794164039]
 layout_mode = 0

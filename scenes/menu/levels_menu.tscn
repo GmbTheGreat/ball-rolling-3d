@@ -1,8 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dteuula4y2op0"]
+[gd_scene format=3 uid="uid://dteuula4y2op0"]
 
 [ext_resource type="Script" uid="uid://c4njsaip0o0wd" path="res://scripts/base/menu/levels_menu.gd" id="1_51xa5"]
 [ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="2_1gfdk"]
 [ext_resource type="Texture2D" uid="uid://dehfoqauc7628" path="res://assets/ui/button_atlas_ui.tres" id="2_nvge3"]
+[ext_resource type="Texture2D" uid="uid://bo4qh2khujl7l" path="res://assets/ui/BG.png" id="2_uehtd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uehtd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5pid"]
+atlas = ExtResource("2_nvge3")
+region = Rect2(1346, 972, 181, 190)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uehtd"]
 atlas = ExtResource("2_nvge3")
@@ -12,7 +19,7 @@ region = Rect2(548, 668, 181, 189)
 atlas = ExtResource("2_nvge3")
 region = Rect2(759, 668, 181, 189)
 
-[node name="LevelsMenu" type="Control"]
+[node name="LevelsMenu" type="Control" unique_id=1765980953]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,8 +28,46 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_51xa5")
 
-[node name="GridContainer" type="GridContainer" parent="."]
-layout_mode = 0
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1185096995]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_uehtd")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="." unique_id=924438379]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -229.5
+offset_top = 54.0
+offset_right = 229.5
+offset_bottom = 216.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_1gfdk")
+theme_override_font_sizes/font_size = 136
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uehtd")
+text = "Levels"
+horizontal_alignment = 1
+
+[node name="Back" type="Button" parent="." unique_id=1219749744]
+layout_mode = 1
+offset_left = 39.999996
+offset_top = 43.0
+offset_right = 229.0
+offset_bottom = 241.0
+scale = Vector2(0.515, 0.515)
+icon = SubResource("AtlasTexture_c5pid")
+flat = true
+
+[node name="LevelButtons" type="CanvasLayer" parent="." unique_id=605121709]
+
+[node name="GridContainer" type="GridContainer" parent="LevelButtons" unique_id=1104600543]
 offset_left = 458.43
 offset_top = 285.0
 offset_right = 1041.4303
@@ -32,7 +77,7 @@ theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
 columns = 3
 
-[node name="level1" type="TextureButton" parent="GridContainer"]
+[node name="level1" type="TextureButton" parent="LevelButtons/GridContainer" unique_id=512759098]
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
@@ -40,7 +85,7 @@ texture_normal = SubResource("AtlasTexture_uehtd")
 texture_hover = SubResource("AtlasTexture_nvge3")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="GridContainer/level1"]
+[node name="Label" type="Label" parent="LevelButtons/GridContainer/level1" unique_id=1603280656]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -58,7 +103,7 @@ theme_override_font_sizes/font_size = 64
 text = "1"
 horizontal_alignment = 1
 
-[node name="level2" type="TextureButton" parent="GridContainer"]
+[node name="level2" type="TextureButton" parent="LevelButtons/GridContainer" unique_id=1286265812]
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
@@ -66,7 +111,7 @@ texture_normal = SubResource("AtlasTexture_uehtd")
 texture_hover = SubResource("AtlasTexture_uehtd")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="GridContainer/level2"]
+[node name="Label" type="Label" parent="LevelButtons/GridContainer/level2" unique_id=1198589174]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -84,7 +129,7 @@ theme_override_font_sizes/font_size = 64
 text = "2"
 horizontal_alignment = 1
 
-[node name="level3" type="TextureButton" parent="GridContainer"]
+[node name="level3" type="TextureButton" parent="LevelButtons/GridContainer" unique_id=1168308720]
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
@@ -92,7 +137,7 @@ texture_normal = SubResource("AtlasTexture_uehtd")
 texture_hover = SubResource("AtlasTexture_uehtd")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="GridContainer/level3"]
+[node name="Label" type="Label" parent="LevelButtons/GridContainer/level3" unique_id=973904191]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -110,7 +155,7 @@ theme_override_font_sizes/font_size = 64
 text = "3"
 horizontal_alignment = 1
 
-[node name="level4" type="TextureButton" parent="GridContainer"]
+[node name="level4" type="TextureButton" parent="LevelButtons/GridContainer" unique_id=449643130]
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
@@ -118,7 +163,7 @@ texture_normal = SubResource("AtlasTexture_uehtd")
 texture_hover = SubResource("AtlasTexture_uehtd")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="GridContainer/level4"]
+[node name="Label" type="Label" parent="LevelButtons/GridContainer/level4" unique_id=1970964415]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -136,7 +181,7 @@ theme_override_font_sizes/font_size = 64
 text = "4"
 horizontal_alignment = 1
 
-[node name="level5" type="TextureButton" parent="GridContainer"]
+[node name="level5" type="TextureButton" parent="LevelButtons/GridContainer" unique_id=765608250]
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
@@ -144,7 +189,7 @@ texture_normal = SubResource("AtlasTexture_uehtd")
 texture_hover = SubResource("AtlasTexture_uehtd")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="GridContainer/level5"]
+[node name="Label" type="Label" parent="LevelButtons/GridContainer/level5" unique_id=1591760414]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -162,7 +207,7 @@ theme_override_font_sizes/font_size = 64
 text = "5"
 horizontal_alignment = 1
 
-[node name="level6" type="TextureButton" parent="GridContainer"]
+[node name="level6" type="TextureButton" parent="LevelButtons/GridContainer" unique_id=233136262]
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
@@ -170,7 +215,7 @@ texture_normal = SubResource("AtlasTexture_uehtd")
 texture_hover = SubResource("AtlasTexture_uehtd")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="GridContainer/level6"]
+[node name="Label" type="Label" parent="LevelButtons/GridContainer/level6" unique_id=1904706434]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -188,4 +233,5 @@ theme_override_font_sizes/font_size = 64
 text = "6"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="GridContainer/level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="LevelButtons/GridContainer/level1" to="." method="_on_level_1_pressed"]
