@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bco5nnasp5qbj"]
+
+[ext_resource type="Script" uid="uid://duffqb1n4ryob" path="res://scripts/base/ui/timer_ui.gd" id="1_xaen2"]
+[ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="2_iyoqa"]
+
+[node name="timer_ui" type="Control" unique_id=998681743]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xaen2")
+
+[node name="Label" type="Label" parent="." unique_id=277424068]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 111.0
+offset_bottom = 87.0
+theme_override_fonts/font = ExtResource("2_iyoqa")
+theme_override_font_sizes/font_size = 45
+text = "0.0"
