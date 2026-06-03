@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CosmeticTrailData" format=3 uid="uid://cs3sh3t46hy6r"]
+[gd_resource type="Resource" script_class="CosmeticTrailData" load_steps=4 format=3 uid="uid://cs3sh3t46hy6r"]
 
 [ext_resource type="Script" uid="uid://dw06njle7ivrm" path="res://scripts/base/menu/trail_data.gd" id="1_i2465"]
 
