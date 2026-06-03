@@ -7,6 +7,9 @@ extends Area3D
 
 var collected := false
 
+func _ready() -> void:
+	circle.material_overlay = circle.material_overlay.duplicate()
+
 func _on_body_entered(body: Node3D) -> void:
 	if collected:
 		return

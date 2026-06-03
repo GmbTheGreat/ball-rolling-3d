@@ -4,30 +4,44 @@
 [ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="2_iyoqa"]
 [ext_resource type="Texture2D" uid="uid://cdw0vbccjhbbf" path="res://assets/ui/stopwatch.png" id="3_iyoqa"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iyoqa"]
+bg_color = Color(0, 0, 0, 0.45490196)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [node name="timer_ui" type="Control" unique_id=998681743]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+size_flags_horizontal = 0
 script = ExtResource("1_xaen2")
+
+[node name="Panel" type="Panel" parent="." unique_id=1302441013]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 56.0
+offset_right = 224.00018
+offset_bottom = 100.88638
+scale = Vector2(0.9199991, 1.7599994)
+theme_override_styles/panel = SubResource("StyleBoxFlat_iyoqa")
 
 [node name="Label" type="Label" parent="." unique_id=277424068]
 layout_mode = 0
-offset_left = 112.0
-offset_top = 40.0
-offset_right = 199.0
-offset_bottom = 100.0
+offset_left = 104.0
+offset_top = 64.0
+offset_right = 191.0
+offset_bottom = 124.0
+focus_mode = 2
 theme_override_fonts/font = ExtResource("2_iyoqa")
 theme_override_font_sizes/font_size = 50
 text = "0.0"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=869082678]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 24.0
-offset_right = 536.0
-offset_bottom = 536.0
-scale = Vector2(0.15, 0.15)
+offset_left = 32.0
+offset_top = 64.0
+offset_right = 613.81824
+offset_bottom = 645.8181
+scale = Vector2(0.11, 0.11)
 texture = ExtResource("3_iyoqa")
