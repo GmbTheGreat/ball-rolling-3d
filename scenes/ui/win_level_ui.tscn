@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://dalu5gmfan8b5"]
+
+[ext_resource type="Texture2D" uid="uid://dv1yptisdc8f3" path="res://assets/ui/window_atlas_ui.tres" id="1_7c2jp"]
+[ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="2_ra3qp"]
+[ext_resource type="Texture2D" uid="uid://dehfoqauc7628" path="res://assets/ui/button_atlas_ui.tres" id="3_sa61i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4ymr"]
+atlas = ExtResource("1_7c2jp")
+region = Rect2(1001, 2026, 769, 619)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yo3df"]
+atlas = ExtResource("3_sa61i")
+region = Rect2(1142, 972, 181, 190)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bagan"]
+load_path = "res://.godot/imported/Button.png-1a60562274a332bde4f7f1b8950e778b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4ojg"]
+atlas = SubResource("CompressedTexture2D_bagan")
+region = Rect2(1346, 972, 181, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4twqt"]
+atlas = ExtResource("3_sa61i")
+region = Rect2(3093, 1190, 181, 190)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7c2jp"]
+load_path = "res://.godot/imported/Button.png-1a60562274a332bde4f7f1b8950e778b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ra3qp"]
+atlas = SubResource("CompressedTexture2D_7c2jp")
+region = Rect2(3297, 1190, 181, 190)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lhtv8"]
+load_path = "res://.godot/imported/Button.png-1a60562274a332bde4f7f1b8950e778b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ooqqa"]
+atlas = SubResource("CompressedTexture2D_lhtv8")
+region = Rect2(197, 972, 181, 190)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sa61i"]
+load_path = "res://.godot/imported/Button.png-1a60562274a332bde4f7f1b8950e778b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bagan"]
+atlas = SubResource("CompressedTexture2D_sa61i")
+region = Rect2(401, 972, 181, 190)
+
+[node name="win_level_ui" type="Control" unique_id=2018532198]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=935901950]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="win_window" type="TextureRect" parent="." unique_id=640025880]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -219.27063
+offset_top = -176.5
+offset_right = 219.27063
+offset_bottom = 176.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_m4ymr")
+expand_mode = 1
+
+[node name="Completed" type="Label" parent="." unique_id=282739680]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -167.0
+offset_right = 106.0
+offset_bottom = -116.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_ra3qp")
+theme_override_font_sizes/font_size = 40
+text = "Completed"
+horizontal_alignment = 1
+
+[node name="Home_win" type="TextureButton" parent="." unique_id=1162488072]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -159.0
+offset_top = 32.0
+offset_right = -86.0
+offset_bottom = 106.53
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_yo3df")
+texture_hover = SubResource("AtlasTexture_r4ojg")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Retry_win" type="TextureButton" parent="." unique_id=1116890380]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.5
+offset_top = 30.0
+offset_right = 35.5
+offset_bottom = 104.530396
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_4twqt")
+texture_hover = SubResource("AtlasTexture_ra3qp")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Next_win" type="TextureButton" parent="." unique_id=998000989]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 86.0
+offset_top = 30.0
+offset_right = 157.0
+offset_bottom = 104.530396
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_ooqqa")
+texture_hover = SubResource("AtlasTexture_bagan")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=24946374]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Star_level" type="TextureRect" parent="HBoxContainer" unique_id=236578691]
+layout_mode = 2
+
+[node name="Star" type="TextureRect" parent="HBoxContainer" unique_id=1219403109]
+layout_mode = 2
+
+[node name="Star_time" type="TextureRect" parent="HBoxContainer" unique_id=2126173159]
+layout_mode = 2
