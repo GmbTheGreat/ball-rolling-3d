@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bfkaaw2ryyrl1"]
 
 [ext_resource type="Texture2D" uid="uid://dv1yptisdc8f3" path="res://assets/ui/window_atlas_ui.tres" id="1_7c2jp"]
+[ext_resource type="Script" uid="uid://cgivot2igip04" path="res://scripts/base/ui/win_level_ui.gd" id="1_ra3qp"]
 [ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="2_ra3qp"]
 [ext_resource type="Texture2D" uid="uid://dehfoqauc7628" path="res://assets/ui/button_atlas_ui.tres" id="3_sa61i"]
 
@@ -52,6 +53,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ra3qp")
 
 [node name="Panel" type="Panel" parent="." unique_id=935901950]
 layout_mode = 1
@@ -171,3 +173,7 @@ layout_mode = 2
 
 [node name="Star_time" type="TextureRect" parent="HBoxContainer" unique_id=2126173159]
 layout_mode = 2
+
+[connection signal="pressed" from="Home_win" to="." method="_on_home_win_pressed"]
+[connection signal="pressed" from="Retry_win" to="." method="_on_retry_win_pressed"]
+[connection signal="pressed" from="Next_win" to="." method="_on_next_win_pressed"]

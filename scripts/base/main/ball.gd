@@ -63,8 +63,7 @@ func apply_equipped_trail():
 	trail.texture = trail_data.texture
 	trail.color_ramp = trail_data.color_ramp
 
-
-func respawn():
+func reset_to_spawn():
 	global_position = spawn_position
 
 	linear_velocity = Vector3.ZERO
@@ -72,13 +71,16 @@ func respawn():
 
 	current_speed = 0.0
 	move_direction = Vector3.FORWARD
-	
+
+func respawn():
+	reset_to_spawn()
+
 	for boost in get_tree().get_nodes_in_group("boosts"):
 		boost.respawn_boost()
 
 	for star in get_tree().get_nodes_in_group("star"):
 		star.reset_star()
-		
+
 	get_tree().current_scene.lose_heart()
 
 

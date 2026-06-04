@@ -1,11 +1,12 @@
 extends Node
 
+@onready var background: WorldEnvironment = $WorldEnvironment
 @onready var level_holder: Node3D = $LevelHolder
 @onready var hearts_label: Label = $UI/heart_ui/Label
-@onready var background: WorldEnvironment = $WorldEnvironment
-@onready var game_over_ui: Control = $UI/game_over_ui
 @onready var timer_ui = $UI/timer_ui
+@onready var game_over_ui: Control = $UI/game_over_ui
 @onready var win_level_ui: Control = $UI/win_level_ui
+@onready var ball : RigidBody3D = $ball
 
 var current_level
 
@@ -16,9 +17,15 @@ var level_time := 0.0
 
 
 func _ready() -> void:
+	# Game over ui signals
 	game_over_ui.retry_pressed.connect(_on_retry_pressed)
 	game_over_ui.home_pressed.connect(_on_home_pressed)
 	game_over_ui.ad_pressed.connect(_on_ad_pressed)
+
+	# Win level ui signals
+	win_level_ui.retry_pressed.connect(_on_retry_pressed)
+	win_level_ui.home_pressed.connect(_on_home_pressed)
+	win_level_ui.next_pressed.connect(_on_next_pressed)
 
 	game_over_ui.visible = false
 	win_level_ui.visible = false
@@ -34,6 +41,7 @@ func _process(delta):
 
 func load_level(level_path: String):
 	game_over_ui.visible = false
+	win_level_ui.visible = false
 
 	# Remove old level
 	for child in level_holder.get_children():
@@ -100,6 +108,7 @@ func game_over():
 
 
 func _on_retry_pressed():
+	ball.reset_to_spawn()
 	get_tree().paused = false
 	load_level(LevelsManager.current_level)
 
@@ -114,12 +123,14 @@ func _on_ad_pressed():
 
 	hearts = 1
 	update_hearts_ui()
-
+	
 	game_over_ui.visible = false
 
 	# TODO:
 	# Respawn player here instead of reloading level
 
+func _on_next_pressed():
+	pass
 
 func apply_equipped_background():
 	var bg = CosmeticsManager.get_equipped_background()
