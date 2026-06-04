@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://u3tr08oa1u45"]
 
-[ext_resource type="PackedScene" uid="uid://c741s88tv4you" path="res://scenes/assets/platforms/win.tscn" id="1_7x1jh"]
 [ext_resource type="PackedScene" uid="uid://87onxlt8byot" path="res://scenes/assets/platforms/curve.tscn" id="2_6xh4u"]
 [ext_resource type="PackedScene" uid="uid://cxv2g8t1ky0s1" path="res://scenes/assets/platforms/pipe.tscn" id="3_fr1um"]
 [ext_resource type="PackedScene" uid="uid://dq2r45p173jco" path="res://scenes/assets/interactables/jump_pad.tscn" id="4_6xh4u"]
@@ -8,11 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://msl1lbid8crh" path="res://scenes/assets/platforms/ramp.tscn" id="5_6xh4u"]
 [ext_resource type="PackedScene" uid="uid://b86kw00lt8vl5" path="res://scenes/assets/interactables/boost.tscn" id="6_6xh4u"]
 [ext_resource type="PackedScene" uid="uid://bhr8neihmxmiq" path="res://scenes/assets/interactables/star.tscn" id="7_cyt5c"]
+[ext_resource type="PackedScene" uid="uid://cwgy6i2npqc0q" path="res://scenes/assets/interactables/win_point.tscn" id="8_7x1jh"]
 
 [node name="Test Level" type="Node3D" unique_id=493517671]
-
-[node name="Win" parent="." unique_id=1238302160 instance=ExtResource("1_7x1jh")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 13.505, 1.7287232, -17.49135)
 
 [node name="Platforms" type="Node" parent="." unique_id=1396637000]
 
@@ -154,3 +151,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.503797, -2.061, -24.796)
 
 [node name="star" parent="." unique_id=1729761214 groups=["star"] instance=ExtResource("7_cyt5c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.673292, 12.124981, -159.81712)
+
+[node name="win_point" parent="." unique_id=1240424430 instance=ExtResource("8_7x1jh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.504, 1.5747721, -17.837156)

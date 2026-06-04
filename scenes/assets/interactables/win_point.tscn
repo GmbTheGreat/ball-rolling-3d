@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cwgy6i2npqc0q"]
+
+[ext_resource type="Script" uid="uid://boq36jh4eyd8i" path="res://scripts/base/interactables/win_point.gd" id="1_extj4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_shuvp"]
+emission_enabled = true
+emission = Color(0, 0, 1, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_shuvp"]
+height = 0.8
+radius = 1.8623047
+
+[node name="win_point" type="Node3D" unique_id=1240424430]
+script = ExtResource("1_extj4")
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="." unique_id=1409089914]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+use_collision = true
+inner_radius = 2.0
+outer_radius = 3.0
+material = SubResource("StandardMaterial3D_shuvp")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1950860914]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1000483753]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -4.4287662e-10, -0.010131836)
+shape = SubResource("CylinderShape3D_shuvp")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]

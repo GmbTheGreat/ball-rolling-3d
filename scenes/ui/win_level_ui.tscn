@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dalu5gmfan8b5"]
+[gd_scene format=3 uid="uid://bfkaaw2ryyrl1"]
 
 [ext_resource type="Texture2D" uid="uid://dv1yptisdc8f3" path="res://assets/ui/window_atlas_ui.tres" id="1_7c2jp"]
 [ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="2_ra3qp"]
@@ -45,6 +45,7 @@ atlas = SubResource("CompressedTexture2D_sa61i")
 region = Rect2(401, 972, 181, 190)
 
 [node name="win_level_ui" type="Control" unique_id=2018532198]
+process_mode = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
