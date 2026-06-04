@@ -78,8 +78,8 @@ func respawn():
 	for boost in get_tree().get_nodes_in_group("boosts"):
 		boost.respawn_boost()
 
-	for star in get_tree().get_nodes_in_group("star"):
-		star.reset_star()
+	#for star in get_tree().get_nodes_in_group("star"):
+		#star.reset_star()
 
 	get_tree().current_scene.lose_heart()
 
