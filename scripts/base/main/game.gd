@@ -105,13 +105,8 @@ func _on_ball_died():
 
 	is_respawning = true
 
-	ball.water_droplets.emitting = true
-	ball.water_ripple.emitting = true
-
 	ball.angular_velocity = Vector3.ZERO
 	ball.current_speed = 0.0
-
-	await get_tree().create_timer(ball.respawn_cooldown).timeout
 
 	lose_heart()
 

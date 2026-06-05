@@ -11,7 +11,6 @@ signal died
 @export var rotate_speed := 2.0
 @export var friction := 8.0
 @export var brake_force := 20.0
-@export var respawn_cooldown := 1.0
 
 # Movement smoothing
 @export var ground_control := 4.0
@@ -21,8 +20,6 @@ signal died
 
 @onready var camera: Camera3D = $"../Camera3D"
 @onready var ground_ray: RayCast3D = $RayCast3D
-@onready var water_droplets: GPUParticles3D = $WaterDroplets
-@onready var water_ripple: GPUParticles3D = $RayCast3D/WaterRipple
 @onready var mesh: MeshInstance3D = $MeshInstance3D
 @onready var trail: GPUTrail3D = $RayCast3D/GPUTrail3D
 @onready var speedlines: Control = $"../UI/speedlines"
@@ -76,18 +73,6 @@ func reset_to_spawn():
 	move_direction = Vector3.FORWARD
 
 	is_dead = false
-
-
-#func respawn():
-	#reset_to_spawn()
-#
-	#for boost in get_tree().get_nodes_in_group("boosts"):
-		#boost.respawn_boost()
-#
-	##for star in get_tree().get_nodes_in_group("star"):
-		##star.reset_star()
-#
-	#get_tree().current_scene.lose_heart()
 
 
 func apply_boost():
