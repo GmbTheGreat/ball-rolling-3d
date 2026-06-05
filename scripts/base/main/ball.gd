@@ -1,5 +1,6 @@
 extends RigidBody3D
 
+signal died
 
 #region variables
 @export var acceleration := 8.0
@@ -32,15 +33,16 @@ var current_speed := 0.0
 var normal_move_speed := 0.0
 var normal_max_speed := 0.0
 var boost_active := false
-var spawn_position
-var is_respawning := false
+var spawn_position : Vector3
 var can_jump := 0.5
+var is_dead := false
 #endregion
 
 
 func _ready() -> void:
 	normal_move_speed = move_speed
 	normal_max_speed = max_speed
+	
 	spawn_position = global_position
 	
 	speedlines.visible = false
@@ -63,6 +65,7 @@ func apply_equipped_trail():
 	trail.texture = trail_data.texture
 	trail.color_ramp = trail_data.color_ramp
 
+
 func reset_to_spawn():
 	global_position = spawn_position
 
@@ -72,16 +75,19 @@ func reset_to_spawn():
 	current_speed = 0.0
 	move_direction = Vector3.FORWARD
 
-func respawn():
-	reset_to_spawn()
+	is_dead = false
 
-	for boost in get_tree().get_nodes_in_group("boosts"):
-		boost.respawn_boost()
 
-	#for star in get_tree().get_nodes_in_group("star"):
-		#star.reset_star()
-
-	get_tree().current_scene.lose_heart()
+#func respawn():
+	#reset_to_spawn()
+#
+	#for boost in get_tree().get_nodes_in_group("boosts"):
+		#boost.respawn_boost()
+#
+	##for star in get_tree().get_nodes_in_group("star"):
+		##star.reset_star()
+#
+	#get_tree().current_scene.lose_heart()
 
 
 func apply_boost():
@@ -206,16 +212,18 @@ func _physics_process(delta):
 		linear_velocity.z = horizontal_velocity.z
 
 	# FALL CHECK
-	if (position.y < -3.0 or Input.is_action_just_pressed("reset_debug")) and !is_respawning:
-		is_respawning = true
-
-		water_droplets.emitting = true
-		water_ripple.emitting = true
-
-		angular_velocity = Vector3.ZERO
-		current_speed = 0.0
-
-		await get_tree().create_timer(respawn_cooldown).timeout
-		respawn()
-
-		is_respawning = false
+	if (position.y < -3.0 or Input.is_action_just_pressed("reset_debug")) and !is_dead:
+		is_dead = true
+		died.emit()
+		#is_respawning = true
+#
+		#water_droplets.emitting = true
+		#water_ripple.emitting = true
+#s
+		#angular_velocity = Vector3.ZERO
+		#current_speed = 0.0
+#
+		#await get_tree().create_timer(respawn_cooldown).timeout
+		#respawn()
+#
+		#is_respawning = false

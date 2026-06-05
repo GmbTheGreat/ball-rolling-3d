@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgtvnq6d5j4op"]
+[gd_scene format=3 uid="uid://bgtvnq6d5j4op"]
 
 [ext_resource type="Script" uid="uid://c8xcpgay0ejhm" path="res://scripts/base/environment/water.gd" id="1_4lcip"]
 [ext_resource type="Shader" uid="uid://cgb4ntx6p6hsc" path="res://scripts/shaders/water.gdshader" id="1_ej58j"]
@@ -53,31 +53,31 @@ shader_parameter/foam_strength = 0.18
 material = SubResource("ShaderMaterial_p7qtd")
 size = Vector2(2000, 1024)
 
-[node name="Water" type="Node3D"]
+[node name="Water" type="Node3D" unique_id=784918788]
 visible = false
 script = ExtResource("1_4lcip")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=670995261]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=152957972]
 mesh = SubResource("PlaneMesh_p7qtd")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=712388043]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
 shape = SubResource("BoxShape3D_p7qtd")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=623984949]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3006.1328, 0, 0)
 mesh = SubResource("PlaneMesh_fl7k6")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=383239800]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3005.876, 0, 0)
 mesh = SubResource("PlaneMesh_fl7k6")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=19271145]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7, 0, 1512)
 mesh = SubResource("PlaneMesh_wxg25")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1785958642]
 transform = Transform3D(0.005061442, 0, 0.9999872, 0, 1, 0, -0.9999872, 0, 0.005061442, 2, 0, -1495)
 mesh = SubResource("PlaneMesh_wxg25")
