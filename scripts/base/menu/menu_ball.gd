@@ -2,9 +2,6 @@ extends RigidBody3D
 
 
 @onready var ground_ray: RayCast3D = $RayCast3D
-@onready var ground_ray2: RayCast3D = $RayCast3D2
-@onready var water_ripple: GPUParticles3D = $RayCast3D2/WaterRipple
-@onready var water_droplets: GPUParticles3D = $WaterDroplets
 @onready var mesh: MeshInstance3D = $MeshInstance3D
 @onready var trail: GPUTrail3D = $RayCast3D/GPUTrail3D
 
@@ -42,11 +39,6 @@ func respawn():
 func _physics_process(delta: float) -> void:
 	mesh.rotate_x(-deg_to_rad(rotate_speed) * delta)
 	
-	ground_ray2.global_rotation = Vector3.ZERO
-	
 	if position.y < 0.0:
-		water_droplets.emitting = true
-		water_ripple.emitting = true
-			
 		await get_tree().create_timer(respawn_cooldown).timeout
 		respawn()

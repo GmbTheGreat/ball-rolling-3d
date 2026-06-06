@@ -1,71 +1,10 @@
 [gd_scene format=3 uid="uid://le0bqhclqdlq"]
 
 [ext_resource type="Script" uid="uid://bg16o71s1xkj5" path="res://scripts/base/menu/customization.gd" id="1_nvaev"]
-[ext_resource type="Shader" uid="uid://xp144hvxfttb" path="res://addons/GPUTrail-main/shaders/trail.gdshader" id="2_i2tad"]
-[ext_resource type="Texture2D" uid="uid://qf8pjtwwdpe3" path="res://assets/hdri/sky_02.png" id="3_vfrjv"]
-[ext_resource type="Shader" uid="uid://5wgjfh4i15nq" path="res://addons/GPUTrail-main/shaders/trail_draw_pass.gdshader" id="3_vl8h5"]
-[ext_resource type="PackedScene" uid="uid://bgtvnq6d5j4op" path="res://scenes/assets/water.tscn" id="4_i2tad"]
-[ext_resource type="Texture2D" uid="uid://crk6pkb7e5rwc" path="res://addons/GPUTrail-main/defaults/texture.tres" id="4_ls4j2"]
-[ext_resource type="Script" uid="uid://clk5tgqbb7tfu" path="res://addons/GPUTrail-main/GPUTrail3D.gd" id="5_m3mfg"]
-[ext_resource type="PackedScene" uid="uid://q5c8jlvgqhp7" path="res://scenes/assets/platforms/straight_platform.tscn" id="7_i2tad"]
+[ext_resource type="Texture2D" uid="uid://y62cpg22kylf" path="res://assets/thumbnail/football.png" id="5_tgp3n"]
 [ext_resource type="Texture2D" uid="uid://dehfoqauc7628" path="res://assets/ui/button_atlas_ui.tres" id="8_m3mfg"]
-[ext_resource type="PackedScene" uid="uid://87onxlt8byot" path="res://scenes/assets/platforms/curve.tscn" id="8_vl8h5"]
 [ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="9_87qbk"]
 [ext_resource type="Texture2D" uid="uid://dv1yptisdc8f3" path="res://assets/ui/window_atlas_ui.tres" id="12_7hjbw"]
-
-[sub_resource type="Curve3D" id="Curve3D_vl8h5"]
-closed = true
-_data = {
-"points": PackedVector3Array(-1.411648, -0.00021409988, 1.2560616, 1.411648, 0.00021409988, -1.2560616, 0, 0, 0, 1.3927022, -5.2928925e-05, 1.9217529, -1.3927022, 5.2928925e-05, -1.9217529, 0, 0, -25, 1.0116901, -0.0001282692, -0.75141525, -1.0116901, 0.0001282692, 0.75141525, -25, 0, -25, -1.6148682, -0.0021038055, -1.7788048, 1.6148682, 0.0021038055, 1.7788048, -25, 0, 0),
-"tilts": PackedFloat32Array(0, 0, 0, 0)
-}
-point_count = 4
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56nvu"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0payd"]
-shader = ExtResource("2_i2tad")
-
-[sub_resource type="Gradient" id="Gradient_ls4j2"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_43p2q"]
-gradient = SubResource("Gradient_ls4j2")
-
-[sub_resource type="Curve" id="Curve_m3mfg"]
-_limits = [0.0, 2.0, 0.0, 1.0]
-bake_resolution = 16
-_data = [Vector2(0, 0.31094885), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_wmmms"]
-curve = SubResource("Curve_m3mfg")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_87qbk"]
-resource_local_to_scene = true
-render_priority = 0
-shader = ExtResource("3_vl8h5")
-shader_parameter/tex = ExtResource("4_ls4j2")
-shader_parameter/mask_strength = 1.0
-shader_parameter/uv_offset = Vector2(0, 0)
-shader_parameter/color_ramp = SubResource("GradientTexture1D_43p2q")
-shader_parameter/curve = SubResource("CurveTexture_wmmms")
-shader_parameter/emmission_transform = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
-shader_parameter/flags = 46
-
-[sub_resource type="QuadMesh" id="QuadMesh_tu04w"]
-material = SubResource("ShaderMaterial_87qbk")
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vdplk"]
-panorama = ExtResource("3_vfrjv")
-
-[sub_resource type="Sky" id="Sky_ng8a8"]
-sky_material = SubResource("PanoramaSkyMaterial_vdplk")
-
-[sub_resource type="Environment" id="Environment_xi1lk"]
-background_mode = 2
-sky = SubResource("Sky_ng8a8")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7hjbw"]
 atlas = ExtResource("8_m3mfg")
@@ -123,53 +62,13 @@ region = Rect2(629, 433, 425, 189)
 atlas = ExtResource("8_m3mfg")
 region = Rect2(1085, 433, 426, 189)
 
-[node name="customization" type="Node3D" unique_id=206109914]
+[node name="customization" type="Control" unique_id=398594158]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_nvaev")
 
-[node name="Path3D" type="Path3D" parent="." unique_id=1911097608]
-curve = SubResource("Curve3D_vl8h5")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=911303973]
-transform = Transform3D(0.6647136, -8.4647254e-05, -0.7470507, 7.2757e-12, 0.99998116, -0.00011330265, 0.7470507, 7.531774e-05, 0.6647136, 0, 0, 0)
-
-[node name="CosmeticCamera" type="Camera3D" parent="Path3D/PathFollow3D" unique_id=401168420]
-transform = Transform3D(1, 0, 0, 0, 0.8660253, 0.49999997, 0, -0.49999997, 0.8660253, 0, 4, 4)
-
-[node name="PreviewBall" type="CSGSphere3D" parent="Path3D/PathFollow3D" unique_id=941398884]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-radial_segments = 10
-material = SubResource("StandardMaterial3D_56nvu")
-
-[node name="RayCast3D" type="RayCast3D" parent="Path3D/PathFollow3D/PreviewBall" unique_id=1173685714]
-
-[node name="GPUTrail3D" type="GPUParticles3D" parent="Path3D/PathFollow3D/PreviewBall/RayCast3D" unique_id=628490455]
-transform = Transform3D(-1, 0, 4.371139e-08, 0, 1, 0, -4.371139e-08, 0, -1, 0, -0.4, 0)
-amount = 40
-lifetime = 40.0
-explosiveness = 1.0
-fixed_fps = 144
-process_material = SubResource("ShaderMaterial_0payd")
-draw_pass_1 = SubResource("QuadMesh_tu04w")
-script = ExtResource("5_m3mfg")
-length = 40
-length_seconds = 0.2777777777777778
-color_ramp = SubResource("GradientTexture1D_43p2q")
-curve = SubResource("CurveTexture_wmmms")
-use_red_as_alpha = true
-billboard = true
-_defaults_have_been_set = true
-metadata/_custom_type_script = "uid://clk5tgqbb7tfu"
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=857684843]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 8.933266, 0)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=950327852]
-environment = SubResource("Environment_xi1lk")
-
-[node name="Water" parent="." unique_id=1278693079 instance=ExtResource("4_i2tad")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17770338, -0.028146744, -0.10071945)
-
 [node name="Back" type="TextureButton" parent="." unique_id=1042860709]
+layout_mode = 0
 offset_left = 56.0
 offset_top = 51.0
 offset_right = 237.0
@@ -179,6 +78,7 @@ texture_normal = SubResource("AtlasTexture_7hjbw")
 texture_pressed = SubResource("AtlasTexture_14nrc")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=875528284]
+layout_mode = 0
 offset_left = 159.0
 offset_top = 337.0
 offset_right = 2521.0
@@ -204,6 +104,7 @@ texture_normal = SubResource("AtlasTexture_87qbk")
 texture_pressed = SubResource("AtlasTexture_2tgwr")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=208113733]
+layout_mode = 0
 offset_left = 1143.0
 offset_top = 28.0
 offset_right = 1455.5
@@ -212,6 +113,7 @@ scale = Vector2(0.4, 0.4)
 texture = SubResource("AtlasTexture_q76ue")
 
 [node name="Ball" type="TextureButton" parent="." unique_id=1803289598]
+layout_mode = 0
 offset_left = 1152.0
 offset_top = 48.0
 offset_right = 1577.0
@@ -233,6 +135,7 @@ theme_override_font_sizes/font_size = 80
 text = "Ball"
 
 [node name="Trail" type="TextureButton" parent="." unique_id=1913931347]
+layout_mode = 0
 offset_left = 1152.0
 offset_top = 104.0
 offset_right = 1577.0
@@ -254,6 +157,7 @@ theme_override_font_sizes/font_size = 80
 text = "Trail"
 
 [node name="Background" type="TextureButton" parent="." unique_id=854996570]
+layout_mode = 0
 offset_left = 1152.0
 offset_top = 160.0
 offset_right = 1577.0
@@ -276,15 +180,16 @@ text = "Sky"
 horizontal_alignment = 1
 
 [node name="Equip" type="TextureButton" parent="." unique_id=1768036246]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.33400002
 anchor_top = 0.66400003
 anchor_right = 0.33400002
 anchor_bottom = 0.66400003
-offset_left = 158.47998
-offset_top = 65.91998
-offset_right = 583.48
-offset_bottom = 254.91998
+offset_left = 567.0
+offset_top = 545.0
+offset_right = 992.0
+offset_bottom = 734.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.35, 0.35)
@@ -301,31 +206,20 @@ theme_override_fonts/font = ExtResource("9_87qbk")
 theme_override_font_sizes/font_size = 80
 text = "Equip"
 
-[node name="track" type="Node3D" parent="." unique_id=1144637967]
-
-[node name="strigth_platform" parent="track" unique_id=1543553135 instance=ExtResource("7_i2tad")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19514847, 1, -12.383066)
-
-[node name="curve" parent="track" unique_id=516517366 instance=ExtResource("8_vl8h5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.799283, 1, -0.2618742)
-
-[node name="strigth_platform2" parent="track" unique_id=794339609 instance=ExtResource("7_i2tad")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.863226, 1, -25.444384)
-
-[node name="curve2" parent="track" unique_id=1386000604 instance=ExtResource("8_vl8h5")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.7181494, 1, -24.449953)
-
-[node name="strigth_platform3" parent="track" unique_id=525839645 instance=ExtResource("7_i2tad")]
-transform = Transform3D(-1.0000001, -4.2221966e-08, -2.9802322e-08, -4.222196e-08, 1, -3.2398052e-08, 2.9802322e-08, -3.2398052e-08, -1.0000001, -25.966312, 0.99999976, -12.414494)
-
-[node name="curve3" parent="track" unique_id=244666968 instance=ExtResource("8_vl8h5")]
-transform = Transform3D(-1.0000001, -4.2221966e-08, -2.9802322e-08, -4.222196e-08, 1, -3.2398052e-08, 2.9802322e-08, -3.2398052e-08, -1.0000001, -24.977869, 0.9999994, -24.535688)
-
-[node name="strigth_platform4" parent="track" unique_id=1141802171 instance=ExtResource("7_i2tad")]
-transform = Transform3D(5.9604645e-08, -4.2221966e-08, -1.0000001, 3.2398052e-08, 1, -4.2221956e-08, 1.0000001, -3.2398052e-08, 5.9604645e-08, -12.93302, 1.0000007, 0.63344955)
-
-[node name="curve4" parent="track" unique_id=620573928 instance=ExtResource("8_vl8h5")]
-transform = Transform3D(5.9604645e-08, -4.2221966e-08, -1.0000001, 3.2398052e-08, 1, -4.2221956e-08, 1.0000001, -3.2398052e-08, 5.9604645e-08, -25.06567, 1.0000001, -0.37244225)
+[node name="Preview" type="TextureRect" parent="." unique_id=996779794]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 535.0
+offset_top = 261.0
+offset_right = 735.0
+offset_bottom = 461.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_tgp3n")
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="HBoxContainer/Previous" to="." method="_on_previous_pressed"]

@@ -1,20 +1,9 @@
-extends Node3D
+extends Control
 
-@onready var background: WorldEnvironment = $WorldEnvironment
 @onready var start_btn = $Buttons/Start
 @onready var customize_btn = $Buttons/Customize
 @onready var settings_btn = $Buttons/Settings
 @onready var exit_btn = $Buttons/Exit
-
-
-func _ready() -> void:
-	apply_equipped_background()
-
-
-func apply_equipped_background() -> void:
-	var bg = CosmeticsManager.get_equipped_background()
-	background.environment.sky.sky_material.panorama = bg["hdri"]
-
 
 func hover_in(button: Control) -> void:
 	create_tween().tween_property(button, "scale", Vector2(1.08, 1.08), 0.12)

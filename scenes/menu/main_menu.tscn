@@ -2,21 +2,9 @@
 
 [ext_resource type="Script" uid="uid://q4jcvcvs8njp" path="res://scripts/base/menu/main_menu.gd" id="1_3rkf3"]
 [ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="2_247la"]
-[ext_resource type="Texture2D" uid="uid://cqnvjv1423c1a" path="res://assets/hdri/sky_01.png" id="2_kiqgm"]
-[ext_resource type="PackedScene" uid="uid://bgtvnq6d5j4op" path="res://scenes/assets/water.tscn" id="3_247la"]
-[ext_resource type="PackedScene" uid="uid://dfwga7b5pp4t5" path="res://scenes/menu/menu_ball.tscn" id="5_hj162"]
+[ext_resource type="Texture2D" uid="uid://c5gfuk2jvcou7" path="res://assets/ui/Menu BG.png" id="5_hj162"]
 [ext_resource type="Texture2D" uid="uid://di2i5n6e6f5jf" path="res://assets/textures/buttons/CGB02-yellow_L_btn.png" id="5_xn6kt"]
 [ext_resource type="Texture2D" uid="uid://vq2lbx76wco1" path="res://assets/textures/buttons/CGB02-green_L_btn.png" id="7_isoef"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hj162"]
-panorama = ExtResource("2_kiqgm")
-
-[sub_resource type="Sky" id="Sky_xn6kt"]
-sky_material = SubResource("PanoramaSkyMaterial_hj162")
-
-[sub_resource type="Environment" id="Environment_isoef"]
-background_mode = 2
-sky = SubResource("Sky_xn6kt")
 
 [sub_resource type="Theme" id="Theme_isoef"]
 default_font = ExtResource("2_247la")
@@ -24,22 +12,10 @@ default_font = ExtResource("2_247la")
 [sub_resource type="Theme" id="Theme_xn6kt"]
 default_font = ExtResource("2_247la")
 
-[node name="MainMenu" type="Node3D" unique_id=22314492]
+[node name="MainMenu" type="Control" unique_id=749428798]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_3rkf3")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1302297107]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 4, 5)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=849034633]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 8.988998, 0)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=945680636]
-environment = SubResource("Environment_isoef")
-
-[node name="Water" parent="." unique_id=638073912 instance=ExtResource("3_247la")]
-
-[node name="menu_ball" parent="." unique_id=1693652898 instance=ExtResource("5_hj162")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6581645, 8.508127, -1)
 
 [node name="Buttons" type="CanvasLayer" parent="." unique_id=539094191]
 scale = Vector2(0.4, 0.4)
@@ -47,10 +23,10 @@ transform = Transform2D(0.4, 0, 0, 0.4, 0, 0)
 
 [node name="Start" type="TextureButton" parent="Buttons" unique_id=1455940385]
 texture_filter = 1
-offset_left = 160.0
-offset_top = 880.0
-offset_right = 672.0
-offset_bottom = 1020.0
+offset_left = 245.0
+offset_top = 802.5
+offset_right = 757.0
+offset_bottom = 942.5
 theme = SubResource("Theme_isoef")
 texture_normal = ExtResource("5_xn6kt")
 texture_pressed = ExtResource("5_xn6kt")
@@ -70,10 +46,10 @@ vertical_alignment = 1
 
 [node name="Customize" type="TextureButton" parent="Buttons" unique_id=1155789919]
 texture_filter = 1
-offset_left = 160.0
-offset_top = 1084.0
-offset_right = 672.0
-offset_bottom = 1224.0
+offset_left = 245.0
+offset_top = 1006.5
+offset_right = 757.0
+offset_bottom = 1146.5
 theme = SubResource("Theme_xn6kt")
 texture_normal = ExtResource("5_xn6kt")
 texture_hover = ExtResource("7_isoef")
@@ -92,10 +68,10 @@ vertical_alignment = 1
 
 [node name="Settings" type="TextureButton" parent="Buttons" unique_id=1927066788]
 texture_filter = 1
-offset_left = 160.0
-offset_top = 1288.0
-offset_right = 672.0
-offset_bottom = 1428.0
+offset_left = 245.0
+offset_top = 1210.5
+offset_right = 757.0
+offset_bottom = 1350.5
 theme = SubResource("Theme_xn6kt")
 texture_normal = ExtResource("5_xn6kt")
 texture_hover = ExtResource("7_isoef")
@@ -114,10 +90,10 @@ vertical_alignment = 1
 
 [node name="Exit" type="TextureButton" parent="Buttons" unique_id=1225351495]
 texture_filter = 1
-offset_left = 160.0
-offset_top = 1492.0
-offset_right = 672.0
-offset_bottom = 1632.0
+offset_left = 245.0
+offset_top = 1414.5
+offset_right = 757.0
+offset_bottom = 1554.5
 theme = SubResource("Theme_xn6kt")
 texture_normal = ExtResource("5_xn6kt")
 texture_hover = ExtResource("7_isoef")
@@ -133,6 +109,11 @@ theme_override_font_sizes/font_size = 62
 text = "Exit"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MenuBg" type="Sprite2D" parent="." unique_id=1464383880]
+position = Vector2(639.5, 358.50003)
+scale = Vector2(0.7649521, 0.7619554)
+texture = ExtResource("5_hj162")
 
 [connection signal="mouse_entered" from="Buttons/Start" to="." method="_on_start_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Start" to="." method="_on_start_mouse_exited"]
