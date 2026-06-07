@@ -5,5 +5,6 @@ class_name CosmeticTrailData
 @export var display_name: String
 @export var price: int = 0
 
+@export var preview : Texture2D
 @export var texture: Texture2D
 @export var color_ramp: GradientTexture1D

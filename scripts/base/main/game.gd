@@ -111,6 +111,9 @@ func _on_ball_died():
 	lose_heart()
 
 	if hearts > 0:
+		for boost in get_tree().get_nodes_in_group("boosts"):
+			boost.respawn_boost()
+			
 		ball.reset_to_spawn()
 
 	is_respawning = false

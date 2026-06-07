@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="CosmeticTrailData" format=3 uid="uid://c000txhj2xoal"]
 
 [ext_resource type="Script" uid="uid://dw06njle7ivrm" path="res://scripts/base/menu/trail_data.gd" id="1_8xh81"]
+[ext_resource type="Texture2D" uid="uid://dcxwtyj0yrw21" path="res://assets/trails/thumbnails/white trail.png" id="1_yxwq3"]
 
 [sub_resource type="Gradient" id="Gradient_8xh81"]
 offsets = PackedFloat32Array(0)
@@ -13,5 +14,6 @@ gradient = SubResource("Gradient_8xh81")
 script = ExtResource("1_8xh81")
 id = "default"
 display_name = "Default"
+preview = ExtResource("1_yxwq3")
 color_ramp = SubResource("GradientTexture1D_yxwq3")
 metadata/_custom_type_script = "uid://dw06njle7ivrm"

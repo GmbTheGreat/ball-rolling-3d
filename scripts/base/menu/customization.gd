@@ -1,6 +1,7 @@
 extends Control
 
-#region variables
+#region VisualShaderNodeResizableBase
+@onready var preview: TextureRect = $Preview
 
 @onready var btn_ball = find_child("BallButton", true, false) # tumhara Ball texture button
 @onready var btn_trail = find_child("TrailButton", true, false) # Trail button
@@ -11,28 +12,34 @@ extends Control
 @onready var _b3 = $Background
 #endregion
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	CosmeticsManager.ball_change.connect(on_ball_changed)
-	on_ball_changed(CosmeticsManager.get_current_ball_data())
-	
 	CosmeticsManager.trail_change.connect(on_trail_changed)
-	on_trail_changed(CosmeticsManager.get_current_trail_data())
-	
 	CosmeticsManager.background_change.connect(on_background_changed)
-	on_background_changed(CosmeticsManager.get_current_background_data())
+
+	match CosmeticsManager.current_category:
+		CosmeticsManager.CosmeticCategory.BALL:
+			on_ball_changed(CosmeticsManager.get_current_ball_data())
+
+		CosmeticsManager.CosmeticCategory.TRAIL:
+			on_trail_changed(CosmeticsManager.get_current_trail_data())
+
+		CosmeticsManager.CosmeticCategory.BACKGROUND:
+			on_background_changed(CosmeticsManager.get_current_background_data())
 
 
 func on_ball_changed(ball_data):
-	pass
+	preview.texture = ball_data["preview"]
 
 
 func on_trail_changed(trail_data: CosmeticTrailData):
-	pass
+	preview.texture = trail_data.preview
 
 
 func on_background_changed(background_data):
-	pass
+	preview.texture = background_data["preview"]
 
 
 #region button signals
@@ -62,16 +69,19 @@ func _on_back_pressed() -> void:
 
 func _on_ball_pressed() -> void:
 	CosmeticsManager.current_category = CosmeticsManager.CosmeticCategory.BALL
+	on_ball_changed(CosmeticsManager.get_current_ball_data())
 
 
 func _on_trail_pressed() -> void:
 	CosmeticsManager.current_category = CosmeticsManager.CosmeticCategory.TRAIL
+	on_trail_changed(CosmeticsManager.get_current_trail_data())
 	
 
 func _on_background_pressed() -> void:
 	CosmeticsManager.current_category = CosmeticsManager.CosmeticCategory.BACKGROUND
+	on_background_changed(CosmeticsManager.get_current_background_data())
 #endregion
-#-----------------------
+
 
 func _one_button_only():
 	await get_tree().process_frame
@@ -87,6 +97,7 @@ func _one_button_only():
 	_b1.button_pressed = CosmeticsManager.current_category == CosmeticsManager.CosmeticCategory.BALL
 	_b2.button_pressed = CosmeticsManager.current_category == CosmeticsManager.CosmeticCategory.TRAIL
 	_b3.button_pressed = CosmeticsManager.current_category == CosmeticsManager.CosmeticCategory.BACKGROUND
+
 
 func _enter_tree():
 	_one_button_only.call_deferred()

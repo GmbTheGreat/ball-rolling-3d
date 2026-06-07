@@ -14,31 +14,36 @@ var balls : Array = [
 		"id": "football",
 		"name": "Football",
 		"price": "0",
-		"texture": preload("res://assets/textures/skins/football.webp")
+		"texture": preload("res://assets/textures/skins/football.webp"),
+		"preview": preload("res://assets/thumbnail/football.png")
 	},
 	{
 		"id": "basketball",
 		"name": "Basletball",
 		"price": "0",
-		"texture": preload("res://assets/textures/skins/basketball.jpg")
+		"texture": preload("res://assets/textures/skins/basketball.jpg"),
+		"preview": preload("res://assets/thumbnail/basketball.png")
 	},
 	{
 		"id": "tennisball",
 		"name": "Tennisball",
 		"price": "0",
-		"texture": preload("res://assets/textures/skins/tennisball.png")
+		"texture": preload("res://assets/textures/skins/tennisball.png"),
+		"preview": preload("res://assets/thumbnail/tennisball.png")
 	},
 	{
 		"id": "poolball",
 		"name": "Poolball",
 		"price": "0",
-		"texture": preload("res://assets/textures/skins/poolball.webp")
+		"texture": preload("res://assets/textures/skins/poolball.webp"),
+		"preview": preload("res://assets/thumbnail/pool.png")
 	},
 	{
 		"id": "earth",
 		"name": "Earth",
 		"price": "500",
-		"texture": preload("res://assets/textures/skins/earth.jpg")
+		"texture": preload("res://assets/textures/skins/earth.jpg"),
+		"preview": preload("res://assets/thumbnail/earth.png")
 	},
 ]
 
@@ -56,19 +61,22 @@ var backgrounds : Array = [
 		"id": "sky_01",
 		"name": "Default",
 		"price": 0,
-		"hdri": preload("res://assets/hdri/sky_01.png")
+		"hdri": preload("res://assets/hdri/sky_01.png"),
+		"preview": preload("res://assets/hdri/thumbnails/default.png")
 	},
 	{
 		"id": "sun_set",
 		"name": "Sun Set",
 		"price": 0,
-		"hdri": preload("res://assets/hdri/sky_02.png")
+		"hdri": preload("res://assets/hdri/sky_02.png"),
+		"preview": preload("res://assets/hdri/thumbnails/evening.png")
 	},
 	{
 		"id": "cloudy",
 		"name": "Cloudy",
 		"price": 0,
-		"hdri": preload("res://assets/hdri/sky_03.png")
+		"hdri": preload("res://assets/hdri/sky_03.png"),
+		"preview": preload("res://assets/hdri/thumbnails/cloudy.png")
 	},
 ]
 
@@ -96,7 +104,7 @@ func next_ball():
 	ball_change.emit(get_current_ball_data())
 
 func equip_ball():
-	equiped_ball_id = get_current_ball_data().id
+	equiped_ball_id = get_current_ball_data()["id"]
 
 func get_equipped_skin() -> Dictionary:
 	for ball in balls:
@@ -201,5 +209,5 @@ func previous():
 			previous_trail()
 			
 		CosmeticCategory.BACKGROUND:
-			next_background()
+			previous_background()
 #endregion

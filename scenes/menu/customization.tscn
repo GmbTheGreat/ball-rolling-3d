@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://le0bqhclqdlq"]
 
 [ext_resource type="Script" uid="uid://bg16o71s1xkj5" path="res://scripts/base/menu/customization.gd" id="1_nvaev"]
-[ext_resource type="Texture2D" uid="uid://y62cpg22kylf" path="res://assets/thumbnail/football.png" id="5_tgp3n"]
 [ext_resource type="Texture2D" uid="uid://dehfoqauc7628" path="res://assets/ui/button_atlas_ui.tres" id="8_m3mfg"]
 [ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="9_87qbk"]
 [ext_resource type="Texture2D" uid="uid://dv1yptisdc8f3" path="res://assets/ui/window_atlas_ui.tres" id="12_7hjbw"]
@@ -61,6 +60,10 @@ region = Rect2(629, 433, 425, 189)
 [sub_resource type="AtlasTexture" id="AtlasTexture_28mpo"]
 atlas = ExtResource("8_m3mfg")
 region = Rect2(1085, 433, 426, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvaev"]
+atlas = ExtResource("12_7hjbw")
+region = Rect2(2239, 4062, 601, 687)
 
 [node name="customization" type="Control" unique_id=398594158]
 layout_mode = 3
@@ -187,9 +190,9 @@ anchor_top = 0.66400003
 anchor_right = 0.33400002
 anchor_bottom = 0.66400003
 offset_left = 567.0
-offset_top = 545.0
+offset_top = 583.00006
 offset_right = 992.0
-offset_bottom = 734.0
+offset_bottom = 772.00006
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.35, 0.35)
@@ -206,6 +209,15 @@ theme_override_fonts/font = ExtResource("9_87qbk")
 theme_override_font_sizes/font_size = 80
 text = "Equip"
 
+[node name="PreviewBox" type="TextureRect" parent="." unique_id=45236272]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 171.0
+offset_right = 1275.0
+offset_bottom = 1046.6758
+scale = Vector2(0.4, 0.37)
+texture = SubResource("AtlasTexture_nvaev")
+
 [node name="Preview" type="TextureRect" parent="." unique_id=996779794]
 layout_mode = 1
 anchors_preset = 8
@@ -213,13 +225,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 535.0
-offset_top = 261.0
-offset_right = 735.0
-offset_bottom = 461.0
+offset_left = 543.0
+offset_top = 224.0
+offset_right = 743.0
+offset_bottom = 424.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_tgp3n")
+expand_mode = 1
+stretch_mode = 3
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="HBoxContainer/Previous" to="." method="_on_previous_pressed"]

@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="CosmeticTrailData" format=3 uid="uid://0yq471onaipe"]
 
+[ext_resource type="Texture2D" uid="uid://qlaami3t2cxj" path="res://assets/trails/thumbnails/green trail.png" id="1_30711"]
 [ext_resource type="Script" uid="uid://dw06njle7ivrm" path="res://scripts/base/menu/trail_data.gd" id="1_jknp0"]
 
 [sub_resource type="Gradient" id="Gradient_jknp0"]
@@ -13,5 +14,6 @@ gradient = SubResource("Gradient_jknp0")
 script = ExtResource("1_jknp0")
 id = "green"
 display_name = "Green"
+preview = ExtResource("1_30711")
 color_ramp = SubResource("GradientTexture1D_30711")
 metadata/_custom_type_script = "uid://dw06njle7ivrm"

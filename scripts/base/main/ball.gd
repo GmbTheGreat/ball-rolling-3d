@@ -200,15 +200,3 @@ func _physics_process(delta):
 	if (position.y < -3.0 or Input.is_action_just_pressed("reset_debug")) and !is_dead:
 		is_dead = true
 		died.emit()
-		#is_respawning = true
-#
-		#water_droplets.emitting = true
-		#water_ripple.emitting = true
-#s
-		#angular_velocity = Vector3.ZERO
-		#current_speed = 0.0
-#
-		#await get_tree().create_timer(respawn_cooldown).timeout
-		#respawn()
-#
-		#is_respawning = false
