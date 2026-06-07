@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://le0bqhclqdlq"]
 
 [ext_resource type="Script" uid="uid://bg16o71s1xkj5" path="res://scripts/base/menu/customization.gd" id="1_nvaev"]
+[ext_resource type="Texture2D" uid="uid://bxifvbusm1fyu" path="res://assets/ui/Cosmetics BG.jpg" id="5_tgp3n"]
 [ext_resource type="Texture2D" uid="uid://dehfoqauc7628" path="res://assets/ui/button_atlas_ui.tres" id="8_m3mfg"]
 [ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="9_87qbk"]
 [ext_resource type="Texture2D" uid="uid://dv1yptisdc8f3" path="res://assets/ui/window_atlas_ui.tres" id="12_7hjbw"]
@@ -62,13 +63,19 @@ atlas = ExtResource("8_m3mfg")
 region = Rect2(1085, 433, 426, 189)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvaev"]
-atlas = ExtResource("12_7hjbw")
-region = Rect2(2239, 4062, 601, 687)
+atlas = ExtResource("8_m3mfg")
+region = Rect2(759, 668, 181, 189)
 
 [node name="customization" type="Control" unique_id=398594158]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_nvaev")
+
+[node name="CosmeticsBg" type="Sprite2D" parent="." unique_id=1603635543]
+modulate = Color(1, 1, 1, 0.49411765)
+position = Vector2(640.00006, 360)
+scale = Vector2(0.2777778, 0.2777778)
+texture = ExtResource("5_tgp3n")
 
 [node name="Back" type="TextureButton" parent="." unique_id=1042860709]
 layout_mode = 0
@@ -211,10 +218,10 @@ text = "Equip"
 
 [node name="PreviewBox" type="TextureRect" parent="." unique_id=45236272]
 layout_mode = 0
-offset_left = 490.0
-offset_top = 171.0
-offset_right = 1275.0
-offset_bottom = 1046.6758
+offset_left = 534.0
+offset_top = 252.00003
+offset_right = 1041.5
+offset_bottom = 811.4595
 scale = Vector2(0.4, 0.37)
 texture = SubResource("AtlasTexture_nvaev")
 
@@ -225,12 +232,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 543.0
-offset_top = 224.0
-offset_right = 743.0
-offset_bottom = 424.0
+offset_left = 581.0
+offset_top = 297.0
+offset_right = 781.0
+offset_bottom = 497.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 expand_mode = 1
 stretch_mode = 3
 
