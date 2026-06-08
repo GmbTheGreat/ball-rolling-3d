@@ -122,16 +122,28 @@ func _on_back_pressed() -> void:
 func _on_ball_pressed() -> void:
 	CosmeticsManager.current_category = CosmeticsManager.CosmeticCategory.BALL
 	on_ball_changed(CosmeticsManager.get_current_ball_data())
+	
+	_b1.scale = Vector2(0.26, 0.26)
+	_b2.scale = Vector2(0.25, 0.25)
+	_b3.scale = Vector2(0.25, 0.25)
 
 
 func _on_trail_pressed() -> void:
 	CosmeticsManager.current_category = CosmeticsManager.CosmeticCategory.TRAIL
 	on_trail_changed(CosmeticsManager.get_current_trail_data())
 	
+	_b1.scale = Vector2(0.25, 0.25)
+	_b2.scale = Vector2(0.26, 0.26)
+	_b3.scale = Vector2(0.25, 0.25)
+	
 
 func _on_background_pressed() -> void:
 	CosmeticsManager.current_category = CosmeticsManager.CosmeticCategory.BACKGROUND
 	on_background_changed(CosmeticsManager.get_current_background_data())
+	
+	_b1.scale = Vector2(0.25, 0.25)
+	_b2.scale = Vector2(0.25, 0.25)
+	_b3.scale = Vector2(0.26, 0.26)
 #endregion
 
 
