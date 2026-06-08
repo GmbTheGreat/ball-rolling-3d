@@ -212,6 +212,7 @@ offset_bottom = 725.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.4, 0.4)
+toggle_mode = true
 texture_normal = SubResource("AtlasTexture_ikwwa")
 texture_pressed = SubResource("AtlasTexture_28mpo")
 

@@ -4,6 +4,7 @@ extends Control
 @onready var coins_label = $Coins/Label
 @onready var name_label = $Name/Label
 @onready var equip_label = $Equip/Label
+@onready var equip_button = $Equip
 @onready var preview: TextureRect = $Preview
 @onready var buy_popup = $buy_item
 
@@ -62,7 +63,7 @@ func on_background_changed(background_data):
 #region button signals
 func _on_previous_pressed() -> void:
 	CosmeticsManager.previous()
-
+ 
 
 func _on_next_pressed() -> void:
 	CosmeticsManager.next()
@@ -110,6 +111,7 @@ func _on_equip_pressed() -> void:
 
 				buy_popup.show_popup(bg["name"],bg["price"])
 
+		
 	update_ui()
 
 
@@ -170,8 +172,10 @@ func update_ui():
 
 				if ball["id"] == CosmeticsManager.equiped_ball_id:
 					equip_label.text = "Equipped"
+					equip_button.button_pressed = true
 				else:
 					equip_label.text = "Equip"
+					equip_button.button_pressed = false
 
 			else:
 				equip_label.text = "Buy"
@@ -187,8 +191,10 @@ func update_ui():
 
 				if trail.id == CosmeticsManager.equipped_trail_id:
 					equip_label.text = "Equipped"
+					equip_button.button_pressed = true
 				else:
 					equip_label.text = "Equip"
+					equip_button.button_pressed = false
 
 			else:
 				equip_label.text = "Buy"
@@ -204,8 +210,10 @@ func update_ui():
 
 				if bg["id"] == CosmeticsManager.equipped_background_id:
 					equip_label.text = "Equipped"
+					equip_button.button_pressed = true
 				else:
 					equip_label.text = "Equip"
+					equip_button.button_pressed = false
 
 			else:
 				equip_label.text = "Buy"
