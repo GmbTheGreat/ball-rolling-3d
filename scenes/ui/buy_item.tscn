@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://bwh5hes6uiq13"]
+
+[ext_resource type="Script" uid="uid://c34pmvpnqdmjs" path="res://scripts/base/ui/buy_item.gd" id="1_q2ywg"]
+[ext_resource type="Texture2D" uid="uid://dv1yptisdc8f3" path="res://assets/ui/window_atlas_ui.tres" id="1_xqt65"]
+[ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="2_q2ywg"]
+[ext_resource type="Texture2D" uid="uid://dehfoqauc7628" path="res://assets/ui/button_atlas_ui.tres" id="3_y1d80"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_070hf"]
+atlas = ExtResource("1_xqt65")
+region = Rect2(599, 1117, 450, 630)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0oaly"]
+atlas = ExtResource("1_xqt65")
+region = Rect2(3619, 3893, 309, 111)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2ywg"]
+atlas = ExtResource("3_y1d80")
+region = Rect2(3297, 755, 181, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l67pq"]
+atlas = ExtResource("3_y1d80")
+region = Rect2(3706, 755, 182, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1d80"]
+atlas = ExtResource("3_y1d80")
+region = Rect2(3502, 537, 181, 189)
+
+[node name="buy_item" type="Control" unique_id=163735436]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_q2ywg")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=809483626]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 39.0
+offset_right = 859.0
+offset_bottom = 669.0
+texture = SubResource("AtlasTexture_070hf")
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=1091393663]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 17.0
+offset_right = 333.0
+offset_bottom = 77.0
+theme_override_fonts/font = ExtResource("2_q2ywg")
+theme_override_font_sizes/font_size = 50
+text = "Confirm"
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect" unique_id=1341989192]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 302.0
+offset_right = 421.0
+offset_bottom = 413.0
+scale = Vector2(0.7, 0.7)
+texture = SubResource("AtlasTexture_0oaly")
+
+[node name="Label" type="Label" parent="TextureRect/TextureRect" unique_id=371278929]
+layout_mode = 0
+offset_left = 97.142845
+offset_top = 24.285713
+offset_right = 218.14285
+offset_bottom = 79.28571
+theme_override_fonts/font = ExtResource("2_q2ywg")
+theme_override_font_sizes/font_size = 45
+text = "1500"
+
+[node name="Yes" type="TextureButton" parent="TextureRect" unique_id=920014375]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 417.0
+offset_right = 307.0
+offset_bottom = 606.0
+scale = Vector2(0.4, 0.4)
+texture_normal = SubResource("AtlasTexture_q2ywg")
+texture_disabled = SubResource("AtlasTexture_l67pq")
+
+[node name="No" type="TextureButton" parent="TextureRect" unique_id=1761380760]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 416.0
+offset_right = 430.0
+offset_bottom = 605.0
+scale = Vector2(0.4, 0.4)
+texture_normal = SubResource("AtlasTexture_y1d80")
+
+[node name="Label2" type="Label" parent="TextureRect" unique_id=1757148659]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 180.0
+offset_right = 338.0
+offset_bottom = 228.0
+theme_override_fonts/font = ExtResource("2_q2ywg")
+theme_override_font_sizes/font_size = 40
+text = "Buy Earth?"
+
+[connection signal="pressed" from="TextureRect/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="TextureRect/No" to="." method="_on_no_pressed"]

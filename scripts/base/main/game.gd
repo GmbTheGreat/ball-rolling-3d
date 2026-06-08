@@ -90,9 +90,10 @@ func _on_level_completed():
 	# Save stars
 	# Save best time
 	# Unlock next level
-	
+
 	win_level_ui.visible = true
 	get_tree().paused = true
+
 
 
 func collect_star():

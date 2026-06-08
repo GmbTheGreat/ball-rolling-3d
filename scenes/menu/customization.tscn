@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bg16o71s1xkj5" path="res://scripts/base/menu/customization.gd" id="1_nvaev"]
 [ext_resource type="Texture2D" uid="uid://bxifvbusm1fyu" path="res://assets/ui/Cosmetics BG.jpg" id="5_tgp3n"]
+[ext_resource type="PackedScene" uid="uid://bwh5hes6uiq13" path="res://scenes/ui/buy_item.tscn" id="6_vfrjv"]
 [ext_resource type="Texture2D" uid="uid://dehfoqauc7628" path="res://assets/ui/button_atlas_ui.tres" id="8_m3mfg"]
 [ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="9_87qbk"]
 [ext_resource type="Texture2D" uid="uid://dv1yptisdc8f3" path="res://assets/ui/window_atlas_ui.tres" id="12_7hjbw"]
@@ -66,6 +67,14 @@ region = Rect2(1085, 433, 426, 189)
 atlas = ExtResource("8_m3mfg")
 region = Rect2(759, 668, 181, 189)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfrjv"]
+atlas = ExtResource("12_7hjbw")
+region = Rect2(3635, 4162, 293, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2tad"]
+atlas = ExtResource("12_7hjbw")
+region = Rect2(3619, 3893, 309, 111)
+
 [node name="customization" type="Control" unique_id=398594158]
 layout_mode = 3
 anchors_preset = 0
@@ -115,18 +124,18 @@ texture_pressed = SubResource("AtlasTexture_2tgwr")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=208113733]
 layout_mode = 0
-offset_left = 1143.0
+offset_left = 1113.0
 offset_top = 28.0
-offset_right = 1455.5
+offset_right = 1425.5
 offset_bottom = 522.99994
 scale = Vector2(0.4, 0.4)
 texture = SubResource("AtlasTexture_q76ue")
 
 [node name="Ball" type="TextureButton" parent="." unique_id=1803289598]
 layout_mode = 0
-offset_left = 1152.0
+offset_left = 1122.0
 offset_top = 48.0
-offset_right = 1577.0
+offset_right = 1547.0
 offset_bottom = 237.0
 scale = Vector2(0.25, 0.25)
 size_flags_horizontal = 5
@@ -139,16 +148,16 @@ layout_mode = 0
 offset_left = 120.0
 offset_top = 44.0
 offset_right = 280.0
-offset_bottom = 154.0
+offset_bottom = 139.0
 theme_override_fonts/font = ExtResource("9_87qbk")
 theme_override_font_sizes/font_size = 80
 text = "Ball"
 
 [node name="Trail" type="TextureButton" parent="." unique_id=1913931347]
 layout_mode = 0
-offset_left = 1152.0
+offset_left = 1122.0
 offset_top = 104.0
-offset_right = 1577.0
+offset_right = 1547.0
 offset_bottom = 293.0
 scale = Vector2(0.25, 0.25)
 size_flags_horizontal = 5
@@ -161,16 +170,16 @@ layout_mode = 0
 offset_left = 112.0
 offset_top = 44.0
 offset_right = 306.0
-offset_bottom = 154.0
+offset_bottom = 139.0
 theme_override_fonts/font = ExtResource("9_87qbk")
 theme_override_font_sizes/font_size = 80
 text = "Trail"
 
 [node name="Background" type="TextureButton" parent="." unique_id=854996570]
 layout_mode = 0
-offset_left = 1152.0
+offset_left = 1122.0
 offset_top = 160.0
-offset_right = 1577.0
+offset_right = 1547.0
 offset_bottom = 349.0
 scale = Vector2(0.25, 0.25)
 size_flags_horizontal = 5
@@ -180,10 +189,10 @@ texture_pressed = SubResource("AtlasTexture_1pqb2")
 
 [node name="Label3" type="Label" parent="Background" unique_id=1997682127]
 layout_mode = 0
-offset_left = 68.0
-offset_top = 44.0
-offset_right = 379.0
-offset_bottom = 154.0
+offset_left = 124.0
+offset_top = 36.0
+offset_right = 282.0
+offset_bottom = 131.0
 theme_override_fonts/font = ExtResource("9_87qbk")
 theme_override_font_sizes/font_size = 80
 text = "Sky"
@@ -196,32 +205,40 @@ anchor_left = 0.33400002
 anchor_top = 0.66400003
 anchor_right = 0.33400002
 anchor_bottom = 0.66400003
-offset_left = 567.0
-offset_top = 583.00006
-offset_right = 992.0
-offset_bottom = 772.00006
+offset_left = 560.0
+offset_top = 536.0
+offset_right = 985.0
+offset_bottom = 725.0
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(0.35, 0.35)
+scale = Vector2(0.4, 0.4)
 texture_normal = SubResource("AtlasTexture_ikwwa")
 texture_pressed = SubResource("AtlasTexture_28mpo")
 
 [node name="Label" type="Label" parent="Equip" unique_id=1794164039]
-layout_mode = 0
-offset_left = 92.49999
-offset_top = 30.0
-offset_right = 335.5
-offset_bottom = 140.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.50006
+offset_top = -46.99997
+offset_right = 160.49994
+offset_bottom = 48.00003
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = ExtResource("9_87qbk")
 theme_override_font_sizes/font_size = 80
 text = "Equip"
 
-[node name="PreviewBox" type="TextureRect" parent="." unique_id=45236272]
+[node name="PreviewBG" type="TextureRect" parent="." unique_id=45236272]
 layout_mode = 0
-offset_left = 534.0
-offset_top = 252.00003
-offset_right = 1041.5
-offset_bottom = 811.4595
+offset_left = 544.0
+offset_top = 248.00002
+offset_right = 1051.5
+offset_bottom = 807.4595
 scale = Vector2(0.4, 0.37)
 texture = SubResource("AtlasTexture_nvaev")
 
@@ -232,15 +249,66 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 581.0
-offset_top = 297.0
-offset_right = 781.0
-offset_bottom = 497.0
+offset_left = 593.0
+offset_top = 295.0
+offset_right = 793.0
+offset_bottom = 495.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 expand_mode = 1
 stretch_mode = 3
+
+[node name="Name" type="TextureRect" parent="." unique_id=1528960197]
+layout_mode = 0
+offset_left = 559.0
+offset_top = 459.99997
+offset_right = 985.0
+offset_bottom = 600.0
+scale = Vector2(0.4, 0.4)
+texture = SubResource("AtlasTexture_vfrjv")
+
+[node name="Label" type="Label" parent="Name" unique_id=1680840506]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.50015
+offset_top = -55.000008
+offset_right = 140.49985
+offset_bottom = 20.999992
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_87qbk")
+theme_override_font_sizes/font_size = 64
+text = "Football"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="buy_item" parent="." unique_id=163735436 instance=ExtResource("6_vfrjv")]
+visible = false
+layout_mode = 0
+
+[node name="Coins" type="TextureRect" parent="." unique_id=1434848038]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 8.000001
+offset_right = 532.0
+offset_bottom = 119.0
+scale = Vector2(0.6, 0.6)
+texture = SubResource("AtlasTexture_i2tad")
+
+[node name="Label" type="Label" parent="Coins" unique_id=1099253113]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 21.666666
+offset_right = 234.0
+offset_bottom = 81.666664
+theme_override_fonts/font = ExtResource("9_87qbk")
+theme_override_font_sizes/font_size = 50
+text = "1500"
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="HBoxContainer/Previous" to="." method="_on_previous_pressed"]

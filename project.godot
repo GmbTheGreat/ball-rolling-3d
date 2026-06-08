@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 
 LevelsManager="*uid://dnwdfi8yg26kp"
 CosmeticsManager="*uid://b76r840wsue0q"
+SaveManager="*uid://h8asm6p262qw"
 
 [display]
 
