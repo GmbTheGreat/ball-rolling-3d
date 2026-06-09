@@ -172,10 +172,8 @@ func update_ui():
 
 				if ball["id"] == CosmeticsManager.equiped_ball_id:
 					equip_label.text = "Equipped"
-					equip_button.button_pressed = true
 				else:
 					equip_label.text = "Equip"
-					equip_button.button_pressed = false
 
 			else:
 				equip_label.text = "Buy"
@@ -191,10 +189,8 @@ func update_ui():
 
 				if trail.id == CosmeticsManager.equipped_trail_id:
 					equip_label.text = "Equipped"
-					equip_button.button_pressed = true
 				else:
 					equip_label.text = "Equip"
-					equip_button.button_pressed = false
 
 			else:
 				equip_label.text = "Buy"
@@ -210,14 +206,12 @@ func update_ui():
 
 				if bg["id"] == CosmeticsManager.equipped_background_id:
 					equip_label.text = "Equipped"
-					equip_button.button_pressed = true
 				else:
 					equip_label.text = "Equip"
-					equip_button.button_pressed = false
 
 			else:
 				equip_label.text = "Buy"
-
+	
 
 func update_coins_ui():
 	coins_label.text = str(SaveManager.save_data["total_coins"])
