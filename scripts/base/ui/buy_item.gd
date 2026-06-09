@@ -10,7 +10,7 @@ signal cancelled
 
 
 func show_popup(item_name:String, price:int):
-	item_name_label.text = "Buy %s?" % item_name
+	item_name_label.text = "Buy\n%s?" % item_name
 	price_label.text = str(price)
 
 	var can_afford = SaveManager.save_data["total_coins"] >= price

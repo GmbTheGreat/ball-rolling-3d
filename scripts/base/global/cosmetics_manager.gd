@@ -19,7 +19,7 @@ var balls : Array = [
 	},
 	{
 		"id": "basketball",
-		"name": "Basletball",
+		"name": "Basketball",
 		"price": 0,
 		"texture": preload("res://assets/textures/skins/basketball.jpg"),
 		"preview": preload("res://assets/thumbnail/basketball.png")

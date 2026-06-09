@@ -34,7 +34,13 @@ func _ready() -> void:
 	game_over_ui.visible = false
 	win_level_ui.visible = false
 
-	load_level(LevelsManager.current_level)
+	var level_instance = SceneLoader.loaded_level_scene.instantiate()
+	level_holder.add_child(level_instance)
+	
+	current_level = level_instance
+	
+	var win_point = level_instance.get_node("win_point")
+	win_point.level_completed.connect(_on_level_completed)
 	
 	apply_equipped_background()
 	update_hearts_ui()
@@ -93,7 +99,6 @@ func _on_level_completed():
 
 	win_level_ui.visible = true
 	get_tree().paused = true
-
 
 
 func collect_star():
