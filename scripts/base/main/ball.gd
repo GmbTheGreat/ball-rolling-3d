@@ -1,6 +1,7 @@
 extends RigidBody3D
 
 signal died
+signal movement_started
 
 #region variables
 @export var acceleration := 8.0
@@ -25,6 +26,7 @@ signal died
 @onready var speedlines: Control = $"../UI/speedlines"
 @onready var speedlines_rect = $"../UI/speedlines/ColorRect"
 
+var has_started_moving := false
 var move_direction := Vector3.FORWARD
 var current_speed := 0.0
 var normal_move_speed := 0.0
@@ -73,6 +75,7 @@ func reset_to_spawn():
 	move_direction = Vector3.FORWARD
 
 	is_dead = false
+	has_started_moving = false
 
 
 func apply_boost():
@@ -134,6 +137,10 @@ func _physics_process(delta):
 
 	# ACCELERATION
 	if Input.is_action_pressed("ui_up"):
+		if !has_started_moving:
+			has_started_moving = true
+			movement_started.emit()
+		
 		current_speed += acceleration * delta
 		current_speed = clamp(
 			current_speed,
@@ -143,6 +150,10 @@ func _physics_process(delta):
 
 	# BRAKE / REVERSE
 	elif Input.is_action_pressed("ui_down"):
+		if !has_started_moving:
+			has_started_moving = true
+			movement_started.emit()
+			
 		current_speed -= brake_force * delta
 		current_speed = clamp(
 			current_speed,

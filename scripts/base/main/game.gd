@@ -13,12 +13,14 @@ var current_level
 # Current level run data
 var star_collected := false
 var hearts := 3
+var timer_started := false
 var level_time := 0.0
 var is_respawning := false
 
 
 func _ready() -> void:
 	# ball signals
+	ball.movement_started.connect(_on_ball_movement_started)
 	ball.died.connect(_on_ball_died)
 	
 	# Game over ui signals
@@ -47,9 +49,13 @@ func _ready() -> void:
 
 
 func _process(delta):
-	if !get_tree().paused:
+	if !get_tree().paused and timer_started:
 		level_time += delta
 		timer_ui.update_time(level_time)
+
+
+func _on_ball_movement_started():
+	timer_started = true
 
 
 func load_level(level_path: String):
@@ -75,6 +81,7 @@ func load_level(level_path: String):
 	# Reset run data
 	hearts = 3
 	star_collected = false
+	timer_started = false
 	level_time = 0.0
 
 	timer_ui.update_time(0.0)

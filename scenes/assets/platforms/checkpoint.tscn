@@ -1,27 +1,17 @@
 [gd_scene format=3 uid="uid://cb0upnrhts18f"]
 
-[ext_resource type="Script" uid="uid://b7obakdkauhnb" path="res://scripts/base/interactables/checkpoint.gd" id="1_s8fh4"]
+[ext_resource type="PackedScene" uid="uid://c6sylqfe6jocr" path="res://assets/models/level-platforms/checkpoint.glb" id="1_s8fh4"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_2evnm"]
-size = Vector3(2.5, 0.1, 2.5)
+[sub_resource type="BoxShape3D" id="BoxShape3D_jy2xw"]
+size = Vector3(5, 3.272522, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s8fh4"]
-transparency = 1
-albedo_color = Color(1, 1, 1, 0.46666667)
+[node name="checkpoint" unique_id=1309010692 instance=ExtResource("1_s8fh4")]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_jy2xw"]
-material = SubResource("StandardMaterial3D_s8fh4")
-size = Vector2(2.5, 2.5)
+[node name="Base_Taper" parent="." index="0" unique_id=1757687254]
+transform = Transform3D(1.30709, 0, 0, 0, 1.21, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="checkpoint" type="Node3D" unique_id=1019531430]
-script = ExtResource("1_s8fh4")
+[node name="Area3D" type="Area3D" parent="." index="1" unique_id=227792243]
 
-[node name="Area3D" type="Area3D" parent="." unique_id=1491982539]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=505153493]
-shape = SubResource("BoxShape3D_2evnm")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=913222213]
-mesh = SubResource("PlaneMesh_jy2xw")
-
-[connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=695878939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.163926, 1.4296196, 0)
+shape = SubResource("BoxShape3D_jy2xw")

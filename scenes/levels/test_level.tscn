@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b86kw00lt8vl5" path="res://scenes/assets/interactables/boost.tscn" id="6_6xh4u"]
 [ext_resource type="PackedScene" uid="uid://bhr8neihmxmiq" path="res://scenes/assets/interactables/star.tscn" id="7_cyt5c"]
 [ext_resource type="PackedScene" uid="uid://cwgy6i2npqc0q" path="res://scenes/assets/interactables/win_point.tscn" id="8_7x1jh"]
+[ext_resource type="PackedScene" uid="uid://cb0upnrhts18f" path="res://scenes/assets/platforms/checkpoint.tscn" id="9_hfwtw"]
 
 [node name="Test Level" type="Node3D" unique_id=493517671]
 
@@ -156,3 +157,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.673292, 12.124981, -159.81
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.504, 1.5747721, -17.837156)
 
 [node name="Checkpoints" type="Node" parent="." unique_id=1748324811]
+
+[node name="checkpoint" parent="Checkpoints" unique_id=1309010692 instance=ExtResource("9_hfwtw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5046, 4.579587, -145.74915)

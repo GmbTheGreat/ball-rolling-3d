@@ -16,7 +16,6 @@ energy_multiplier = 1.1
 
 [sub_resource type="Sky" id="Sky_gsayk"]
 sky_material = SubResource("PanoramaSkyMaterial_gsayk")
-process_mode = 3
 
 [sub_resource type="Environment" id="Environment_gf1f2"]
 background_mode = 2
