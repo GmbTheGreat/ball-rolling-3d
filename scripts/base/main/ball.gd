@@ -32,7 +32,9 @@ var current_speed := 0.0
 var normal_move_speed := 0.0
 var normal_max_speed := 0.0
 var boost_active := false
+var initial_spawn_position: Vector3
 var spawn_position : Vector3
+var current_checkpoint_position : Vector3
 var can_jump := 0.5
 var is_dead := false
 #endregion
@@ -42,7 +44,8 @@ func _ready() -> void:
 	normal_move_speed = move_speed
 	normal_max_speed = max_speed
 	
-	spawn_position = global_position
+	initial_spawn_position = global_position
+	current_checkpoint_position = global_position
 	
 	speedlines.visible = false
 
@@ -66,7 +69,8 @@ func apply_equipped_trail():
 
 
 func reset_to_spawn():
-	global_position = spawn_position
+	global_position = initial_spawn_position
+	current_checkpoint_position = initial_spawn_position
 
 	linear_velocity = Vector3.ZERO
 	angular_velocity = Vector3.ZERO
@@ -76,6 +80,18 @@ func reset_to_spawn():
 
 	is_dead = false
 	has_started_moving = false
+
+
+func respawn():
+	global_position = current_checkpoint_position
+
+	linear_velocity = Vector3.ZERO
+	angular_velocity = Vector3.ZERO
+
+	current_speed = 0.0
+	move_direction = Vector3.FORWARD
+	
+	is_dead = false
 
 
 func apply_boost():

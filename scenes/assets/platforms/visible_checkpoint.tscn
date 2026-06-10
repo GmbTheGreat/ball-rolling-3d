@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cb0upnrhts18f"]
+
+[ext_resource type="PackedScene" uid="uid://c6sylqfe6jocr" path="res://assets/models/level-platforms/checkpoint.glb" id="1_w50ru"]
+
+[node name="visible_checkpoint" unique_id=1309010692 instance=ExtResource("1_w50ru")]
+
+[node name="Base_Taper" parent="." index="0" unique_id=1757687254]
+transform = Transform3D(1.30709, 0, 0, 0, 1.21, 0, 0, 0, 1, 0.29264235, 1.1166229, 0)

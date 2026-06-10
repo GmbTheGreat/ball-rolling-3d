@@ -127,7 +127,7 @@ func _on_ball_died():
 		for boost in get_tree().get_nodes_in_group("boosts"):
 			boost.respawn_boost()
 			
-		ball.reset_to_spawn()
+		ball.respawn()
 
 	is_respawning = false
 

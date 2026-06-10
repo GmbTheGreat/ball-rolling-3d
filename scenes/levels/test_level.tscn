@@ -8,7 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://b86kw00lt8vl5" path="res://scenes/assets/interactables/boost.tscn" id="6_6xh4u"]
 [ext_resource type="PackedScene" uid="uid://bhr8neihmxmiq" path="res://scenes/assets/interactables/star.tscn" id="7_cyt5c"]
 [ext_resource type="PackedScene" uid="uid://cwgy6i2npqc0q" path="res://scenes/assets/interactables/win_point.tscn" id="8_7x1jh"]
-[ext_resource type="PackedScene" uid="uid://cb0upnrhts18f" path="res://scenes/assets/platforms/checkpoint.tscn" id="9_hfwtw"]
+[ext_resource type="PackedScene" uid="uid://cb0upnrhts18f" path="res://scenes/assets/platforms/visible_checkpoint.tscn" id="9_2mu0v"]
+[ext_resource type="PackedScene" uid="uid://dyvik3on3111j" path="res://scenes/assets/interactables/checkpoint.tscn" id="10_jmx14"]
 
 [node name="Test Level" type="Node3D" unique_id=493517671]
 
@@ -33,7 +34,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.86037153, 0, 4.0949993, -123.6
 transform = Transform3D(-4.371139e-08, 0, -0.866, 0, 1, 0, 1, 0, -3.785406e-08, -11.664, 4.095, -135.257)
 
 [node name="strigth_platform7" parent="Platforms" unique_id=1186457753 instance=ExtResource("4_v45ci")]
-transform = Transform3D(-0.99999994, 0, 8.611527e-08, 0, 0.9999999, 0, -8.742276e-08, 0, -0.9850438, -23.31596, 4.0949993, -148.19484)
+transform = Transform3D(-0.99999994, 0, 8.611527e-08, 0, 0.9999999, 0, -8.742276e-08, 0, -0.9850438, -23.299824, 4.0949993, -148.21098)
 
 [node name="strigth_platform8" parent="Platforms" unique_id=1446837856 instance=ExtResource("4_v45ci")]
 transform = Transform3D(-1, 0, 7.9212455e-08, 0, 1, 0, -1.509958e-07, 0, -0.5246004, -23.34303, 8.226202, -169.80612)
@@ -158,5 +159,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.504, 1.5747721, -17.837156
 
 [node name="Checkpoints" type="Node" parent="." unique_id=1748324811]
 
-[node name="checkpoint" parent="Checkpoints" unique_id=1309010692 instance=ExtResource("9_hfwtw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.5046, 4.579587, -145.74915)
+[node name="visible_checkpoint" parent="Checkpoints" unique_id=1309010692 instance=ExtResource("9_2mu0v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.403, 4.366, -144)
+
+[node name="checkpoint" parent="Checkpoints" unique_id=1530323803 instance=ExtResource("10_jmx14")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.295, 4.6398764, -144)
