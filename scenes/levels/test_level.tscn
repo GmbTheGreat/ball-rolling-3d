@@ -164,3 +164,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.403, 4.366, -144)
 
 [node name="checkpoint" parent="Checkpoints" unique_id=1530323803 instance=ExtResource("10_jmx14")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.295, 4.6398764, -144)
+
+[node name="checkpoint2" parent="Checkpoints" unique_id=824695682 instance=ExtResource("10_jmx14")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.295, 4.6398764, -151.03624)
