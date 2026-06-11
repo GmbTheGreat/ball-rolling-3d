@@ -4,14 +4,18 @@ signal retry_pressed
 signal home_pressed
 signal next_pressed
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _ready():
+	pivot_offset = size / 2
 
+func show_smooth():
+	scale = Vector2(0.9, 0.9)
+	modulate.a = 0.0
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	visible = true
+
+	var tween = create_tween()
+	tween.parallel().tween_property(self,"scale",Vector2.ONE,0.25)
+	tween.parallel().tween_property(self,"modulate:a",1.0,0.25)
 
 
 func _on_home_win_pressed() -> void:

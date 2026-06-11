@@ -37,6 +37,7 @@ var spawn_position : Vector3
 var current_checkpoint_position : Vector3
 var can_jump := 0.5
 var is_dead := false
+var level_completed := false
 #endregion
 
 
@@ -80,6 +81,7 @@ func reset_to_spawn():
 
 	is_dead = false
 	has_started_moving = false
+	level_completed = false
 
 
 func respawn():
@@ -140,16 +142,10 @@ func _physics_process(delta):
 
 	# STEERING
 	if Input.is_action_pressed("ui_left"):
-		move_direction = move_direction.rotated(
-			Vector3.UP,
-			rotate_speed * steer_direction * delta
-		)
+		move_direction = move_direction.rotated(Vector3.UP,rotate_speed * steer_direction * delta)
 
 	if Input.is_action_pressed("ui_right"):
-		move_direction = move_direction.rotated(
-			Vector3.UP,
-			-rotate_speed * steer_direction * delta
-		)
+		move_direction = move_direction.rotated(Vector3.UP,-rotate_speed * steer_direction * delta)
 
 	# ACCELERATION
 	if Input.is_action_pressed("ui_up"):
@@ -158,11 +154,7 @@ func _physics_process(delta):
 			movement_started.emit()
 		
 		current_speed += acceleration * delta
-		current_speed = clamp(
-			current_speed,
-			-move_speed,
-			move_speed
-		)
+		current_speed = clamp(current_speed,-move_speed,move_speed)
 
 	# BRAKE / REVERSE
 	elif Input.is_action_pressed("ui_down"):
@@ -171,19 +163,11 @@ func _physics_process(delta):
 			movement_started.emit()
 			
 		current_speed -= brake_force * delta
-		current_speed = clamp(
-			current_speed,
-			-move_speed * 0.5,
-			move_speed
-		)
+		current_speed = clamp(current_speed,-move_speed * 0.5,move_speed)
 
 	# NATURAL FRICTION
 	else:
-		current_speed = move_toward(
-			current_speed,
-			0.0,
-			friction * delta
-		)
+		current_speed = move_toward(current_speed,0.0,friction * delta)
 	
 	# JUMP
 	if Input.is_action_just_pressed("jump") and ground_ray.is_colliding() and can_jump >= jump_cooldown:
@@ -206,16 +190,8 @@ func _physics_process(delta):
 		control = air_control
 
 	# SMOOTH MOVEMENT
-	linear_velocity = linear_velocity.lerp(
-		target_velocity,
-		control * delta
-	)
-	
-	var horizontal_velocity = Vector3(
-		linear_velocity.x,
-		0,
-		linear_velocity.z
-	)
+	linear_velocity = linear_velocity.lerp(target_velocity,control * delta)
+	var horizontal_velocity = Vector3(linear_velocity.x,0,linear_velocity.z)
 
 	if horizontal_velocity.length() > max_speed:
 		horizontal_velocity = horizontal_velocity.normalized() * max_speed
@@ -224,6 +200,7 @@ func _physics_process(delta):
 		linear_velocity.z = horizontal_velocity.z
 
 	# FALL CHECK
-	if (position.y < -3.0 or Input.is_action_just_pressed("reset_debug")) and !is_dead:
-		is_dead = true
-		died.emit()
+	if !level_completed:
+		if (position.y < -3.0 or Input.is_action_just_pressed("reset_debug")) and !is_dead:
+			is_dead = true
+			died.emit()

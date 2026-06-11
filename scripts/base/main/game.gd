@@ -16,6 +16,7 @@ var hearts := 3
 var timer_started := false
 var level_time := 0.0
 var is_respawning := false
+var level_completed := false
 
 
 func _ready() -> void:
@@ -83,12 +84,19 @@ func load_level(level_path: String):
 	star_collected = false
 	timer_started = false
 	level_time = 0.0
+	level_completed = false
 
 	timer_ui.update_time(0.0)
 	update_hearts_ui()
 
 
 func _on_level_completed():
+	if level_completed:
+		return
+
+	level_completed = true
+	ball.level_completed = true
+
 	var stars := 1
 
 	# Star 2 = Collect star
@@ -98,13 +106,14 @@ func _on_level_completed():
 	# Star 3 = Beat target time
 	if level_time <= LevelsManager.get_target_time():
 		stars += 1
-
+	
 	# TODO:
 	# Save stars
-	# Save best time
 	# Unlock next level
 
-	win_level_ui.visible = true
+	await get_tree().create_timer(0.8).timeout
+	
+	win_level_ui.show_smooth()
 	get_tree().paused = true
 
 
@@ -154,6 +163,7 @@ func _on_retry_pressed():
 	
 	load_level(LevelsManager.current_level)
 	ball.reset_to_spawn()
+	ball.level_completed = false
 
 
 func _on_home_pressed():
