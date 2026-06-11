@@ -152,7 +152,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.34, 9.03822, -165.79669)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.503797, -2.061, -24.796)
 
 [node name="star" parent="." unique_id=1729761214 groups=["star"] instance=ExtResource("7_cyt5c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.673292, 12.124981, -159.81712)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.673292, 12.714744, -159.806)
 
 [node name="win_point" parent="." unique_id=1240424430 instance=ExtResource("8_7x1jh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.504, 1.5747721, -17.837156)
@@ -164,6 +164,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.403, 4.366, -144)
 
 [node name="checkpoint" parent="Checkpoints" unique_id=1530323803 instance=ExtResource("10_jmx14")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.295, 4.6398764, -144)
-
-[node name="checkpoint2" parent="Checkpoints" unique_id=824695682 instance=ExtResource("10_jmx14")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.295, 4.6398764, -151.03624)

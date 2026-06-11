@@ -168,6 +168,7 @@ func _on_ad_pressed():
 	update_hearts_ui()
 	
 	game_over_ui.visible = false
+	ball.respawn()
 
 	# TODO:
 	# Respawn player here instead of reloading level
