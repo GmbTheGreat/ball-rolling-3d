@@ -7,6 +7,7 @@ extends Node
 @onready var game_over_ui: Control = $UI/game_over_ui
 @onready var win_level_ui: Control = $UI/win_level_ui
 @onready var ball : RigidBody3D = $ball
+@onready var camera: Camera3D = $Camera3D
 
 var current_level
 
@@ -98,22 +99,30 @@ func _on_level_completed():
 	ball.level_completed = true
 
 	var stars := 1
+	var coins := 100
 
 	# Star 2 = Collect star
 	if star_collected:
 		stars += 1
+		coins += 50
 
 	# Star 3 = Beat target time
 	if level_time <= LevelsManager.get_target_time():
 		stars += 1
+		coins += 50
+	
+	SaveManager.save_data["total_coins"] += coins
+	SaveManager.save_game()
 	
 	# TODO:
-	# Save stars
 	# Unlock next level
 
-	await get_tree().create_timer(0.8).timeout
+	camera.shake(1.0,1.0)
+	await get_tree().create_timer(1.0).timeout
 	
 	win_level_ui.show_smooth()
+	await get_tree().process_frame
+	win_level_ui.show_results(stars, coins)
 	get_tree().paused = true
 
 
@@ -159,11 +168,11 @@ func game_over():
 
 
 func _on_retry_pressed():
-	get_tree().paused = false
-	
 	load_level(LevelsManager.current_level)
 	ball.reset_to_spawn()
-	ball.level_completed = false
+	await get_tree().process_frame
+	ball.is_dead = false
+	get_tree().paused = false
 
 
 func _on_home_pressed():

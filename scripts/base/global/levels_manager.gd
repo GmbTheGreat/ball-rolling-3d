@@ -6,7 +6,7 @@ var current_level := ""
 # Time required for time-star
 var level_data := {
 	"res://scenes/levels/test_level.tscn": {
-		"target_time": 20.0
+		"target_time": 50.0
 	},
 
 	"res://scenes/levels/level_2.tscn": {

@@ -3,6 +3,7 @@ extends RigidBody3D
 signal died
 signal movement_started
 
+
 #region variables
 @export var acceleration := 8.0
 @export var move_speed := 10.0
@@ -79,7 +80,7 @@ func reset_to_spawn():
 	current_speed = 0.0
 	move_direction = Vector3.FORWARD
 
-	is_dead = false
+	is_dead = true
 	has_started_moving = false
 	level_completed = false
 

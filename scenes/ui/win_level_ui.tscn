@@ -5,9 +5,25 @@
 [ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="2_ra3qp"]
 [ext_resource type="Texture2D" uid="uid://dehfoqauc7628" path="res://assets/ui/button_atlas_ui.tres" id="3_sa61i"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7c2jp"]
+atlas = ExtResource("1_7c2jp")
+region = Rect2(1559, 4062, 602, 687)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_m4ymr"]
 atlas = ExtResource("1_7c2jp")
-region = Rect2(1001, 2026, 769, 619)
+region = Rect2(1553, 3807, 615, 184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsxiu"]
+atlas = ExtResource("1_7c2jp")
+region = Rect2(942.00006, 3888, 402.99994, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uolvd"]
+atlas = ExtResource("1_7c2jp")
+region = Rect2(168, 4400, 184, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sa61i"]
+atlas = ExtResource("1_7c2jp")
+region = Rect2(184, 4528, 160, 56)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yo3df"]
 atlas = ExtResource("3_sa61i")
@@ -22,7 +38,7 @@ region = Rect2(1346, 972, 181, 190)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4twqt"]
 atlas = ExtResource("3_sa61i")
-region = Rect2(3093, 1190, 181, 190)
+region = Rect2(3502, 1190, 181, 190)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7c2jp"]
 load_path = "res://.godot/imported/Button.png-1a60562274a332bde4f7f1b8950e778b.ctex"
@@ -45,6 +61,18 @@ load_path = "res://.godot/imported/Button.png-1a60562274a332bde4f7f1b8950e778b.c
 atlas = SubResource("CompressedTexture2D_sa61i")
 region = Rect2(401, 972, 181, 190)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhtv8"]
+atlas = ExtResource("1_7c2jp")
+region = Rect2(906, 4834, 130, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87cxs"]
+atlas = ExtResource("1_7c2jp")
+region = Rect2(1046, 4761, 171, 165)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ev7h6"]
+atlas = ExtResource("1_7c2jp")
+region = Rect2(1229, 4834, 129, 125)
+
 [node name="win_level_ui" type="Control" unique_id=2018532198]
 process_mode = 2
 layout_mode = 3
@@ -56,124 +84,165 @@ grow_vertical = 2
 script = ExtResource("1_ra3qp")
 
 [node name="Panel" type="Panel" parent="." unique_id=935901950]
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="win_window" type="TextureRect" parent="." unique_id=640025880]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -219.27063
-offset_top = -176.5
-offset_right = 219.27063
-offset_bottom = 176.5
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Window" type="TextureRect" parent="." unique_id=1289846816]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 100.0
+offset_right = 1024.0
+offset_bottom = 787.0
+scale = Vector2(0.8, 0.8)
+texture = SubResource("AtlasTexture_7c2jp")
+
+[node name="Ribbon" type="TextureRect" parent="Window" unique_id=1031591758]
+layout_mode = 0
+offset_left = -8.0
+offset_top = -92.0
+offset_right = 607.0
+offset_bottom = 92.0
 texture = SubResource("AtlasTexture_m4ymr")
-expand_mode = 1
 
-[node name="Completed" type="Label" parent="." unique_id=282739680]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -123.0
-offset_top = -167.0
-offset_right = 106.0
-offset_bottom = -116.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Label" type="TextureRect" parent="Window" unique_id=133301128]
+layout_mode = 0
+offset_left = 111.0
+offset_top = -54.0
+offset_right = 531.0
+offset_bottom = 4.8888893
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_wsxiu")
+
+[node name="MoneyLabel" type="TextureRect" parent="Window" unique_id=1223403172]
+layout_mode = 0
+offset_left = 31.250015
+offset_top = 328.75
+offset_right = 451.25
+offset_bottom = 392.75
+scale = Vector2(0.45663443, 1.05)
+texture = SubResource("AtlasTexture_uolvd")
+
+[node name="Label" type="Label" parent="Window/MoneyLabel" unique_id=712089970]
+layout_mode = 0
+offset_left = 711.72906
+offset_top = -4.761898
+offset_right = 848.72906
+offset_bottom = 71.2381
+scale = Vector2(1.7664775, 1)
 theme_override_fonts/font = ExtResource("2_ra3qp")
-theme_override_font_sizes/font_size = 40
-text = "Completed"
-horizontal_alignment = 1
+theme_override_font_sizes/font_size = 64
+text = "0"
 
-[node name="Home_win" type="TextureButton" parent="." unique_id=1162488072]
+[node name="StarLabel" type="TextureRect" parent="Window" unique_id=2047441888]
+layout_mode = 0
+offset_left = 31.25
+offset_top = 463.75
+offset_right = 451.25
+offset_bottom = 527.75
+scale = Vector2(0.45663443, 1.05)
+texture = SubResource("AtlasTexture_sa61i")
+
+[node name="Label" type="Label" parent="Window/StarLabel" unique_id=959971775]
+layout_mode = 0
+offset_left = 711.72906
+offset_top = -4.761898
+offset_right = 848.72906
+offset_bottom = 71.2381
+scale = Vector2(1.7664775, 1)
+theme_override_fonts/font = ExtResource("2_ra3qp")
+theme_override_font_sizes/font_size = 64
+text = "0/1"
+
+[node name="Home_win" type="TextureButton" parent="Window" unique_id=1162488072]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -159.0
-offset_top = 32.0
-offset_right = -86.0
-offset_bottom = 106.53
+offset_left = -228.5
+offset_top = 245.5
+offset_right = -155.5
+offset_bottom = 320.03003
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
 texture_normal = SubResource("AtlasTexture_yo3df")
 texture_hover = SubResource("AtlasTexture_r4ojg")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Retry_win" type="TextureButton" parent="." unique_id=1116890380]
+[node name="Retry_win" type="TextureButton" parent="Window" unique_id=1116890380]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -35.5
-offset_top = 30.0
-offset_right = 35.5
-offset_bottom = 104.530396
+offset_left = -76.5
+offset_top = 245.5
+offset_right = -5.5
+offset_bottom = 320.0304
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
 texture_normal = SubResource("AtlasTexture_4twqt")
 texture_hover = SubResource("AtlasTexture_ra3qp")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Next_win" type="TextureButton" parent="." unique_id=998000989]
+[node name="Next_win" type="TextureButton" parent="Window" unique_id=998000989]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 86.0
-offset_top = 30.0
-offset_right = 157.0
-offset_bottom = 104.530396
+offset_left = 79.5
+offset_top = 245.5
+offset_right = 150.5
+offset_bottom = 320.0304
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
 texture_normal = SubResource("AtlasTexture_ooqqa")
 texture_hover = SubResource("AtlasTexture_bagan")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=24946374]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Star1" type="TextureRect" parent="." unique_id=439720976]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 191.0
+offset_right = 590.0
+offset_bottom = 316.0
+texture = SubResource("AtlasTexture_lhtv8")
 
-[node name="Star_level" type="TextureRect" parent="HBoxContainer" unique_id=236578691]
-layout_mode = 2
+[node name="Star2" type="TextureRect" parent="." unique_id=1853585856]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 127.0
+offset_right = 739.0
+offset_bottom = 292.0
+texture = SubResource("AtlasTexture_87cxs")
 
-[node name="Star" type="TextureRect" parent="HBoxContainer" unique_id=1219403109]
-layout_mode = 2
+[node name="Star3" type="TextureRect" parent="." unique_id=64329767]
+layout_mode = 0
+offset_left = 718.0
+offset_top = 191.0
+offset_right = 848.0
+offset_bottom = 316.0
+texture = SubResource("AtlasTexture_ev7h6")
 
-[node name="Star_time" type="TextureRect" parent="HBoxContainer" unique_id=2126173159]
-layout_mode = 2
-
-[connection signal="pressed" from="Home_win" to="." method="_on_home_win_pressed"]
-[connection signal="pressed" from="Retry_win" to="." method="_on_retry_win_pressed"]
-[connection signal="pressed" from="Next_win" to="." method="_on_next_win_pressed"]
+[connection signal="pressed" from="Window/Home_win" to="." method="_on_home_win_pressed"]
+[connection signal="pressed" from="Window/Retry_win" to="." method="_on_retry_win_pressed"]
+[connection signal="pressed" from="Window/Next_win" to="." method="_on_next_win_pressed"]
