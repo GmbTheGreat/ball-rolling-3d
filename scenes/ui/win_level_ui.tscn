@@ -73,6 +73,10 @@ region = Rect2(1046, 4761, 171, 165)
 atlas = ExtResource("1_7c2jp")
 region = Rect2(1229, 4834, 129, 125)
 
+[sub_resource type="Gradient" id="Gradient_sa61i"]
+offsets = PackedFloat32Array(0, 0.28723404, 0.5425532, 0.77304965, 1)
+colors = PackedColorArray(1, 0.96862745, 0.12156863, 1, 0.07058824, 0.07058824, 0.9254902, 1, 0.07058824, 0.8509804, 0.07058824, 1, 1, 0.0627451, 1, 1, 1, 0.5686275, 0, 1)
+
 [node name="win_level_ui" type="Control" unique_id=2018532198]
 process_mode = 2
 layout_mode = 3
@@ -89,8 +93,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -1.0
 offset_right = -1.0
 offset_bottom = -1.0
 grow_horizontal = 2
@@ -169,10 +171,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -228.5
-offset_top = 245.5
-offset_right = -155.5
-offset_bottom = 320.03003
+offset_left = -249.75
+offset_top = 245.25
+offset_right = -176.75
+offset_bottom = 319.78003
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -188,10 +190,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -76.5
-offset_top = 245.5
-offset_right = -5.5
-offset_bottom = 320.0304
+offset_left = -80.99997
+offset_top = 245.25
+offset_right = -9.9999695
+offset_bottom = 319.7804
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -207,10 +209,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 79.5
-offset_top = 245.5
-offset_right = 150.5
-offset_bottom = 320.0304
+offset_left = 81.49997
+offset_top = 245.25
+offset_right = 152.49997
+offset_bottom = 319.7804
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -242,6 +244,24 @@ offset_top = 191.0
 offset_right = 848.0
 offset_bottom = 316.0
 texture = SubResource("AtlasTexture_ev7h6")
+
+[node name="Confetti" type="CPUParticles2D" parent="." unique_id=355227782]
+position = Vector2(667, 0)
+emitting = false
+amount = 16
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.46
+direction = Vector2(0, 1)
+spread = 180.0
+gravity = Vector2(0, 600)
+initial_velocity_min = 500.0
+initial_velocity_max = 500.0
+angular_velocity_min = 720.0
+angular_velocity_max = 720.0
+scale_amount_min = 22.0
+scale_amount_max = 22.0
+color_ramp = SubResource("Gradient_sa61i")
 
 [connection signal="pressed" from="Window/Home_win" to="." method="_on_home_win_pressed"]
 [connection signal="pressed" from="Window/Retry_win" to="." method="_on_retry_win_pressed"]

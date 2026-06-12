@@ -121,6 +121,7 @@ func _on_level_completed():
 	await get_tree().create_timer(1.0).timeout
 	
 	win_level_ui.show_smooth()
+	win_level_ui.confetti.emitting = true
 	await get_tree().process_frame
 	win_level_ui.show_results(stars, coins, star_collected)
 	get_tree().paused = true

@@ -12,7 +12,7 @@ signal next_pressed
 
 @onready var money_label: Label = $Window/MoneyLabel/Label
 @onready var star_label: Label = $Window/StarLabel/Label
-
+@onready var confetti: CPUParticles2D = $Confetti
 
 func _ready():
 	star1.scale = Vector2.ZERO
