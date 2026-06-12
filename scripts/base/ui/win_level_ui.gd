@@ -54,9 +54,11 @@ func pop_star(star: TextureRect):
 	await tween.finished
 
 
-func show_results(stars: int, coins: int):
+func show_results(stars: int, coins: int, star_collected: bool):
 	money_label.text = str(coins)
-	star_label.text = str(stars) + "/1"
+	
+	if star_collected:
+		star_label.text = str(1) + "/1"
 
 	star1.scale = Vector2.ZERO
 	star2.scale = Vector2.ZERO

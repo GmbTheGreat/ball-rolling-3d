@@ -214,7 +214,7 @@ func update_ui():
 	
 
 func update_coins_ui():
-	coins_label.text = str(SaveManager.save_data["total_coins"])
+	coins_label.text = str(int(SaveManager.save_data["total_coins"]))
 
 
 #region UI/UX

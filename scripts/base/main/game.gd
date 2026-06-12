@@ -99,17 +99,17 @@ func _on_level_completed():
 	ball.level_completed = true
 
 	var stars := 1
-	var coins := 100
+	var coins := LevelsManager.get_win_coin()
 
 	# Star 2 = Collect star
 	if star_collected:
 		stars += 1
-		coins += 50
+		coins += LevelsManager.get_star_coin()
 
 	# Star 3 = Beat target time
 	if level_time <= LevelsManager.get_target_time():
 		stars += 1
-		coins += 50
+		coins += LevelsManager.get_time_coin()
 	
 	SaveManager.save_data["total_coins"] += coins
 	SaveManager.save_game()
@@ -122,7 +122,7 @@ func _on_level_completed():
 	
 	win_level_ui.show_smooth()
 	await get_tree().process_frame
-	win_level_ui.show_results(stars, coins)
+	win_level_ui.show_results(stars, coins, star_collected)
 	get_tree().paused = true
 
 
