@@ -4,6 +4,7 @@ extends Area3D
 @export var upward_force := 200.0
 
 @onready var animation_player: AnimationPlayer = $"../AnimationPlayer"
+@onready var jump: AudioStreamPlayer3D = $"../Jump"
 
 var triggered := false
 var boosting := false
@@ -44,6 +45,7 @@ func _on_body_entered(body: Node3D) -> void:
 		
 		body.apply_central_impulse(dir * jump_force)
 		animation_player.play("Armature|Bounce")
+		jump.play()
 		
 		await get_tree().create_timer(0.3).timeout
 		triggered = false

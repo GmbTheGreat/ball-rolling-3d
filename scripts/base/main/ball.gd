@@ -27,11 +27,17 @@ signal movement_started
 @onready var speedlines: Control = $"../UI/speedlines"
 @onready var speedlines_rect = $"../UI/speedlines/ColorRect"
 
+# SFX
+@onready var hit_sfx: AudioStreamPlayer3D = $HitSfx
+@onready var star_collect: AudioStreamPlayer3D = $StarCollect
+
+
 var has_started_moving := false
 var move_direction := Vector3.FORWARD
 var current_speed := 0.0
 var normal_move_speed := 0.0
 var normal_max_speed := 0.0
+var fall_speed := 0.0
 var boost_active := false
 var initial_spawn_position: Vector3
 var spawn_position : Vector3
@@ -135,6 +141,10 @@ func _physics_process(delta):
 	var is_in_air = !is_grounded
 	ground_ray.global_rotation = Vector3.ZERO
 
+	# FALL CHECK
+	if linear_velocity.y < 0:
+		fall_speed = linear_velocity.y
+
 	# REVERSE STEERING
 	var steer_direction = 1.0
 
@@ -205,3 +215,12 @@ func _physics_process(delta):
 		if (position.y < -3.0 or Input.is_action_just_pressed("reset_debug")) and !is_dead:
 			is_dead = true
 			died.emit()
+
+
+func _on_body_entered(body: Node) -> void:
+	if not body.is_in_group("platform"):
+		return
+
+	if fall_speed < -6.0:
+		hit_sfx.play()
+		fall_speed = 0.0

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dwxmna5sqro5l" path="res://assets/models/interactables/star.glb" id="1_30qls"]
 [ext_resource type="Script" uid="uid://cea2ojp1tmygf" path="res://scripts/base/interactables/star.gd" id="2_piemh"]
+[ext_resource type="AudioStream" uid="uid://baowuf7oa6lg0" path="res://assets/sfx/star_collect.mp3" id="3_g10l2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_30qls"]
 blend_mode = 1
@@ -36,7 +37,7 @@ material_override = SubResource("StandardMaterial3D_30qls")
 [node name="Circle_Material_001_0_001" parent="Circle_001" index="1" unique_id=432045871]
 material_override = SubResource("StandardMaterial3D_30qls")
 
-[node name="Area3D" type="Area3D" parent="." index="1" unique_id=727480002]
+[node name="Area3D" type="Area3D" parent="." index="1" unique_id=727480002 groups=["star"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=2033406744]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0062561035, 0, 0.0357666)
@@ -53,5 +54,8 @@ gravity = Vector3(0, 0, 0)
 initial_velocity_min = 2.5
 initial_velocity_max = 2.5
 scale_amount_curve = SubResource("Curve_piemh")
+
+[node name="StarCollect" type="AudioStreamPlayer3D" parent="." index="3" unique_id=1979517323]
+stream = ExtResource("3_g10l2")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]

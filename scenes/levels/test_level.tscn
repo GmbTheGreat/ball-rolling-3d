@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://u3tr08oa1u45"]
 
+[ext_resource type="Script" uid="uid://oc6ggnt0x44o" path="res://scripts/base/levels/test_level.gd" id="1_jmx14"]
 [ext_resource type="PackedScene" uid="uid://87onxlt8byot" path="res://scenes/assets/platforms/curve.tscn" id="2_6xh4u"]
 [ext_resource type="PackedScene" uid="uid://cxv2g8t1ky0s1" path="res://scenes/assets/platforms/pipe.tscn" id="3_fr1um"]
 [ext_resource type="PackedScene" uid="uid://dq2r45p173jco" path="res://scenes/assets/interactables/jump_pad.tscn" id="4_6xh4u"]
@@ -12,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dyvik3on3111j" path="res://scenes/assets/interactables/checkpoint.tscn" id="10_jmx14"]
 
 [node name="Test Level" type="Node3D" unique_id=493517671]
+script = ExtResource("1_jmx14")
 
 [node name="Platforms" type="Node" parent="." unique_id=1396637000]
 
@@ -160,7 +162,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.504, 1.5747721, -17.837156
 [node name="Checkpoints" type="Node" parent="." unique_id=1748324811]
 
 [node name="visible_checkpoint" parent="Checkpoints" unique_id=1309010692 instance=ExtResource("9_2mu0v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.403, 4.366, -144)
+transform = Transform3D(0.95126665, 0, 0.30836955, 0, 1, 0, -0.30836955, 0, 0.95126665, -26.40571, 5.702986, -147.85835)
 
 [node name="checkpoint" parent="Checkpoints" unique_id=1530323803 instance=ExtResource("10_jmx14")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.295, 4.6398764, -144)

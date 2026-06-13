@@ -9,7 +9,7 @@ size = Vector3(5, 1, 21.25)
 
 [node name="straight_platform" parent="." unique_id=848457853 instance=ExtResource("1_k20yg")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=401106188]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=401106188 groups=["platform"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2086299090]
 shape = SubResource("BoxShape3D_k20yg")
