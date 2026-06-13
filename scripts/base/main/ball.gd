@@ -29,7 +29,8 @@ signal movement_started
 
 # SFX
 @onready var hit_sfx: AudioStreamPlayer3D = $HitSfx
-@onready var star_collect: AudioStreamPlayer3D = $StarCollect
+@onready var spawn: AudioStreamPlayer3D = $Spawn
+@onready var game_over: AudioStreamPlayer3D = $GameOver
 
 
 var has_started_moving := false
@@ -56,6 +57,7 @@ func _ready() -> void:
 	current_checkpoint_position = global_position
 	
 	speedlines.visible = false
+	spawn.play()
 
 	apply_equipped_skin()
 	apply_equipped_trail()
@@ -89,6 +91,7 @@ func reset_to_spawn():
 	is_dead = true
 	has_started_moving = false
 	level_completed = false
+	spawn.play()
 
 
 func respawn():
@@ -101,6 +104,7 @@ func respawn():
 	move_direction = Vector3.FORWARD
 	
 	is_dead = false
+	spawn.play()
 
 
 func apply_boost():

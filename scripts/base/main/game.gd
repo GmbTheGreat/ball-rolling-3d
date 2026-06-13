@@ -1,11 +1,13 @@
 extends Node
 
+#region variables
 @onready var background: WorldEnvironment = $WorldEnvironment
 @onready var level_holder: Node3D = $LevelHolder
 @onready var hearts_label: Label = $UI/heart_ui/Label
 @onready var timer_ui = $UI/timer_ui
 @onready var game_over_ui: Control = $UI/game_over_ui
 @onready var win_level_ui: Control = $UI/win_level_ui
+@onready var pause_ui: Control = $UI/pause_ui
 @onready var ball : RigidBody3D = $ball
 @onready var camera: Camera3D = $Camera3D
 
@@ -18,7 +20,7 @@ var timer_started := false
 var level_time := 0.0
 var is_respawning := false
 var level_completed := false
-
+#endregion
 
 func _ready() -> void:
 	# ball signals
@@ -35,8 +37,15 @@ func _ready() -> void:
 	win_level_ui.home_pressed.connect(_on_home_pressed)
 	win_level_ui.next_pressed.connect(_on_next_pressed)
 
+	# Pause ui signals
+	pause_ui.retry_pressed.connect(_on_retry_pressed)
+	pause_ui.home_pressed.connect(_on_home_pressed)
+	pause_ui.resume_pressed.connect(_on_resume_pressed)
+	pause_ui.levels_pressed.connect(_on_levels_pressed)
+
 	game_over_ui.visible = false
 	win_level_ui.visible = false
+	pause_ui.visible = false
 
 	var level_instance = SceneLoader.loaded_level_scene.instantiate()
 	level_holder.add_child(level_instance)
@@ -51,6 +60,9 @@ func _ready() -> void:
 
 
 func _process(delta):
+	if Input.is_action_just_pressed("pause"):
+		show_pause_ui()
+	
 	if !get_tree().paused and timer_started:
 		level_time += delta
 		timer_ui.update_time(level_time)
@@ -122,7 +134,9 @@ func _on_level_completed():
 	
 	win_level_ui.show_smooth()
 	win_level_ui.confetti.emitting = true
+	
 	await get_tree().process_frame
+	
 	win_level_ui.show_results(stars, coins, star_collected)
 	get_tree().paused = true
 
@@ -164,14 +178,24 @@ func lose_heart():
 
 
 func game_over():
-	game_over_ui.visible = true
+	ball.game_over.play()
+	
+	game_over_ui.show_smooth()
+	get_tree().paused = true
+
+
+func show_pause_ui():
+	pause_ui.show_smooth()
 	get_tree().paused = true
 
 
 func _on_retry_pressed():
+	pause_ui.visible = false
 	load_level(LevelsManager.current_level)
 	ball.reset_to_spawn()
+	
 	await get_tree().process_frame
+	
 	ball.is_dead = false
 	get_tree().paused = false
 
@@ -196,6 +220,17 @@ func _on_ad_pressed():
 
 func _on_next_pressed():
 	pass
+
+
+func _on_resume_pressed():
+	pause_ui.visible = false
+	get_tree().paused= false
+
+
+func _on_levels_pressed():
+	pause_ui.visible = false
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/menu/levels_menu.tscn")
 
 
 func apply_equipped_background():

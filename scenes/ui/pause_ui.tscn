@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bnlvcpfs6eq1w"]
 
+[ext_resource type="Script" uid="uid://cipyfji6o2t4q" path="res://scripts/base/ui/pause_ui.gd" id="1_8dn2d"]
 [ext_resource type="Texture2D" uid="uid://dv1yptisdc8f3" path="res://assets/ui/window_atlas_ui.tres" id="1_yrwkb"]
 [ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="2_8dn2d"]
 [ext_resource type="Texture2D" uid="uid://dehfoqauc7628" path="res://assets/ui/button_atlas_ui.tres" id="3_lauhp"]
@@ -10,6 +11,10 @@ bg_color = Color(0, 0, 0, 0.70980394)
 [sub_resource type="AtlasTexture" id="AtlasTexture_i86gu"]
 atlas = ExtResource("1_yrwkb")
 region = Rect2(599, 1117, 450, 630)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dn2d"]
+atlas = ExtResource("1_yrwkb")
+region = Rect2(737, 1044, 174, 53)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nw1ig"]
 atlas = ExtResource("3_lauhp")
@@ -23,13 +28,19 @@ region = Rect2(3093, 101, 181, 189)
 atlas = ExtResource("3_lauhp")
 region = Rect2(197, 972, 181, 190)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lauhp"]
+atlas = ExtResource("3_lauhp")
+region = Rect2(1142, 2280, 181, 189)
+
 [node name="pause_ui" type="Control" unique_id=593031671]
+process_mode = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8dn2d")
 
 [node name="Panel" type="Panel" parent="." unique_id=2134269932]
 layout_mode = 1
@@ -40,85 +51,117 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_mbdly")
 
-[node name="Window" type="TextureRect" parent="Panel" unique_id=1282977287]
+[node name="Window" type="TextureRect" parent="." unique_id=1282977287]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -151.0
-offset_top = -243.0
-offset_right = 299.0
-offset_bottom = 387.0
+offset_left = -224.0
+offset_top = -320.0
+offset_right = 226.0
+offset_bottom = 310.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.7, 0.7)
 texture = SubResource("AtlasTexture_i86gu")
 
-[node name="Title" type="Label" parent="Panel" unique_id=1999793680]
-layout_mode = 0
-offset_left = 579.0
-offset_top = 125.0
-offset_right = 706.0
-offset_bottom = 173.0
-theme_override_fonts/font = ExtResource("2_8dn2d")
-theme_override_font_sizes/font_size = 40
-text = "Pause"
+[node name="Label" type="TextureRect" parent="." unique_id=659378497]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -304.0
+offset_right = 104.0
+offset_bottom = -240.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_8dn2d")
 
 [node name="Home" type="TextureButton" parent="." unique_id=727206088]
 layout_mode = 0
-offset_left = 568.0
-offset_top = 339.0
-offset_right = 749.0
-offset_bottom = 529.0
-scale = Vector2(0.2, 0.2)
+offset_left = 512.0
+offset_top = 201.0
+offset_right = 693.0
+offset_bottom = 391.0
+scale = Vector2(0.4, 0.4)
 texture_normal = SubResource("AtlasTexture_nw1ig")
 
 [node name="Label" type="Label" parent="Home" unique_id=305208320]
 layout_mode = 0
-offset_left = 259.99997
+offset_left = 214.99997
 offset_top = 19.999998
-offset_right = 578.0
+offset_right = 542.0
 offset_bottom = 171.0
+scale = Vector2(0.9, 0.9)
 theme_override_fonts/font = ExtResource("2_8dn2d")
 theme_override_font_sizes/font_size = 110
 text = "Home"
 
 [node name="Retry" type="TextureButton" parent="." unique_id=1341712013]
 layout_mode = 0
-offset_left = 568.0
-offset_top = 391.0
-offset_right = 749.0
-offset_bottom = 580.0
-scale = Vector2(0.2, 0.2)
+offset_left = 512.0
+offset_top = 293.0
+offset_right = 693.0
+offset_bottom = 482.0
+scale = Vector2(0.4, 0.4)
 texture_normal = SubResource("AtlasTexture_ibklw")
 
 [node name="Label" type="Label" parent="Retry" unique_id=1862681844]
 layout_mode = 0
-offset_left = 264.99997
+offset_left = 219.99997
 offset_top = 24.999998
-offset_right = 598.0
+offset_right = 553.0
 offset_bottom = 176.0
+scale = Vector2(0.9, 0.9)
 theme_override_fonts/font = ExtResource("2_8dn2d")
 theme_override_font_sizes/font_size = 110
 text = "Retry"
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=1889422588]
+[node name="Resume" type="TextureButton" parent="." unique_id=1889422588]
 layout_mode = 0
-offset_left = 568.0
-offset_top = 442.0
-offset_right = 608.0
-offset_bottom = 482.0
-scale = Vector2(0.2, 0.2)
+offset_left = 513.0
+offset_top = 386.0
+offset_right = 694.0
+offset_bottom = 576.0
+scale = Vector2(0.4, 0.4)
 texture_normal = SubResource("AtlasTexture_yrwkb")
 
-[node name="Label" type="Label" parent="TextureButton" unique_id=1114842710]
+[node name="Label" type="Label" parent="Resume" unique_id=1114842710]
 layout_mode = 0
-offset_left = 264.99997
+offset_left = 219.99997
 offset_top = 24.999998
-offset_right = 598.0
+offset_right = 678.0
 offset_bottom = 176.0
+scale = Vector2(0.9, 0.9)
 theme_override_fonts/font = ExtResource("2_8dn2d")
 theme_override_font_sizes/font_size = 110
 text = "Resume"
+
+[node name="Levels" type="TextureButton" parent="." unique_id=1654436715]
+layout_mode = 0
+offset_left = 513.0
+offset_top = 483.0
+offset_right = 694.0
+offset_bottom = 673.0
+scale = Vector2(0.4, 0.4)
+texture_normal = SubResource("AtlasTexture_lauhp")
+
+[node name="Label" type="Label" parent="Levels" unique_id=955328146]
+layout_mode = 0
+offset_left = 219.99997
+offset_top = 24.999998
+offset_right = 591.0
+offset_bottom = 176.0
+scale = Vector2(0.9, 0.9)
+theme_override_fonts/font = ExtResource("2_8dn2d")
+theme_override_font_sizes/font_size = 110
+text = "Levels"
+
+[connection signal="pressed" from="Home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Levels" to="." method="_on_levels_pressed"]

@@ -1,8 +1,11 @@
 extends Control
 
+
 signal retry_pressed
 signal home_pressed
-signal ad_pressed
+signal resume_pressed
+signal levels_pressed
+
 
 func _ready() -> void:
 	pivot_offset = size / 2
@@ -29,5 +32,9 @@ func _on_retry_pressed() -> void:
 	retry_pressed.emit()
 
 
-func _on_ad_pressed() -> void:
-	ad_pressed.emit()
+func _on_resume_pressed() -> void:
+	resume_pressed.emit()
+
+
+func _on_levels_pressed() -> void:
+	levels_pressed.emit()
