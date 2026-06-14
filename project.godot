@@ -21,7 +21,7 @@ config/icon="res://icon.svg"
 
 [audio]
 
-buses/default_bus_layout="uid://bmlm0ni6c387g"
+buses/default_bus_layout=""
 
 [autoload]
 
@@ -29,6 +29,7 @@ LevelsManager="*uid://dnwdfi8yg26kp"
 CosmeticsManager="*uid://b76r840wsue0q"
 SaveManager="*uid://h8asm6p262qw"
 SceneLoader="*uid://cxxq5keahfqcm"
+AudioManager="*uid://dkae84ald1wc6"
 
 [display]
 
