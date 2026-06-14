@@ -1,14 +1,19 @@
 [gd_scene format=3 uid="uid://dkae84ald1wc6"]
 
 [ext_resource type="AudioStream" uid="uid://brtxkyyknarqd" path="res://assets/sfx/ui.mp3" id="1_8qd8g"]
+[ext_resource type="AudioStream" uid="uid://ci1r6d3c0vrj" path="res://assets/sfx/win.mp3" id="2_liach"]
 
 [sub_resource type="GDScript" id="GDScript_8qd8g"]
 script/source = "extends Node
 
 @onready var ui: AudioStreamPlayer = $UI
+@onready var win: AudioStreamPlayer = $Win
 
 func play_ui_click():
 	ui.play()
+
+func play_win():
+	win.play()
 "
 
 [node name="AudioManager" type="Node" unique_id=57718784]
@@ -16,3 +21,7 @@ script = SubResource("GDScript_8qd8g")
 
 [node name="UI" type="AudioStreamPlayer" parent="." unique_id=625512871]
 stream = ExtResource("1_8qd8g")
+
+[node name="Win" type="AudioStreamPlayer" parent="." unique_id=2122593128]
+process_mode = 3
+stream = ExtResource("2_liach")

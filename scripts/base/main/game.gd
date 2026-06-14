@@ -2,6 +2,7 @@ extends Node
 
 #region variables
 @onready var background: WorldEnvironment = $WorldEnvironment
+@onready var sky_reflection: MeshInstance3D = $SkyReflection
 @onready var level_holder: Node3D = $LevelHolder
 @onready var hearts_label: Label = $UI/heart_ui/Label
 @onready var timer_ui = $UI/timer_ui
@@ -10,6 +11,7 @@ extends Node
 @onready var pause_ui: Control = $UI/pause_ui
 @onready var ball : RigidBody3D = $ball
 @onready var camera: Camera3D = $Camera3D
+
 
 var current_level
 
@@ -60,6 +62,10 @@ func _ready() -> void:
 
 
 func _process(delta):
+	if sky_reflection.position.distance_to(ball.position) > 50:
+		sky_reflection.position.x = ball.position.x
+		sky_reflection.position.z = ball.position.z
+	
 	if Input.is_action_just_pressed("pause"):
 		show_pause_ui()
 	
@@ -128,6 +134,8 @@ func _on_level_completed():
 	
 	# TODO:
 	# Unlock next level
+	
+	AudioManager.play_win()
 
 	camera.shake(1.0,1.0)
 	await get_tree().create_timer(1.0).timeout
