@@ -21,10 +21,12 @@ func show_popup(item_name:String, price:int):
 
 
 func _on_yes_pressed():
+	AudioManager.play_ui_click()
 	hide()
 	accepted.emit()
 
 
 func _on_no_pressed():
+	AudioManager.play_ui_click()
 	hide()
 	cancelled.emit()

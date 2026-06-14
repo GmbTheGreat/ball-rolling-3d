@@ -62,15 +62,17 @@ func on_background_changed(background_data):
 
 #region button signals
 func _on_previous_pressed() -> void:
+	AudioManager.play_ui_click()
 	CosmeticsManager.previous()
  
 
 func _on_next_pressed() -> void:
+	AudioManager.play_ui_click()
 	CosmeticsManager.next()
 
 
 func _on_equip_pressed() -> void:
-
+	AudioManager.play_ui_click()
 	match CosmeticsManager.current_category:
 
 		CosmeticsManager.CosmeticCategory.BALL:
@@ -116,20 +118,24 @@ func _on_equip_pressed() -> void:
 
 
 func _on_back_pressed() -> void:
+	AudioManager.play_ui_click()
 	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
 
 
 func _on_ball_pressed() -> void:
+	AudioManager.play_ui_click()
 	CosmeticsManager.current_category = CosmeticsManager.CosmeticCategory.BALL
 	on_ball_changed(CosmeticsManager.get_current_ball_data())
 
 
 func _on_trail_pressed() -> void:
+	AudioManager.play_ui_click()
 	CosmeticsManager.current_category = CosmeticsManager.CosmeticCategory.TRAIL
 	on_trail_changed(CosmeticsManager.get_current_trail_data())
 	
 
 func _on_background_pressed() -> void:
+	AudioManager.play_ui_click()
 	CosmeticsManager.current_category = CosmeticsManager.CosmeticCategory.BACKGROUND
 	on_background_changed(CosmeticsManager.get_current_background_data())
 #endregion
