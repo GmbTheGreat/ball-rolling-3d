@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cb0upnrhts18f" path="res://scenes/assets/platforms/visible_checkpoint.tscn" id="9_2mu0v"]
 [ext_resource type="PackedScene" uid="uid://dyvik3on3111j" path="res://scenes/assets/interactables/checkpoint.tscn" id="10_jmx14"]
 [ext_resource type="PackedScene" uid="uid://dnncli65rmou6" path="res://scenes/assets/obstacles/saw_blade.tscn" id="12_eaa0b"]
+[ext_resource type="PackedScene" uid="uid://dykrsvo8lsnjs" path="res://scenes/assets/obstacles/hammer.tscn" id="13_a5rnb"]
 
 [node name="Test Level" type="Node3D" unique_id=493517671]
 script = ExtResource("1_jmx14")
@@ -55,7 +56,7 @@ transform = Transform3D(1.9470718e-07, 0, 0.36995983, 0, 1, 0, -1, 0, 7.203383e-
 transform = Transform3D(-0.99999994, 0, 8.997745e-08, 0, 0.9999999, 0, -8.742276e-08, 0, -1.029222, 30.327, 4.2, -147.13477)
 
 [node name="strigth_platform12" parent="Platforms" unique_id=186518826 instance=ExtResource("4_v45ci")]
-transform = Transform3D(-4.371137e-08, 0, -0.5627425, 0, 0.9999999, 0, 0.99999994, 0, -2.4598254e-08, 21.925398, 4.2, -133.73631)
+transform = Transform3D(-4.3711374e-08, 0, -0.55876267, 0, 0.9999999, 0, 1, 0, -2.4424292e-08, 21.921955, 4.2, -133.73631)
 
 [node name="strigth_platform13" parent="Platforms" unique_id=724706756 instance=ExtResource("4_v45ci")]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.9999999, 0, -1.0658141e-14, 0, 0.76784873, 13.504531, 4.2, -123.22625)
@@ -157,12 +158,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.503797, -2.061, -24.796)
 [node name="Checkpoints" type="Node" parent="." unique_id=1748324811]
 
 [node name="visible_checkpoint" parent="Checkpoints" unique_id=1309010692 instance=ExtResource("9_2mu0v")]
-transform = Transform3D(0.95126665, 0, 0.30836955, 0, 1, 0, -0.30836955, 0, 0.95126665, -26.40571, 5.702986, -147.85835)
+transform = Transform3D(-0.95126665, 0, -0.30836964, 0, 1, 0, 0.30836964, 0, -0.95126665, 33.433895, 5.823127, -143.99998)
 
 [node name="checkpoint" parent="Checkpoints" unique_id=1530323803 instance=ExtResource("10_jmx14")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.295, 4.6398764, -144)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 30.323181, 4.7600174, -147.85834)
 
 [node name="Obstacles" type="Node" parent="." unique_id=78644049]
+
+[node name="hammer" parent="Obstacles" unique_id=963157096 instance=ExtResource("13_a5rnb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6789908, -44.7721)
 
 [node name="saw_blade" parent="Obstacles" unique_id=883367280 instance=ExtResource("12_eaa0b")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.478524, -2.3541484, -69.29315)
