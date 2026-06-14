@@ -22,12 +22,15 @@ func show_smooth():
 
 
 func _on_home_pressed() -> void:
+	AudioManager.play_ui_click()
 	home_pressed.emit()
 
 
 func _on_retry_pressed() -> void:
+	AudioManager.play_ui_click()
 	retry_pressed.emit()
 
 
 func _on_ad_pressed() -> void:
+	AudioManager.play_ui_click()
 	ad_pressed.emit()

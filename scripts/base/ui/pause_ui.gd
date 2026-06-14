@@ -25,16 +25,20 @@ func show_smooth():
 
 
 func _on_home_pressed() -> void:
+	AudioManager.play_ui_click()
 	home_pressed.emit()
 
 
 func _on_retry_pressed() -> void:
+	AudioManager.play_ui_click()
 	retry_pressed.emit()
 
 
 func _on_resume_pressed() -> void:
+	AudioManager.play_ui_click()
 	resume_pressed.emit()
 
 
 func _on_levels_pressed() -> void:
+	AudioManager.play_ui_click()
 	levels_pressed.emit()

@@ -77,12 +77,15 @@ func show_results(stars: int, coins: int, star_collected: bool):
 
 
 func _on_home_win_pressed() -> void:
+	AudioManager.play_ui_click()
 	home_pressed.emit()
 
 
 func _on_retry_win_pressed() -> void:
+	AudioManager.play_ui_click()
 	retry_pressed.emit()
 
 
 func _on_next_win_pressed() -> void:
+	AudioManager.play_ui_click()
 	next_pressed.emit()
