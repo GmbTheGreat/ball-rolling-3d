@@ -30,12 +30,11 @@ func _on_home_pressed() -> void:
 
 
 func _on_retry_pressed() -> void:
-	AudioManager.play_ui_click()
 	retry_pressed.emit()
 
 
 func _on_resume_pressed() -> void:
-	AudioManager.play_ui_click()
+	AudioManager.play_pause()
 	resume_pressed.emit()
 
 

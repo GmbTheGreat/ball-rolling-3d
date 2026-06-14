@@ -67,6 +67,7 @@ func _process(delta):
 		sky_reflection.position.z = ball.position.z
 	
 	if Input.is_action_just_pressed("pause"):
+		AudioManager.play_pause()
 		show_pause_ui()
 	
 	if !get_tree().paused and timer_started:

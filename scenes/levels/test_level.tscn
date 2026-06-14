@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cwgy6i2npqc0q" path="res://scenes/assets/interactables/win_point.tscn" id="8_7x1jh"]
 [ext_resource type="PackedScene" uid="uid://cb0upnrhts18f" path="res://scenes/assets/platforms/visible_checkpoint.tscn" id="9_2mu0v"]
 [ext_resource type="PackedScene" uid="uid://dyvik3on3111j" path="res://scenes/assets/interactables/checkpoint.tscn" id="10_jmx14"]
+[ext_resource type="PackedScene" uid="uid://dnncli65rmou6" path="res://scenes/assets/obstacles/saw_blade.tscn" id="12_eaa0b"]
 
 [node name="Test Level" type="Node3D" unique_id=493517671]
 script = ExtResource("1_jmx14")
@@ -153,12 +154,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.34, 9.03822, -165.79669)
 [node name="ramp3" parent="Ramps" unique_id=543725504 instance=ExtResource("5_6xh4u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.503797, -2.061, -24.796)
 
-[node name="star" parent="." unique_id=1729761214 groups=["star"] instance=ExtResource("7_cyt5c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.673292, 12.714744, -159.806)
-
-[node name="win_point" parent="." unique_id=1240424430 instance=ExtResource("8_7x1jh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.504, 1.5747721, -17.837156)
-
 [node name="Checkpoints" type="Node" parent="." unique_id=1748324811]
 
 [node name="visible_checkpoint" parent="Checkpoints" unique_id=1309010692 instance=ExtResource("9_2mu0v")]
@@ -166,3 +161,17 @@ transform = Transform3D(0.95126665, 0, 0.30836955, 0, 1, 0, -0.30836955, 0, 0.95
 
 [node name="checkpoint" parent="Checkpoints" unique_id=1530323803 instance=ExtResource("10_jmx14")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.295, 4.6398764, -144)
+
+[node name="Obstacles" type="Node" parent="." unique_id=78644049]
+
+[node name="saw_blade" parent="Obstacles" unique_id=883367280 instance=ExtResource("12_eaa0b")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.478524, -2.3541484, -69.29315)
+
+[node name="saw_blade2" parent="Obstacles" unique_id=1074353480 instance=ExtResource("12_eaa0b")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 13.478524, -2.3541484, -36.162155)
+
+[node name="star" parent="." unique_id=1729761214 groups=["star"] instance=ExtResource("7_cyt5c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.673292, 12.714744, -159.806)
+
+[node name="win_point" parent="." unique_id=1240424430 instance=ExtResource("8_7x1jh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.504, 1.5747721, -17.837156)
