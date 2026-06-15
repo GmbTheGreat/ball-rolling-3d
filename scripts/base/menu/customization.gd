@@ -159,9 +159,6 @@ func _on_purchase_confirmed():
 
 
 func _on_purchase_cancelled():
-	pass
-
-
 	update_ui()
 
 

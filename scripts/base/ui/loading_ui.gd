@@ -1,7 +1,5 @@
 extends Control
 
-var progress := []
-
 func _ready():
 	ResourceLoader.load_threaded_request("res://scenes/main/game.tscn")
 	ResourceLoader.load_threaded_request(SceneLoader.target_level)
