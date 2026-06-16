@@ -221,7 +221,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.042773604, 7.095888, -129.
 [node name="Deco" type="Node" parent="." unique_id=1364247975]
 
 [node name="watermelon" parent="Deco" unique_id=1890676413 instance=ExtResource("13_3ay3b")]
-transform = Transform3D(-0.18452048, 0.68863976, -0.70123285, -0.96592575, -0.25881904, 0, -0.18149242, 0.67733896, 0.71293235, -25.669668, 4.6717157, -153.09146)
+transform = Transform3D(-0.2685918, 0.65646136, -0.70492345, -0.9104861, -0.41191003, -0.03667622, -0.31444147, 0.6319721, 0.7083346, -25.669668, 4.7234445, -153.09146)
 
 [node name="ring_red" parent="Deco" unique_id=859270928 instance=ExtResource("16_hppjq")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 30.38071, 5.019123, -149.29681)
