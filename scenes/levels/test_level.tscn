@@ -15,7 +15,10 @@
 [ext_resource type="PackedScene" uid="uid://cp2ot2tywdjca" path="res://scenes/assets/deco/watermelon.tscn" id="13_3ay3b"]
 [ext_resource type="PackedScene" uid="uid://dykrsvo8lsnjs" path="res://scenes/assets/obstacles/hammer.tscn" id="13_a5rnb"]
 [ext_resource type="PackedScene" uid="uid://ud3a65cmibvk" path="res://scenes/assets/obstacles/box.tscn" id="14_fqldq"]
+[ext_resource type="PackedScene" uid="uid://d4jn3te0tjj5j" path="res://scenes/assets/deco/ring_green.tscn" id="15_os2yb"]
 [ext_resource type="PackedScene" uid="uid://cmp733jomf8ju" path="res://scenes/assets/deco/ring_red.tscn" id="16_hppjq"]
+[ext_resource type="PackedScene" uid="uid://bl6ghy47wfhtg" path="res://scenes/assets/deco/ring_blue.tscn" id="18_v6k17"]
+[ext_resource type="PackedScene" uid="uid://2jxabkbw0mro" path="res://assets/models/deco/hot_air_balloon.glb" id="19_upsmr"]
 
 [node name="Test Level" type="Node3D" unique_id=493517671]
 script = ExtResource("1_jmx14")
@@ -221,16 +224,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.042773604, 7.095888, -129.
 [node name="Deco" type="Node" parent="." unique_id=1364247975]
 
 [node name="watermelon" parent="Deco" unique_id=1890676413 instance=ExtResource("13_3ay3b")]
-transform = Transform3D(-0.2685918, 0.65646136, -0.70492345, -0.9104861, -0.41191003, -0.03667622, -0.31444147, 0.6319721, 0.7083346, -25.669668, 4.7234445, -153.09146)
+transform = Transform3D(0.34638038, -0.7111683, -0.61176807, -0.9104859, -0.41190994, -0.036676206, -0.22591048, 0.5697103, -0.7901864, -25.669668, 4.7234445, -153.09146)
 
 [node name="ring_red" parent="Deco" unique_id=859270928 instance=ExtResource("16_hppjq")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 30.38071, 5.019123, -149.29681)
 
-[node name="ring_red2" parent="Deco" unique_id=22128568 instance=ExtResource("16_hppjq")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 30.38071, 5.019123, -147.29681)
+[node name="ring_green" parent="Deco" unique_id=1217770967 instance=ExtResource("15_os2yb")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 13.466877, 5.292049, -125.290306)
 
-[node name="ring_red3" parent="Deco" unique_id=1494561117 instance=ExtResource("16_hppjq")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 30.38071, 5.019123, -145.29681)
+[node name="ring_blue" parent="Deco" unique_id=352543149 instance=ExtResource("18_v6k17")]
+transform = Transform3D(1.1998446, 0.019309487, 0, -0.019309487, 1.1998446, 0, 0, 0, 1.1999999, 0.112, 5.24, -125.29)
+
+[node name="hot_air_balloon" parent="Deco" unique_id=1275425070 instance=ExtResource("19_upsmr")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 6.556259, 0.5099716, -152.43011)
 
 [node name="star" parent="." unique_id=1729761214 groups=["star"] instance=ExtResource("7_cyt5c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.673292, 12.714744, -159.806)

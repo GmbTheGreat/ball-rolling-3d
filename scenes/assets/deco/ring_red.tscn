@@ -7,6 +7,7 @@ data = PackedVector3Array(0.41889998, 0.0534, -0.627, 0.68079996, 0.11, -0.68079
 backface_collision = true
 
 [node name="ring_red" unique_id=859270928 instance=ExtResource("1_q6c22")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1239399978]
 
