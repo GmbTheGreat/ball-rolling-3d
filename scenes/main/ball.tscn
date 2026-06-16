@@ -9,9 +9,6 @@
 [ext_resource type="AudioStream" uid="uid://c21o6qhdbiyw7" path="res://assets/sfx/spawn.mp3" id="7_a1s1t"]
 [ext_resource type="AudioStream" uid="uid://t0waf4n4pmd6" path="res://assets/sfx/game_over.mp3" id="8_3klhb"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3klhb"]
-bounce = 0.4
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_n1dj2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nyjrx"]
@@ -53,7 +50,6 @@ shader_parameter/flags = 44
 material = SubResource("ShaderMaterial_87qbk")
 
 [node name="ball" type="RigidBody3D" unique_id=1403333367]
-physics_material_override = SubResource("PhysicsMaterial_3klhb")
 contact_monitor = true
 max_contacts_reported = 10
 script = ExtResource("1_k2nl5")

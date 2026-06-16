@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bqj2w8aklhgw"]
+
+[ext_resource type="Script" uid="uid://bqxjnnf3nuaw7" path="res://scripts/base/ui/fps_ui.gd" id="1_6icgu"]
+[ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="2_2qoht"]
+
+[node name="fps_ui" type="Control" unique_id=838822315]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_6icgu")
+
+[node name="Label" type="Label" parent="." unique_id=1228507686]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_2qoht")
+theme_override_font_sizes/font_size = 22
+text = "FPS: 144"

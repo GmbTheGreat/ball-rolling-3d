@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ud3a65cmibvk"]
+
+[ext_resource type="Script" uid="uid://ymbiibgbhexd" path="res://scripts/base/obstacles/box.gd" id="1_5fgwd"]
+[ext_resource type="PackedScene" uid="uid://ck7mhyom0lrq0" path="res://assets/models/obstacles/box.glb" id="1_83i4w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_83i4w"]
+
+[node name="box" type="RigidBody3D" unique_id=658049126]
+mass = 0.1
+script = ExtResource("1_5fgwd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=474169341]
+shape = SubResource("BoxShape3D_83i4w")
+
+[node name="box" parent="." unique_id=45886730 instance=ExtResource("1_83i4w")]
+transform = Transform3D(0.675, 0, 0, 0, 0.675, 0, 0, 0, 0.675, 0.06874704, 0, 0)

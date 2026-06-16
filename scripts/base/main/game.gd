@@ -220,11 +220,11 @@ func _on_ad_pressed():
 	hearts = 1
 	update_hearts_ui()
 	
+	for boost in get_tree().get_nodes_in_group("boosts"):
+			boost.respawn_boost()
+	
 	game_over_ui.visible = false
 	ball.respawn()
-
-	# TODO:
-	# Respawn player here instead of reloading level
 
 
 func _on_next_pressed():
