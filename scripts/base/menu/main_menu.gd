@@ -14,14 +14,17 @@ func hover_out(button: Control) -> void:
 
 
 func _on_start_pressed() -> void:
+	AudioManager.play_ui_click()
 	get_tree().change_scene_to_file("res://scenes/menu/levels_menu.tscn")
 
 
 func _on_customize_pressed() -> void:
+	AudioManager.play_ui_click()
 	get_tree().change_scene_to_file("res://scenes/menu/customization.tscn")
 
 
 func _on_exit_pressed() -> void:
+	AudioManager.play_ui_click()
 	get_tree().quit()
 
 

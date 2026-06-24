@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://drn8lr1ifdxd8" path="res://assets/models/interactables/jump_pad.glb" id="1_vin3f"]
 [ext_resource type="Script" uid="uid://dusds8gbcdtt6" path="res://scripts/base/interactables/jump_pad.gd" id="2_rglk1"]
+[ext_resource type="AudioStream" uid="uid://btr4u6ljkl4i6" path="res://assets/sfx/jump.MP3" id="3_55vws"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rglk1"]
 size = Vector3(3.8728027, 4, 1.060852)
@@ -19,5 +20,8 @@ shape = SubResource("BoxShape3D_rglk1")
 [node name="Skeleton3D" parent="Sketchfab_model/b87dfa16891b477d9dcbbaccfa8f951d_fbx/Object_2/RootNode/Armature/Object_6" parent_id_path=PackedInt32Array(183476168) index="0" unique_id=213078358]
 bones/1/rotation = Quaternion(0.7071069, 1.2780743e-22, 5.293956e-23, 0.70710665)
 bones/1/scale = Vector3(1, 1.0000001, 1.0000001)
+
+[node name="Jump" type="AudioStreamPlayer3D" parent="." index="3" unique_id=508601134]
+stream = ExtResource("3_55vws")
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dykrsvo8lsnjs"]
+
+[ext_resource type="Script" uid="uid://bjvw3q3gj0wci" path="res://scripts/base/obstacles/hammer.gd" id="1_mkhrb"]
+[ext_resource type="PackedScene" uid="uid://co586uv380gvp" path="res://assets/models/obstacles/hammer.glb" id="1_o1p4j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o1p4j"]
+size = Vector3(1.2700195, 2.246643, 1.4082642)
+
+[sub_resource type="Animation" id="Animation_mkhrb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_o1p4j"]
+resource_name = "swing"
+length = 1.8
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1, 1.2, 1.5, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -1.4835298), Vector3(0, 0, -1.0471976), Vector3(0, 0, -0.43633232), Vector3(0, 0, 0), Vector3(0, 0, 0.61086524), Vector3(0, 0, 1.2217305), Vector3(0, 0, 1.4835298)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mkhrb"]
+_data = {
+&"RESET": SubResource("Animation_mkhrb"),
+&"swing": SubResource("Animation_o1p4j")
+}
+
+[node name="hammer" type="AnimatableBody3D" unique_id=963157096]
+script = ExtResource("1_mkhrb")
+
+[node name="hammer" parent="." unique_id=458262083 instance=ExtResource("1_o1p4j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.514277, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=773678211]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.0128478985, -3.9228725, -0.24780428)
+shape = SubResource("BoxShape3D_o1p4j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=464224256]
+libraries/ = SubResource("AnimationLibrary_mkhrb")

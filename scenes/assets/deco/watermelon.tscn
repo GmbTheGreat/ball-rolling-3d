@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cp2ot2tywdjca"]
+
+[ext_resource type="PackedScene" uid="uid://k4j5psrcguqu" path="res://assets/models/deco/watermelon.glb" id="1_kimhx"]
+[ext_resource type="Script" uid="uid://cht1e8tfushri" path="res://scripts/base/deco/watermelon.gd" id="1_v3qj3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kimhx"]
+size = Vector3(0.33258057, 0.4810791, 1.0853271)
+
+[node name="watermelon" type="RigidBody3D" unique_id=1890676413]
+mass = 0.01
+script = ExtResource("1_v3qj3")
+
+[node name="watermelon" parent="." unique_id=1366410441 instance=ExtResource("1_kimhx")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1473349953]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010894775, 0.04425049, -0.016418457)
+shape = SubResource("BoxShape3D_kimhx")

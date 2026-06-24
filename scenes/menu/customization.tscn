@@ -59,10 +59,6 @@ region = Rect2(1085, 433, 426, 189)
 atlas = ExtResource("8_m3mfg")
 region = Rect2(629, 433, 425, 189)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_28mpo"]
-atlas = ExtResource("8_m3mfg")
-region = Rect2(1085, 433, 426, 189)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvaev"]
 atlas = ExtResource("8_m3mfg")
 region = Rect2(759, 668, 181, 189)
@@ -214,7 +210,6 @@ grow_vertical = 0
 scale = Vector2(0.4, 0.4)
 toggle_mode = true
 texture_normal = SubResource("AtlasTexture_ikwwa")
-texture_pressed = SubResource("AtlasTexture_28mpo")
 
 [node name="Label" type="Label" parent="Equip" unique_id=1794164039]
 layout_mode = 1

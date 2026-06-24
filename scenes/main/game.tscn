@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://chh7ki1deikq6" path="res://scenes/ui/game_over_ui.tscn" id="7_0rn35"]
 [ext_resource type="PackedScene" uid="uid://djjqcxlr01ksq" path="res://scenes/shader/speedlines.tscn" id="8_kjrfb"]
 [ext_resource type="PackedScene" uid="uid://bco5nnasp5qbj" path="res://scenes/ui/timer_ui.tscn" id="9_se30j"]
+[ext_resource type="PackedScene" uid="uid://bqj2w8aklhgw" path="res://scenes/ui/fps_ui.tscn" id="10_157ky"]
 [ext_resource type="PackedScene" uid="uid://bfkaaw2ryyrl1" path="res://scenes/ui/win_level_ui.tscn" id="10_ktwa8"]
 [ext_resource type="PackedScene" uid="uid://bnlvcpfs6eq1w" path="res://scenes/ui/pause_ui.tscn" id="11_157ky"]
 
@@ -16,12 +17,19 @@ energy_multiplier = 1.1
 
 [sub_resource type="Sky" id="Sky_gsayk"]
 sky_material = SubResource("PanoramaSkyMaterial_gsayk")
-process_mode = 3
 
 [sub_resource type="Environment" id="Environment_gf1f2"]
 background_mode = 2
 sky = SubResource("Sky_gsayk")
-glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmx14"]
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_se30j"]
+material = SubResource("StandardMaterial3D_jmx14")
+size = Vector2(500, 500)
 
 [node name="Game" type="Node3D" unique_id=1223377323]
 script = ExtResource("1_e64el")
@@ -30,6 +38,10 @@ script = ExtResource("1_e64el")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=777788788]
 environment = SubResource("Environment_gf1f2")
+
+[node name="SkyReflection" type="MeshInstance3D" parent="." unique_id=2032975891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+mesh = SubResource("PlaneMesh_se30j")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1322373630]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 38.371925, 0)
@@ -43,7 +55,7 @@ ball = NodePath("../ball")
 [node name="ball" parent="." unique_id=1403333367 instance=ExtResource("5_em1bs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
-[node name="UI" type="Node" parent="." unique_id=1187318232]
+[node name="UI" type="CanvasLayer" parent="." unique_id=1682010689]
 
 [node name="game_over_ui" parent="UI" unique_id=1611315528 instance=ExtResource("7_0rn35")]
 
@@ -56,4 +68,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 [node name="timer_ui" parent="UI" unique_id=998681743 instance=ExtResource("9_se30j")]
 
 [node name="pause_ui" parent="UI" unique_id=593031671 instance=ExtResource("11_157ky")]
-visible = false
+
+[node name="fps_ui" parent="UI" unique_id=838822315 instance=ExtResource("10_157ky")]
+offset_left = 1136.0
+offset_top = 24.0
+offset_right = 1136.0
+offset_bottom = 24.0

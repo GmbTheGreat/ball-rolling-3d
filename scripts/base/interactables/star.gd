@@ -2,22 +2,44 @@ extends Node3D
 
 
 @onready var collision_shape_3d: CollisionShape3D = $Area3D/CollisionShape3D
+@onready var area_3d: Area3D = $Area3D
+@onready var cpu_particles_3d: CPUParticles3D = $CPUParticles3D
+@onready var circle_001: Node3D = $Circle_001
+@onready var star_collect: AudioStreamPlayer3D = $StarCollect
 
-# Called when the node enters the scene tree for the first time.
+var start_y : float
+var time := 0.0
+var rotate_speed = 2.0
+
 func _ready() -> void:
-	pass # Replace with function body.
+	start_y = position.y
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	time += delta
+	rotate_y(rotate_speed * delta)
+	position.y = start_y + sin(time * 2.0) * 0.15
 
 
 func _on_body_entered(body: RigidBody3D) -> void:
 	if body is RigidBody3D:
+		var star_collected = get_tree().current_scene.star_collected
+		if star_collected:
+			return
+		
 		get_tree().current_scene.collect_star()
-		visible = false
+		star_collect.play()
+
+		cpu_particles_3d.emitting = true
+
+		circle_001.visible = false
 		collision_shape_3d.disabled = true
+		area_3d.monitoring = false
+		area_3d.monitorable = false
+		
+		await get_tree().create_timer(1.0).timeout
+		visible = false
+
 
 func reset_star():
 	visible = true

@@ -62,15 +62,17 @@ func on_background_changed(background_data):
 
 #region button signals
 func _on_previous_pressed() -> void:
+	AudioManager.play_ui_click()
 	CosmeticsManager.previous()
  
 
 func _on_next_pressed() -> void:
+	AudioManager.play_ui_click()
 	CosmeticsManager.next()
 
 
 func _on_equip_pressed() -> void:
-
+	AudioManager.play_ui_click()
 	match CosmeticsManager.current_category:
 
 		CosmeticsManager.CosmeticCategory.BALL:
@@ -116,10 +118,12 @@ func _on_equip_pressed() -> void:
 
 
 func _on_back_pressed() -> void:
+	AudioManager.play_ui_click()
 	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
 
 
 func _on_ball_pressed() -> void:
+	AudioManager.play_ui_click()
 	CosmeticsManager.current_category = CosmeticsManager.CosmeticCategory.BALL
 	on_ball_changed(CosmeticsManager.get_current_ball_data())
 	
@@ -129,6 +133,7 @@ func _on_ball_pressed() -> void:
 
 
 func _on_trail_pressed() -> void:
+	AudioManager.play_ui_click()
 	CosmeticsManager.current_category = CosmeticsManager.CosmeticCategory.TRAIL
 	on_trail_changed(CosmeticsManager.get_current_trail_data())
 	
@@ -138,6 +143,7 @@ func _on_trail_pressed() -> void:
 	
 
 func _on_background_pressed() -> void:
+	AudioManager.play_ui_click()
 	CosmeticsManager.current_category = CosmeticsManager.CosmeticCategory.BACKGROUND
 	on_background_changed(CosmeticsManager.get_current_background_data())
 	
@@ -165,9 +171,6 @@ func _on_purchase_confirmed():
 
 
 func _on_purchase_cancelled():
-	pass
-
-
 	update_ui()
 
 
@@ -184,10 +187,8 @@ func update_ui():
 
 				if ball["id"] == CosmeticsManager.equiped_ball_id:
 					equip_label.text = "Equipped"
-					equip_button.button_pressed = true
 				else:
 					equip_label.text = "Equip"
-					equip_button.button_pressed = false
 
 			else:
 				equip_label.text = "Buy"
@@ -203,10 +204,8 @@ func update_ui():
 
 				if trail.id == CosmeticsManager.equipped_trail_id:
 					equip_label.text = "Equipped"
-					equip_button.button_pressed = true
 				else:
 					equip_label.text = "Equip"
-					equip_button.button_pressed = false
 
 			else:
 				equip_label.text = "Buy"
@@ -222,17 +221,15 @@ func update_ui():
 
 				if bg["id"] == CosmeticsManager.equipped_background_id:
 					equip_label.text = "Equipped"
-					equip_button.button_pressed = true
 				else:
 					equip_label.text = "Equip"
-					equip_button.button_pressed = false
 
 			else:
 				equip_label.text = "Buy"
-
+	
 
 func update_coins_ui():
-	coins_label.text = str(SaveManager.save_data["total_coins"])
+	coins_label.text = str(int(SaveManager.save_data["total_coins"]))
 
 
 #region UI/UX

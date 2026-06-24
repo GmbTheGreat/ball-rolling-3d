@@ -4,6 +4,7 @@ extends Area3D
 @onready var mesh = $MeshInstance3D
 @onready var circle: MeshInstance3D = $"../Circle"
 @onready var gpu_particles_3d: GPUParticles3D = $"../GPUParticles3D"
+@onready var speed_lines: AudioStreamPlayer3D = $"../SpeedLines"
 
 var collected := false
 
@@ -17,6 +18,7 @@ func _on_body_entered(body: Node3D) -> void:
 	if body.has_method("apply_boost"):
 		collected = true
 		body.apply_boost()
+		speed_lines.play()
 		
 		gpu_particles_3d.emitting = false
 		var mat = circle.material_overlay

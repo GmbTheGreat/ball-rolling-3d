@@ -20,7 +20,7 @@ region = Rect2(1142, 972, 181, 190)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sxdiq"]
 atlas = ExtResource("2_u4odh")
-region = Rect2(3093, 101, 181, 189)
+region = Rect2(3502, 101, 181, 189)
 
 [node name="game_over_ui" type="Control" unique_id=1611315528]
 process_mode = 2

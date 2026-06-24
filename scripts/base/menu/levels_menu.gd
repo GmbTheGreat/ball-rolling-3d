@@ -21,8 +21,13 @@ func hover_out(b):
 	tw.tween_property(b, "scale", b.get_meta("orig"), 0.12)
 
 func _on_level_1_pressed():
-	LevelsManager.current_level = "res://scenes/levels/test_level.tscn"
-	get_tree().change_scene_to_file("res://scenes/main/game.tscn")
+	AudioManager.play_ui_click()
+	var level_path = "res://scenes/levels/test_level.tscn"
+	
+	LevelsManager.current_level = level_path
+	SceneLoader.target_level = level_path
+	get_tree().change_scene_to_file("res://scenes/ui/loading_ui.tscn")
 
 func _on_back_pressed():
+	AudioManager.play_ui_click()
 	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
