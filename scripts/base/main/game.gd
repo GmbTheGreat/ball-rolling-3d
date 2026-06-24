@@ -24,6 +24,7 @@ var is_respawning := false
 var level_completed := false
 #endregion
 
+
 func _ready() -> void:
 	# ball signals
 	ball.movement_started.connect(_on_ball_movement_started)

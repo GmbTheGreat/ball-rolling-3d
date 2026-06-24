@@ -21,7 +21,6 @@ sky_material = SubResource("PanoramaSkyMaterial_gsayk")
 [sub_resource type="Environment" id="Environment_gf1f2"]
 background_mode = 2
 sky = SubResource("Sky_gsayk")
-glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmx14"]
 metallic = 1.0
