@@ -16,7 +16,9 @@ emission_box_extents = Vector3(1, 0, 2)
 gravity = Vector3(0, 1, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_60i7m"]
-albedo_color = Color(0.36372328, 0.51826125, 0.9545166, 1)
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_60i7m"]
 material = SubResource("StandardMaterial3D_60i7m")
