@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://oc6ggnt0x44o" path="res://scripts/base/levels/test_level.gd" id="1_jmx14"]
 [ext_resource type="PackedScene" uid="uid://87onxlt8byot" path="res://scenes/assets/platforms/curve.tscn" id="2_6xh4u"]
 [ext_resource type="PackedScene" uid="uid://cxv2g8t1ky0s1" path="res://scenes/assets/platforms/pipe.tscn" id="3_fr1um"]
-[ext_resource type="PackedScene" uid="uid://dq2r45p173jco" path="res://scenes/assets/interactables/jump_pad.tscn" id="4_6xh4u"]
+[ext_resource type="PackedScene" uid="uid://cpwpx8ol1327m" path="res://scenes/assets/interactables/jump_pad.tscn" id="4_6xh4u"]
 [ext_resource type="PackedScene" uid="uid://q5c8jlvgqhp7" path="res://scenes/assets/platforms/straight_platform.tscn" id="4_v45ci"]
 [ext_resource type="PackedScene" uid="uid://msl1lbid8crh" path="res://scenes/assets/platforms/ramp.tscn" id="5_6xh4u"]
 [ext_resource type="PackedScene" uid="uid://b86kw00lt8vl5" path="res://scenes/assets/interactables/boost.tscn" id="6_6xh4u"]
@@ -17,8 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://ud3a65cmibvk" path="res://scenes/assets/obstacles/box.tscn" id="14_fqldq"]
 [ext_resource type="PackedScene" uid="uid://d4jn3te0tjj5j" path="res://scenes/assets/deco/ring_green.tscn" id="15_os2yb"]
 [ext_resource type="PackedScene" uid="uid://cmp733jomf8ju" path="res://scenes/assets/deco/ring_red.tscn" id="16_hppjq"]
+[ext_resource type="PackedScene" uid="uid://oa1fdy8v3471" path="res://assets/models/deco/hot_air_balloon-v2.glb" id="17_upsmr"]
 [ext_resource type="PackedScene" uid="uid://bl6ghy47wfhtg" path="res://scenes/assets/deco/ring_blue.tscn" id="18_v6k17"]
-[ext_resource type="PackedScene" uid="uid://2jxabkbw0mro" path="res://assets/models/deco/hot_air_balloon.glb" id="19_upsmr"]
 
 [node name="Test Level" type="Node3D" unique_id=493517671]
 script = ExtResource("1_jmx14")
@@ -153,7 +153,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9992359, 0.039561473, 0, -0.039085414, 1.0
 [node name="Ramps" type="Node" parent="." unique_id=380814170]
 
 [node name="ramp" parent="Ramps" unique_id=1823554980 instance=ExtResource("5_6xh4u")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.815, -22.884373)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.8037798, -22.884373)
 
 [node name="ramp2" parent="Ramps" unique_id=204329093 instance=ExtResource("5_6xh4u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.34, 9.03822, -165.79669)
@@ -235,7 +235,7 @@ transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 13.466877, 5.292049, -1
 [node name="ring_blue" parent="Deco" unique_id=352543149 instance=ExtResource("18_v6k17")]
 transform = Transform3D(1.1998446, 0.019309487, 0, -0.019309487, 1.1998446, 0, 0, 0, 1.1999999, 0.112, 5.24, -125.29)
 
-[node name="hot_air_balloon" parent="Deco" unique_id=1275425070 instance=ExtResource("19_upsmr")]
+[node name="hot_air_balloon-v2" parent="Deco" unique_id=967759656 instance=ExtResource("17_upsmr")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 6.556259, 0.5099716, -152.43011)
 
 [node name="star" parent="." unique_id=1729761214 groups=["star"] instance=ExtResource("7_cyt5c")]

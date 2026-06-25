@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d017g73m6vly6"
-path.s3tc="res://.godot/imported/hot_air_balloon_Image_16.png-75fae8a2485ccf4cfe5b016de4747b21.s3tc.ctex"
+uid="uid://mmo86bhdqjk3"
+path.s3tc="res://.godot/imported/hammer-v1_Image_19.webp-c33a5fcc15534003bde97ae815ab01dd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "ac979a04450afc1f98b87637039b00e1"
+"md5": "22cbc5ce355ce7a839978e1c51d0127f"
 }
 
 [deps]
 
-source_file="res://assets/models/deco/hot_air_balloon_Image_16.png"
-dest_files=["res://.godot/imported/hot_air_balloon_Image_16.png-75fae8a2485ccf4cfe5b016de4747b21.s3tc.ctex"]
+source_file="res://assets/models/obstacles/hammer-v1_Image_19.webp"
+dest_files=["res://.godot/imported/hammer-v1_Image_19.webp-c33a5fcc15534003bde97ae815ab01dd.s3tc.ctex"]
 
 [params]
 

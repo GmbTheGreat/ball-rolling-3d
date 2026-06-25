@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cag7agx7d41m5"
-path.s3tc="res://.godot/imported/box_Image_11.png-48762ce56921717c85dc64b67c0f75ab.s3tc.ctex"
+uid="uid://b5c7s5c4wqdbd"
+path.s3tc="res://.godot/imported/hot_air_balloon-v2_Image_16.webp-88a091fb516f250cce1febc6cbd28112.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "a5680bd8b5cb155320e0dcf055312d39"
+"md5": "af0ad59d81ce2d6523af7a1da59f19bd"
 }
 
 [deps]
 
-source_file="res://assets/models/obstacles/box_Image_11.png"
-dest_files=["res://.godot/imported/box_Image_11.png-48762ce56921717c85dc64b67c0f75ab.s3tc.ctex"]
+source_file="res://assets/models/deco/hot_air_balloon-v2_Image_16.webp"
+dest_files=["res://.godot/imported/hot_air_balloon-v2_Image_16.webp-88a091fb516f250cce1febc6cbd28112.s3tc.ctex"]
 
 [params]
 

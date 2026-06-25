@@ -1,27 +1,27 @@
-[gd_scene format=3 uid="uid://dq2r45p173jco"]
+[gd_scene format=3 uid="uid://cpwpx8ol1327m"]
 
-[ext_resource type="PackedScene" uid="uid://drn8lr1ifdxd8" path="res://assets/models/interactables/jump_pad.glb" id="1_vin3f"]
 [ext_resource type="Script" uid="uid://dusds8gbcdtt6" path="res://scripts/base/interactables/jump_pad.gd" id="2_rglk1"]
 [ext_resource type="AudioStream" uid="uid://btr4u6ljkl4i6" path="res://assets/sfx/jump.MP3" id="3_55vws"]
+[ext_resource type="PackedScene" uid="uid://6o5kvxnb2jom" path="res://assets/models/interactables/jump_pad-v1.glb" id="3_kp61i"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rglk1"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_wny0u"]
 size = Vector3(3.8728027, 4, 1.060852)
 
-[node name="jump_pad" unique_id=900099848 instance=ExtResource("1_vin3f")]
+[node name="jump_pad-v1" unique_id=548376843 instance=ExtResource("3_kp61i")]
 
-[node name="Area3D" type="Area3D" parent="." index="0" unique_id=66655906]
+[node name="Skeleton3D" parent="Object_6" parent_id_path=PackedInt32Array(2122361560) index="0" unique_id=360113205]
+bones/1/rotation = Quaternion(0.7071069, 1.254866e-22, 8.3945384e-23, 0.70710665)
+bones/1/scale = Vector3(1, 1.0000001, 1.0000001)
+
+[node name="Jump" type="AudioStreamPlayer3D" parent="." index="2" unique_id=706492464]
+stream = ExtResource("3_55vws")
+
+[node name="Area3D" type="Area3D" parent="." index="3" unique_id=1050370857]
 transform = Transform3D(0.5, 0, 0, 0, -1.7881398e-07, 0.50000006, 0, -0.50000006, -1.7881398e-07, 0, 0, 0)
 script = ExtResource("2_rglk1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=2031730363]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=1625746974]
 transform = Transform3D(1, 0, 0, 0, 1, -1.1368684e-13, 0, 1.1368684e-13, 1, 0.06359863, -1.1368684e-13, 0.8894348)
-shape = SubResource("BoxShape3D_rglk1")
-
-[node name="Skeleton3D" parent="Sketchfab_model/b87dfa16891b477d9dcbbaccfa8f951d_fbx/Object_2/RootNode/Armature/Object_6" parent_id_path=PackedInt32Array(183476168) index="0" unique_id=213078358]
-bones/1/rotation = Quaternion(0.7071069, 1.2780743e-22, 5.293956e-23, 0.70710665)
-bones/1/scale = Vector3(1, 1.0000001, 1.0000001)
-
-[node name="Jump" type="AudioStreamPlayer3D" parent="." index="3" unique_id=508601134]
-stream = ExtResource("3_55vws")
+shape = SubResource("BoxShape3D_wny0u")
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

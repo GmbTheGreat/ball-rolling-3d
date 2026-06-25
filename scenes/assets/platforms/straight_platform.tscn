@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://q5c8jlvgqhp7"]
 
-[ext_resource type="PackedScene" uid="uid://dy0luqf0rwnac" path="res://assets/models/level-platforms/straight_platform.glb" id="1_k20yg"]
+[ext_resource type="PackedScene" uid="uid://ck1i751ce2fcx" path="res://assets/models/level-platforms/straight_platform-v1.glb" id="1_k20yg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k20yg"]
 size = Vector3(5, 1, 21.25)
 
 [node name="strigth_platform" type="Node3D" unique_id=1543553135]
 
-[node name="straight_platform" parent="." unique_id=848457853 instance=ExtResource("1_k20yg")]
+[node name="straight_platform-v1" parent="." unique_id=797699563 instance=ExtResource("1_k20yg")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=401106188 groups=["platform"]]
 

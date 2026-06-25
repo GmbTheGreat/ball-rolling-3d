@@ -1,17 +1,11 @@
 [gd_scene format=3 uid="uid://bhr8neihmxmiq"]
 
-[ext_resource type="PackedScene" uid="uid://dwxmna5sqro5l" path="res://assets/models/interactables/star.glb" id="1_30qls"]
+[ext_resource type="PackedScene" uid="uid://bn0wab17fqx1c" path="res://assets/models/interactables/star.glb" id="1_30qls"]
 [ext_resource type="Script" uid="uid://cea2ojp1tmygf" path="res://scripts/base/interactables/star.gd" id="2_piemh"]
 [ext_resource type="AudioStream" uid="uid://baowuf7oa6lg0" path="res://assets/sfx/star_collect.mp3" id="3_g10l2"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_30qls"]
-blend_mode = 1
-emission_enabled = true
-emission = Color(1, 1, 1, 1)
-emission_energy_multiplier = 3.0
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_30qls"]
-size = Vector3(1.2, 1.2, 0.16)
+size = Vector3(1.2, 1.2, 0.38975096)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_piemh"]
 emission_enabled = true
@@ -25,25 +19,19 @@ material = SubResource("StandardMaterial3D_piemh")
 _data = [Vector2(0, 0.14809954), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="star" unique_id=615678935 instance=ExtResource("1_30qls")]
+[node name="star" type="Node3D" unique_id=1456049874]
 script = ExtResource("2_piemh")
 
-[node name="Circle_001" parent="." index="0" unique_id=646423808]
-transform = Transform3D(-0.75, 1.13246855e-07, 0, -1.13246855e-07, -0.75, 0, 0, 0, 0.75, 0, 0, 0)
+[node name="Sketchfab_Scene" parent="." unique_id=166130078 instance=ExtResource("1_30qls")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 
-[node name="Circle_Material_001_0" parent="Circle_001" index="0" unique_id=71559173]
-material_override = SubResource("StandardMaterial3D_30qls")
+[node name="Area3D" type="Area3D" parent="." unique_id=1322922059 groups=["star"]]
 
-[node name="Circle_Material_001_0_001" parent="Circle_001" index="1" unique_id=432045871]
-material_override = SubResource("StandardMaterial3D_30qls")
-
-[node name="Area3D" type="Area3D" parent="." index="1" unique_id=727480002 groups=["star"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=2033406744]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0062561035, 0, 0.0357666)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=389814976]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0062561035, 0, 0.008024894)
 shape = SubResource("BoxShape3D_30qls")
 
-[node name="CPUParticles3D" type="CPUParticles3D" parent="." index="2" unique_id=474535277]
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=471570789]
 emitting = false
 one_shot = true
 explosiveness = 1.0
@@ -55,7 +43,7 @@ initial_velocity_min = 2.5
 initial_velocity_max = 2.5
 scale_amount_curve = SubResource("Curve_piemh")
 
-[node name="StarCollect" type="AudioStreamPlayer3D" parent="." index="3" unique_id=1979517323]
+[node name="StarCollect" type="AudioStreamPlayer3D" parent="." unique_id=1710538535]
 stream = ExtResource("3_g10l2")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]

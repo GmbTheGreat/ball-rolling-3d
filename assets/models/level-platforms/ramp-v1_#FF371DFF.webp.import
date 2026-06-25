@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cylk5a1qefnj2"
-path.s3tc="res://.godot/imported/curve_#FF371DFF.png-04cb2ae120fcc87419794c0b041b3e31.s3tc.ctex"
+uid="uid://8cntmhpbf4p0"
+path.s3tc="res://.godot/imported/ramp-v1_#FF371DFF.webp-debb15841fa8f45816ff364562f48010.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "8c039d22cbb8b175911f8a1f758a444e"
+"md5": "6020ffb9085ee2d9a1de51f1cc02ba52"
 }
 
 [deps]
 
-source_file="res://assets/models/level-platforms/curve_#FF371DFF.png"
-dest_files=["res://.godot/imported/curve_#FF371DFF.png-04cb2ae120fcc87419794c0b041b3e31.s3tc.ctex"]
+source_file="res://assets/models/level-platforms/ramp-v1_#FF371DFF.webp"
+dest_files=["res://.godot/imported/ramp-v1_#FF371DFF.webp-debb15841fa8f45816ff364562f48010.s3tc.ctex"]
 
 [params]
 

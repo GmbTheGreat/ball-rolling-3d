@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ck7mhyom0lrq0"
-path="res://.godot/imported/box.glb-65417657565c805806715db21a36eecf.scn"
+uid="uid://oa1fdy8v3471"
+path="res://.godot/imported/hot_air_balloon-v2.glb-e36699af324dfd9dd03687e5ff8b70b9.scn"
 
 [deps]
 
-source_file="res://assets/models/obstacles/box.glb"
-dest_files=["res://.godot/imported/box.glb-65417657565c805806715db21a36eecf.scn"]
+source_file="res://assets/models/deco/hot_air_balloon-v2.glb"
+dest_files=["res://.godot/imported/hot_air_balloon-v2.glb-e36699af324dfd9dd03687e5ff8b70b9.scn"]
 
 [params]
 

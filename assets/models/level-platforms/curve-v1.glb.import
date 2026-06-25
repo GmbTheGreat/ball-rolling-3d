@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://2jxabkbw0mro"
-path="res://.godot/imported/hot_air_balloon.glb-c97aafbda60c330e13e3e7813d2c4f95.scn"
+uid="uid://c0wjwdkliujum"
+path="res://.godot/imported/curve-v1.glb-6da9bf3ef8f7bbee820a724c211b8dde.scn"
 
 [deps]
 
-source_file="res://assets/models/deco/hot_air_balloon.glb"
-dest_files=["res://.godot/imported/hot_air_balloon.glb-c97aafbda60c330e13e3e7813d2c4f95.scn"]
+source_file="res://assets/models/level-platforms/curve-v1.glb"
+dest_files=["res://.godot/imported/curve-v1.glb-6da9bf3ef8f7bbee820a724c211b8dde.scn"]
 
 [params]
 

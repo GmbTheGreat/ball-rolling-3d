@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dykrsvo8lsnjs"]
 
 [ext_resource type="Script" uid="uid://bjvw3q3gj0wci" path="res://scripts/base/obstacles/hammer.gd" id="1_mkhrb"]
-[ext_resource type="PackedScene" uid="uid://co586uv380gvp" path="res://assets/models/obstacles/hammer.glb" id="1_o1p4j"]
+[ext_resource type="PackedScene" uid="uid://dmjsvi8ef5p0e" path="res://assets/models/obstacles/hammer-v1.glb" id="2_mkhrb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o1p4j"]
 size = Vector3(1.2700195, 2.246643, 1.4082642)
@@ -47,8 +47,8 @@ _data = {
 [node name="hammer" type="AnimatableBody3D" unique_id=963157096]
 script = ExtResource("1_mkhrb")
 
-[node name="hammer" parent="." unique_id=458262083 instance=ExtResource("1_o1p4j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.514277, 0)
+[node name="hammer-v1" parent="." unique_id=1089253691 instance=ExtResource("2_mkhrb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.514, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=773678211]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.0128478985, -3.9228725, -0.24780428)

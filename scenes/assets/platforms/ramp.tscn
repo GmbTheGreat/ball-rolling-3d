@@ -1,14 +1,16 @@
 [gd_scene format=3 uid="uid://msl1lbid8crh"]
 
-[ext_resource type="PackedScene" uid="uid://dd6at0oqifkux" path="res://assets/models/level-platforms/ramp.glb" id="1_5wlb0"]
+[ext_resource type="PackedScene" uid="uid://djylrhleu52tq" path="res://assets/models/level-platforms/ramp-v1.glb" id="1_5wlb0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5wlb0"]
 size = Vector3(1.9957275, 0.12435913, 2.1246223)
 
-[node name="ramp" unique_id=369730013 instance=ExtResource("1_5wlb0")]
+[node name="ramp" type="Node3D" unique_id=1986108097]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="0" unique_id=200658147]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1463312171]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=496611517]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=231906822]
 transform = Transform3D(2.5, 0, 0, 0, 0.78100073, 0.93651634, 0, -0.31554475, 2.3179595, 0.001, 0.63, -0.502)
 shape = SubResource("BoxShape3D_5wlb0")
+
+[node name="ramp" parent="." unique_id=464639798 instance=ExtResource("1_5wlb0")]

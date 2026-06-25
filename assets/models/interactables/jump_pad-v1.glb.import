@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://drn8lr1ifdxd8"
-path="res://.godot/imported/jump_pad.glb-5450a960c97f795c69348b812ee815bb.scn"
+uid="uid://6o5kvxnb2jom"
+path="res://.godot/imported/jump_pad-v1.glb-0454b71e8822409ed33a519bde561b62.scn"
 
 [deps]
 
-source_file="res://assets/models/interactables/jump_pad.glb"
-dest_files=["res://.godot/imported/jump_pad.glb-5450a960c97f795c69348b812ee815bb.scn"]
+source_file="res://assets/models/interactables/jump_pad-v1.glb"
+dest_files=["res://.godot/imported/jump_pad-v1.glb-0454b71e8822409ed33a519bde561b62.scn"]
 
 [params]
 

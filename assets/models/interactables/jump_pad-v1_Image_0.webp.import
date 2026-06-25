@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1mkq5vb5nvlc"
-path.s3tc="res://.godot/imported/hammer_Image_19.webp-5fce30f8992645816d368404864b7cc9.s3tc.ctex"
+uid="uid://d4ntoljdkga6l"
+path.s3tc="res://.godot/imported/jump_pad-v1_Image_0.webp-5d73d26ca92ec8889b327e0f993002eb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "2c3611d7b4de67e78c39d6e590563d9d"
+"md5": "657316e470f27dbb063476ce07738ce9"
 }
 
 [deps]
 
-source_file="res://assets/models/obstacles/hammer_Image_19.webp"
-dest_files=["res://.godot/imported/hammer_Image_19.webp-5fce30f8992645816d368404864b7cc9.s3tc.ctex"]
+source_file="res://assets/models/interactables/jump_pad-v1_Image_0.webp"
+dest_files=["res://.godot/imported/jump_pad-v1_Image_0.webp-5d73d26ca92ec8889b327e0f993002eb.s3tc.ctex"]
 
 [params]
 
