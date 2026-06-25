@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://boq36jh4eyd8i" path="res://scripts/base/interactables/win_point.gd" id="1_extj4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_shuvp"]
-emission_enabled = true
 emission = Color(0, 0, 1, 1)
 emission_energy_multiplier = 8.0
 

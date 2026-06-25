@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1mkq5vb5nvlc"
-path.s3tc="res://.godot/imported/hammer_Image_19.webp-5fce30f8992645816d368404864b7cc9.s3tc.ctex"
+uid="uid://mmo86bhdqjk3"
+path.s3tc="res://.godot/imported/hammer-v1_Image_19.webp-c33a5fcc15534003bde97ae815ab01dd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "2c3611d7b4de67e78c39d6e590563d9d"
+"md5": "22cbc5ce355ce7a839978e1c51d0127f"
 }
 
 [deps]
 
-source_file="res://assets/models/obstacles/hammer_Image_19.webp"
-dest_files=["res://.godot/imported/hammer_Image_19.webp-5fce30f8992645816d368404864b7cc9.s3tc.ctex"]
+source_file="res://assets/models/obstacles/hammer-v1_Image_19.webp"
+dest_files=["res://.godot/imported/hammer-v1_Image_19.webp-c33a5fcc15534003bde97ae815ab01dd.s3tc.ctex"]
 
 [params]
 

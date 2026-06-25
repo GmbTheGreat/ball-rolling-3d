@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd5nv2fst6hx3"
-path.s3tc="res://.godot/imported/ramp_#FF371DFF.png-f8a075f48cd5b00db697a891332e226d.s3tc.ctex"
+uid="uid://de7147ru8x611"
+path.s3tc="res://.godot/imported/box-v1_Image_11.webp-c930039852a8cb6e5e9eacd0d81d76dc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "8c039d22cbb8b175911f8a1f758a444e"
+"md5": "6bd8cbf57cacbbbf55d16a8ffcfe88b6"
 }
 
 [deps]
 
-source_file="res://assets/models/level-platforms/ramp_#FF371DFF.png"
-dest_files=["res://.godot/imported/ramp_#FF371DFF.png-f8a075f48cd5b00db697a891332e226d.s3tc.ctex"]
+source_file="res://assets/models/obstacles/box-v1_Image_11.webp"
+dest_files=["res://.godot/imported/box-v1_Image_11.webp-c930039852a8cb6e5e9eacd0d81d76dc.s3tc.ctex"]
 
 [params]
 

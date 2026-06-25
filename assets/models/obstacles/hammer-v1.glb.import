@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://co586uv380gvp"
-path="res://.godot/imported/hammer.glb-8799c3b821f4601f008683e98e3d0da2.scn"
+uid="uid://dmjsvi8ef5p0e"
+path="res://.godot/imported/hammer-v1.glb-c4b3752c93deb11ed5e9c66518e51330.scn"
 
 [deps]
 
-source_file="res://assets/models/obstacles/hammer.glb"
-dest_files=["res://.godot/imported/hammer.glb-8799c3b821f4601f008683e98e3d0da2.scn"]
+source_file="res://assets/models/obstacles/hammer-v1.glb"
+dest_files=["res://.godot/imported/hammer-v1.glb-c4b3752c93deb11ed5e9c66518e51330.scn"]
 
 [params]
 

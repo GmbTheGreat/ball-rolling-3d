@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cag7agx7d41m5"
-path.s3tc="res://.godot/imported/box_Image_11.png-48762ce56921717c85dc64b67c0f75ab.s3tc.ctex"
+uid="uid://c7tv4a6xdqcqp"
+path.s3tc="res://.godot/imported/curve-v1_#FF371DFF.webp-1cd21fb5cf18ad19d74b519747802172.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "a5680bd8b5cb155320e0dcf055312d39"
+"md5": "6020ffb9085ee2d9a1de51f1cc02ba52"
 }
 
 [deps]
 
-source_file="res://assets/models/obstacles/box_Image_11.png"
-dest_files=["res://.godot/imported/box_Image_11.png-48762ce56921717c85dc64b67c0f75ab.s3tc.ctex"]
+source_file="res://assets/models/level-platforms/curve-v1_#FF371DFF.webp"
+dest_files=["res://.godot/imported/curve-v1_#FF371DFF.webp-1cd21fb5cf18ad19d74b519747802172.s3tc.ctex"]
 
 [params]
 

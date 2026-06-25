@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdys1w21n6md"
-path.s3tc="res://.godot/imported/jump_pad_Image_0.png-4ad02ae1da0663094fcfd8e29cfb084b.s3tc.ctex"
+uid="uid://d4ntoljdkga6l"
+path.s3tc="res://.godot/imported/jump_pad-v1_Image_0.webp-5d73d26ca92ec8889b327e0f993002eb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "b367b2c12cb1a5f320c582d2cfeb824c"
+"md5": "657316e470f27dbb063476ce07738ce9"
 }
 
 [deps]
 
-source_file="res://assets/models/interactables/jump_pad_Image_0.png"
-dest_files=["res://.godot/imported/jump_pad_Image_0.png-4ad02ae1da0663094fcfd8e29cfb084b.s3tc.ctex"]
+source_file="res://assets/models/interactables/jump_pad-v1_Image_0.webp"
+dest_files=["res://.godot/imported/jump_pad-v1_Image_0.webp-5d73d26ca92ec8889b327e0f993002eb.s3tc.ctex"]
 
 [params]
 

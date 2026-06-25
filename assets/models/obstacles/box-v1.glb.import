@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dy0luqf0rwnac"
-path="res://.godot/imported/straight_platform.glb-015490ff3428c920f4a31b56f55a6449.scn"
+uid="uid://cdn72wwgoojum"
+path="res://.godot/imported/box-v1.glb-bd73f5fb871b3ea1ac74f34e02b76796.scn"
 
 [deps]
 
-source_file="res://assets/models/level-platforms/straight_platform.glb"
-dest_files=["res://.godot/imported/straight_platform.glb-015490ff3428c920f4a31b56f55a6449.scn"]
+source_file="res://assets/models/obstacles/box-v1.glb"
+dest_files=["res://.godot/imported/box-v1.glb-bd73f5fb871b3ea1ac74f34e02b76796.scn"]
 
 [params]
 

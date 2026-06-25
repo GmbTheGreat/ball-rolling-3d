@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d017g73m6vly6"
-path.s3tc="res://.godot/imported/hot_air_balloon_Image_16.png-75fae8a2485ccf4cfe5b016de4747b21.s3tc.ctex"
+uid="uid://b5c7s5c4wqdbd"
+path.s3tc="res://.godot/imported/hot_air_balloon-v2_Image_16.webp-88a091fb516f250cce1febc6cbd28112.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "ac979a04450afc1f98b87637039b00e1"
+"md5": "af0ad59d81ce2d6523af7a1da59f19bd"
 }
 
 [deps]
 
-source_file="res://assets/models/deco/hot_air_balloon_Image_16.png"
-dest_files=["res://.godot/imported/hot_air_balloon_Image_16.png-75fae8a2485ccf4cfe5b016de4747b21.s3tc.ctex"]
+source_file="res://assets/models/deco/hot_air_balloon-v2_Image_16.webp"
+dest_files=["res://.godot/imported/hot_air_balloon-v2_Image_16.webp-88a091fb516f250cce1febc6cbd28112.s3tc.ctex"]
 
 [params]
 
