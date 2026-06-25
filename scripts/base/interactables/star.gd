@@ -4,7 +4,7 @@ extends Node3D
 @onready var collision_shape_3d: CollisionShape3D = $Area3D/CollisionShape3D
 @onready var area_3d: Area3D = $Area3D
 @onready var cpu_particles_3d: CPUParticles3D = $CPUParticles3D
-@onready var circle_001: Node3D = $Circle_001
+@onready var sketchfab_scene: Node3D = $Sketchfab_Scene
 @onready var star_collect: AudioStreamPlayer3D = $StarCollect
 
 var start_y : float
@@ -32,10 +32,8 @@ func _on_body_entered(body: RigidBody3D) -> void:
 
 		cpu_particles_3d.emitting = true
 
-		circle_001.visible = false
+		sketchfab_scene.visible = false
 		collision_shape_3d.disabled = true
-		area_3d.monitoring = false
-		area_3d.monitorable = false
 		
 		await get_tree().create_timer(1.0).timeout
 		visible = false
