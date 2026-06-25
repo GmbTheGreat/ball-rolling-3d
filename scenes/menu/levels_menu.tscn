@@ -111,7 +111,6 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
-disabled = true
 texture_normal = SubResource("AtlasTexture_uehtd")
 texture_hover = SubResource("AtlasTexture_uehtd")
 texture_disabled = SubResource("AtlasTexture_2krcr")
@@ -669,3 +668,4 @@ horizontal_alignment = 1
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="LevelButtons/GridContainer/level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="LevelButtons/GridContainer/level2" to="." method="_on_level_2_pressed"]

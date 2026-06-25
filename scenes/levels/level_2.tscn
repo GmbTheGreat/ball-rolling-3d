@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://mcrw4u68skbh"]
+
+[ext_resource type="PackedScene" uid="uid://q5c8jlvgqhp7" path="res://scenes/assets/platforms/straight_platform.tscn" id="1_j2425"]
+[ext_resource type="PackedScene" uid="uid://cwgy6i2npqc0q" path="res://scenes/assets/interactables/win_point.tscn" id="2_g2h2n"]
+[ext_resource type="PackedScene" uid="uid://dy87l6tsrycw" path="res://scenes/assets/platforms/pipe_2.tscn" id="3_ra442"]
+[ext_resource type="PackedScene" uid="uid://msl1lbid8crh" path="res://scenes/assets/platforms/ramp.tscn" id="4_fiq81"]
+
+[node name="level_2" type="Node3D" unique_id=1624577538]
+
+[node name="win_point" parent="." unique_id=1240424430 instance=ExtResource("2_g2h2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.428601, 2.2265186, -8.648443)
+visible = false
+
+[node name="Platforms" type="Node" parent="." unique_id=1339105979]
+
+[node name="strigth_platform" parent="Platforms" unique_id=1543553135 instance=ExtResource("1_j2425")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.4293363, 0, 0, -9.706111)
+
+[node name="strigth_platform2" parent="Platforms" unique_id=2094483608 instance=ExtResource("1_j2425")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.4293363, 0, 1.924, -58.27)
+
+[node name="Pipes" type="Node" parent="." unique_id=1574948223]
+
+[node name="pipe2" parent="Pipes" unique_id=1581600854 instance=ExtResource("3_ra442")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.8361651, 0, 0.68184114, -31.552982)
+
+[node name="Ramps" type="Node" parent="." unique_id=1257442529]
+
+[node name="ramp" parent="Ramps" unique_id=1986108097 instance=ExtResource("4_fiq81")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.7420418, -41.094)
