@@ -132,6 +132,11 @@ func _on_level_completed():
 		coins += LevelsManager.get_time_coin()
 	
 	SaveManager.save_data["total_coins"] += coins
+	var current_index = LevelsManager.levels.find(LevelsManager.current_level)
+
+	if SaveManager.save_data["unlocked_levels"] < current_index + 2:
+		SaveManager.save_data["unlocked_levels"] = current_index + 2
+		SaveManager.save_game()
 	SaveManager.save_game()
 	
 	# TODO:
@@ -229,7 +234,21 @@ func _on_ad_pressed():
 
 
 func _on_next_pressed():
-	pass
+	get_tree().paused = false
+
+	win_level_ui.visible = false
+
+	var next_level = LevelsManager.get_next_level()
+
+	if next_level != "":
+		LevelsManager.current_level = next_level
+		SceneLoader.target_level = next_level
+
+		call_deferred("_go_to_loading")
+
+
+func _go_to_loading():
+	get_tree().change_scene_to_file("res://scenes/ui/loading_ui.tscn")
 
 
 func _on_resume_pressed():

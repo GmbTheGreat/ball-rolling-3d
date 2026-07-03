@@ -7,7 +7,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_wny0u"]
 size = Vector3(3.8728027, 4, 1.060852)
 
-[node name="jump_pad-v1" unique_id=548376843 instance=ExtResource("3_kp61i")]
+[node name="jump_pad" unique_id=548376843 instance=ExtResource("3_kp61i")]
 
 [node name="Skeleton3D" parent="Object_6" parent_id_path=PackedInt32Array(2122361560) index="0" unique_id=360113205]
 bones/1/rotation = Quaternion(0.7071069, 1.254866e-22, 8.3945384e-23, 0.70710665)
