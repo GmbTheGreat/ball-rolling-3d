@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://c2st6vkrqbtq2" path="res://scripts/base/levels/level_5.gd" id="1_j14br"]
 [ext_resource type="PackedScene" uid="uid://q5c8jlvgqhp7" path="res://scenes/assets/platforms/straight_platform.tscn" id="1_r1vs7"]
 [ext_resource type="PackedScene" uid="uid://87onxlt8byot" path="res://scenes/assets/platforms/curve.tscn" id="2_845dy"]
+[ext_resource type="PackedScene" uid="uid://ckq4tkesrnmux" path="res://scenes/assets/deco/robot.tscn" id="3_0y7y4"]
 [ext_resource type="PackedScene" uid="uid://cpwpx8ol1327m" path="res://scenes/assets/interactables/jump_pad.tscn" id="4_laj7o"]
 [ext_resource type="PackedScene" uid="uid://bwv2ap0cnnxly" path="res://scenes/assets/platforms/pipe_4.tscn" id="5_fsnos"]
 [ext_resource type="PackedScene" uid="uid://dykrsvo8lsnjs" path="res://scenes/assets/obstacles/hammer.tscn" id="6_hldbq"]
@@ -14,20 +15,18 @@
 [ext_resource type="PackedScene" uid="uid://dnncli65rmou6" path="res://scenes/assets/obstacles/saw_blade.tscn" id="11_dwyms"]
 [ext_resource type="PackedScene" uid="uid://b86kw00lt8vl5" path="res://scenes/assets/interactables/boost.tscn" id="12_6xwso"]
 [ext_resource type="PackedScene" uid="uid://msl1lbid8crh" path="res://scenes/assets/platforms/ramp.tscn" id="13_5ke18"]
+[ext_resource type="PackedScene" uid="uid://bl6ghy47wfhtg" path="res://scenes/assets/deco/ring_blue.tscn" id="16_gruok"]
 
 [node name="level_5" type="Node3D" unique_id=2097204535]
 script = ExtResource("1_j14br")
-
-[node name="star" parent="." unique_id=1456049874 groups=["star"] instance=ExtResource("1_fi56y")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.095, 4.107431, -103.87337)
-
-[node name="win_point" parent="." unique_id=1240424430 instance=ExtResource("1_dswqx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2251515, -229)
 
 [node name="Platforms" type="Node" parent="." unique_id=1721524254]
 
 [node name="strigth_platform" parent="Platforms" unique_id=1543553135 instance=ExtResource("1_r1vs7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, -7.042)
+
+[node name="robot" parent="Platforms/strigth_platform" unique_id=452788079 instance=ExtResource("3_0y7y4")]
+transform = Transform3D(2.2397404, 0, 1.9958864, 0, 3, 0, -1.9958866, 0, 2.2397404, -5.9368505, 1.4819734, -5.2858133)
 
 [node name="strigth_platform2" parent="Platforms" unique_id=1303371235 instance=ExtResource("1_r1vs7")]
 transform = Transform3D(-4.371139e-08, 0, 0.2, 0, 1, 0, -1, 0, -8.742278e-09, -4.4973655, 0, -20.106092)
@@ -113,8 +112,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.095, 0.49, -157.304)
 [node name="hammer" parent="Obstacles" unique_id=963157096 instance=ExtResource("6_hldbq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1541996, 5.315361, -109.355316)
 
+[node name="hammer3" parent="Obstacles" unique_id=2052451522 instance=ExtResource("6_hldbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.1542, 5.315361, -42.355316)
+
+[node name="hammer5" parent="Obstacles" unique_id=156073636 instance=ExtResource("6_hldbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1541996, 5.315361, -33.355316)
+
+[node name="hammer4" parent="Obstacles" unique_id=1922668238 instance=ExtResource("6_hldbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8458, 5.315361, -24.355316)
+
 [node name="hammer2" parent="Obstacles" unique_id=54491692 instance=ExtResource("6_hldbq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1541996, 5.315361, -112.355316)
+
+[node name="saw_blade" parent="Obstacles" unique_id=883367280 instance=ExtResource("11_dwyms")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.095, -0.987, -203.273)
+
+[node name="saw_blade2" parent="Obstacles" unique_id=2084313095 instance=ExtResource("11_dwyms")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.095, -0.987, -206.273)
 
 [node name="Pipes" type="Node" parent="." unique_id=1583743388]
 
@@ -153,14 +167,21 @@ transform = Transform3D(0.9512666, 0, 0.3083697, 0, 1, 0, -0.3083697, 0, 0.95126
 [node name="checkpoint" parent="Checkpoints" unique_id=1530323803 instance=ExtResource("10_dwyms")]
 transform = Transform3D(1, 0, 2.3841858e-07, 0, 1, 0, -2.3841858e-07, 0, 1, -0.059012413, 0.57636976, -141.55095)
 
-[node name="saw_blade" parent="." unique_id=883367280 instance=ExtResource("11_dwyms")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.095, -0.987, -203.273)
+[node name="Boosts" type="Node" parent="." unique_id=1551695154]
 
-[node name="saw_blade2" parent="." unique_id=2084313095 instance=ExtResource("11_dwyms")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.095, -0.987, -206.273)
-
-[node name="boost" parent="." unique_id=27694386 instance=ExtResource("12_6xwso")]
+[node name="boost" parent="Boosts" unique_id=27694386 instance=ExtResource("12_6xwso")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.095, 0.5270016, -136.27701)
 
-[node name="ramp" parent="." unique_id=1986108097 instance=ExtResource("13_5ke18")]
+[node name="Ramps" type="Node" parent="." unique_id=25717839]
+
+[node name="ramp" parent="Ramps" unique_id=1986108097 instance=ExtResource("13_5ke18")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.095, -0.71536386, -223.17024)
+
+[node name="star" parent="." unique_id=1456049874 groups=["star"] instance=ExtResource("1_fi56y")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.095, 4.107431, -102.85737)
+
+[node name="win_point" parent="." unique_id=1240424430 instance=ExtResource("1_dswqx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2251515, -229)
+
+[node name="ring_blue" parent="." unique_id=352543149 instance=ExtResource("16_gruok")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.095, 0.96418834, -56.53408)

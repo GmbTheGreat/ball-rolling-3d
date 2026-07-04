@@ -8,7 +8,8 @@ var levels := [
 	"res://scenes/levels/level_2.tscn",
 	"res://scenes/levels/level_3.tscn",
 	"res://scenes/levels/level_4.tscn",
-	"res://scenes/levels/level_5.tscn"
+	"res://scenes/levels/level_5.tscn",
+	"res://scenes/levels/level_6.tscn"
 ]
 
 # Time required for time-star
@@ -17,7 +18,8 @@ var level_data := {
 	"res://scenes/levels/level_2.tscn": {"target_time": 60.0, "win_coin": 10, "star_coin": 15, "time_coin": 20},
 	"res://scenes/levels/level_3.tscn": {"target_time": 60.0, "win_coin": 10, "star_coin": 15, "time_coin": 20},
 	"res://scenes/levels/level_4.tscn": {"target_time": 60.0, "win_coin": 10, "star_coin": 15, "time_coin": 20},
-	"res://scenes/levels/level_5.tscn": {"target_time": 60.0, "win_coin": 10, "star_coin": 15, "time_coin": 20}
+	"res://scenes/levels/level_5.tscn": {"target_time": 60.0, "win_coin": 10, "star_coin": 15, "time_coin": 20},
+	"res://scenes/levels/level_6.tscn": {"target_time": 60.0, "win_coin": 10, "star_coin": 15, "time_coin": 20}
 }
 
 

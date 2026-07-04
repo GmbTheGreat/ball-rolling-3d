@@ -48,6 +48,20 @@ func _on_back_pressed():
 	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
 
 
+func _on_previous_pressed() -> void:
+	grid_container.visible = true
+	grid_container_2.visible = false
+	previous.visible = false
+	next.visible = true
+
+
+func _on_next_pressed() -> void:
+	grid_container_2.visible = true
+	grid_container.visible = false
+	next.visible = false
+	previous.visible = true
+
+
 func _on_level_1_pressed():
 	AudioManager.play_ui_click()
 	var level_path = "res://scenes/levels/test_level.tscn"
@@ -93,15 +107,10 @@ func _on_level_5_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/ui/loading_ui.tscn")
 
 
-func _on_previous_pressed() -> void:
-	grid_container.visible = true
-	grid_container_2.visible = false
-	previous.visible = false
-	next.visible = true
-
-
-func _on_next_pressed() -> void:
-	grid_container_2.visible = true
-	grid_container.visible = false
-	next.visible = false
-	previous.visible = true
+func _on_level_6_pressed() -> void:
+	AudioManager.play_ui_click()
+	var level_path = "res://scenes/levels/level_6.tscn"
+	
+	LevelsManager.current_level = level_path
+	SceneLoader.target_level = level_path
+	get_tree().change_scene_to_file("res://scenes/ui/loading_ui.tscn")
