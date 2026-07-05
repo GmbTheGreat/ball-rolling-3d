@@ -82,8 +82,6 @@ transform = Transform3D(0.9659258, 0, 0.2588191, 0, 1, 0, -0.2588191, 0, 0.96592
 [node name="jump_pad" parent="Jump Pads" unique_id=548376843 instance=ExtResource("5_anwe6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -80.38959)
 
-[node name="Boosts" type="Node" parent="." unique_id=967161495]
-
 [node name="Obstacles" type="Node" parent="." unique_id=205820837]
 
 [node name="hammer" parent="Obstacles" unique_id=963157096 instance=ExtResource("8_ts8eg")]
@@ -95,9 +93,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.568, -110.267)
 [node name="hammer3" parent="Obstacles" unique_id=687376319 instance=ExtResource("8_ts8eg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 5.568, -168.189)
 
-[node name="ring_green" parent="." unique_id=1217770967 instance=ExtResource("9_um320")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 4.144, -93.37)
-
 [node name="Checkpoints" type="Node" parent="." unique_id=967783320]
 
 [node name="visible_checkpoint" parent="Checkpoints" unique_id=1309010692 instance=ExtResource("10_4wsov")]
@@ -106,5 +101,10 @@ transform = Transform3D(0.9512666, 0, 0.3083697, 0, 1, 0, -0.3083697, 0, 0.95126
 [node name="checkpoint" parent="Checkpoints" unique_id=1530323803 instance=ExtResource("11_qvnao")]
 transform = Transform3D(1, 0, 2.3841858e-07, 0, 1, 0, -2.3841858e-07, 0, 1, 0, 0.497, -99.255)
 
-[node name="robot" parent="." unique_id=452788079 instance=ExtResource("13_hsvsk")]
+[node name="Deco" type="Node" parent="." unique_id=1488529466]
+
+[node name="robot" parent="Deco" unique_id=452788079 instance=ExtResource("13_hsvsk")]
 transform = Transform3D(2.2397404, 0, 1.9958864, 0, 3, 0, -1.9958864, 0, 2.2397404, -5.9368505, 0.60873723, -12.147978)
+
+[node name="ring_green" parent="Deco" unique_id=1217770967 instance=ExtResource("9_um320")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 4.144, -93.37)
