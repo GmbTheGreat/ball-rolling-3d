@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BallData" format=3 uid="uid://kmsa43hf5ixi"]
+
+[ext_resource type="SphereMesh" uid="uid://e1ks3wneu2mj" path="res://assets/models/balls/default_ball_mesh.tres" id="1_456bo"]
+[ext_resource type="Texture2D" uid="uid://bopt3u1jwxtvo" path="res://assets/thumbnail/tennisball.png" id="1_mju55"]
+[ext_resource type="Script" uid="uid://dtkhb7vwmx4xq" path="res://scripts/base/resources/ball_data.gd" id="2_vv6tl"]
+[ext_resource type="Texture2D" uid="uid://b2jxm4t8nm63j" path="res://assets/textures/skins/tennisball.png" id="3_vv6tl"]
+
+[resource]
+script = ExtResource("2_vv6tl")
+id = "tennisball"
+display_name = "Tennisball"
+price = 200
+preview = ExtResource("1_mju55")
+texture = ExtResource("3_vv6tl")
+mesh = ExtResource("1_456bo")
+metadata/_custom_type_script = "uid://dtkhb7vwmx4xq"

@@ -5,11 +5,11 @@ var save_data = {
 	"unlocked_levels": 1,
 
 	"owned_trails": ["default"],
-	"owned_balls": ["football"],
+	"owned_balls": ["default"],
 	"owned_backgrounds": ["sky_01"],
 
 	"selected_trail": "default",
-	"selected_ball": "football",
+	"selected_ball": "default",
 	"selected_background": "sky_01"
 }
 

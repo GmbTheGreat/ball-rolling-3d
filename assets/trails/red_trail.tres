@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CosmeticTrailData" format=3 uid="uid://bwnosahnhrakt"]
 
-[ext_resource type="Script" uid="uid://dw06njle7ivrm" path="res://scripts/base/menu/trail_data.gd" id="1_4yxfk"]
+[ext_resource type="Script" uid="uid://dw06njle7ivrm" path="res://scripts/base/resources/trail_data.gd" id="1_4yxfk"]
 [ext_resource type="Texture2D" uid="uid://cjd4ia8gf4bva" path="res://assets/trails/thumbnails/red trail.png" id="1_otom7"]
 
 [sub_resource type="Gradient" id="Gradient_4yxfk"]

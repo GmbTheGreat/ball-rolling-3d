@@ -232,7 +232,7 @@ transform = Transform3D(-9.616505e-08, 0, 2.2, 0, 2.2, 0, -2.2, 0, -9.616505e-08
 transform = Transform3D(0.9512666, 0, 0.3083697, 0, 1, 0, -0.3083697, 0, 0.9512666, 23.353865, 1.5878203, -150.05804)
 
 [node name="checkpoint" parent="Checkpoints" unique_id=1530323803 instance=ExtResource("15_6to6e")]
-transform = Transform3D(1, 0, 2.3841858e-07, 0, 1, 0, -2.3841858e-07, 0, 1, 26.464579, 0.5247109, -146.19969)
+transform = Transform3D(1, 0, 2.3841858e-07, 0, 1, 0, -2.3841858e-07, 0, 1, 26.09, 0.525, -146.2)
 
 [node name="win_point" parent="." unique_id=1240424430 instance=ExtResource("6_7snfr")]
 transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, -26.054, 2.032, -124.99)

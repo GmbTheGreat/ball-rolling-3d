@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BallData" format=3 uid="uid://bqn262fcha2n"]
+
+[ext_resource type="SphereMesh" uid="uid://e1ks3wneu2mj" path="res://assets/models/balls/default_ball_mesh.tres" id="1_1g54r"]
+[ext_resource type="Texture2D" uid="uid://y62cpg22kylf" path="res://assets/thumbnail/football.png" id="1_02wxp"]
+[ext_resource type="Script" uid="uid://dtkhb7vwmx4xq" path="res://scripts/base/resources/ball_data.gd" id="1_ss5d5"]
+[ext_resource type="Texture2D" uid="uid://c7qrwsdf4ord4" path="res://assets/textures/skins/football.webp" id="3_lo2a4"]
+
+[resource]
+script = ExtResource("1_ss5d5")
+id = "default"
+display_name = "Default"
+preview = ExtResource("1_02wxp")
+texture = ExtResource("3_lo2a4")
+mesh = ExtResource("1_1g54r")
+metadata/_custom_type_script = "uid://dtkhb7vwmx4xq"

@@ -21,7 +21,7 @@
 script = ExtResource("1_gfuhv")
 
 [node name="win_point" parent="." unique_id=1240424430 instance=ExtResource("4_741xk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.049, 4.495285, -311.50937)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.049, 4.241591, -308.92978)
 
 [node name="Platforms" type="Node" parent="." unique_id=257996961]
 

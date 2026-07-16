@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CosmeticTrailData" format=3 uid="uid://cs3sh3t46hy6r"]
 
 [ext_resource type="Texture2D" uid="uid://cq3j5y5hw5oml" path="res://assets/trails/thumbnails/blue trail.png" id="1_3jvcp"]
-[ext_resource type="Script" uid="uid://dw06njle7ivrm" path="res://scripts/base/menu/trail_data.gd" id="1_i2465"]
+[ext_resource type="Script" uid="uid://dw06njle7ivrm" path="res://scripts/base/resources/trail_data.gd" id="1_i2465"]
 
 [sub_resource type="Gradient" id="Gradient_i2465"]
 offsets = PackedFloat32Array(0)

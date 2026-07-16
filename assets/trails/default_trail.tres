@@ -1,19 +1,19 @@
 [gd_resource type="Resource" script_class="CosmeticTrailData" format=3 uid="uid://c000txhj2xoal"]
 
-[ext_resource type="Script" uid="uid://dw06njle7ivrm" path="res://scripts/base/menu/trail_data.gd" id="1_8xh81"]
 [ext_resource type="Texture2D" uid="uid://dcxwtyj0yrw21" path="res://assets/trails/thumbnails/white trail.png" id="1_yxwq3"]
+[ext_resource type="Script" uid="uid://dw06njle7ivrm" path="res://scripts/base/resources/trail_data.gd" id="2_yxwq3"]
 
-[sub_resource type="Gradient" id="Gradient_8xh81"]
+[sub_resource type="Gradient" id="Gradient_yxwq3"]
 offsets = PackedFloat32Array(0)
 colors = PackedColorArray(1, 1, 1, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_yxwq3"]
-gradient = SubResource("Gradient_8xh81")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1qtvd"]
+gradient = SubResource("Gradient_yxwq3")
 
 [resource]
-script = ExtResource("1_8xh81")
+script = ExtResource("2_yxwq3")
 id = "default"
 display_name = "Default"
 preview = ExtResource("1_yxwq3")
-color_ramp = SubResource("GradientTexture1D_yxwq3")
+color_ramp = SubResource("GradientTexture1D_1qtvd")
 metadata/_custom_type_script = "uid://dw06njle7ivrm"
