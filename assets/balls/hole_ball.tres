@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BallData" format=3 uid="uid://y2xra4i1nldk"]
+
+[ext_resource type="ArrayMesh" uid="uid://b01yblx6hm6fh" path="res://assets/models/balls/hole_ball_mesh.tres" id="1_mgd8o"]
+[ext_resource type="Texture2D" uid="uid://c8qqjx8sfwmab" path="res://assets/thumbnail/holeball.png" id="2_mgd8o"]
+[ext_resource type="Script" uid="uid://dtkhb7vwmx4xq" path="res://scripts/base/resources/ball_data.gd" id="3_vx7lt"]
+
+[resource]
+script = ExtResource("3_vx7lt")
+id = "holeball"
+display_name = "Holeball"
+preview = ExtResource("2_mgd8o")
+mesh = ExtResource("1_mgd8o")
+metadata/_custom_type_script = "uid://dtkhb7vwmx4xq"

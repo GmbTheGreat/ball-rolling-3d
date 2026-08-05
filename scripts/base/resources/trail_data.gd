@@ -8,3 +8,5 @@ class_name CosmeticTrailData
 @export var preview : Texture2D
 @export var texture: Texture2D
 @export var color_ramp: GradientTexture1D
+
+@export var pack: PackedScene

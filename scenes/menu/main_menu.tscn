@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="2_247la"]
 [ext_resource type="Texture2D" uid="uid://c5gfuk2jvcou7" path="res://assets/ui/Menu BG.png" id="5_hj162"]
 [ext_resource type="Texture2D" uid="uid://di2i5n6e6f5jf" path="res://assets/textures/buttons/CGB02-yellow_L_btn.png" id="5_xn6kt"]
+[ext_resource type="PackedScene" uid="uid://dcqocyk1kn2f4" path="res://scenes/menu/settings_menu.tscn" id="6_xn6kt"]
 [ext_resource type="Texture2D" uid="uid://vq2lbx76wco1" path="res://assets/textures/buttons/CGB02-green_L_btn.png" id="7_isoef"]
 
 [sub_resource type="Theme" id="Theme_isoef"]
@@ -115,6 +116,22 @@ position = Vector2(639.5, 358.50003)
 scale = Vector2(0.7649521, 0.7619554)
 texture = ExtResource("5_hj162")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=13989789]
+visible = false
+layout_mode = 0
+offset_right = 1281.0
+offset_bottom = 714.0
+color = Color(0.1882353, 0.1882353, 0.1882353, 0.972549)
+
+[node name="SettingsMenu" parent="." unique_id=474330535 instance=ExtResource("6_xn6kt")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [connection signal="mouse_entered" from="Buttons/Start" to="." method="_on_start_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Start" to="." method="_on_start_mouse_exited"]
 [connection signal="pressed" from="Buttons/Start" to="." method="_on_start_pressed"]
@@ -123,6 +140,7 @@ texture = ExtResource("5_hj162")
 [connection signal="pressed" from="Buttons/Customize" to="." method="_on_customize_pressed"]
 [connection signal="mouse_entered" from="Buttons/Settings" to="." method="_on_settings_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Settings" to="." method="_on_settings_mouse_exited"]
+[connection signal="pressed" from="Buttons/Settings" to="." method="_on_settings_pressed"]
 [connection signal="mouse_entered" from="Buttons/Exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Exit" to="." method="_on_exit_mouse_exited"]
 [connection signal="pressed" from="Buttons/Exit" to="." method="_on_exit_pressed"]

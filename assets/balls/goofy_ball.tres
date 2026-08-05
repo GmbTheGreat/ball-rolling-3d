@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BallData" format=3 uid="uid://kn36thv70yry"]
+
+[ext_resource type="ArrayMesh" uid="uid://cjsfwouon5xry" path="res://assets/models/balls/goofy_ball.tres" id="1_svdiv"]
+[ext_resource type="Texture2D" uid="uid://opcxietsk8ee" path="res://assets/thumbnail/goofyball.png" id="2_spyl4"]
+[ext_resource type="Script" uid="uid://dtkhb7vwmx4xq" path="res://scripts/base/resources/ball_data.gd" id="3_3f36h"]
+
+[resource]
+script = ExtResource("3_3f36h")
+id = "goofyball"
+display_name = "Goofyball"
+preview = ExtResource("2_spyl4")
+mesh = ExtResource("1_svdiv")
+metadata/_custom_type_script = "uid://dtkhb7vwmx4xq"

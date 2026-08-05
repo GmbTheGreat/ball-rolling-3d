@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="BallData" format=3 uid="uid://csske5ojn0cv3"]
+
+[ext_resource type="SphereMesh" uid="uid://e1ks3wneu2mj" path="res://assets/models/balls/default_ball_mesh.tres" id="1_4lhjs"]
+[ext_resource type="Texture2D" uid="uid://bkrl4ln2tcueb" path="res://assets/thumbnail/beachball.png" id="2_4lhjs"]
+[ext_resource type="Script" uid="uid://dtkhb7vwmx4xq" path="res://scripts/base/resources/ball_data.gd" id="3_0ejkp"]
+[ext_resource type="Texture2D" uid="uid://dnr0cuavkdyiq" path="res://assets/textures/skins/beachball.jpg" id="4_4lhjs"]
+
+[resource]
+script = ExtResource("3_0ejkp")
+id = "beachball"
+display_name = "Beachball"
+preview = ExtResource("2_4lhjs")
+texture = ExtResource("4_4lhjs")
+mesh = ExtResource("1_4lhjs")
+metadata/_custom_type_script = "uid://dtkhb7vwmx4xq"

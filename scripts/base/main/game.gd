@@ -78,6 +78,7 @@ func _process(delta):
 
 func _on_ball_movement_started():
 	timer_started = true
+	AudioManager.play_ambient()
 
 
 func load_level(level_path: String):
@@ -115,6 +116,8 @@ func _on_level_completed():
 	if level_completed:
 		return
 
+	AudioManager.stop_ambient()
+
 	level_completed = true
 	ball.level_completed = true
 
@@ -138,9 +141,6 @@ func _on_level_completed():
 		SaveManager.save_data["unlocked_levels"] = current_index + 2
 		SaveManager.save_game()
 	SaveManager.save_game()
-	
-	# TODO:
-	# Unlock next level
 	
 	AudioManager.play_win()
 
@@ -194,6 +194,7 @@ func lose_heart():
 
 func game_over():
 	ball.game_over.play()
+	AudioManager.stop_ambient()
 	
 	game_over_ui.show_smooth()
 	get_tree().paused = true
@@ -206,6 +207,7 @@ func show_pause_ui():
 
 func _on_retry_pressed():
 	pause_ui.visible = false
+	AudioManager.stop_ambient()
 	load_level(LevelsManager.current_level)
 	ball.reset_to_spawn()
 	
@@ -216,11 +218,13 @@ func _on_retry_pressed():
 
 
 func _on_home_pressed():
+	AudioManager.stop_ambient()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
 
 
 func _on_ad_pressed():
+	AudioManager.stop_ambient()
 	get_tree().paused = false
 
 	hearts = 1
@@ -231,9 +235,11 @@ func _on_ad_pressed():
 	
 	game_over_ui.visible = false
 	ball.respawn()
+	AudioManager.play_ambient()
 
 
 func _on_next_pressed():
+	AudioManager.stop_ambient()
 	get_tree().paused = false
 
 	win_level_ui.visible = false
@@ -257,6 +263,7 @@ func _on_resume_pressed():
 
 
 func _on_levels_pressed():
+	AudioManager.stop_ambient()
 	pause_ui.visible = false
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/menu/levels_menu.tscn")

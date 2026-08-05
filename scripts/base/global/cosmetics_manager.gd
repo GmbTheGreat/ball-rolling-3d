@@ -50,11 +50,23 @@ var current_category = CosmeticCategory.BALL
 var balls: Array[BallData] = [
 	preload("res://assets/balls/default_ball.tres"),
 	preload("res://assets/balls/basket_ball.tres"),
+	preload("res://assets/balls/beach_ball.tres"),
 	preload("res://assets/balls/tennis_ball.tres"),
 	preload("res://assets/balls/pool_ball.tres"),
 	preload("res://assets/balls/earth_ball.tres"),
 	preload("res://assets/balls/vine_ball.tres"),
-	preload("res://assets/balls/atomic_ball.tres")
+	preload("res://assets/balls/atomic_ball.tres"),
+	preload("res://assets/balls/geo_ball.tres"),
+	preload("res://assets/balls/hole_ball.tres"),
+	preload("res://assets/balls/goofy_ball.tres"),
+	preload("res://assets/balls/blob_ball.tres"),
+	preload("res://assets/balls/derp_ball.tres"),
+	preload("res://assets/balls/scaredy_ball.tres"),
+	preload("res://assets/balls/spike_ball.tres"),
+	preload("res://assets/balls/facet_ball.tres"),
+	preload("res://assets/balls/wire_ball.tres"),
+	preload("res://assets/balls/grid_ball.tres"),
+	preload("res://assets/balls/molecule_ball.tres")
 ]
 
 # TRAILS

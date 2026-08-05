@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BallData" format=3 uid="uid://bf0ro7l4f6li2"]
+
+[ext_resource type="ArrayMesh" uid="uid://cu0wdaheahake" path="res://assets/models/balls/blob_ball.tres" id="1_538ps"]
+[ext_resource type="Texture2D" uid="uid://dxpr0jaayfg1j" path="res://assets/thumbnail/blobball.png" id="2_538ps"]
+[ext_resource type="Script" uid="uid://dtkhb7vwmx4xq" path="res://scripts/base/resources/ball_data.gd" id="3_60tn8"]
+
+[resource]
+script = ExtResource("3_60tn8")
+id = "blobball"
+display_name = "Blobball"
+preview = ExtResource("2_538ps")
+mesh = ExtResource("1_538ps")
+metadata/_custom_type_script = "uid://dtkhb7vwmx4xq"

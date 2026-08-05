@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="BallData" format=3 uid="uid://d18bfu0h21yow"]
 
 [ext_resource type="ArrayMesh" uid="uid://bwehaxi0vosdr" path="res://assets/models/balls/atomic_ball_mesh.tres" id="1_b1yih"]
-[ext_resource type="Texture2D" uid="uid://y62cpg22kylf" path="res://assets/thumbnail/football.png" id="2_mgapj"]
+[ext_resource type="Texture2D" uid="uid://drjhi1h0cuvwr" path="res://assets/thumbnail/atomicball.png" id="2_b1yih"]
 [ext_resource type="Script" uid="uid://dtkhb7vwmx4xq" path="res://scripts/base/resources/ball_data.gd" id="3_lh0nb"]
 
 [resource]
 script = ExtResource("3_lh0nb")
 id = "atomicball"
 display_name = "Atomicball"
-preview = ExtResource("2_mgapj")
+preview = ExtResource("2_b1yih")
 mesh = ExtResource("1_b1yih")
 metadata/_custom_type_script = "uid://dtkhb7vwmx4xq"

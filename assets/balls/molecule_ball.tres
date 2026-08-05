@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BallData" format=3 uid="uid://bvjtpkb7afjtt"]
+
+[ext_resource type="ArrayMesh" uid="uid://q5u5sasimn0x" path="res://assets/models/balls/molecule_ball_mesh.tres" id="1_1e23s"]
+[ext_resource type="Texture2D" uid="uid://cdmn7okj87yni" path="res://assets/thumbnail/moleculeball.png" id="2_w7bls"]
+[ext_resource type="Script" uid="uid://dtkhb7vwmx4xq" path="res://scripts/base/resources/ball_data.gd" id="3_v2kex"]
+
+[resource]
+script = ExtResource("3_v2kex")
+id = "moleculeball"
+display_name = "Moleculeball"
+preview = ExtResource("2_w7bls")
+mesh = ExtResource("1_1e23s")
+metadata/_custom_type_script = "uid://dtkhb7vwmx4xq"

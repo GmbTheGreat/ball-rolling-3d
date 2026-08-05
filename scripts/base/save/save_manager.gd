@@ -10,7 +10,11 @@ var save_data = {
 
 	"selected_trail": "default",
 	"selected_ball": "default",
-	"selected_background": "sky_01"
+	"selected_background": "sky_01",
+	
+	"music_volume": 1.0,
+	"sfx_volume": 1.0,
+	"mute": false,
 }
 
 func _ready():

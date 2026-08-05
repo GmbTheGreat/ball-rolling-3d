@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BallData" format=3 uid="uid://do8114g86fqay"]
+
+[ext_resource type="ArrayMesh" uid="uid://bosddgbvdrgja" path="res://assets/models/balls/geo_ball_mesh.tres" id="1_0vyj5"]
+[ext_resource type="Texture2D" uid="uid://b65p2yahi8ilf" path="res://assets/thumbnail/geoball.png" id="2_0vyj5"]
+[ext_resource type="Script" uid="uid://dtkhb7vwmx4xq" path="res://scripts/base/resources/ball_data.gd" id="3_ijol6"]
+
+[resource]
+script = ExtResource("3_ijol6")
+id = "geoball"
+display_name = "Geoball"
+preview = ExtResource("2_0vyj5")
+mesh = ExtResource("1_0vyj5")
+metadata/_custom_type_script = "uid://dtkhb7vwmx4xq"

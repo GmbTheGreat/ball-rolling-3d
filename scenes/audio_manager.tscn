@@ -4,17 +4,26 @@
 [ext_resource type="Script" uid="uid://cg2w03o4ekp53" path="res://scripts/base/global/audio_manager.gd" id="1_m6ggh"]
 [ext_resource type="AudioStream" uid="uid://ci1r6d3c0vrj" path="res://assets/sfx/win.mp3" id="2_liach"]
 [ext_resource type="AudioStream" uid="uid://u0y6dkfiaomd" path="res://assets/sfx/pause.mp3" id="3_3asnw"]
+[ext_resource type="AudioStream" uid="uid://2gmcu5amcp8p" path="res://assets/sfx/Steps_in_the_Tall_Grass.mp3" id="4_m6ggh"]
 
 [node name="AudioManager" type="Node" unique_id=57718784]
 script = ExtResource("1_m6ggh")
 
 [node name="UI" type="AudioStreamPlayer" parent="." unique_id=625512871]
 stream = ExtResource("1_8qd8g")
+bus = &"SFX"
 
 [node name="Win" type="AudioStreamPlayer" parent="." unique_id=2122593128]
 process_mode = 3
 stream = ExtResource("2_liach")
+bus = &"SFX"
 
 [node name="Pause" type="AudioStreamPlayer" parent="." unique_id=792603756]
 process_mode = 2
 stream = ExtResource("3_3asnw")
+bus = &"SFX"
+
+[node name="Ambient" type="AudioStreamPlayer" parent="." unique_id=1268983071]
+stream = ExtResource("4_m6ggh")
+pitch_scale = 1.2
+bus = &"Music"

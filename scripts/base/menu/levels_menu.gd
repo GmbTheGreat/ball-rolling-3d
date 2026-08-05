@@ -132,3 +132,75 @@ func _on_level_8_pressed() -> void:
 	LevelsManager.current_level = level_path
 	SceneLoader.target_level = level_path
 	get_tree().change_scene_to_file("res://scenes/ui/loading_ui.tscn")
+
+
+func _on_level_9_pressed() -> void:
+	AudioManager.play_ui_click()
+	var level_path = "res://scenes/levels/level_9.tscn"
+	
+	LevelsManager.current_level = level_path
+	SceneLoader.target_level = level_path
+	get_tree().change_scene_to_file("res://scenes/ui/loading_ui.tscn")
+
+
+func _on_level_10_pressed() -> void:
+	AudioManager.play_ui_click()
+	var level_path = "res://scenes/levels/level_10.tscn"
+	
+	LevelsManager.current_level = level_path
+	SceneLoader.target_level = level_path
+	get_tree().change_scene_to_file("res://scenes/ui/loading_ui.tscn")
+
+
+func _on_level_11_pressed() -> void:
+	AudioManager.play_ui_click()
+	var level_path = "res://scenes/levels/level_11.tscn"
+	
+	LevelsManager.current_level = level_path
+	SceneLoader.target_level = level_path
+	get_tree().change_scene_to_file("res://scenes/ui/loading_ui.tscn")
+
+
+func _on_level_12_pressed() -> void:
+	AudioManager.play_ui_click()
+	var level_path = "res://scenes/levels/level_12.tscn"
+	
+	LevelsManager.current_level = level_path
+	SceneLoader.target_level = level_path
+	get_tree().change_scene_to_file("res://scenes/ui/loading_ui.tscn")
+
+
+func _on_level_13_pressed() -> void:
+	AudioManager.play_ui_click()
+	var level_path = "res://scenes/levels/level_13.tscn"
+	
+	LevelsManager.current_level = level_path
+	SceneLoader.target_level = level_path
+	get_tree().change_scene_to_file("res://scenes/ui/loading_ui.tscn")
+
+
+func _on_level_14_pressed() -> void:
+	AudioManager.play_ui_click()
+	var level_path = "res://scenes/levels/level_14.tscn"
+	
+	LevelsManager.current_level = level_path
+	SceneLoader.target_level = level_path
+	get_tree().change_scene_to_file("res://scenes/ui/loading_ui.tscn")
+
+
+func _on_level_15_pressed() -> void:
+	AudioManager.play_ui_click()
+	var level_path = "res://scenes/levels/level_15.tscn"
+	
+	LevelsManager.current_level = level_path
+	SceneLoader.target_level = level_path
+	get_tree().change_scene_to_file("res://scenes/ui/loading_ui.tscn")
+
+
+func _on_level_16_pressed() -> void:
+	AudioManager.play_ui_click()
+	var level_path = "res://scenes/levels/level_16.tscn"
+	
+	LevelsManager.current_level = level_path
+	SceneLoader.target_level = level_path
+	get_tree().change_scene_to_file("res://scenes/ui/loading_ui.tscn")

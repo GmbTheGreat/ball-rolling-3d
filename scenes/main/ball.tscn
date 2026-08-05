@@ -77,12 +77,15 @@ metadata/_custom_type_script = "uid://clk5tgqbb7tfu"
 [node name="HitSfx" type="AudioStreamPlayer3D" parent="." unique_id=1221130474]
 stream = ExtResource("6_nyjrx")
 unit_size = 47.09
+bus = &"SFX"
 
 [node name="Spawn" type="AudioStreamPlayer3D" parent="." unique_id=1211848489]
 stream = ExtResource("7_a1s1t")
+bus = &"SFX"
 
 [node name="GameOver" type="AudioStreamPlayer3D" parent="." unique_id=1259347569]
 process_mode = 2
 stream = ExtResource("8_3klhb")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

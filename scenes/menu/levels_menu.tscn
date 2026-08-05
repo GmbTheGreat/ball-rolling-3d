@@ -84,6 +84,7 @@ flat = true
 [node name="LevelButtons" type="CanvasLayer" parent="." unique_id=605121709]
 
 [node name="GridContainer" type="GridContainer" parent="LevelButtons" unique_id=1104600543]
+visible = false
 offset_left = 376.00003
 offset_top = 259.0
 offset_right = 1220.0
@@ -314,7 +315,6 @@ text = "8"
 horizontal_alignment = 1
 
 [node name="GridContainer2" type="GridContainer" parent="LevelButtons" unique_id=1624054663]
-visible = false
 offset_left = 376.00003
 offset_top = 259.0
 offset_right = 1220.0
@@ -522,7 +522,7 @@ theme_override_font_sizes/font_size = 64
 text = "15"
 horizontal_alignment = 1
 
-[node name="level16" type="TextureButton" parent="LevelButtons/GridContainer2" unique_id=91414533]
+[node name="level16" type="TextureButton" parent="LevelButtons/GridContainer2" unique_id=91414533 groups=["level_button"]]
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
@@ -575,10 +575,13 @@ texture_normal = SubResource("AtlasTexture_bh6tv")
 [connection signal="pressed" from="LevelButtons/GridContainer/level6" to="." method="_on_level_6_pressed"]
 [connection signal="pressed" from="LevelButtons/GridContainer/level7" to="." method="_on_level_7_pressed"]
 [connection signal="pressed" from="LevelButtons/GridContainer/level8" to="." method="_on_level_8_pressed"]
-[connection signal="pressed" from="LevelButtons/GridContainer2/level9" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="LevelButtons/GridContainer2/level10" to="." method="_on_level_2_pressed"]
-[connection signal="pressed" from="LevelButtons/GridContainer2/level11" to="." method="_on_level_3_pressed"]
-[connection signal="pressed" from="LevelButtons/GridContainer2/level12" to="." method="_on_level_4_pressed"]
-[connection signal="pressed" from="LevelButtons/GridContainer2/level13" to="." method="_on_level_5_pressed"]
+[connection signal="pressed" from="LevelButtons/GridContainer2/level9" to="." method="_on_level_9_pressed"]
+[connection signal="pressed" from="LevelButtons/GridContainer2/level10" to="." method="_on_level_10_pressed"]
+[connection signal="pressed" from="LevelButtons/GridContainer2/level11" to="." method="_on_level_11_pressed"]
+[connection signal="pressed" from="LevelButtons/GridContainer2/level12" to="." method="_on_level_12_pressed"]
+[connection signal="pressed" from="LevelButtons/GridContainer2/level13" to="." method="_on_level_13_pressed"]
+[connection signal="pressed" from="LevelButtons/GridContainer2/level14" to="." method="_on_level_14_pressed"]
+[connection signal="pressed" from="LevelButtons/GridContainer2/level15" to="." method="_on_level_15_pressed"]
+[connection signal="pressed" from="LevelButtons/GridContainer2/level16" to="." method="_on_level_16_pressed"]
 [connection signal="pressed" from="LevelButtons/Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="LevelButtons/Next" to="." method="_on_next_pressed"]
