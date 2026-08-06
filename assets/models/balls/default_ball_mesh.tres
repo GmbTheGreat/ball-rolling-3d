@@ -1,0 +1,8 @@
+[gd_resource type="SphereMesh" format=3 uid="uid://e1ks3wneu2mj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3wkve"]
+
+[resource]
+material = SubResource("StandardMaterial3D_3wkve")
+radial_segments = 10
+rings = 6

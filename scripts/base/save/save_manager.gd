@@ -5,12 +5,16 @@ var save_data = {
 	"unlocked_levels": 1,
 
 	"owned_trails": ["default"],
-	"owned_balls": ["football"],
+	"owned_balls": ["default"],
 	"owned_backgrounds": ["sky_01"],
 
 	"selected_trail": "default",
-	"selected_ball": "football",
-	"selected_background": "sky_01"
+	"selected_ball": "default",
+	"selected_background": "sky_01",
+	
+	"music_volume": 1.0,
+	"sfx_volume": 1.0,
+	"mute": false,
 }
 
 func _ready():

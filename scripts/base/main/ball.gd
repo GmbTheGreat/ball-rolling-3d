@@ -67,8 +67,10 @@ func apply_equipped_skin():
 	var ball_skin = CosmeticsManager.get_equipped_skin()
 	var ball_matr = mesh.get_active_material(0) as StandardMaterial3D
 	
+	mesh.mesh = ball_skin.mesh
+	
 	if ball_matr:
-		ball_matr.albedo_texture = ball_skin["texture"]
+		ball_matr.albedo_texture = ball_skin.texture
 
 
 func apply_equipped_trail():

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BallData" format=3 uid="uid://dsasm1itfgu82"]
+
+[ext_resource type="ArrayMesh" uid="uid://d3gbgmlhfc31b" path="res://assets/models/balls/scared_ball.tres" id="1_o3kpd"]
+[ext_resource type="Texture2D" uid="uid://dhtewshdqafuu" path="res://assets/thumbnail/scaredball.png" id="2_ot2mt"]
+[ext_resource type="Script" uid="uid://dtkhb7vwmx4xq" path="res://scripts/base/resources/ball_data.gd" id="3_v52td"]
+
+[resource]
+script = ExtResource("3_v52td")
+id = "scaredball"
+display_name = "Scaredball"
+preview = ExtResource("2_ot2mt")
+mesh = ExtResource("1_o3kpd")
+metadata/_custom_type_script = "uid://dtkhb7vwmx4xq"

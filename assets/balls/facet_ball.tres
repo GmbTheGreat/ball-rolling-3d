@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BallData" format=3 uid="uid://7ok1ayeywnxb"]
+
+[ext_resource type="ArrayMesh" uid="uid://gkwtmmebekkh" path="res://assets/models/balls/facet_ball_mesh.tres" id="1_vs7ud"]
+[ext_resource type="Texture2D" uid="uid://cdsmrypauahax" path="res://assets/thumbnail/facetball.png" id="2_lp2en"]
+[ext_resource type="Script" uid="uid://dtkhb7vwmx4xq" path="res://scripts/base/resources/ball_data.gd" id="3_y3k44"]
+
+[resource]
+script = ExtResource("3_y3k44")
+id = "facetball"
+display_name = "Facetball"
+preview = ExtResource("2_lp2en")
+mesh = ExtResource("1_vs7ud")
+metadata/_custom_type_script = "uid://dtkhb7vwmx4xq"

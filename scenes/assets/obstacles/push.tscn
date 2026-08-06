@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bu4xcfpyveumh"]
+
+[ext_resource type="PackedScene" uid="uid://bsh13bttjfu17" path="res://assets/models/obstacles/push.glb" id="2_cb462"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cb462"]
+size = Vector3(0.16674805, 0.16610718, 0.032714844)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cb462"]
+radius = 0.14013672
+height = 2.4328613
+
+[node name="push" type="AnimatableBody3D" unique_id=103624144]
+
+[node name="push2" parent="." unique_id=78468801 instance=ExtResource("2_cb462")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=603484030]
+transform = Transform3D(5.1808725e-13, 4.3460304e-06, -8.348945, 8.348942, -9.952719e-07, -1.6972389e-19, -9.952719e-07, -8.348945, -4.3460304e-06, 2.3166952, 0.003057491, -0.010064031)
+shape = SubResource("BoxShape3D_cb462")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=2112220212]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.8592529, -4.9863637e-08, 0)
+shape = SubResource("CapsuleShape3D_cb462")

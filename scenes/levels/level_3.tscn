@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bfgecinr8577i"]
+
+[ext_resource type="PackedScene" uid="uid://q5c8jlvgqhp7" path="res://scenes/assets/platforms/straight_platform.tscn" id="1_ugcn1"]
+[ext_resource type="PackedScene" uid="uid://ckq4tkesrnmux" path="res://scenes/assets/deco/robot.tscn" id="5_qi5uv"]
+[ext_resource type="PackedScene" uid="uid://x5gdyo0gi8xo" path="res://assets/models/deco/hot_air_balloon_2-v2.glb" id="6_f6egh"]
+[ext_resource type="PackedScene" uid="uid://b6u8u7q6g2ub8" path="res://scenes/assets/obstacles/rotating_hammer.tscn" id="6_ftfob"]
+[ext_resource type="PackedScene" uid="uid://bhr8neihmxmiq" path="res://scenes/assets/interactables/star.tscn" id="7_fkk1g"]
+[ext_resource type="PackedScene" uid="uid://cwgy6i2npqc0q" path="res://scenes/assets/interactables/win_point.tscn" id="7_t4txi"]
+[ext_resource type="PackedScene" uid="uid://87onxlt8byot" path="res://scenes/assets/platforms/curve.tscn" id="8_apo5x"]
+[ext_resource type="PackedScene" uid="uid://bd7hx0nmi804m" path="res://assets/models/deco/hot_ari_balloon_3.glb" id="9_pimnq"]
+[ext_resource type="PackedScene" uid="uid://oa1fdy8v3471" path="res://assets/models/deco/hot_air_balloon-v2.glb" id="10_2bnyt"]
+
+[node name="level_3" type="Node3D" unique_id=1765201253]
+
+[node name="Platforms" type="Node" parent="." unique_id=2048158728]
+
+[node name="strigth_platform" parent="Platforms" unique_id=1543553135 instance=ExtResource("1_ugcn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="strigth_platform2" parent="Platforms" unique_id=1429222007 instance=ExtResource("1_ugcn1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 13, 0, -21.050009)
+
+[node name="strigth_platform3" parent="Platforms" unique_id=1968878120 instance=ExtResource("1_ugcn1")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 26.086763, 0, -34.05001)
+
+[node name="Deco" type="Node" parent="." unique_id=450726873]
+
+[node name="robot" parent="Deco" unique_id=452788079 instance=ExtResource("5_qi5uv")]
+transform = Transform3D(1.4999999, 0, 2.5980763, 0, 3, 0, -2.5980763, 0, 1.4999999, -5.4588995, -1.0528489, -12.307844)
+
+[node name="hot_air_balloon_2-v2" parent="Deco" unique_id=960356236 instance=ExtResource("6_f6egh")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 13.980782, 0, -33.308525)
+
+[node name="hot_ari_balloon_3" parent="Deco" unique_id=566245771 instance=ExtResource("9_pimnq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.326591, 0.33464003, -15.89472)
+
+[node name="win_point" parent="." unique_id=1240424430 instance=ExtResource("7_t4txi")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 26.127993, 1.8322675, -42.54013)
+
+[node name="Rounds" type="Node" parent="." unique_id=673172229]
+
+[node name="curve" parent="Rounds" unique_id=1112589416 instance=ExtResource("8_apo5x")]
+transform = Transform3D(-0.99999994, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, -0.99999994, 0.97698426, 0, -20.172342)
+
+[node name="curve2" parent="Rounds" unique_id=940772841 instance=ExtResource("8_apo5x")]
+transform = Transform3D(0.9999999, 0, 1.4702741e-07, 0, 1, 0, -1.4702741e-07, 0, 0.9999999, 25.110895, 0, -21.97157)
+
+[node name="Obstacles" type="Node" parent="." unique_id=1000698060]
+
+[node name="rotating_hammer" parent="Obstacles" unique_id=1288279586 instance=ExtResource("6_ftfob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.669, 0.55, -21.05)
+
+[node name="star" parent="." unique_id=1456049874 instance=ExtResource("7_fkk1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.699149, 1.5, -22.248116)
+
+[node name="hot_air_balloon-v2" parent="." unique_id=967759656 instance=ExtResource("10_2bnyt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.85219, 0.9373183, -59.468777)

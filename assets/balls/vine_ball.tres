@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BallData" format=3 uid="uid://bc8kx0u1kd7r8"]
+
+[ext_resource type="ArrayMesh" uid="uid://cahihvv54wo7v" path="res://assets/models/balls/vine_ball_mesh.tres" id="1_xxcog"]
+[ext_resource type="Script" uid="uid://dtkhb7vwmx4xq" path="res://scripts/base/resources/ball_data.gd" id="2_ccp1k"]
+[ext_resource type="Texture2D" uid="uid://ub62852mt0lo" path="res://assets/thumbnail/vineball.png" id="2_py6bb"]
+
+[resource]
+script = ExtResource("2_ccp1k")
+id = "vineball"
+display_name = "Vineball"
+preview = ExtResource("2_py6bb")
+mesh = ExtResource("1_xxcog")
+metadata/_custom_type_script = "uid://dtkhb7vwmx4xq"

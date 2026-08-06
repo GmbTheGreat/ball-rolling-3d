@@ -46,7 +46,7 @@ func _ready() -> void:
 
 
 func on_ball_changed(ball_data):
-	preview.texture = ball_data["preview"]
+	preview.texture = ball_data.preview
 	update_ui()
 
 
@@ -56,7 +56,7 @@ func on_trail_changed(trail_data: CosmeticTrailData):
 
 
 func on_background_changed(background_data):
-	preview.texture = background_data["preview"]
+	preview.texture = background_data.preview
 	update_ui()
 
 
@@ -79,13 +79,13 @@ func _on_equip_pressed() -> void:
 
 			var ball = CosmeticsManager.get_current_ball_data()
 
-			if CosmeticsManager.is_ball_owned(ball["id"]):
+			if CosmeticsManager.is_ball_owned(ball.id):
 				CosmeticsManager.equip_ball()
 			else:
-				pending_item_id = ball["id"]
+				pending_item_id = ball.id
 				pending_category = CosmeticsManager.CosmeticCategory.BALL
 
-				buy_popup.show_popup(ball["name"],ball["price"])
+				buy_popup.show_popup(ball.display_name,ball.price)
 
 
 		CosmeticsManager.CosmeticCategory.TRAIL:
@@ -105,13 +105,13 @@ func _on_equip_pressed() -> void:
 
 			var bg = CosmeticsManager.get_current_background_data()
 
-			if CosmeticsManager.is_background_owned(bg["id"]):
+			if CosmeticsManager.is_background_owned(bg.id):
 				CosmeticsManager.equip_background()
 			else:
-				pending_item_id = bg["id"]
+				pending_item_id = bg.id
 				pending_category = CosmeticsManager.CosmeticCategory.BACKGROUND
 
-				buy_popup.show_popup(bg["name"],bg["price"])
+				buy_popup.show_popup(bg.name,bg.price)
 
 		
 	update_ui()
@@ -181,11 +181,11 @@ func update_ui():
 
 			var ball = CosmeticsManager.get_current_ball_data()
 
-			name_label.text = ball["name"]
+			name_label.text = ball.display_name
 
-			if CosmeticsManager.is_ball_owned(ball["id"]):
+			if CosmeticsManager.is_ball_owned(ball.id):
 
-				if ball["id"] == CosmeticsManager.equiped_ball_id:
+				if ball.id == CosmeticsManager.equiped_ball_id:
 					equip_label.text = "Equipped"
 				else:
 					equip_label.text = "Equip"
@@ -215,11 +215,11 @@ func update_ui():
 
 			var bg = CosmeticsManager.get_current_background_data()
 
-			name_label.text = bg["name"]
+			name_label.text = bg.name
 
-			if CosmeticsManager.is_background_owned(bg["id"]):
+			if CosmeticsManager.is_background_owned(bg.id):
 
-				if bg["id"] == CosmeticsManager.equipped_background_id:
+				if bg.id == CosmeticsManager.equipped_background_id:
 					equip_label.text = "Equipped"
 				else:
 					equip_label.text = "Equip"

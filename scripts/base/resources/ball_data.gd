@@ -1,0 +1,12 @@
+extends Resource
+class_name BallData
+
+@export var id: String
+@export var display_name: String
+@export var price: int = 0
+
+@export var preview : Texture2D
+@export var texture: Texture2D
+
+@export var mesh: Mesh
+@export var material: Material

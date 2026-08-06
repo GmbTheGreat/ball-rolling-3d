@@ -9,42 +9,64 @@ enum CosmeticCategory {BALL,TRAIL,BACKGROUND}
 var current_category = CosmeticCategory.BALL
 
 # BALLS
-var balls : Array = [
-	{
-		"id": "football",
-		"name": "Football",
-		"price": 0,
-		"texture": preload("res://assets/textures/skins/football.webp"),
-		"preview": preload("res://assets/thumbnail/football.png")
-	},
-	{
-		"id": "basketball",
-		"name": "Basketball",
-		"price": 0,
-		"texture": preload("res://assets/textures/skins/basketball.jpg"),
-		"preview": preload("res://assets/thumbnail/basketball.png")
-	},
-	{
-		"id": "tennisball",
-		"name": "Tennisball",
-		"price": 0,
-		"texture": preload("res://assets/textures/skins/tennisball.png"),
-		"preview": preload("res://assets/thumbnail/tennisball.png")
-	},
-	{
-		"id": "poolball",
-		"name": "Poolball",
-		"price": 0,
-		"texture": preload("res://assets/textures/skins/poolball.webp"),
-		"preview": preload("res://assets/thumbnail/pool.png")
-	},
-	{
-		"id": "earth",
-		"name": "Earth",
-		"price": 500,
-		"texture": preload("res://assets/textures/skins/earth.jpg"),
-		"preview": preload("res://assets/thumbnail/earth.png")
-	},
+#var balls : Array = [
+	#{
+		#"id": "football",
+		#"name": "Football",
+		#"price": 0,
+		#"texture": preload("res://assets/textures/skins/football.webp"),
+		#"preview": preload("res://assets/thumbnail/football.png")
+	#},
+	#{
+		#"id": "basketball",
+		#"name": "Basketball",
+		#"price": 0,
+		#"texture": preload("res://assets/textures/skins/basketball.jpg"),
+		#"preview": preload("res://assets/thumbnail/basketball.png")
+	#},
+	#{
+		#"id": "tennisball",
+		#"name": "Tennisball",
+		#"price": 0,
+		#"texture": preload("res://assets/textures/skins/tennisball.png"),
+		#"preview": preload("res://assets/thumbnail/tennisball.png")
+	#},
+	#{
+		#"id": "poolball",
+		#"name": "Poolball",
+		#"price": 0,
+		#"texture": preload("res://assets/textures/skins/poolball.webp"),
+		#"preview": preload("res://assets/thumbnail/pool.png")
+	#},
+	#{
+		#"id": "earth",
+		#"name": "Earth",
+		#"price": 500,
+		#"texture": preload("res://assets/textures/skins/earth.jpg"),
+		#"preview": preload("res://assets/thumbnail/earth.png")
+	#},
+#]
+
+var balls: Array[BallData] = [
+	preload("res://assets/balls/default_ball.tres"),
+	preload("res://assets/balls/basket_ball.tres"),
+	preload("res://assets/balls/beach_ball.tres"),
+	preload("res://assets/balls/tennis_ball.tres"),
+	preload("res://assets/balls/pool_ball.tres"),
+	preload("res://assets/balls/earth_ball.tres"),
+	preload("res://assets/balls/vine_ball.tres"),
+	preload("res://assets/balls/atomic_ball.tres"),
+	preload("res://assets/balls/geo_ball.tres"),
+	preload("res://assets/balls/hole_ball.tres"),
+	preload("res://assets/balls/goofy_ball.tres"),
+	preload("res://assets/balls/blob_ball.tres"),
+	preload("res://assets/balls/derp_ball.tres"),
+	preload("res://assets/balls/scaredy_ball.tres"),
+	preload("res://assets/balls/spike_ball.tres"),
+	preload("res://assets/balls/facet_ball.tres"),
+	preload("res://assets/balls/wire_ball.tres"),
+	preload("res://assets/balls/grid_ball.tres"),
+	preload("res://assets/balls/molecule_ball.tres")
 ]
 
 # TRAILS
@@ -92,7 +114,7 @@ var current_ball_index = 0
 var equiped_ball_id = "football"
 
 
-func get_current_ball_data() -> Dictionary:
+func get_current_ball_data() -> BallData:
 	return balls[current_ball_index]
 
 
@@ -115,7 +137,7 @@ func next_ball():
 
 
 func equip_ball():
-	var ball_id = get_current_ball_data()["id"]
+	var ball_id = get_current_ball_data().id
 
 	if !is_ball_owned(ball_id):
 		return
@@ -130,9 +152,9 @@ func is_ball_owned(ball_id:String) -> bool:
 	return ball_id in SaveManager.save_data["owned_balls"]
 
 
-func get_equipped_skin() -> Dictionary:
+func get_equipped_skin() -> BallData:
 	for ball in balls:
-		if ball["id"] == equiped_ball_id:
+		if ball.id == equiped_ball_id:
 			return ball
 	
 	return balls[0]
@@ -141,9 +163,9 @@ func get_equipped_skin() -> Dictionary:
 func buy_ball(ball_id:String) -> bool:
 	for ball in balls:
 
-		if ball["id"] == ball_id:
+		if ball.id == ball_id:
 
-			var price = ball["price"]
+			var price = ball.price
 
 			if SaveManager.save_data["total_coins"] < price:
 				return false

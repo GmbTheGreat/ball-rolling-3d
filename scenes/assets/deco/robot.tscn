@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ckq4tkesrnmux"]
+
+[ext_resource type="PackedScene" uid="uid://bly2gtfbxl7g4" path="res://assets/models/deco/free_stylized_sci-fi_scout_bot-v1.glb" id="1_wxj1t"]
+[ext_resource type="Script" uid="uid://blf1iuwpv0c5e" path="res://scripts/base/deco/robot.gd" id="2_nh4qb"]
+
+[node name="robot" unique_id=452788079 instance=ExtResource("1_wxj1t")]
+script = ExtResource("2_nh4qb")
+
+[node name="Skeleton3D" parent="Object_5" parent_id_path=PackedInt32Array(2062418412) index="0" unique_id=7182530]
+bones/1/position = Vector3(-2.771503e-13, 90.01581, -4.016296)
+bones/1/rotation = Quaternion(-0.0534595, 3.5445015e-14, 1.8573605e-15, 0.99857)
+bones/2/rotation = Quaternion(0.18806747, 0.0498803, -0.2514626, 0.9481082)
+bones/3/rotation = Quaternion(-0.7320266, 0.009121021, 0.013364181, 0.681084)
+bones/4/position = Vector3(7.6293945e-06, -39.56214, 5.662441e-07)
+bones/5/rotation = Quaternion(0.28062952, 0.018040033, 0.31586355, 0.90617436)
+bones/6/rotation = Quaternion(0.9522515, 0.23528631, 0.04667164, -0.18888928)
+bones/7/rotation = Quaternion(-0.5946236, -0.12630521, 0.15551625, 0.77864265)
+bones/8/position = Vector3(1.9073486e-06, 39.562084, 3.1590462e-06)
+bones/8/rotation = Quaternion(1.2063877e-08, 7.5381486e-08, 4.6566195e-10, -1)
+bones/9/rotation = Quaternion(0.92895174, -0.316135, -0.012402814, -0.19223268)
+bones/10/position = Vector3(0.17281942, -74.872795, 24.682817)
+bones/10/rotation = Quaternion(0.14135192, 0.02565771, 0.014460561, 0.9895212)

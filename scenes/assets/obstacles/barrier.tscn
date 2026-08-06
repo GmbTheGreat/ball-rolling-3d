@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bii4q6wpa4cc5"]
+
+[ext_resource type="PackedScene" uid="uid://be12bna5h0rau" path="res://assets/models/obstacles/barrier-v1.glb" id="1_6jv62"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6jv62"]
+size = Vector3(4.2523804, 4.772888, 0.33943176)
+
+[node name="barrier" type="Node3D" unique_id=1502842331]
+
+[node name="Sketchfab_Scene" parent="." unique_id=217772793 instance=ExtResource("1_6jv62")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3612842)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1641005452]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=691833520]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11782837, 1.8864441, -0.063056946)
+shape = SubResource("BoxShape3D_6jv62")

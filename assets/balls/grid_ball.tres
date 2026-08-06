@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BallData" format=3 uid="uid://4q5ahyq02ene"]
+
+[ext_resource type="ArrayMesh" uid="uid://cqkcgknakiac" path="res://assets/models/balls/grid_ball_mesh.tres" id="1_bf48v"]
+[ext_resource type="Texture2D" uid="uid://dl3uf0rchnewd" path="res://assets/thumbnail/gridball.png" id="2_8umsj"]
+[ext_resource type="Script" uid="uid://dtkhb7vwmx4xq" path="res://scripts/base/resources/ball_data.gd" id="3_c6d75"]
+
+[resource]
+script = ExtResource("3_c6d75")
+id = "gridball"
+display_name = "Gridball"
+preview = ExtResource("2_8umsj")
+mesh = ExtResource("1_bf48v")
+metadata/_custom_type_script = "uid://dtkhb7vwmx4xq"
