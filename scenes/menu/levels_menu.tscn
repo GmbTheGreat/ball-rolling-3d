@@ -59,10 +59,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -171.0
-offset_top = 77.0
-offset_right = 166.0
-offset_bottom = 196.0
+offset_left = -169.0
+offset_top = 27.0
+offset_right = 168.0
+offset_bottom = 146.0
 grow_horizontal = 2
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("2_1gfdk")
@@ -83,12 +83,28 @@ flat = true
 
 [node name="LevelButtons" type="CanvasLayer" parent="." unique_id=605121709]
 
+[node name="Category" type="Label" parent="LevelButtons" unique_id=483701708]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = -207.0
+offset_right = 53.0
+offset_bottom = -152.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_1gfdk")
+theme_override_font_sizes/font_size = 45
+text = "Easy"
+
 [node name="GridContainer" type="GridContainer" parent="LevelButtons" unique_id=1104600543]
-visible = false
 offset_left = 376.00003
 offset_top = 259.0
-offset_right = 1220.0
-offset_bottom = 677.0
+offset_right = 1250.0
+offset_bottom = 737.0
 scale = Vector2(0.635, 0.635)
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -315,6 +331,7 @@ text = "8"
 horizontal_alignment = 1
 
 [node name="GridContainer2" type="GridContainer" parent="LevelButtons" unique_id=1624054663]
+visible = false
 offset_left = 376.00003
 offset_top = 259.0
 offset_right = 1220.0
@@ -550,6 +567,243 @@ theme_override_font_sizes/font_size = 64
 text = "16"
 horizontal_alignment = 1
 
+[node name="GridContainer3" type="GridContainer" parent="LevelButtons" unique_id=2069571218]
+visible = false
+offset_left = 376.00003
+offset_top = 259.0
+offset_right = 1220.0
+offset_bottom = 677.0
+scale = Vector2(0.635, 0.635)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 100
+columns = 4
+
+[node name="level17" type="TextureButton" parent="LevelButtons/GridContainer3" unique_id=1756031622 groups=["level_button"]]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+disabled = true
+texture_normal = SubResource("AtlasTexture_uehtd")
+texture_hover = SubResource("AtlasTexture_nvge3")
+texture_disabled = SubResource("AtlasTexture_rf8is")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="LevelButtons/GridContainer3/level17" unique_id=889328470]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -38.5
+offset_right = 36.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_1gfdk")
+theme_override_font_sizes/font_size = 64
+text = "17"
+horizontal_alignment = 1
+
+[node name="level18" type="TextureButton" parent="LevelButtons/GridContainer3" unique_id=743812729 groups=["level_button"]]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+disabled = true
+texture_normal = SubResource("AtlasTexture_uehtd")
+texture_hover = SubResource("AtlasTexture_uehtd")
+texture_disabled = SubResource("AtlasTexture_2krcr")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="LevelButtons/GridContainer3/level18" unique_id=325607762]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -38.5
+offset_right = 36.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_1gfdk")
+theme_override_font_sizes/font_size = 64
+text = "18"
+horizontal_alignment = 1
+
+[node name="level19" type="TextureButton" parent="LevelButtons/GridContainer3" unique_id=2013234118 groups=["level_button"]]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+disabled = true
+texture_normal = SubResource("AtlasTexture_uehtd")
+texture_hover = SubResource("AtlasTexture_uehtd")
+texture_disabled = SubResource("AtlasTexture_2krcr")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="LevelButtons/GridContainer3/level19" unique_id=1076574212]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -38.5
+offset_right = 36.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_1gfdk")
+theme_override_font_sizes/font_size = 64
+text = "19"
+horizontal_alignment = 1
+
+[node name="level20" type="TextureButton" parent="LevelButtons/GridContainer3" unique_id=711531344 groups=["level_button"]]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+disabled = true
+texture_normal = SubResource("AtlasTexture_uehtd")
+texture_hover = SubResource("AtlasTexture_uehtd")
+texture_disabled = SubResource("AtlasTexture_2krcr")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="LevelButtons/GridContainer3/level20" unique_id=251105588]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -38.5
+offset_right = 36.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_1gfdk")
+theme_override_font_sizes/font_size = 64
+text = "20"
+horizontal_alignment = 1
+
+[node name="level21" type="TextureButton" parent="LevelButtons/GridContainer3" unique_id=362682383 groups=["level_button"]]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+disabled = true
+texture_normal = SubResource("AtlasTexture_uehtd")
+texture_hover = SubResource("AtlasTexture_uehtd")
+texture_disabled = SubResource("AtlasTexture_2krcr")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="LevelButtons/GridContainer3/level21" unique_id=1055695351]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -38.5
+offset_right = 36.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_1gfdk")
+theme_override_font_sizes/font_size = 64
+text = "21"
+horizontal_alignment = 1
+
+[node name="level22" type="TextureButton" parent="LevelButtons/GridContainer3" unique_id=1119811032 groups=["level_button"]]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+disabled = true
+texture_normal = SubResource("AtlasTexture_uehtd")
+texture_hover = SubResource("AtlasTexture_uehtd")
+texture_disabled = SubResource("AtlasTexture_2krcr")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="LevelButtons/GridContainer3/level22" unique_id=1766153880]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -38.5
+offset_right = 36.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_1gfdk")
+theme_override_font_sizes/font_size = 64
+text = "22"
+horizontal_alignment = 1
+
+[node name="level23" type="TextureButton" parent="LevelButtons/GridContainer3" unique_id=923638947 groups=["level_button"]]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+disabled = true
+texture_normal = SubResource("AtlasTexture_uehtd")
+texture_hover = SubResource("AtlasTexture_uehtd")
+texture_disabled = SubResource("AtlasTexture_2krcr")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="LevelButtons/GridContainer3/level23" unique_id=1751262743]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -38.5
+offset_right = 36.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_1gfdk")
+theme_override_font_sizes/font_size = 64
+text = "23"
+horizontal_alignment = 1
+
+[node name="level24" type="TextureButton" parent="LevelButtons/GridContainer3" unique_id=1589520440 groups=["level_button"]]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+disabled = true
+texture_normal = SubResource("AtlasTexture_uehtd")
+texture_hover = SubResource("AtlasTexture_uehtd")
+texture_disabled = SubResource("AtlasTexture_2krcr")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="LevelButtons/GridContainer3/level24" unique_id=2086870429]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -38.5
+offset_right = 36.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_1gfdk")
+theme_override_font_sizes/font_size = 64
+text = "24"
+horizontal_alignment = 1
+
 [node name="Previous" type="TextureButton" parent="LevelButtons" unique_id=2079126032]
 offset_left = 120.0
 offset_top = 344.00003
@@ -583,5 +837,13 @@ texture_normal = SubResource("AtlasTexture_bh6tv")
 [connection signal="pressed" from="LevelButtons/GridContainer2/level14" to="." method="_on_level_14_pressed"]
 [connection signal="pressed" from="LevelButtons/GridContainer2/level15" to="." method="_on_level_15_pressed"]
 [connection signal="pressed" from="LevelButtons/GridContainer2/level16" to="." method="_on_level_16_pressed"]
+[connection signal="pressed" from="LevelButtons/GridContainer3/level17" to="." method="_on_level_17_pressed"]
+[connection signal="pressed" from="LevelButtons/GridContainer3/level18" to="." method="_on_level_10_pressed"]
+[connection signal="pressed" from="LevelButtons/GridContainer3/level19" to="." method="_on_level_11_pressed"]
+[connection signal="pressed" from="LevelButtons/GridContainer3/level20" to="." method="_on_level_12_pressed"]
+[connection signal="pressed" from="LevelButtons/GridContainer3/level21" to="." method="_on_level_13_pressed"]
+[connection signal="pressed" from="LevelButtons/GridContainer3/level22" to="." method="_on_level_14_pressed"]
+[connection signal="pressed" from="LevelButtons/GridContainer3/level23" to="." method="_on_level_15_pressed"]
+[connection signal="pressed" from="LevelButtons/GridContainer3/level24" to="." method="_on_level_16_pressed"]
 [connection signal="pressed" from="LevelButtons/Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="LevelButtons/Next" to="." method="_on_next_pressed"]
