@@ -234,3 +234,48 @@ func _on_level_18_pressed() -> void:
 	LevelsManager.current_level = level_path
 	SceneLoader.target_level = level_path
 	get_tree().change_scene_to_file("res://scenes/ui/loading_ui.tscn")
+
+
+func _on_level_19_pressed() -> void:
+	AudioManager.play_ui_click()
+	var level_path = "res://scenes/levels/level_19.tscn"
+	
+	LevelsManager.current_level = level_path
+	SceneLoader.target_level = level_path
+	get_tree().change_scene_to_file("res://scenes/ui/loading_ui.tscn")
+
+
+func _on_level_20_pressed() -> void:
+	AudioManager.play_ui_click()
+	var level_path = "res://scenes/levels/level_20.tscn"
+	
+	LevelsManager.current_level = level_path
+	SceneLoader.target_level = level_path
+	get_tree().change_scene_to_file("res://scenes/ui/loading_ui.tscn")
+
+
+func _on_level_21_pressed() -> void:
+	AudioManager.play_ui_click()
+	var level_path = "res://scenes/levels/level_21.tscn"
+	
+	LevelsManager.current_level = level_path
+	SceneLoader.target_level = level_path
+	get_tree().change_scene_to_file("res://scenes/ui/loading_ui.tscn")
+
+
+func _on_level_22_pressed() -> void:
+	AudioManager.play_ui_click()
+	var level_path = "res://scenes/levels/level_22.tscn"
+	
+	LevelsManager.current_level = level_path
+	SceneLoader.target_level = level_path
+	get_tree().change_scene_to_file("res://scenes/ui/loading_ui.tscn")
+
+
+func _on_level_23_pressed() -> void:
+	AudioManager.play_ui_click()
+	var level_path = "res://scenes/levels/level_23.tscn"
+	
+	LevelsManager.current_level = level_path
+	SceneLoader.target_level = level_path
+	get_tree().change_scene_to_file("res://scenes/ui/loading_ui.tscn")

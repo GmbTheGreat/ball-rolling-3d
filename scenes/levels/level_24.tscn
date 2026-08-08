@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://cjbuev6jbfpn5"]
+
+[ext_resource type="PackedScene" uid="uid://q5c8jlvgqhp7" path="res://scenes/assets/platforms/straight_platform.tscn" id="1_nkw4p"]
+[ext_resource type="PackedScene" uid="uid://bhr8neihmxmiq" path="res://scenes/assets/interactables/star.tscn" id="2_strji"]
+[ext_resource type="PackedScene" uid="uid://msl1lbid8crh" path="res://scenes/assets/platforms/ramp.tscn" id="3_1loos"]
+[ext_resource type="PackedScene" uid="uid://djy3wp37xai12" path="res://scenes/assets/platforms/pipe_3.tscn" id="4_75tqh"]
+[ext_resource type="PackedScene" uid="uid://bwv2ap0cnnxly" path="res://scenes/assets/platforms/pipe_4.tscn" id="5_fb8nu"]
+[ext_resource type="PackedScene" uid="uid://cxv2g8t1ky0s1" path="res://scenes/assets/platforms/pipe.tscn" id="6_poky2"]
+[ext_resource type="PackedScene" uid="uid://dnncli65rmou6" path="res://scenes/assets/obstacles/saw_blade.tscn" id="7_tybsa"]
+
+[node name="level_24" type="Node3D" unique_id=1816462118]
+
+[node name="Platforms" type="Node" parent="." unique_id=1068260432]
+
+[node name="strigth_platform" parent="Platforms" unique_id=1543553135 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="strigth_platform2" parent="Platforms" unique_id=662681535 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -33)
+
+[node name="strigth_platform3" parent="Platforms" unique_id=1429981520 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, -68)
+
+[node name="strigth_platform4" parent="Platforms" unique_id=1976161299 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, -94)
+
+[node name="strigth_platform22" parent="Platforms" unique_id=2081596744 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, -122)
+
+[node name="strigth_platform23" parent="Platforms" unique_id=1714284513 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, -158)
+
+[node name="strigth_platform24" parent="Platforms" unique_id=14481150 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, -190.4378)
+
+[node name="strigth_platform25" parent="Platforms" unique_id=1252897323 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, -224.14726)
+
+[node name="strigth_platform26" parent="Platforms" unique_id=297707358 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, -250.14726)
+
+[node name="strigth_platform27" parent="Platforms" unique_id=1794930964 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3, 0, 16, -268.14728)
+
+[node name="strigth_platform28" parent="Platforms" unique_id=1858302018 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3, 7, 17, -268.14728)
+
+[node name="strigth_platform30" parent="Platforms" unique_id=1874157807 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3, 7, 18, -277.14728)
+
+[node name="strigth_platform31" parent="Platforms" unique_id=1203007948 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3, -1, 19, -277.14728)
+
+[node name="strigth_platform32" parent="Platforms" unique_id=17351516 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3, -1, 20, -286.14728)
+
+[node name="strigth_platform33" parent="Platforms" unique_id=660774212 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3, -1, 21, -296.14728)
+
+[node name="strigth_platform34" parent="Platforms" unique_id=1265387316 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3, 6, 22, -296.14728)
+
+[node name="strigth_platform35" parent="Platforms" unique_id=1602064320 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3, 6, 23, -287.14728)
+
+[node name="strigth_platform36" parent="Platforms" unique_id=628244953 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3, 6, 24, -278.14728)
+
+[node name="strigth_platform37" parent="Platforms" unique_id=2117792501 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3, -1, 25, -278.14728)
+
+[node name="strigth_platform29" parent="Platforms" unique_id=1228933533 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3, -8, 22, -268.14728)
+
+[node name="strigth_platform5" parent="Platforms" unique_id=312812224 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(0.8314212, 0, -0.055564284, 0, 1, 0, 0.55564284, 0, 0.083142124, 3.5614967, 1, -47.061592)
+
+[node name="strigth_platform6" parent="Platforms" unique_id=1596474152 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(0.97298586, 0, 0.023086496, 0, 1, 0, -0.23086494, 0, 0.09729859, 3.7857828, 1.7892065, -50.82586)
+
+[node name="strigth_platform7" parent="Platforms" unique_id=1676731937 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(0.10058758, 0, 0.099492826, 0, 1, 0, -0.9949281, 0, 0.010058746, 0.35493946, 2.7892065, -53.297157)
+
+[node name="strigth_platform8" parent="Platforms" unique_id=427348954 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(-0.78198826, 0, 0.062329285, 0, 1, 0, -0.62329304, 0, -0.07819885, -3.4222324, 3.7892065, -51.982086)
+
+[node name="strigth_platform9" parent="Platforms" unique_id=1763201363 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(-0.9601572, 0, -0.02794604, 0, 1, 0, 0.27946007, 0, -0.09601571, -4.119636, 4.7892065, -47.97149)
+
+[node name="strigth_platform10" parent="Platforms" unique_id=784067147 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(-0.196032, 0, -0.09805974, 0, 1, 0, 0.9805973, 0, -0.01960316, -0.9693495, 5.7892065, -45.00232)
+
+[node name="strigth_platform11" parent="Platforms" unique_id=762840210 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(0.5963086, 0, -0.08027548, 0, 1, 0, 0.80275506, 0, 0.059630897, 2.8286545, 6.7892065, -46.090717)
+
+[node name="strigth_platform12" parent="Platforms" unique_id=1597998394 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(0.99793565, 0, 0.006421894, 0, 1, 0, -0.06421852, 0, 0.099793576, 4.1078343, 7.7892065, -49.84385)
+
+[node name="strigth_platform13" parent="Platforms" unique_id=1081735849 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(0.48293102, 0, 0.08756585, 0, 1, 0, -0.8756582, 0, 0.048293065, 1.9182262, 8.7892065, -52.985146)
+
+[node name="strigth_platform14" parent="Platforms" unique_id=281455720 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(-0.5168768, 0, 0.08560594, 0, 1, 0, -0.8560597, 0, -0.051687717, -2.2559457, 9.7892065, -52.82418)
+
+[node name="strigth_platform15" parent="Platforms" unique_id=1183079499 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(-0.994578, 0, -0.010399066, 0, 0.99999994, 0, 0.10399026, 0, -0.09945781, -4.2931824, 10.7892065, -48.91513)
+
+[node name="strigth_platform16" parent="Platforms" unique_id=28262782 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(-0.5759044, 0, -0.081751704, 0, 0.99999994, 0, 0.8175168, 0, -0.05759042, -2.4050376, 11.7892065, -45.586044)
+
+[node name="strigth_platform17" parent="Platforms" unique_id=1124594477 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(0.37319824, 0, -0.092775136, 0, 0.9999999, 0, 0.9277514, 0, 0.037319843, 1.8069148, 12.7892065, -45.196712)
+
+[node name="strigth_platform18" parent="Platforms" unique_id=1381859088 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(0.9908445, 0, -0.013500635, 0, 0.9999999, 0, 0.13500655, 0, 0.09908445, 4.2927437, 13.7892065, -48.91519)
+
+[node name="strigth_platform19" parent="Platforms" unique_id=933592736 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(0.6968144, 0, 0.071725115, 0, 0.99999976, 0, -0.71725094, 0, 0.06968144, 2.616796, 14.7892065, -52.56603)
+
+[node name="strigth_platform20" parent="Platforms" unique_id=1265571529 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(-0.51246226, 0, 0.08587092, 0, 0.99999976, 0, -0.85870916, 0, -0.051246256, -1.8939533, 15.7892065, -53.079468)
+
+[node name="strigth_platform21" parent="Platforms" unique_id=641553022 instance=ExtResource("1_nkw4p")]
+transform = Transform3D(-0.9860769, 0, 0.016628666, 0, 0.9999999, 0, -0.16628683, 0, -0.09860771, -4.3946214, 16.65343, -49.862816)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Platforms" unique_id=1362548215]
+transform = Transform3D(0.92289466, 0, -0.3850525, 0, 1, 0, 0.3850525, 0, 0.92289466, 0, 8.071564, -49.245697)
+calculate_tangents = false
+use_collision = true
+radius = 2.8110352
+height = 18.67041
+sides = 10
+smooth_faces = false
+
+[node name="star" parent="." unique_id=1456049874 instance=ExtResource("2_strji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08289456, 18.238771, -49.426987)
+
+[node name="Ramps" type="Node" parent="." unique_id=1417963248]
+
+[node name="ramp" parent="Ramps" unique_id=1986108097 instance=ExtResource("3_1loos")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 15.815, -105.343)
+
+[node name="pipe3" parent="." unique_id=1102450277 instance=ExtResource("4_75tqh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, -0.6016674, 15.397203, -140.20058)
+
+[node name="pipe4" parent="." unique_id=1228160143 instance=ExtResource("5_fb8nu")]
+transform = Transform3D(1.165, 0, 0, 0, 0.74, 0, 0, 0, 1.61, 0, 17.324, -174.4087)
+
+[node name="pipe" parent="." unique_id=1455267557 instance=ExtResource("6_poky2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45020103, 15.797815, -207.64813)
+
+[node name="saw_blade" parent="." unique_id=883367280 instance=ExtResource("7_tybsa")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 15.593, -221.16)
+
+[node name="saw_blade2" parent="." unique_id=1913079841 instance=ExtResource("7_tybsa")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0, 15.593, -223.16)
