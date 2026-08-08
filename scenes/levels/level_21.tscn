@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://bof2urckbxuu0"]
+
+[ext_resource type="PackedScene" uid="uid://q5c8jlvgqhp7" path="res://scenes/assets/platforms/straight_platform.tscn" id="1_gac4a"]
+[ext_resource type="Script" uid="uid://drvvsb1u6pf8k" path="res://scripts/base/levels/level_21.gd" id="1_jk8g3"]
+[ext_resource type="PackedScene" uid="uid://b86kw00lt8vl5" path="res://scenes/assets/interactables/boost.tscn" id="2_5k350"]
+[ext_resource type="PackedScene" uid="uid://cb0upnrhts18f" path="res://scenes/assets/platforms/visible_checkpoint.tscn" id="2_txmwe"]
+[ext_resource type="PackedScene" uid="uid://cwgy6i2npqc0q" path="res://scenes/assets/interactables/win_point.tscn" id="3_ipl4r"]
+[ext_resource type="PackedScene" uid="uid://dyvik3on3111j" path="res://scenes/assets/interactables/checkpoint.tscn" id="4_i5y4y"]
+[ext_resource type="PackedScene" uid="uid://oa1fdy8v3471" path="res://assets/models/deco/hot_air_balloon-v2.glb" id="7_uaiw1"]
+[ext_resource type="PackedScene" uid="uid://x5gdyo0gi8xo" path="res://assets/models/deco/hot_air_balloon_2-v2.glb" id="8_qeely"]
+[ext_resource type="PackedScene" uid="uid://bd7hx0nmi804m" path="res://assets/models/deco/hot_ari_balloon_3.glb" id="9_0yalt"]
+[ext_resource type="PackedScene" uid="uid://6f6on5tbk80e" path="res://assets/models/deco/ring_blue.glb" id="10_ijk3t"]
+[ext_resource type="PackedScene" uid="uid://dmsid7rwejo8s" path="res://assets/models/deco/ring_green.glb" id="11_rmx8k"]
+[ext_resource type="PackedScene" uid="uid://du8bl585h080o" path="res://assets/models/deco/ring_red.glb" id="12_hnrul"]
+[ext_resource type="PackedScene" uid="uid://k4j5psrcguqu" path="res://assets/models/deco/watermelon.glb" id="13_aag0v"]
+
+[sub_resource type="Animation" id="Animation_i5y4y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Platform/strigth_platform13:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ipl4r"]
+resource_name = "rotate"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Platform/strigth_platform13:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.7853982), Vector3(0, 0, 0), Vector3(0, 0, -0.7853982)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i5y4y"]
+_data = {
+&"RESET": SubResource("Animation_i5y4y"),
+&"rotate": SubResource("Animation_ipl4r")
+}
+
+[node name="level_21" type="Node3D" unique_id=1957473719]
+script = ExtResource("1_jk8g3")
+
+[node name="Platform" type="Node" parent="." unique_id=1906229162]
+
+[node name="strigth_platform" parent="Platform" unique_id=1543553135 instance=ExtResource("1_gac4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="strigth_platform2" parent="Platform" unique_id=761467134 instance=ExtResource("1_gac4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -34)
+
+[node name="strigth_platform3" parent="Platform" unique_id=518657899 instance=ExtResource("1_gac4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -64)
+
+[node name="strigth_platform4" parent="Platform" unique_id=152994738 instance=ExtResource("1_gac4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -95)
+
+[node name="strigth_platform5" parent="Platform" unique_id=2031210196 instance=ExtResource("1_gac4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -125)
+
+[node name="strigth_platform6" parent="Platform" unique_id=2087583265 instance=ExtResource("1_gac4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.4, 0, 0, -144)
+
+[node name="strigth_platform7" parent="Platform" unique_id=1718293461 instance=ExtResource("1_gac4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3, 0, 0, -156)
+
+[node name="strigth_platform8" parent="Platform" unique_id=136273199 instance=ExtResource("1_gac4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.2, 0, 0, -166)
+
+[node name="strigth_platform9" parent="Platform" unique_id=1194937836 instance=ExtResource("1_gac4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0, -174)
+
+[node name="strigth_platform10" parent="Platform" unique_id=1881067884 instance=ExtResource("1_gac4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0, -180)
+
+[node name="strigth_platform11" parent="Platform" unique_id=278748566 instance=ExtResource("1_gac4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0, -186)
+
+[node name="strigth_platform12" parent="Platform" unique_id=770653988 instance=ExtResource("1_gac4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -202)
+
+[node name="strigth_platform13" parent="Platform" unique_id=902161674 instance=ExtResource("1_gac4a")]
+transform = Transform3D(0.9999997, 0, 0, 0, 0.9999997, 0, 0, 0, 1, 0, 0, -229)
+
+[node name="strigth_platform14" parent="Platform" unique_id=1785743601 instance=ExtResource("1_gac4a")]
+transform = Transform3D(0.9999997, 0, 0, 0, 0.9999997, 0, 0, 0, 1, 0, 0, -254)
+
+[node name="strigth_platform15" parent="Platform" unique_id=1517576771 instance=ExtResource("1_gac4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.2, 0, 0, -270)
+
+[node name="strigth_platform16" parent="Platform" unique_id=1176145920 instance=ExtResource("1_gac4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.2, -1, 1, -276)
+
+[node name="strigth_platform17" parent="Platform" unique_id=1379679899 instance=ExtResource("1_gac4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.2, -2, 2, -282)
+
+[node name="strigth_platform18" parent="Platform" unique_id=201133377 instance=ExtResource("1_gac4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.2, -3, 3, -288)
+
+[node name="strigth_platform19" parent="Platform" unique_id=1034943812 instance=ExtResource("1_gac4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.2, -4, 4, -294)
+
+[node name="Boosts" type="Node" parent="." unique_id=375058916]
+
+[node name="boost" parent="Boosts" unique_id=27694386 instance=ExtResource("2_5k350")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5075629, -33)
+
+[node name="boost2" parent="Boosts" unique_id=1545335758 instance=ExtResource("2_5k350")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5075629, -63)
+
+[node name="boost3" parent="Boosts" unique_id=1220094534 instance=ExtResource("2_5k350")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5075629, -95)
+
+[node name="boost4" parent="Boosts" unique_id=1315906119 instance=ExtResource("2_5k350")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5075629, -125)
+
+[node name="Checkpoints" type="Node" parent="." unique_id=440904092]
+
+[node name="checkpoint" parent="Checkpoints" unique_id=1530323803 instance=ExtResource("4_i5y4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -202.152)
+
+[node name="visible_checkpoint" parent="Checkpoints" unique_id=1309010692 instance=ExtResource("2_txmwe")]
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -3.3001564, 1.6175425, -204)
+
+[node name="Deco" type="Node" parent="." unique_id=1974123374]
+
+[node name="hot_air_balloon-v2" parent="Deco" unique_id=967759656 instance=ExtResource("7_uaiw1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3977566, 0, -181.4829)
+
+[node name="hot_air_balloon-v3" parent="Deco" unique_id=1375124329 instance=ExtResource("7_uaiw1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6022434, 0, -145.4829)
+
+[node name="hot_air_balloon_2-v2" parent="Deco" unique_id=960356236 instance=ExtResource("8_qeely")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9517956, 1.9073486e-06, -32.65487)
+
+[node name="hot_air_balloon_2-v3" parent="Deco" unique_id=52762409 instance=ExtResource("8_qeely")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9517956, 1.9073486e-06, -285.65488)
+
+[node name="hot_ari_balloon_3" parent="Deco" unique_id=566245771 instance=ExtResource("9_0yalt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2951355, 0, -99.627335)
+
+[node name="hot_ari_balloon_4" parent="Deco" unique_id=168330726 instance=ExtResource("9_0yalt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2951355, 0, -258.62732)
+
+[node name="ring_blue" parent="Deco" unique_id=352543149 instance=ExtResource("10_ijk3t")]
+transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, 5.2214165, 1.9073486e-06, -77.66319)
+
+[node name="ring_blue2" parent="Deco" unique_id=1725408713 instance=ExtResource("10_ijk3t")]
+transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, 5.2214165, 1.9073486e-06, -216.6632)
+
+[node name="ring_green" parent="Deco" unique_id=1217770967 instance=ExtResource("11_rmx8k")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -7.1378765, 0, -49.19331)
+
+[node name="ring_green2" parent="Deco" unique_id=1263313855 instance=ExtResource("11_rmx8k")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -7.1378765, 0, -239.19331)
+
+[node name="ring_red" parent="Deco" unique_id=859270928 instance=ExtResource("12_hnrul")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -6.2740335, 1.9073486e-06, -102.06273)
+
+[node name="ring_red2" parent="Deco" unique_id=244113094 instance=ExtResource("12_hnrul")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -6.2740335, 1.9073486e-06, -168.06273)
+
+[node name="watermelon" parent="Deco" unique_id=1366410441 instance=ExtResource("13_aag0v")]
+transform = Transform3D(-0.8378283, 0, 2.8806329, 0, 3, 0, -2.8806329, 0, -0.8378283, -4.8630395, 1, -214.841)
+
+[node name="win_point" parent="." unique_id=1240424430 instance=ExtResource("3_ipl4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 6, -300)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=30406590]
+libraries/ = SubResource("AnimationLibrary_i5y4y")

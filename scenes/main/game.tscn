@@ -41,11 +41,11 @@ environment = SubResource("Environment_gf1f2")
 
 [node name="SkyReflection" type="MeshInstance3D" parent="." unique_id=2032975891]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
-visible = false
 mesh = SubResource("PlaneMesh_se30j")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1322373630]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 38.371925, 0)
+light_bake_mode = 1
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2077313752 node_paths=PackedStringArray("ball")]
 transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 19, 30)

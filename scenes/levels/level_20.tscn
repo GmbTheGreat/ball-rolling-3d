@@ -1,0 +1,366 @@
+[gd_scene format=3 uid="uid://bgrtdwkiwv6vf"]
+
+[ext_resource type="Script" uid="uid://e5afq1rvbk6h" path="res://scripts/base/levels/level_20.gd" id="1_5rpay"]
+[ext_resource type="PackedScene" uid="uid://q5c8jlvgqhp7" path="res://scenes/assets/platforms/straight_platform.tscn" id="1_v835e"]
+[ext_resource type="PackedScene" uid="uid://bu4xcfpyveumh" path="res://scenes/assets/obstacles/push.tscn" id="2_j0w4h"]
+[ext_resource type="PackedScene" uid="uid://cwgy6i2npqc0q" path="res://scenes/assets/interactables/win_point.tscn" id="4_qpktt"]
+[ext_resource type="PackedScene" uid="uid://bhr8neihmxmiq" path="res://scenes/assets/interactables/star.tscn" id="5_aq57r"]
+[ext_resource type="PackedScene" uid="uid://6f6on5tbk80e" path="res://assets/models/deco/ring_blue.glb" id="6_yajbp"]
+[ext_resource type="PackedScene" uid="uid://dmsid7rwejo8s" path="res://assets/models/deco/ring_green.glb" id="7_tww4k"]
+[ext_resource type="PackedScene" uid="uid://du8bl585h080o" path="res://assets/models/deco/ring_red.glb" id="8_h4p5x"]
+[ext_resource type="PackedScene" uid="uid://bd7hx0nmi804m" path="res://assets/models/deco/hot_ari_balloon_3.glb" id="9_n7mij"]
+[ext_resource type="PackedScene" uid="uid://x5gdyo0gi8xo" path="res://assets/models/deco/hot_air_balloon_2-v2.glb" id="10_5eyv6"]
+[ext_resource type="PackedScene" uid="uid://oa1fdy8v3471" path="res://assets/models/deco/hot_air_balloon-v2.glb" id="11_20c87"]
+
+[sub_resource type="Animation" id="Animation_j0w4h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Obstacles/push3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-5, 1.3958035, -35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Obstacles/push:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-5, 1.3958035, -24)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Obstacles/push5:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-5, 1.3958035, -46)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Obstacles/push7:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-5, 1.3958035, -56)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Obstacles/push9:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-5, 1.3958035, -66)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Obstacles/push10:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(5, 1.3958035, -70.48792)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Obstacles/push8:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(5, 1.3958035, -61)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Obstacles/push6:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(5, 1.3958035, -51)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Obstacles/push4:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(5, 1.3958035, -40)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Obstacles/push2:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(5, 1.3958035, -30)]
+}
+
+[sub_resource type="Animation" id="Animation_5rpay"]
+resource_name = "push"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Obstacles/push3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-5, 1.3958035, -35), Vector3(-1, 1.3958035, -35), Vector3(-1, 1.3958035, -35), Vector3(-5, 1.3958035, -35), Vector3(-5, 1.3958035, -35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Obstacles/push:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-5, 1.3958035, -24), Vector3(-1, 1.3958035, -24), Vector3(-1, 1.3958035, -24), Vector3(-5, 1.3958035, -24), Vector3(-5, 1.3958035, -24)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Obstacles/push5:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-5, 1.3958035, -46), Vector3(-1, 1.3958035, -46), Vector3(-1, 1.3958035, -46), Vector3(-5, 1.3958035, -46), Vector3(-5, 1.3958035, -46)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Obstacles/push7:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-5, 1.3958035, -56), Vector3(-1, 1.3958035, -56), Vector3(-1, 1.3958035, -56), Vector3(-5, 1.3958035, -56), Vector3(-5, 1.3958035, -56)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Obstacles/push9:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-5, 1.3958035, -66), Vector3(-1, 1.3958035, -66), Vector3(-1, 1.3958035, -66), Vector3(-5, 1.3958035, -66), Vector3(-5, 1.3958035, -66)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Obstacles/push10:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(5, 1.3958035, -70.48792), Vector3(2, 1.3958035, -70.48792), Vector3(2, 1.3958035, -70.48792), Vector3(5, 1.3958035, -70.48792), Vector3(5, 1.3958035, -70.48792)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Obstacles/push8:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.2, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(5, 1.3958035, -61), Vector3(2, 1.3958035, -61), Vector3(2, 1.3958035, -61), Vector3(5, 1.3958035, -61), Vector3(5, 1.3958035, -61)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Obstacles/push6:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.2, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(5, 1.3958035, -51), Vector3(2, 1.3958035, -51), Vector3(2, 1.3958035, -51), Vector3(5, 1.3958035, -51), Vector3(5, 1.3958035, -51)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Obstacles/push4:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.2, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(5, 1.3958035, -40), Vector3(2, 1.3958035, -40), Vector3(2, 1.3958035, -40), Vector3(5, 1.3958035, -40), Vector3(5, 1.3958035, -40)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Obstacles/push2:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.2, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(5, 1.3958035, -30), Vector3(2, 1.3958035, -30), Vector3(2, 1.3958035, -30), Vector3(5, 1.3958035, -30), Vector3(5, 1.3958035, -30)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qpktt"]
+_data = {
+&"RESET": SubResource("Animation_j0w4h"),
+&"push": SubResource("Animation_5rpay")
+}
+
+[node name="level_20" type="Node3D" unique_id=2072505819]
+script = ExtResource("1_5rpay")
+
+[node name="Platforms" type="Node" parent="." unique_id=530127741]
+
+[node name="strigth_platform" parent="Platforms" unique_id=1543553135 instance=ExtResource("1_v835e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
+
+[node name="strigth_platform2" parent="Platforms" unique_id=97092390 instance=ExtResource("1_v835e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.15, 0, 0, -24)
+
+[node name="strigth_platform3" parent="Platforms" unique_id=339887395 instance=ExtResource("1_v835e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.15, 0, 0, -30)
+
+[node name="strigth_platform4" parent="Platforms" unique_id=264752079 instance=ExtResource("1_v835e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.15, 0, 0, -35)
+
+[node name="strigth_platform5" parent="Platforms" unique_id=966673583 instance=ExtResource("1_v835e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.15, 0, 0, -40)
+
+[node name="strigth_platform6" parent="Platforms" unique_id=732163796 instance=ExtResource("1_v835e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.15, 0, 0, -46)
+
+[node name="strigth_platform7" parent="Platforms" unique_id=2126825652 instance=ExtResource("1_v835e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.15, 0, 0, -51)
+
+[node name="strigth_platform8" parent="Platforms" unique_id=1957304001 instance=ExtResource("1_v835e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.15, 0, 0, -56)
+
+[node name="strigth_platform9" parent="Platforms" unique_id=1534004627 instance=ExtResource("1_v835e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.15, 0, 0, -61)
+
+[node name="strigth_platform10" parent="Platforms" unique_id=851445668 instance=ExtResource("1_v835e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.15, 0, 0, -66)
+
+[node name="strigth_platform11" parent="Platforms" unique_id=1105331336 instance=ExtResource("1_v835e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.15, 0, 0, -71.23497)
+
+[node name="Obstacles" type="Node" parent="." unique_id=2057226624]
+
+[node name="push" parent="Obstacles" unique_id=103624144 instance=ExtResource("2_j0w4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.3958035, -24)
+
+[node name="push2" parent="Obstacles" unique_id=1594376064 instance=ExtResource("2_j0w4h")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5, 1.3958035, -30)
+
+[node name="push3" parent="Obstacles" unique_id=444289592 instance=ExtResource("2_j0w4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.3958035, -35)
+
+[node name="push4" parent="Obstacles" unique_id=675237273 instance=ExtResource("2_j0w4h")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5, 1.3958035, -40)
+
+[node name="push5" parent="Obstacles" unique_id=1291786191 instance=ExtResource("2_j0w4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.3958035, -46)
+
+[node name="push6" parent="Obstacles" unique_id=1299780882 instance=ExtResource("2_j0w4h")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5, 1.3958035, -51)
+
+[node name="push7" parent="Obstacles" unique_id=107989577 instance=ExtResource("2_j0w4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.3958035, -56)
+
+[node name="push8" parent="Obstacles" unique_id=1377122643 instance=ExtResource("2_j0w4h")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5, 1.3958035, -61)
+
+[node name="push9" parent="Obstacles" unique_id=1449873199 instance=ExtResource("2_j0w4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.3958035, -66)
+
+[node name="push10" parent="Obstacles" unique_id=1368508709 instance=ExtResource("2_j0w4h")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5, 1.3958035, -70.48792)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=168732761]
+libraries/ = SubResource("AnimationLibrary_qpktt")
+
+[node name="win_point" parent="." unique_id=1240424430 instance=ExtResource("4_qpktt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22882462, 2, -78.25369)
+
+[node name="star" parent="." unique_id=1456049874 instance=ExtResource("5_aq57r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6048489, 1.4229758, -46.563637)
+
+[node name="Deco" type="Node" parent="." unique_id=1130072854]
+
+[node name="ring_blue" parent="Deco" unique_id=352543149 instance=ExtResource("6_yajbp")]
+transform = Transform3D(0.8326507, 0, -0.5537985, 0, 1, 0, 0.5537985, 0, 0.8326507, 6.257021, 1.3913231, -42.12121)
+
+[node name="ring_green" parent="Deco" unique_id=1217770967 instance=ExtResource("7_tww4k")]
+transform = Transform3D(0.6775951, 0, 0.7354352, 0, 1, 0, -0.7354352, 0, 0.6775951, -6.1260047, 0, -28.870823)
+
+[node name="ring_red" parent="Deco" unique_id=859270928 instance=ExtResource("8_h4p5x")]
+transform = Transform3D(0.84835315, 0, 0.52943075, 0, 1, 0, -0.52943075, 0, 0.84835315, -6.0022144, 1.9555185, -59.696243)
+
+[node name="hot_ari_balloon_3" parent="Deco" unique_id=566245771 instance=ExtResource("9_n7mij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2805867, 0.73323166, -31.648449)
+
+[node name="hot_air_balloon_2-v2" parent="Deco" unique_id=960356236 instance=ExtResource("10_5eyv6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4808526, 0.4162302, -54.553616)
+
+[node name="hot_air_balloon-v2" parent="Deco" unique_id=967759656 instance=ExtResource("11_20c87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.652456, 0.89779556, -34.268105)
