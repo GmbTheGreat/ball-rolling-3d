@@ -225,3 +225,12 @@ func _on_level_17_pressed() -> void:
 	LevelsManager.current_level = level_path
 	SceneLoader.target_level = level_path
 	get_tree().change_scene_to_file("res://scenes/ui/loading_ui.tscn")
+
+
+func _on_level_18_pressed() -> void:
+	AudioManager.play_ui_click()
+	var level_path = "res://scenes/levels/level_18.tscn"
+	
+	LevelsManager.current_level = level_path
+	SceneLoader.target_level = level_path
+	get_tree().change_scene_to_file("res://scenes/ui/loading_ui.tscn")

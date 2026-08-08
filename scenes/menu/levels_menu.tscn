@@ -838,7 +838,7 @@ texture_normal = SubResource("AtlasTexture_bh6tv")
 [connection signal="pressed" from="LevelButtons/GridContainer2/level15" to="." method="_on_level_15_pressed"]
 [connection signal="pressed" from="LevelButtons/GridContainer2/level16" to="." method="_on_level_16_pressed"]
 [connection signal="pressed" from="LevelButtons/GridContainer3/level17" to="." method="_on_level_17_pressed"]
-[connection signal="pressed" from="LevelButtons/GridContainer3/level18" to="." method="_on_level_10_pressed"]
+[connection signal="pressed" from="LevelButtons/GridContainer3/level18" to="." method="_on_level_18_pressed"]
 [connection signal="pressed" from="LevelButtons/GridContainer3/level19" to="." method="_on_level_11_pressed"]
 [connection signal="pressed" from="LevelButtons/GridContainer3/level20" to="." method="_on_level_12_pressed"]
 [connection signal="pressed" from="LevelButtons/GridContainer3/level21" to="." method="_on_level_13_pressed"]
