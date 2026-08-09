@@ -132,12 +132,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.769, 0.50987655, -130.967)
 [node name="ramp" parent="Ramps" unique_id=1986108097 instance=ExtResource("9_0x7s7")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 10.769, 0.815, -324.422)
 
-[node name="win_point" parent="." unique_id=1240424430 instance=ExtResource("11_ts6dj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.769, 1, -371)
-
-[node name="star" parent="." unique_id=1456049874 instance=ExtResource("12_v83sl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.779112, 2.5, -231.82)
-
 [node name="Checkpoints" type="Node" parent="." unique_id=326298450]
 
 [node name="checkpoint" parent="Checkpoints" unique_id=1530323803 instance=ExtResource("13_5gfpd")]
@@ -193,5 +187,11 @@ transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49
 [node name="watermelon" parent="Deco" unique_id=1366410441 instance=ExtResource("22_spfs2")]
 transform = Transform3D(0.22026044, 0.7039775, -0.67520446, 0.22940813, 0.6354031, 0.737316, 0.94808096, -0.31729892, -0.02154398, -4.0592203, 1.2048149, -82.99173)
 
-[node name="robot" parent="." unique_id=452788079 instance=ExtResource("23_x0607")]
+[node name="robot" parent="Deco" unique_id=452788079 instance=ExtResource("23_x0607")]
 transform = Transform3D(2.1959887, 0, 2.0439262, 0, 3, 0, -2.0439262, 0, 2.1959887, -4.3702826, 0.50000095, -17.022036)
+
+[node name="win_point" parent="." unique_id=1240424430 instance=ExtResource("11_ts6dj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.769, 1, -371)
+
+[node name="star" parent="." unique_id=1456049874 instance=ExtResource("12_v83sl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.779112, 2.5, -231.82)
