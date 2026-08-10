@@ -7,7 +7,8 @@ extends Control
 @onready var pages = [
 	$LevelButtons/GridContainer,
 	$LevelButtons/GridContainer2,
-	$LevelButtons/GridContainer3
+	$LevelButtons/GridContainer3,
+	$LevelButtons/GridContainer4
 ]
 
 var current_page := 0
@@ -41,7 +42,10 @@ func show_page(index: int):
 		elif current_page == 1:
 			category.text = "Medium"
 		elif current_page == 2:
+			category.visible = true
 			category.text = "Hard"
+		elif current_page == 3:
+			category.visible = false
 
 	previous.visible = current_page > 0
 	next.visible = current_page < pages.size() - 1

@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://cwieljm56i1xg" path="res://assets/fonts/RubikSprayPaint-Regular.ttf" id="2_1gfdk"]
 [ext_resource type="Texture2D" uid="uid://dehfoqauc7628" path="res://assets/ui/button_atlas_ui.tres" id="2_nvge3"]
 [ext_resource type="Texture2D" uid="uid://bo4qh2khujl7l" path="res://assets/ui/BG.png" id="2_uehtd"]
+[ext_resource type="Texture2D" uid="uid://3p6e7tw31qxi" path="res://assets/ui/comingsoon.png" id="5_c5pid"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uehtd"]
 
@@ -101,6 +102,7 @@ theme_override_font_sizes/font_size = 45
 text = "Easy"
 
 [node name="GridContainer" type="GridContainer" parent="LevelButtons" unique_id=1104600543]
+visible = false
 offset_left = 376.00003
 offset_top = 259.0
 offset_right = 1250.0
@@ -803,6 +805,23 @@ theme_override_fonts/font = ExtResource("2_1gfdk")
 theme_override_font_sizes/font_size = 64
 text = "24"
 horizontal_alignment = 1
+
+[node name="GridContainer4" type="GridContainer" parent="LevelButtons" unique_id=658379302]
+offset_left = 376.00003
+offset_top = 259.0
+offset_right = 1220.0
+offset_bottom = 677.0
+scale = Vector2(0.635, 0.635)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 100
+columns = 4
+
+[node name="Comingsoon" type="Sprite2D" parent="LevelButtons/GridContainer4" unique_id=1963897269]
+position = Vector2(461.41724, 188.97636)
+scale = Vector2(1.5748031, 1.5748031)
+texture = ExtResource("5_c5pid")
 
 [node name="Previous" type="TextureButton" parent="LevelButtons" unique_id=2079126032]
 offset_left = 120.0
