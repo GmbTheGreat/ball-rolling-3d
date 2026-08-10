@@ -14,6 +14,8 @@ signal next_pressed
 @onready var star_label: Label = $Window/StarLabel/Label
 @onready var confetti: CPUParticles2D = $Confetti
 
+@onready var next_win: TextureButton = $Window/Next_win
+
 func _ready():
 	star1.scale = Vector2.ZERO
 	star2.scale = Vector2.ZERO
@@ -24,6 +26,11 @@ func _ready():
 	star3.pivot_offset = star3.size / 2.0
 	
 	pivot_offset = size / 2
+	
+	if LevelsManager.get_next_level() == "":
+		next_win.visible = false
+	else:
+		next_win.visible = true
 
 
 func show_smooth():
