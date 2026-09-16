@@ -14,6 +14,7 @@ gradient = SubResource("Gradient_jknp0")
 script = ExtResource("1_jknp0")
 id = "green"
 display_name = "Green"
+price = 100
 preview = ExtResource("1_30711")
 color_ramp = SubResource("GradientTexture1D_30711")
 metadata/_custom_type_script = "uid://dw06njle7ivrm"

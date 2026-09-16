@@ -8,6 +8,7 @@
 script = ExtResource("2_ccp1k")
 id = "vineball"
 display_name = "Vineball"
+price = 600
 preview = ExtResource("2_py6bb")
 mesh = ExtResource("1_xxcog")
 metadata/_custom_type_script = "uid://dtkhb7vwmx4xq"

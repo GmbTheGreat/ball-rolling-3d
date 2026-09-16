@@ -50,6 +50,7 @@ shadow_mesh = SubResource("ArrayMesh_u7si2")
 script = ExtResource("3_i5p4q")
 id = "derpball"
 display_name = "Derpball"
+price = 600
 preview = ExtResource("1_8k26r")
 mesh = SubResource("ArrayMesh_8o2te")
 metadata/_custom_type_script = "uid://dtkhb7vwmx4xq"

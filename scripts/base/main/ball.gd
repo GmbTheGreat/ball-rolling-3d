@@ -158,14 +158,14 @@ func _physics_process(delta):
 		steer_direction = -1.0
 
 	# STEERING
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("ui_left") or Input.is_action_pressed("a_left"):
 		move_direction = move_direction.rotated(Vector3.UP,rotate_speed * steer_direction * delta)
 
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("ui_right") or Input.is_action_pressed("d_right"):
 		move_direction = move_direction.rotated(Vector3.UP,-rotate_speed * steer_direction * delta)
 
 	# ACCELERATION
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("ui_up") or Input.is_action_pressed("w_up"):
 		if !has_started_moving:
 			has_started_moving = true
 			movement_started.emit()
@@ -174,7 +174,7 @@ func _physics_process(delta):
 		current_speed = clamp(current_speed,-move_speed,move_speed)
 
 	# BRAKE / REVERSE
-	elif Input.is_action_pressed("ui_down"):
+	elif Input.is_action_pressed("ui_down") or Input.is_action_pressed("s_down"):
 		if !has_started_moving:
 			has_started_moving = true
 			movement_started.emit()

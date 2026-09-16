@@ -8,6 +8,7 @@
 script = ExtResource("3_c6d75")
 id = "gridball"
 display_name = "Gridball"
+price = 800
 preview = ExtResource("2_8umsj")
 mesh = ExtResource("1_bf48v")
 metadata/_custom_type_script = "uid://dtkhb7vwmx4xq"

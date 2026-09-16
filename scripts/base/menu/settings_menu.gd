@@ -4,6 +4,8 @@ extends Control
 @onready var color_rect: ColorRect = $"../ColorRect"
 @onready var music: HSlider = $Music
 @onready var sfx: HSlider = $Sfx
+@onready var preview_bg: TextureRect = $"../PreviewBG"
+@onready var preview: TextureRect = $"../Preview"
 
 func _ready() -> void:
 	music.value = SaveManager.save_data["music_volume"]

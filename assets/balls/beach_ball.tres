@@ -9,6 +9,7 @@
 script = ExtResource("3_0ejkp")
 id = "beachball"
 display_name = "Beachball"
+price = 100
 preview = ExtResource("2_4lhjs")
 texture = ExtResource("4_4lhjs")
 mesh = ExtResource("1_4lhjs")

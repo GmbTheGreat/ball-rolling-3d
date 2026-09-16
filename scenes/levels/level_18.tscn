@@ -113,12 +113,12 @@ transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 14.5
 [node name="ramp" parent="Ramps" unique_id=1986108097 instance=ExtResource("8_cfa1n")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 15.49, 2.794, -186.411)
 
-[node name="Checkpoint" type="Node" parent="." unique_id=19802700]
+[node name="Checkpoints" type="Node" parent="." unique_id=19802700]
 
-[node name="checkpoint" parent="Checkpoint" unique_id=1530323803 instance=ExtResource("9_hdpka")]
+[node name="checkpoint" parent="Checkpoints" unique_id=1530323803 instance=ExtResource("9_hdpka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4741035, -75.61189)
 
-[node name="visible_checkpoint" parent="Checkpoint" unique_id=1309010692 instance=ExtResource("10_wporn")]
+[node name="visible_checkpoint" parent="Checkpoints" unique_id=1309010692 instance=ExtResource("10_wporn")]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, -3.1824563, 3.5004473, -75.68879)
 
 [node name="win_point" parent="." unique_id=1240424430 instance=ExtResource("2_g3o2n")]
